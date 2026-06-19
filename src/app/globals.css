@@ -77,6 +77,13 @@
   --radius-pill: 9999px;
 }
 
+/* Lenis smooth-scroll (class is added to <html> by the SmoothScrollProvider). */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -148,6 +155,10 @@
   0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45), 0 0 24px rgba(212, 175, 55, 0.30); }
   50%      { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0), 0 0 40px rgba(212, 175, 55, 0.55); }
 }
+
+/* 3D tilt cards establish a shared perspective on their container. */
+.tilt-scene { perspective: 1000px; }
+.tilt-3d { transform-style: preserve-3d; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
