@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GlassCard } from '@/components/ui/GlassCard';
+import { TiltCard } from '@/components/ui/TiltCard';
 import { GoldButton } from '@/components/ui/GoldButton';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -42,11 +42,8 @@ export function AstrologersSection() {
           viewport={{ once: true, amount: 0.2 }}
         >
           {ASTROLOGERS.map((a) => (
-            <GlassCard
-              key={a.name}
-              variants={card}
-              className="flex flex-col items-center p-6 text-center"
-            >
+            <motion.div key={a.name} variants={card}>
+            <TiltCard className="flex flex-col items-center p-6 text-center">
               {/* Avatar with golden ring + live dot. */}
               <div className="relative mb-4">
                 <div className="rounded-full p-[2px] [background:linear-gradient(135deg,#F2CA50,#A67C00)]">
@@ -79,7 +76,8 @@ export function AstrologersSection() {
               <GoldButton variant="outline" className="mt-5 w-full px-4 py-2.5 text-xs">
                 Connect Now
               </GoldButton>
-            </GlassCard>
+            </TiltCard>
+            </motion.div>
           ))}
         </motion.div>
       </div>
