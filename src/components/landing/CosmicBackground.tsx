@@ -37,9 +37,10 @@ function seededParticles(count: number): Particle[] {
   return out;
 }
 
-export function CosmicBackground() {
+export function CosmicBackground({ particles: showParticles = true }: { particles?: boolean }) {
   const reduce = useReducedMotion();
   // ~44 particles — dense enough to feel alive, light enough to stay smooth.
+  // Hidden when the WebGL scene supplies its own starfield (see Scene3D).
   const particles = useMemo(() => seededParticles(44), []);
 
   return (
@@ -52,6 +53,7 @@ export function CosmicBackground() {
       <div className="absolute bottom-0 right-0 h-[55vh] w-[55vh] translate-x-1/4 translate-y-1/4 rounded-full bg-[radial-gradient(circle,rgba(120,60,180,0.22),transparent_65%)] blur-3xl" />
 
       {/* Particle field. */}
+      {showParticles && (
       <div className="absolute inset-0">
         {particles.map((p, i) => (
           <motion.span
@@ -77,6 +79,7 @@ export function CosmicBackground() {
           />
         ))}
       </div>
+      )}
 
       {/* Cinematic vignette. */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(3,2,8,0.7)_100%)]" />

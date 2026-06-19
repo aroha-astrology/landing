@@ -1,9 +1,10 @@
 'use client';
 
-import { CosmicBackground } from './CosmicBackground';
+import { Scene3D } from '@/components/three/Scene3D';
 import { Navbar } from './Navbar';
 import { HeroSection } from './HeroSection';
 import { PanchangSection } from './PanchangSection';
+import { NavagrahaSection } from './NavagrahaSection';
 import { NakshatraSection } from './NakshatraSection';
 import { AstrologersSection } from './AstrologersSection';
 
@@ -15,11 +16,12 @@ import { AstrologersSection } from './AstrologersSection';
 export function LandingPage() {
   return (
     <>
-      <CosmicBackground />
+      <Scene3D />
       <Navbar />
       <main className="relative">
         <HeroSection />
         <PanchangSection />
+        <NavagrahaSection />
         <NakshatraSection />
         <AstrologersSection />
       </main>
