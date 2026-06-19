@@ -1,0 +1,29 @@
+# dependencies
+node_modules
+.pnpm-debug.log
+
+# next.js / build
+.next/
+out/
+.turbo/
+dist/
+build/
+*.tsbuildinfo
+
+# env files
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+.vercel/
