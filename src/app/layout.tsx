@@ -9,6 +9,7 @@ import {
 import './globals.css';
 import { TranslationProvider } from '@/components/providers/TranslationProvider';
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
+import { AppDownloadBanner } from '@/components/landing/AppDownloadBanner';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${inter.variable} ${playfair.variable} ${cinzel.variable} ${cormorant.variable} ${notoDevanagari.variable} antialiased`}
       >
         <TranslationProvider>
+          <AppDownloadBanner />
           <SmoothScrollProvider>{children}</SmoothScrollProvider>
         </TranslationProvider>
       </body>
