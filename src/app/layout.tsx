@@ -9,6 +9,7 @@ import {
 import './globals.css';
 import { TranslationProvider } from '@/components/providers/TranslationProvider';
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
+import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import { AppDownloadBanner } from '@/components/landing/AppDownloadBanner';
 
 const inter = Inter({
@@ -88,10 +89,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${inter.variable} ${playfair.variable} ${cinzel.variable} ${cormorant.variable} ${notoDevanagari.variable} antialiased`}
       >
-        <TranslationProvider>
-          <AppDownloadBanner />
-          <SmoothScrollProvider>{children}</SmoothScrollProvider>
-        </TranslationProvider>
+        <PostHogProvider>
+          <TranslationProvider>
+            <AppDownloadBanner />
+            <SmoothScrollProvider>{children}</SmoothScrollProvider>
+          </TranslationProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
