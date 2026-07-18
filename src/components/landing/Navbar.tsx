@@ -22,7 +22,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-[var(--app-banner-h,0px)] z-40 transition-colors duration-300 ${
         scrolled
           ? 'border-b border-primary/20 bg-[#0a0616]/70 backdrop-blur-md'
           : 'border-b border-transparent'

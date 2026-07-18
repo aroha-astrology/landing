@@ -93,6 +93,9 @@ html.lenis, html.lenis body { height: auto; }
     background-color: #0a0616;
     color: var(--text);
     overflow-x: hidden;
+    /* Pushes normal-flow content down while AppDownloadBanner is visible;
+       fixed elements (Navbar) read the same var directly — see Navbar.tsx. */
+    padding-top: var(--app-banner-h, 0px);
   }
 }
 
