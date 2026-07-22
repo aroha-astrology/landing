@@ -2178,6 +2178,15 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Start your free reading': 'अपनी मुफ़्त रीडिंग शुरू करें',
     'What is a Vedic Moon sign?': 'वैदिक चंद्र राशि क्या है?',
     'Why is it different from my Western sun sign?': 'यह मेरी पश्चिमी सूर्य राशि से अलग क्यों है?',
+
+    // ─── 2026-07-22 follow-up: AppCTA + Moon-signs overview ───────────────
+    'Get the app': 'ऐप प्राप्त करें',
+    'Coming soon': 'जल्द आ रहा है',
+    'Chandra Rashi': 'चंद्र राशि',
+    'What your Moon sign says about you': 'आपकी चंद्र राशि आपके बारे में क्या कहती है',
+    "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
+      'वैदिक ज्योतिष मन और भावना के लिए चंद्रमा को पढ़ता है, सूर्य को नहीं। यहां बताया गया है कि सभी 12 राशियों का चंद्रमा के लिए विशेष रूप से क्या अर्थ है।',
+    'Calculate your real Moon sign': 'अपनी असली चंद्र राशि की गणना करें',
   },
   bn: {
     'Horoscope': 'রাশিফল',
@@ -2573,6 +2582,14 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Start your free reading': 'Comienza tu lectura gratuita',
     'What is a Vedic Moon sign?': '¿Qué es un signo lunar védico?',
     'Why is it different from my Western sun sign?': '¿Por qué es diferente de mi signo solar occidental?',
+
+    // ─── 2026-07-22 follow-up: AppCTA + Moon-signs overview ───────────────
+    'Get the app': 'Obtén la app',
+    'Coming soon': 'Próximamente',
+    'What your Moon sign says about you': 'Lo que dice tu signo lunar sobre ti',
+    "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
+      'La astrología védica lee la Luna para la mente y la emoción, no el Sol. Esto es lo que significa cada uno de los 12 signos específicamente para la Luna.',
+    'Calculate your real Moon sign': 'Calcula tu verdadero signo lunar',
   },
 
   fr: {
@@ -2697,6 +2714,14 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Start your free reading': 'Commencez votre lecture gratuite',
     'What is a Vedic Moon sign?': "Qu'est-ce qu'un signe lunaire védique ?",
     'Why is it different from my Western sun sign?': 'Pourquoi est-ce différent de mon signe solaire occidental ?',
+
+    // ─── 2026-07-22 follow-up: AppCTA + Moon-signs overview ───────────────
+    'Get the app': "Obtenir l'app",
+    'Coming soon': 'Bientôt disponible',
+    'What your Moon sign says about you': 'Ce que votre signe lunaire dit de vous',
+    "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
+      "L'astrologie védique lit la Lune pour l'esprit et l'émotion, pas le Soleil. Voici ce que chacun des 12 signes signifie spécifiquement pour la Lune.",
+    'Calculate your real Moon sign': 'Calculez votre vrai signe lunaire',
   },
 };
 

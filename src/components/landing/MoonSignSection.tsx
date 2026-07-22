@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
+import { AppCTA } from '@/components/ui/AppCTA';
 import { useT } from '@/lib/i18n/useT';
-import { LINKS } from '@/lib/links';
 import { CITIES, type City } from '@/data/cities';
 import { getUtcOffsetMinutes } from '@/lib/timezone';
 
@@ -239,9 +239,7 @@ export function MoonSignSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
               </span>
             </p>
             <div className="mt-6">
-              <Button variant="solid" href={LINKS.kundli}>
-                See your full chart →
-              </Button>
+              <AppCTA variant="solid">See your full chart →</AppCTA>
             </div>
           </motion.div>
         )}

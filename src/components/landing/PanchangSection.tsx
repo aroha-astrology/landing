@@ -1,7 +1,6 @@
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Button } from '@/components/ui/Button';
-import { LINKS } from '@/lib/links';
+import { AppCTA } from '@/components/ui/AppCTA';
 import { getTodayPanchang, type PanchangData } from '@/lib/panchang';
 
 /**
@@ -49,9 +48,7 @@ export async function PanchangSection() {
             Panchang is temporarily unavailable — check it in the app.
           </p>
           <div className="mt-6">
-            <Button variant="solid" href={LINKS.panchang}>
-              Open Panchang in the app →
-            </Button>
+            <AppCTA variant="solid">Open Panchang in the app →</AppCTA>
           </div>
         </div>
       ) : (

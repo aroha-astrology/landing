@@ -52,10 +52,19 @@ export function PrecisionSection() {
         >
           <svg
             viewBox="0 0 300 300"
-            className="h-[240px] w-[240px] sm:h-[300px] sm:w-[300px]"
+            className="h-[260px] w-[260px] sm:h-[320px] sm:w-[320px] lg:h-[380px] lg:w-[380px]"
             role="img"
             aria-label="A decorative chart-wheel outline"
           >
+            <defs>
+              <radialGradient id="precision-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="var(--night-accent)" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="var(--night-accent)" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+
+            <circle cx={150} cy={150} r={90} fill="url(#precision-glow)" aria-hidden />
+
             <g
               style={
                 reduce
@@ -67,7 +76,7 @@ export function PrecisionSection() {
                     }
               }
             >
-              <circle cx={150} cy={150} r={135} fill="none" stroke="var(--night-rule)" strokeWidth={1} />
+              <circle cx={150} cy={150} r={135} fill="none" stroke="var(--night-rule)" strokeWidth={1.5} />
               <circle cx={150} cy={150} r={95} fill="none" stroke="var(--night-rule)" strokeWidth={1} />
               {SPOKES.map((deg) => {
                 const rad = (deg * Math.PI) / 180;
@@ -79,11 +88,14 @@ export function PrecisionSection() {
                 const x2 = Math.round((150 + 135 * Math.cos(rad)) * 100) / 100;
                 const y2 = Math.round((150 + 135 * Math.sin(rad)) * 100) / 100;
                 return (
-                  <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--night-rule)" strokeWidth={1} />
+                  <g key={deg}>
+                    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--night-rule)" strokeWidth={1} />
+                    <circle cx={x2} cy={y2} r={2.5} fill="var(--night-accent)" fillOpacity={0.7} />
+                  </g>
                 );
               })}
             </g>
-            <circle cx={150} cy={150} r={3} fill="var(--night-accent)" />
+            <circle cx={150} cy={150} r={4} fill="var(--night-accent)" />
           </svg>
           {!reduce && (
             <style>{`

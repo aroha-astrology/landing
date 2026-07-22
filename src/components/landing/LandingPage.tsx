@@ -1,6 +1,6 @@
 import { Navbar } from './Navbar';
 import { HeroSection } from './HeroSection';
-import { MoonSignSection } from './MoonSignSection';
+import { MoonSignsOverviewSection } from './MoonSignsOverviewSection';
 import { NavagrahaSection } from './NavagrahaSection';
 import { HowItWorksSection } from './HowItWorksSection';
 import { FeaturesSection } from './FeaturesSection';
@@ -13,9 +13,9 @@ import { Footer } from './Footer';
 /**
  * Light editorial landing page with two full-bleed dark "acts"
  * (Navagraha, Precision) breaking up the paper surface. Order:
- * Hero → Moon-sign tool (the free hook) → Navagraha (dark) → How it
- * works → Features → Precision (dark) → Panchang (live data) →
- * Languages → FAQ → Footer.
+ * Hero → Moon-sign overview (no form — the real calculator lives at
+ * /moon-sign) → Navagraha (dark) → How it works → Features → Precision
+ * (dark) → Panchang (live data) → Languages → FAQ → Footer.
  */
 export function LandingPage() {
   return (
@@ -23,7 +23,7 @@ export function LandingPage() {
       <Navbar />
       <main>
         <HeroSection />
-        <MoonSignSection />
+        <MoonSignsOverviewSection />
         <NavagrahaSection />
         <HowItWorksSection />
         <FeaturesSection />

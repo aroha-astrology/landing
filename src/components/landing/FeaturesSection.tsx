@@ -14,8 +14,7 @@ import {
 } from 'lucide-react';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Button } from '@/components/ui/Button';
-import { LINKS } from '@/lib/links';
+import { AppCTA } from '@/components/ui/AppCTA';
 
 type Feature = { icon: LucideIcon; title: string; description: string };
 
@@ -99,9 +98,7 @@ export function FeaturesSection() {
       </motion.div>
 
       <div className="mt-12 flex justify-center">
-        <Button variant="outline" href={LINKS.kundli}>
-          Explore the app
-        </Button>
+        <AppCTA variant="outline">Explore the app</AppCTA>
       </div>
     </Section>
   );

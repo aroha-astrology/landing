@@ -71,13 +71,23 @@ export function NavagrahaSection() {
       <div className="mt-14 flex justify-center">
         <svg
           viewBox="0 0 400 400"
-          className="h-[260px] w-[260px] sm:h-[380px] sm:w-[380px]"
+          className="h-[280px] w-[280px] sm:h-[400px] sm:w-[400px] lg:h-[460px] lg:w-[460px]"
           role="img"
           aria-label="The nine grahas of Jyotish orbiting in concentric rings"
         >
+          <defs>
+            {GRAHAS.map((g) => (
+              <radialGradient key={g.sanskrit} id={`glow-${g.sanskrit}`} cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor={g.color} stopOpacity="0.9" />
+                <stop offset="100%" stopColor={g.color} stopOpacity="0" />
+              </radialGradient>
+            ))}
+          </defs>
+
           {RING_RADIUS.map((r) => (
             <circle key={r} cx={CENTER} cy={CENTER} r={r} fill="none" stroke="var(--night-rule)" strokeWidth={1} />
           ))}
+
           {rings.map((ring, ringIndex) => (
             <g
               key={ringIndex}
@@ -92,13 +102,30 @@ export function NavagrahaSection() {
               }
             >
               {ring.dots.map((dot) => (
-                <circle key={dot.sanskrit} cx={dot.x} cy={dot.y} r={7} fill={dot.color} data-no-translate>
-                  <title>{`${dot.sanskrit} (${dot.english}) — ${dot.domain}`}</title>
-                </circle>
+                <g key={dot.sanskrit}>
+                  {/* Faint spoke from center to this graha — rotates with its
+                      dot (same <g>) so it fills the empty arcs between the
+                      3-per-ring dots without detaching during the orbit. */}
+                  <line
+                    x1={CENTER}
+                    y1={CENTER}
+                    x2={dot.x}
+                    y2={dot.y}
+                    stroke={dot.color}
+                    strokeOpacity={0.18}
+                    strokeWidth={1}
+                  />
+                  <circle cx={dot.x} cy={dot.y} r={22} fill={`url(#glow-${dot.sanskrit})`} aria-hidden />
+                  <circle cx={dot.x} cy={dot.y} r={9} fill={dot.color} data-no-translate>
+                    <title>{`${dot.sanskrit} (${dot.english}) — ${dot.domain}`}</title>
+                  </circle>
+                </g>
               ))}
             </g>
           ))}
-          <circle cx={CENTER} cy={CENTER} r={3} fill="var(--night-ink-2)" />
+
+          <circle cx={CENTER} cy={CENTER} r={26} fill="url(#glow-Chandra)" opacity={0.4} aria-hidden />
+          <circle cx={CENTER} cy={CENTER} r={4} fill="var(--night-ink)" />
         </svg>
       </div>
 

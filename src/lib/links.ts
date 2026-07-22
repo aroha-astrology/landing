@@ -4,6 +4,11 @@
 
 export const APP_URL = 'https://app.arohaastrology.in';
 
+// Not live on the App Store yet — every "get the app" CTA on the site opens
+// the AppCTA picker (Android via this link, iOS marked Coming soon) rather
+// than linking straight into the web app. See src/components/ui/AppCTA.tsx.
+export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.aroha.astrology';
+
 export const LINKS = {
   app: APP_URL,
   signup: `${APP_URL}/onboarding`,

@@ -1,6 +1,5 @@
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
-import { Button } from '@/components/ui/Button';
-import { LINKS } from '@/lib/links';
+import { AppCTA } from '@/components/ui/AppCTA';
 
 const NAV_LINKS: { href: string; label: string }[] = [
   { href: '#how-it-works', label: 'How it works' },
@@ -36,9 +35,9 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
-          <Button variant="solid" href={LINKS.signup} className="hidden sm:inline-flex">
+          <AppCTA variant="solid" align="right" className="hidden sm:inline-flex">
             Get my free chart
-          </Button>
+          </AppCTA>
         </div>
       </div>
     </nav>

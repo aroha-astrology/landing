@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Button } from '@/components/ui/Button';
+import { AppCTA } from '@/components/ui/AppCTA';
 import { Stat } from '@/components/ui/Stat';
-import { LINKS } from '@/lib/links';
 
 /**
  * The front door. Calm, fast, editorial — no scroll-jacking or heavy
@@ -32,9 +32,9 @@ export function HeroSection() {
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button variant="solid" href={LINKS.signup}>
+          <AppCTA variant="solid">
             Get my free chart <span aria-hidden>→</span>
-          </Button>
+          </AppCTA>
           <Button variant="outline" href="#moon-sign">
             Try the free Moon sign tool
           </Button>

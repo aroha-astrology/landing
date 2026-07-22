@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/Button';
+import { AppCTA } from '@/components/ui/AppCTA';
 import { LINKS } from '@/lib/links';
 
 const PRODUCT_LINKS: { href: string; label: string }[] = [
@@ -73,9 +73,9 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-sm text-night-ink-2">
               Your chart takes a minute to generate, no cost to see it.
             </p>
-            <Button variant="solid" href={LINKS.signup} className="mt-4">
+            <AppCTA variant="solid" align="right" className="mt-4">
               Start your free reading
-            </Button>
+            </AppCTA>
           </div>
         </div>
 
