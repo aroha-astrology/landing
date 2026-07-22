@@ -1,5 +1,6 @@
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { AppCTA } from '@/components/ui/AppCTA';
+import { Logo } from '@/components/ui/Logo';
 
 const NAV_LINKS: { href: string; label: string }[] = [
   { href: '#how-it-works', label: 'How it works' },
@@ -16,9 +17,9 @@ const NAV_LINKS: { href: string; label: string }[] = [
 export function Navbar() {
   return (
     <nav className="sticky top-0 z-40 border-b border-rule bg-paper">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-        <a href="/" data-no-translate className="font-display text-xl font-medium text-ink">
-          Aroha
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
+        <a href="/" aria-label="Aroha home">
+          <Logo />
         </a>
 
         <div className="hidden items-center gap-7 lg:flex">

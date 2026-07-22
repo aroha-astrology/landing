@@ -24,8 +24,8 @@ type SectionProps = {
 
 export function Section({ children, tone = 'paper', className = '', id }: SectionProps) {
   return (
-    <section id={id} className={`relative px-5 py-20 sm:px-8 sm:py-28 ${TONE_CLASSES[tone]} ${className}`}>
-      <div className="mx-auto max-w-6xl">{children}</div>
+    <section id={id} className={`relative px-5 py-20 sm:px-8 sm:py-28 lg:px-12 ${TONE_CLASSES[tone]} ${className}`}>
+      <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
 }

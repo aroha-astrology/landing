@@ -1,4 +1,5 @@
-import { AppCTA } from '@/components/ui/AppCTA';
+import { AppStoreBadges } from '@/components/ui/AppStoreBadges';
+import { Logo } from '@/components/ui/Logo';
 import { LINKS } from '@/lib/links';
 
 const PRODUCT_LINKS: { href: string; label: string }[] = [
@@ -23,12 +24,12 @@ const LEGAL_LINKS: { href: string; label: string }[] = [
  */
 export function Footer() {
   return (
-    <footer className="bg-night px-5 py-16 text-night-ink sm:px-8 sm:py-20">
-      <div className="mx-auto max-w-6xl">
+    <footer className="bg-night px-5 py-16 text-night-ink sm:px-8 sm:py-20 lg:px-12">
+      <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <a href="/" data-no-translate className="font-display text-xl font-medium text-night-ink">
-              Aroha
+            <a href="/" aria-label="Aroha home">
+              <Logo dark />
             </a>
             <p className="mt-3 max-w-xs text-sm text-night-ink-2">
               Vedic astrology backed by Swiss Ephemeris precision, explained in plain language.
@@ -73,9 +74,7 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-sm text-night-ink-2">
               Your chart takes a minute to generate, no cost to see it.
             </p>
-            <AppCTA variant="solid" align="right" className="mt-4">
-              Start your free reading
-            </AppCTA>
+            <AppStoreBadges align="start" className="mt-4" />
           </div>
         </div>
 

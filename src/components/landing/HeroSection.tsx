@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Button } from '@/components/ui/Button';
-import { AppCTA } from '@/components/ui/AppCTA';
+import { AppStoreBadges } from '@/components/ui/AppStoreBadges';
 import { Stat } from '@/components/ui/Stat';
 
 /**
@@ -15,26 +15,27 @@ export function HeroSection() {
   return (
     <section className="relative bg-paper px-5 pb-20 pt-16 text-center text-ink sm:px-8 sm:pb-28 sm:pt-24">
       <motion.div
-        className="mx-auto max-w-3xl"
+        className="mx-auto max-w-5xl"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
         <Eyebrow>Vedic astrology, done properly</Eyebrow>
 
-        <h1 className="font-display text-[2.5rem] font-medium leading-[1.1] sm:text-6xl md:text-7xl">
+        <h1 className="font-display text-[2.5rem] font-medium leading-[1.1] sm:text-6xl md:text-7xl lg:text-8xl">
           Your birth chart, read properly.
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-base text-ink-2 sm:text-lg">
+        <p className="mx-auto mt-6 max-w-2xl text-base text-ink-2 sm:text-lg lg:text-xl">
           Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI
           explains what it means in plain language — in 13 languages.
         </p>
 
-        <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <AppCTA variant="solid">
-            Get my free chart <span aria-hidden>→</span>
-          </AppCTA>
+        <div className="mt-9">
+          <AppStoreBadges />
+        </div>
+
+        <div className="mt-5">
           <Button variant="outline" href="#moon-sign">
             Try the free Moon sign tool
           </Button>

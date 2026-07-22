@@ -2187,6 +2187,23 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
       'वैदिक ज्योतिष मन और भावना के लिए चंद्रमा को पढ़ता है, सूर्य को नहीं। यहां बताया गया है कि सभी 12 राशियों का चंद्रमा के लिए विशेष रूप से क्या अर्थ है।',
     'Calculate your real Moon sign': 'अपनी असली चंद्र राशि की गणना करें',
+
+    // ─── 2026-07-22 follow-up: expanded FAQ ──────────────────────────────
+    'Do I need to know my exact birth time?': 'क्या मुझे अपने जन्म का सटीक समय पता होना चाहिए?',
+    "Ideally, yes, to the minute. The Moon moves fast enough that even a 15-20 minute error can shift your Nakshatra, and a bigger error can move your Ascendant into a different sign entirely. If you're not sure, your birth certificate or hospital records usually have it.":
+      'आदर्श रूप से, हां, मिनट तक। चंद्रमा इतनी तेजी से चलता है कि 15-20 मिनट की त्रुटि भी आपके नक्षत्र को बदल सकती है, और एक बड़ी त्रुटि आपके लग्न को पूरी तरह से एक अलग राशि में बदल सकती है। यदि आपको यकीन नहीं है, तो आपके जन्म प्रमाण पत्र या अस्पताल के रिकॉर्ड में आमतौर पर यह जानकारी होती है।',
+    'What is a rising sign (Lagna / Ascendant)?': 'लग्न (उदय राशि) क्या है?',
+    "Your rising sign is whichever zodiac sign was crossing the eastern horizon at your exact moment of birth. In Vedic astrology it's called your Lagna, and it sets the entire house structure of your chart — where your career, relationships and health placements fall are all measured from it.":
+      'आपकी उदय राशि वह राशि है जो आपके जन्म के सटीक क्षण में पूर्वी क्षितिज को पार कर रही थी। वैदिक ज्योतिष में इसे लग्न कहा जाता है, और यह आपकी कुंडली की पूरी भाव संरचना तय करती है — आपके करियर, रिश्ते और स्वास्थ्य से जुड़े भाव इसी से मापे जाते हैं।',
+    'What is a Nakshatra?': 'नक्षत्र क्या है?',
+    "A Nakshatra is one of 27 lunar mansions the Moon's path is divided into, each spanning 13°20' of the zodiac. It gives a more precise reading than your Moon sign alone, and traditionally factors into naming conventions and marriage compatibility (Guna Milan).":
+      "नक्षत्र चंद्रमा के पथ को विभाजित करने वाले 27 चंद्र मंडलों में से एक है, जिनमें से प्रत्येक राशि चक्र के 13°20' तक फैला हुआ है। यह आपकी चंद्र राशि से भी अधिक सटीक जानकारी देता है, और परंपरागत रूप से नामकरण और विवाह अनुकूलता (गुण मिलान) में इसका उपयोग होता है।",
+    'Can I check compatibility with a partner?': 'क्या मैं किसी साथी के साथ अनुकूलता जांच सकता/सकती हूं?',
+    "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
+      'हां — आरोहा में अष्टकूट (गुण मिलान) शैली की अनुकूलता मिलान शामिल है, जो ऐप में जाने पर दो कुंडलियों की तुलना करके देखती है कि मुख्य ग्रह स्थितियां कैसे मेल खाती हैं।',
+    "How accurate is the AI astrologer's interpretation?": 'AI ज्योतिषी की व्याख्या कितनी सटीक है?',
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      'कुंडली स्वयं — ग्रह स्थिति, भाव, दशाएं — स्विस एफेमेरिस द्वारा गणना की जाती है, वही सटीकता इंजन जिस पर वेधशालाएं भरोसा करती हैं, इसलिए वह हिस्सा खगोलीय रूप से सटीक है। AI का काम केवल यह समझाना है कि वह डेटा परंपरागत रूप से क्या अर्थ रखता है, सरल भाषा में; किसी भी ज्योतिषीय रीडिंग की तरह, यह चिंतन का एक साधन है, वैज्ञानिक भविष्यवाणी नहीं।',
   },
   bn: {
     'Horoscope': 'রাশিফল',
@@ -2590,6 +2607,23 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
       'La astrología védica lee la Luna para la mente y la emoción, no el Sol. Esto es lo que significa cada uno de los 12 signos específicamente para la Luna.',
     'Calculate your real Moon sign': 'Calcula tu verdadero signo lunar',
+
+    // ─── 2026-07-22 follow-up: expanded FAQ ──────────────────────────────
+    'Do I need to know my exact birth time?': '¿Necesito saber mi hora de nacimiento exacta?',
+    "Ideally, yes, to the minute. The Moon moves fast enough that even a 15-20 minute error can shift your Nakshatra, and a bigger error can move your Ascendant into a different sign entirely. If you're not sure, your birth certificate or hospital records usually have it.":
+      'Idealmente sí, al minuto. La Luna se mueve tan rápido que incluso un error de 15-20 minutos puede cambiar tu Nakshatra, y un error mayor puede mover tu Ascendente a un signo completamente diferente. Si no estás seguro, tu certificado de nacimiento o los registros del hospital suelen tenerlo.',
+    'What is a rising sign (Lagna / Ascendant)?': '¿Qué es un signo ascendente (Lagna)?',
+    "Your rising sign is whichever zodiac sign was crossing the eastern horizon at your exact moment of birth. In Vedic astrology it's called your Lagna, and it sets the entire house structure of your chart — where your career, relationships and health placements fall are all measured from it.":
+      'Tu signo ascendente es el signo del zodíaco que cruzaba el horizonte este en el momento exacto de tu nacimiento. En la astrología védica se llama Lagna, y establece toda la estructura de casas de tu carta: de ahí se miden tus posiciones de carrera, relaciones y salud.',
+    'What is a Nakshatra?': '¿Qué es un Nakshatra?',
+    "A Nakshatra is one of 27 lunar mansions the Moon's path is divided into, each spanning 13°20' of the zodiac. It gives a more precise reading than your Moon sign alone, and traditionally factors into naming conventions and marriage compatibility (Guna Milan).":
+      'Un Nakshatra es una de las 27 mansiones lunares en las que se divide el recorrido de la Luna, cada una de 13°20\' del zodíaco. Ofrece una lectura más precisa que tu signo lunar por sí solo, y tradicionalmente influye en las convenciones de nombres y la compatibilidad matrimonial (Guna Milan).',
+    'Can I check compatibility with a partner?': '¿Puedo comprobar la compatibilidad con una pareja?',
+    "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
+      'Sí — Aroha incluye emparejamiento de compatibilidad estilo Ashtakoota (Guna Milan), que compara dos cartas astrales para ver cómo se alinean las posiciones clave, una vez que estés en la aplicación.',
+    "How accurate is the AI astrologer's interpretation?": '¿Qué tan precisa es la interpretación del astrólogo de IA?',
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      'La carta en sí (posiciones planetarias, casas, dashas) se calcula con Swiss Ephemeris, el mismo motor de precisión que usan los observatorios, así que esa parte es astronómicamente exacta. El trabajo de la IA es solo explicar qué significa tradicionalmente esa información, en lenguaje sencillo; como cualquier lectura astrológica, es una herramienta de reflexión, no una predicción científica.',
   },
 
   fr: {
@@ -2722,6 +2756,23 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
       "L'astrologie védique lit la Lune pour l'esprit et l'émotion, pas le Soleil. Voici ce que chacun des 12 signes signifie spécifiquement pour la Lune.",
     'Calculate your real Moon sign': 'Calculez votre vrai signe lunaire',
+
+    // ─── 2026-07-22 follow-up: expanded FAQ ──────────────────────────────
+    'Do I need to know my exact birth time?': 'Dois-je connaître mon heure de naissance exacte ?',
+    "Ideally, yes, to the minute. The Moon moves fast enough that even a 15-20 minute error can shift your Nakshatra, and a bigger error can move your Ascendant into a different sign entirely. If you're not sure, your birth certificate or hospital records usually have it.":
+      "Idéalement, oui, à la minute près. La Lune se déplace assez vite pour qu'une erreur de 15 à 20 minutes puisse changer votre Nakshatra, et une erreur plus importante peut déplacer votre Ascendant vers un signe complètement différent. Si vous n'êtes pas sûr, votre certificat de naissance ou les dossiers de l'hôpital l'indiquent généralement.",
+    'What is a rising sign (Lagna / Ascendant)?': "Qu'est-ce qu'un signe ascendant (Lagna) ?",
+    "Your rising sign is whichever zodiac sign was crossing the eastern horizon at your exact moment of birth. In Vedic astrology it's called your Lagna, and it sets the entire house structure of your chart — where your career, relationships and health placements fall are all measured from it.":
+      "Votre signe ascendant est le signe du zodiaque qui traversait l'horizon est au moment exact de votre naissance. En astrologie védique, on l'appelle le Lagna, et il détermine toute la structure des maisons de votre thème — vos placements de carrière, de relations et de santé en sont tous mesurés.",
+    'What is a Nakshatra?': "Qu'est-ce qu'un Nakshatra ?",
+    "A Nakshatra is one of 27 lunar mansions the Moon's path is divided into, each spanning 13°20' of the zodiac. It gives a more precise reading than your Moon sign alone, and traditionally factors into naming conventions and marriage compatibility (Guna Milan).":
+      "Un Nakshatra est l'une des 27 maisons lunaires dans lesquelles la trajectoire de la Lune est divisée, chacune couvrant 13°20' du zodiaque. Il offre une lecture plus précise que votre seul signe lunaire, et intervient traditionnellement dans les conventions de prénoms et la compatibilité matrimoniale (Guna Milan).",
+    'Can I check compatibility with a partner?': 'Puis-je vérifier la compatibilité avec un partenaire ?',
+    "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
+      "Oui — Aroha comprend un système de compatibilité de type Ashtakoota (Guna Milan), qui compare deux thèmes astraux pour voir comment les placements clés s'alignent, une fois que vous êtes dans l'application.",
+    "How accurate is the AI astrologer's interpretation?": "Quelle est la précision de l'interprétation de l'astrologue IA ?",
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      "Le thème lui-même — positions planétaires, maisons, dashas — est calculé par la Swiss Ephemeris, le même moteur de précision utilisé par les observatoires, donc cette partie est astronomiquement exacte. Le rôle de l'IA est seulement d'expliquer ce que ces données signifient traditionnellement, en langage clair ; comme toute lecture astrologique, c'est un outil de réflexion, pas une prédiction scientifique.",
   },
 };
 
