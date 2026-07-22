@@ -1,78 +1,98 @@
 @import 'tailwindcss';
 
 /* ============================================================
-   Aroha Astrology — landing tokens (dark cosmic, trimmed)
-   Names mirror the production app's globals.css so ported
-   components (LanguageSwitcher etc.) resolve unchanged.
+   Aroha Astrology — landing tokens (light editorial + dark acts)
+   One accent (midnight indigo), one data colour (brass, numerals
+   only), one dark canvas for full-bleed cinematic interludes.
    ============================================================ */
 :root {
-  /* Surfaces — deep obsidian */
-  --bg:            #11131A;
-  --surface:       rgba(21,24,34,0.6);
-  --surface-2:     #1D1F26;
-  --surface-3:     #282A31;
-  --border:        rgba(248,249,250,0.15);
-  --border-strong: rgba(248,249,250,0.22);
+  /* Surfaces — warm paper */
+  --paper:         #FAF8F5;
+  --paper-raised:  #FFFFFF;
+  --paper-sunk:    #F1EDE6;
+  --rule:          #E3DCD1;
+  --rule-strong:   #D2C8B8;
 
   /* Ink */
-  --text:          #E1E2EB;
-  --text-2:        rgba(225,226,235,0.90);
-  --text-muted:    #D0C5AF;
-  --text-dim:      #A39E8A;
-  --text-secondary: var(--text-muted);
+  --ink:           #141418;
+  --ink-2:         #43434D;
+  --ink-muted:     #77777F;
 
-  /* Accent — cosmic gold + saffron */
-  --primary:       #D4AF37;
-  --primary-soft:  rgba(212,175,55,0.18);
-  --primary-ink:   #F2CA50;
-  --accent:        #F2CA50;
+  /* Accent — midnight indigo */
+  --accent:        #2A3A7C;
+  --accent-hover:  #1F2C63;
+  --accent-soft:   #ECEEF7;
+  --accent-ink:    #FFFFFF;
 
-  /* Fonts — next/font injects --font-inter / --font-playfair /
-     --font-devanagari (see layout.tsx). Emoji fallbacks live at
-     the end of every stack so glyphless fonts don't return .notdef. */
+  /* Data — aged brass. Numerals, degrees, chart glyphs ONLY, never body text. */
+  --data:          #B8862F;
+
+  /* Dark acts — full-bleed cinematic interludes */
+  --night:         #0E1024;
+  --night-2:       #171A34;
+  --night-ink:     #F0F0F4;
+  --night-ink-2:   #A0A3BE;
+  --night-accent:  #8FA0E8;
+  --night-rule:    rgba(240,240,244,0.14);
+
+  /* Fonts — next/font injects --font-inter / --font-fraunces /
+     --font-devanagari / --font-* per-script (see layout.tsx). Emoji
+     fallbacks live at the end of every stack so glyphless fonts don't
+     return .notdef. */
   --font-emoji:    'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Segoe UI Symbol';
-  --font-body:     var(--font-inter), -apple-system, BlinkMacSystemFont, system-ui, var(--font-devanagari), sans-serif, var(--font-emoji);
+  --font-body:     var(--font-inter), -apple-system, BlinkMacSystemFont, system-ui,
+                   var(--font-devanagari), var(--font-bengali), var(--font-tamil),
+                   var(--font-telugu), var(--font-kannada), var(--font-malayalam),
+                   var(--font-gujarati), var(--font-gurmukhi),
+                   sans-serif, var(--font-emoji);
 }
 
-/* The spec applies Inter to everything; we keep that and append the
-   Devanagari face so Hindi/Marathi/Nepali strings render real glyphs. */
+/* Inter across the board; script fallbacks appended so every exposed
+   language (incl. the ones without a dedicated serif) renders real glyphs
+   instead of tofu boxes. */
 * {
   font-family: var(--font-body);
 }
 
-.font-playfair {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
 }
 
-/* Cinzel — cinematic serif for section headings. */
-.font-cinzel {
-  font-family: var(--font-cinzel), 'Cinzel', Georgia, serif;
-}
-
-/* Cormorant Garamond — elegant sub-display serif for eyebrows + quotes. */
-.font-cormorant {
-  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+/* Tabular numerals in brass — chart data, degrees, dates. Never body copy. */
+.font-data {
+  font-family: var(--font-inter), sans-serif;
+  font-variant-numeric: tabular-nums;
+  color: var(--data);
 }
 
 /* ============================================================
-   Tailwind v4 theme bridge — same utility names as production
+   Tailwind v4 theme bridge — utility names map 1:1 to the tokens above
    ============================================================ */
 @theme {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
-  --color-surface-3: var(--surface-3);
-  --color-border: var(--border);
-  --color-border-strong: var(--border-strong);
-  --color-text: var(--text);
-  --color-text-2: var(--text-2);
-  --color-text-muted: var(--text-muted);
-  --color-text-dim: var(--text-dim);
-  --color-text-secondary: var(--text-muted);
-  --color-primary: var(--primary);
-  --color-primary-soft: var(--primary-soft);
-  --color-primary-ink: var(--primary-ink);
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-paper-sunk: var(--paper-sunk);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-muted: var(--ink-muted);
+
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+
+  --color-data: var(--data);
+
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-night-ink: var(--night-ink);
+  --color-night-ink-2: var(--night-ink-2);
+  --color-night-accent: var(--night-accent);
+  --color-night-rule: var(--night-rule);
 
   --radius-pill: 9999px;
 }
@@ -87,82 +107,34 @@ html.lenis, html.lenis body { height: auto; }
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
-  /* Deep cosmic base so there's no white flash before the animated
-     background paints; the fixed CosmicBackground layers over this. */
   body {
-    background-color: #0a0616;
-    color: var(--text);
+    background-color: var(--paper);
+    color: var(--ink);
     overflow-x: hidden;
     /* Pushes normal-flow content down while AppDownloadBanner is visible;
        fixed elements (Navbar) read the same var directly — see Navbar.tsx. */
     padding-top: var(--app-banner-h, 0px);
   }
-}
-
-/* Small eyebrow label used by the ported LanguageSwitcher dropdown header. */
-.j-eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--text-muted);
-}
-
-/* ============================================================
-   Hero load animations — copied verbatim from the spec
-   ============================================================ */
-@keyframes heroReveal {
-  0%   { opacity: 0; transform: translateY(28px); filter: blur(12px); }
-  100% { opacity: 1; transform: translateY(0);    filter: blur(0); }
-}
-
-@keyframes heroFadeUp {
-  0%   { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes heroZoom {
-  0%   { transform: scale(1.12); }
-  100% { transform: scale(1); }
-}
-
-.hero-anim {
-  opacity: 0;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-reveal {
-  animation-name: heroReveal;
-  animation-duration: 1.1s;
-}
-
-.hero-fade {
-  animation-name: heroFadeUp;
-  animation-duration: 1s;
-}
-
-.hero-zoom {
-  animation: heroZoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-anim, .hero-zoom {
-    animation: none;
-    opacity: 1;
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
   }
 }
 
-/* ============================================================
-   Gold glow pulse — used by the primary CTA (GoldButton pulse)
-   ============================================================ */
-@keyframes goldPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45), 0 0 24px rgba(212, 175, 55, 0.30); }
-  50%      { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0), 0 0 40px rgba(212, 175, 55, 0.55); }
+/* Small eyebrow label used above section headings and by the ported
+   LanguageSwitcher dropdown header. */
+.j-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
 }
 
-/* 3D tilt cards establish a shared perspective on their container. */
-.tilt-scene { perspective: 1000px; }
-.tilt-3d { transform-style: preserve-3d; }
-
+/* ============================================================
+   Shared entrance animation — one recipe, used everywhere via
+   framer-motion's viewport-triggered variants (see ui/Reveal usage in
+   section components). Kept here only for the no-JS / reduced-motion
+   fallback state.
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;

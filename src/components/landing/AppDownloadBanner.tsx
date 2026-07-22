@@ -6,7 +6,7 @@ import { X, Smartphone } from 'lucide-react';
 const DISMISS_KEY = 'app_banner_dismissed_until';
 const DISMISS_DAYS = 7;
 const APK_URL = '/downloads/aroha-astrology.apk';
-const APP_PACKAGE = 'com.arohaastrology.app';
+const APP_PACKAGE = 'com.aroha.astrology';
 
 type Platform = 'android' | 'ios' | null;
 
@@ -80,25 +80,25 @@ export function AppDownloadBanner() {
   return (
     <div
       className="fixed top-0 inset-x-0 z-[100] flex items-center gap-3 px-3 py-2.5 border-b"
-      style={{ background: 'var(--bg)', borderColor: 'var(--border)' }}
+      style={{ background: 'var(--paper)', borderColor: 'var(--rule)' }}
     >
       <button
         onClick={dismiss}
         aria-label="Dismiss"
-        className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full text-text-muted hover:bg-white/10 transition-colors"
+        className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full text-ink-muted hover:bg-ink/5 transition-colors"
       >
         <X size={14} />
       </button>
 
-      <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary/15 text-primary-ink">
+      <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 bg-accent-soft text-accent">
         <Smartphone size={18} />
       </div>
 
       <div className="flex-1 min-w-0">
-        <p data-no-translate className="text-[13px] font-semibold text-text leading-tight">
+        <p data-no-translate className="text-[13px] font-semibold text-ink leading-tight">
           Aroha Astrology
         </p>
-        <p className="text-[11px] text-text-muted leading-tight truncate">
+        <p className="text-[11px] text-ink-muted leading-tight truncate">
           {platform === 'android' ? 'Get the app — faster & offline' : 'iPhone app — coming soon'}
         </p>
       </div>
@@ -108,20 +108,20 @@ export function AppDownloadBanner() {
           <>
             <a
               href={intentUrl(window.location.pathname)}
-              className="px-3 py-1.5 rounded-full text-[12px] font-semibold no-underline border border-primary/50 text-primary-ink"
+              className="px-3 py-1.5 rounded-full text-[12px] font-semibold no-underline border border-accent/50 text-accent"
             >
               Open
             </a>
             <a
               href={APK_URL}
               download
-              className="px-3 py-1.5 rounded-full text-[12px] font-bold no-underline bg-primary text-[#1a1205]"
+              className="px-3 py-1.5 rounded-full text-[12px] font-bold no-underline bg-accent text-white"
             >
               Install
             </a>
           </>
         ) : (
-          <span className="px-3 py-1.5 rounded-full text-[12px] font-semibold border border-primary/25 text-text-muted opacity-70">
+          <span className="px-3 py-1.5 rounded-full text-[12px] font-semibold border border-accent/25 text-ink-muted opacity-70">
             Coming soon
           </span>
         )}

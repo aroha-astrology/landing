@@ -1,15 +1,14 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { TiltCard } from '@/components/ui/TiltCard';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
 /**
- * The Navagraha — the nine influences of Jyotish. A grid of tilt cards, each
- * with a glowing orb tinted to match its planet in the 3D scene, the Sanskrit
- * name, its English counterpart, and the life-domain it governs. The grid
- * parallax-drifts as the section scrolls through the viewport.
+ * Dark Act I. The nine grahas of Jyotish as concentric orbiting rings — pure
+ * SVG + CSS keyframes (no canvas/WebGL, that stack was removed). A static
+ * legend below carries the same data for anyone who can't or doesn't hover,
+ * and doubles as the accessible fallback when reduced motion is requested.
  */
 
 const GRAHAS = [
@@ -24,52 +23,117 @@ const GRAHAS = [
   { sanskrit: 'Ketu', english: 'South Node', domain: 'Detachment & moksha', color: '#B8BEC6' },
 ];
 
-const item = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+// Which ring (0 = inner, 1 = middle, 2 = outer) each graha orbits on.
+const RING_OF = [0, 0, 0, 1, 1, 1, 2, 2, 2];
+const RING_RADIUS = [90, 130, 170];
+const RING_DURATION = ['22s', '32s', '46s'];
+const RING_OFFSET_DEG = [0, 40, 80];
+const CENTER = 200;
+
+// Rounded to 2dp: Math.cos/sin can differ in the last bit between the SSR
+// pass and the client's hydration pass, and React's hydration check compares
+// numeric SVG attributes as exact strings — an unrounded value here causes a
+// (harmless but noisy) hydration mismatch on every load.
+function polar(r: number, deg: number) {
+  const rad = (deg * Math.PI) / 180;
+  return {
+    x: Math.round((CENTER + r * Math.cos(rad)) * 100) / 100,
+    y: Math.round((CENTER + r * Math.sin(rad)) * 100) / 100,
+  };
+}
+
+const listVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+};
+const itemVariants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 export function NavagrahaSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], [70, -70]);
+  const reduce = useReducedMotion();
+
+  const rings = RING_RADIUS.map((radius, ringIndex) => {
+    const planets = GRAHAS.filter((_, i) => RING_OF[i] === ringIndex);
+    const step = 360 / planets.length;
+    return {
+      radius,
+      duration: RING_DURATION[ringIndex],
+      dots: planets.map((g, i) => ({ ...g, ...polar(radius, RING_OFFSET_DEG[ringIndex] + i * step) })),
+    };
+  });
 
   return (
-    <section ref={ref} className="relative px-5 py-24 sm:px-8">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading eyebrow="The Nine Influences" title="Navagraha" className="mb-12" />
+    <Section tone="night" id="navagraha">
+      <SectionHeading eyebrow="The Nine Influences" title="Navagraha" dark />
 
-        <motion.div
-          style={{ y }}
-          className="grid grid-cols-2 gap-5 md:grid-cols-3"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ staggerChildren: 0.07 }}
+      <div className="mt-14 flex justify-center">
+        <svg
+          viewBox="0 0 400 400"
+          className="h-[260px] w-[260px] sm:h-[380px] sm:w-[380px]"
+          role="img"
+          aria-label="The nine grahas of Jyotish orbiting in concentric rings"
         >
-          {GRAHAS.map((g) => (
-            <motion.div key={g.sanskrit} variants={item}>
-              <TiltCard className="flex flex-col items-center gap-3 p-6 text-center">
-                {/* Glowing orb tinted to match the 3D planet. */}
-                <span
-                  className="h-12 w-12 rounded-full"
-                  data-no-translate
-                  style={{
-                    background: `radial-gradient(circle at 35% 30%, ${g.color}, ${g.color}55 55%, transparent 75%)`,
-                    boxShadow: `0 0 22px ${g.color}88`,
-                  }}
-                  aria-hidden
-                />
-                <h3 className="font-cinzel text-xl text-text">{g.sanskrit}</h3>
-                <p className="-mt-2 text-xs uppercase tracking-[0.2em] text-text-muted">
-                  {g.english}
-                </p>
-                <p className="font-cormorant text-base italic text-primary/80">{g.domain}</p>
-              </TiltCard>
-            </motion.div>
+          {RING_RADIUS.map((r) => (
+            <circle key={r} cx={CENTER} cy={CENTER} r={r} fill="none" stroke="var(--night-rule)" strokeWidth={1} />
           ))}
-        </motion.div>
+          {rings.map((ring, ringIndex) => (
+            <g
+              key={ringIndex}
+              style={
+                reduce
+                  ? undefined
+                  : {
+                      transformBox: 'fill-box',
+                      transformOrigin: 'center',
+                      animation: `orbit-spin-${ringIndex} ${ring.duration} linear infinite`,
+                    }
+              }
+            >
+              {ring.dots.map((dot) => (
+                <circle key={dot.sanskrit} cx={dot.x} cy={dot.y} r={7} fill={dot.color} data-no-translate>
+                  <title>{`${dot.sanskrit} (${dot.english}) — ${dot.domain}`}</title>
+                </circle>
+              ))}
+            </g>
+          ))}
+          <circle cx={CENTER} cy={CENTER} r={3} fill="var(--night-ink-2)" />
+        </svg>
       </div>
-    </section>
+
+      {!reduce && (
+        <style>{`
+          @keyframes orbit-spin-0 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+          @keyframes orbit-spin-1 { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+          @keyframes orbit-spin-2 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        `}</style>
+      )}
+
+      <motion.ul
+        className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-3"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={listVariants}
+      >
+        {GRAHAS.map((g) => (
+          <motion.li key={g.sanskrit} variants={itemVariants} className="flex items-start gap-3">
+            <span
+              className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full"
+              style={{ backgroundColor: g.color, boxShadow: `0 0 10px ${g.color}99` }}
+              aria-hidden
+              data-no-translate
+            />
+            <p className="text-sm leading-snug">
+              <span className="font-medium text-night-ink">{g.sanskrit}</span>{' '}
+              <span className="text-night-ink-2">({g.english})</span>
+              <br />
+              <span className="text-night-ink-2">{g.domain}</span>
+            </p>
+          </motion.li>
+        ))}
+      </motion.ul>
+    </Section>
   );
 }

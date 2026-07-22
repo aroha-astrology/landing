@@ -1,30 +1,38 @@
-'use client';
-
-import { Scene3D } from '@/components/three/Scene3D';
 import { Navbar } from './Navbar';
 import { HeroSection } from './HeroSection';
-import { PanchangSection } from './PanchangSection';
+import { MoonSignSection } from './MoonSignSection';
 import { NavagrahaSection } from './NavagrahaSection';
-import { NakshatraSection } from './NakshatraSection';
-import { AstrologersSection } from './AstrologersSection';
+import { HowItWorksSection } from './HowItWorksSection';
+import { FeaturesSection } from './FeaturesSection';
+import { PrecisionSection } from './PrecisionSection';
+import { PanchangSection } from './PanchangSection';
+import { LanguagesSection } from './LanguagesSection';
+import { FAQSection } from './FAQSection';
+import { Footer } from './Footer';
 
 /**
- * Premium cinematic Vedic astrology landing page. A fixed cosmic backdrop sits
- * behind a fixed nav and four scroll-revealed sections:
- *   Hero → Panchang → Nakshatra tool → Live Astrologers.
+ * Light editorial landing page with two full-bleed dark "acts"
+ * (Navagraha, Precision) breaking up the paper surface. Order:
+ * Hero → Moon-sign tool (the free hook) → Navagraha (dark) → How it
+ * works → Features → Precision (dark) → Panchang (live data) →
+ * Languages → FAQ → Footer.
  */
 export function LandingPage() {
   return (
     <>
-      <Scene3D />
       <Navbar />
-      <main className="relative">
+      <main>
         <HeroSection />
-        <PanchangSection />
+        <MoonSignSection />
         <NavagrahaSection />
-        <NakshatraSection />
-        <AstrologersSection />
+        <HowItWorksSection />
+        <FeaturesSection />
+        <PrecisionSection />
+        <PanchangSection />
+        <LanguagesSection />
+        <FAQSection />
       </main>
+      <Footer />
     </>
   );
 }
