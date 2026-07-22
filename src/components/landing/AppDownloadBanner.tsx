@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { X, Smartphone } from 'lucide-react';
+import Image from 'next/image';
+import { X } from 'lucide-react';
 
 const DISMISS_KEY = 'app_banner_dismissed_until';
 const DISMISS_DAYS = 7;
@@ -90,9 +91,15 @@ export function AppDownloadBanner() {
         <X size={14} />
       </button>
 
-      <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 bg-accent-soft text-accent">
-        <Smartphone size={18} />
-      </div>
+      {/* The real app icon, not a generic phone glyph — this banner is
+          imitating an install prompt, so it should show what the store shows. */}
+      <Image
+        src="/brand/aroha-logo-navy.png"
+        alt=""
+        width={36}
+        height={36}
+        className="h-9 w-9 flex-shrink-0 rounded-xl"
+      />
 
       <div className="flex-1 min-w-0">
         <p data-no-translate className="text-[13px] font-semibold text-ink leading-tight">
