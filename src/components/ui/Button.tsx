@@ -27,7 +27,9 @@ const BASE =
   'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide cursor-pointer transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper';
 
 const VARIANTS: Record<Variant, string> = {
-  solid: 'bg-accent text-white hover:bg-accent-hover',
+  // Ink on amber, not white — the accent is a light surface, so white text
+  // sits around 2.3:1 against it.
+  solid: 'bg-accent text-accent-ink hover:bg-accent-hover',
   outline: 'border border-ink/25 text-ink hover:border-accent hover:text-accent',
   ghost: 'px-2 py-1 text-ink-2 hover:text-accent',
 };

@@ -67,7 +67,9 @@ export function FAQSection() {
     <Section tone="paper" id="faq">
       <SectionHeading eyebrow="Questions" title="Before you start" />
 
-      <div className="mx-auto mt-12 max-w-2xl">
+      {/* 840px per the redesign spec (was max-w-2xl/672px) — gives the
+          longer answers more room per line. */}
+      <div className="mx-auto mt-12 max-w-[840px]">
         <Accordion items={faqItems} />
       </div>
 

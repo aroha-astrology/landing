@@ -2,7 +2,6 @@
 
 import { useId, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 
 export type AccordionItem = {
   question: string;
@@ -15,13 +14,13 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
   const baseId = useId();
 
   return (
-    <div className="divide-y divide-rule border-y border-rule">
+    <div className="flex flex-col">
       {items.map((item, i) => {
         const open = openIndex === i;
         const panelId = `${baseId}-panel-${i}`;
         const buttonId = `${baseId}-button-${i}`;
         return (
-          <div key={item.question}>
+          <div key={item.question} className="border-b border-rule">
             <h3>
               <button
                 id={buttonId}
@@ -29,15 +28,14 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                 aria-expanded={open}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(open ? null : i)}
-                className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-medium text-ink sm:text-lg"
+                className="font-display flex w-full items-center justify-between gap-4 py-[22px] text-left text-lg text-ink"
               >
                 {item.question}
-                <ChevronDown
-                  className={`shrink-0 text-ink-muted transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
-                  size={20}
-                  strokeWidth={1.75}
-                  aria-hidden
-                />
+                {/* A plain +/- rather than a chevron, per the design. It's
+                    decorative: aria-expanded already announces the state. */}
+                <span className="shrink-0 text-xl text-accent" aria-hidden data-no-translate>
+                  {open ? '−' : '+'}
+                </span>
               </button>
             </h3>
             <AnimatePresence initial={false}>
@@ -52,7 +50,9 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="pb-5 text-sm text-ink-2 sm:text-base">{item.answer}</p>
+                  <p className="max-w-[640px] pb-6 text-[15px] leading-[1.65] text-ink-2">
+                    {item.answer}
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>

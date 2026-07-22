@@ -9,10 +9,14 @@ import type { ReactNode } from 'react';
  */
 type Tone = 'paper' | 'sunk' | 'night';
 
+// Vertical rhythm is fluid and tone-dependent: the dark acts are given a
+// taller measure than the paper sections so they read as interludes rather
+// than just another band. Keeping this here means call sites never need an
+// !important override to restore the design's spacing.
 const TONE_CLASSES: Record<Tone, string> = {
-  paper: 'bg-paper text-ink',
-  sunk: 'bg-paper-sunk text-ink',
-  night: 'bg-night text-night-ink',
+  paper: 'bg-paper text-ink py-[clamp(56px,7vw,88px)]',
+  sunk: 'bg-paper-sunk text-ink py-[clamp(56px,7vw,88px)]',
+  night: 'bg-night text-night-ink py-[clamp(64px,8vw,104px)]',
 };
 
 type SectionProps = {
@@ -24,8 +28,11 @@ type SectionProps = {
 
 export function Section({ children, tone = 'paper', className = '', id }: SectionProps) {
   return (
-    <section id={id} className={`relative px-5 py-20 sm:px-8 sm:py-28 lg:px-12 ${TONE_CLASSES[tone]} ${className}`}>
-      <div className="mx-auto max-w-7xl">{children}</div>
+    <section
+      id={id}
+      className={`relative px-[clamp(20px,4vw,56px)] ${TONE_CLASSES[tone]} ${className}`}
+    >
+      <div className="mx-auto max-w-[1180px]">{children}</div>
     </section>
   );
 }

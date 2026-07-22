@@ -30,12 +30,12 @@ export function LanguagesSection() {
           <motion.div
             key={l.code}
             variants={itemVariants}
-            className="flex items-center gap-2 rounded-full border border-rule bg-paper-raised px-4 py-2"
+            className="flex items-center gap-2 rounded-full border border-rule-strong px-5 py-2.5"
           >
-            <span className="text-sm font-medium text-ink" data-no-translate>
+            <span className="text-sm font-semibold text-ink">{l.label}</span>
+            <span className="text-xs text-ink-muted" data-no-translate>
               {l.native}
             </span>
-            <span className="text-xs text-ink-muted">{l.label}</span>
           </motion.div>
         ))}
       </motion.div>

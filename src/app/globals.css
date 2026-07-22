@@ -1,53 +1,62 @@
 @import 'tailwindcss';
 
 /* ============================================================
-   Aroha Astrology — landing tokens (light editorial + dark acts)
-   One accent (midnight indigo), one data colour (brass, numerals
-   only), one dark canvas for full-bleed cinematic interludes.
+   Aroha Astrology — landing tokens (warm sand editorial + ink acts)
+   One accent (amber), a violet reserved for inline links, and one
+   near-black canvas for full-bleed interludes.
+
+   Translucent values from the design (e.g. rgba(27,25,18,0.72) body
+   text, rgba(27,25,18,0.12) hairlines) are stored pre-composited over
+   --paper as solid hex. Tailwind's opacity modifiers (text-ink-2/50)
+   multiply alpha, so a token that already carries alpha compounds and
+   renders too faint.
    ============================================================ */
 :root {
-  /* Surfaces — warm paper */
-  --paper:         #FAF8F5;
-  --paper-raised:  #FFFFFF;
-  --paper-sunk:    #F1EDE6;
-  --rule:          #E3DCD1;
-  --rule-strong:   #D2C8B8;
+  /* Surfaces — warm sand */
+  --paper:         #F2ECDF;
+  --paper-raised:  #FBF8F1;
+  --paper-sunk:    #EBE4D3;
+  --rule:          #D8D2C6;  /* rgba(27,25,18,0.12) over paper */
+  --rule-strong:   #BCB7AB;  /* rgba(27,25,18,0.25) over paper */
 
   /* Ink */
-  --ink:           #141418;
-  --ink-2:         #43434D;
-  --ink-muted:     #77777F;
+  --ink:           #1B1912;
+  --ink-2:         #57544B;  /* rgba(27,25,18,0.72) over paper */
+  --ink-muted:     #7C786E;  /* rgba(27,25,18,0.55) over paper */
 
-  /* Accent — midnight indigo */
-  --accent:        #2A3A7C;
-  --accent-hover:  #1F2C63;
-  --accent-soft:   #ECEEF7;
-  --accent-ink:    #FFFFFF;
+  /* Accent — amber */
+  --accent:        #D98A2B;
+  --accent-hover:  #C2761F;
+  --accent-soft:   #F7EAD8;
+  --accent-ink:    #141310;  /* amber is a light surface: ink, not white */
 
-  /* Data — aged brass. Numerals, degrees, chart glyphs ONLY, never body text. */
-  --data:          #B8862F;
+  /* Link — muted violet. Inline text links only; never a fill. */
+  --link:          #5A5796;
 
-  /* Dark acts — full-bleed cinematic interludes */
-  --night:         #0E1024;
-  --night-2:       #171A34;
-  --night-ink:     #F0F0F4;
-  --night-ink-2:   #A0A3BE;
-  --night-accent:  #8FA0E8;
-  --night-rule:    rgba(240,240,244,0.14);
+  /* Data — numerals, degrees, chart glyphs ONLY, never body text. */
+  --data:          #D98A2B;
 
-  /* Fonts — next/font injects --font-inter / --font-fraunces /
+  /* Ink acts — full-bleed interludes */
+  --night:         #141310;
+  --night-2:       #1B1912;
+  --night-ink:     #F5EFE4;
+  --night-ink-2:   #ADA79B;  /* ~0.7 alpha over night */
+  --night-accent:  #D98A2B;
+  --night-rule:    rgba(245,239,228,0.18);
+
+  /* Fonts — next/font injects --font-public-sans / --font-newsreader /
      --font-devanagari / --font-* per-script (see layout.tsx). Emoji
      fallbacks live at the end of every stack so glyphless fonts don't
      return .notdef. */
   --font-emoji:    'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Segoe UI Symbol';
-  --font-body:     var(--font-inter), -apple-system, BlinkMacSystemFont, system-ui,
+  --font-body:     var(--font-public-sans), -apple-system, BlinkMacSystemFont, system-ui,
                    var(--font-devanagari), var(--font-bengali), var(--font-tamil),
                    var(--font-telugu), var(--font-kannada), var(--font-malayalam),
                    var(--font-gujarati), var(--font-gurmukhi),
                    sans-serif, var(--font-emoji);
 }
 
-/* Inter across the board; script fallbacks appended so every exposed
+/* Public Sans across the board; script fallbacks appended so every exposed
    language (incl. the ones without a dedicated serif) renders real glyphs
    instead of tofu boxes. */
 * {
@@ -55,13 +64,13 @@
 }
 
 .font-display {
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-optical-sizing: auto;
 }
 
-/* Tabular numerals in brass — chart data, degrees, dates. Never body copy. */
+/* Tabular numerals in amber — chart data, degrees, dates. Never body copy. */
 .font-data {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-public-sans), sans-serif;
   font-variant-numeric: tabular-nums;
   color: var(--data);
 }
@@ -84,6 +93,8 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);
+
+  --color-link: var(--link);
 
   --color-data: var(--data);
 
@@ -122,11 +133,25 @@ html.lenis, html.lenis body { height: auto; }
 }
 
 /* Small eyebrow label used above section headings and by the ported
-   LanguageSwitcher dropdown header. */
+   LanguageSwitcher dropdown header. The design sets these in amber at
+   700 weight, so the colour lives here rather than at each call site. */
 .j-eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--ink-muted);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Inline text links read violet and warm to amber on hover. Scoped to
+   prose contexts — nav items, buttons and cards set their own colour and
+   would otherwise be overridden. */
+.j-prose a,
+a.j-link {
+  color: var(--link);
+}
+.j-prose a:hover,
+a.j-link:hover {
+  color: var(--accent);
 }
 
 /* ============================================================

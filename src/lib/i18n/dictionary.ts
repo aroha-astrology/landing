@@ -2078,6 +2078,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Get my free chart': 'मेरी मुफ़्त कुंडली प्राप्त करें',
     'Vedic astrology, done properly': 'वैदिक ज्योतिष, सही तरीके से',
     'Your birth chart, read properly.': 'आपकी जन्म कुंडली, सही ढंग से पढ़ी गई।',
+    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
+      'स्विस एफेमेरिस की सटीकता, और एक AI ज्योतिषी जो कुछ भी पूछने पर बता सके — 13 भाषाओं में।',
     'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
       'स्विस एफेमेरिस की सटीकता आपके जन्म के सटीक क्षण में प्रत्येक ग्रह को मैप करती है, और एक AI सरल भाषा में इसका अर्थ समझाता है — 13 भाषाओं में।',
     'Try the free Moon sign tool': 'मुफ़्त चंद्र राशि टूल आज़माएं',
@@ -2486,6 +2488,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Get my free chart': 'Obtén mi carta astral gratis',
     'Vedic astrology, done properly': 'Astrología védica, hecha correctamente',
     'Your birth chart, read properly.': 'Tu carta astral, leída correctamente.',
+    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
+      'La precisión de Swiss Ephemeris y un astrólogo con IA que responde lo que sea, en 13 idiomas.',
     'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
       'La precisión de Swiss Ephemeris mapea cada planeta en tu momento exacto de nacimiento, y una IA explica lo que significa en lenguaje sencillo, en 13 idiomas.',
     'Try the free Moon sign tool': 'Prueba la herramienta gratuita de signo lunar',
@@ -2635,6 +2639,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Get my free chart': 'Obtenir mon thème astral gratuit',
     'Vedic astrology, done properly': "L'astrologie védique, faite correctement",
     'Your birth chart, read properly.': 'Votre thème astral, lu correctement.',
+    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
+      'La précision de Swiss Ephemeris et un astrologue IA qui répond à tout, en 13 langues.',
     'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
       'La précision de Swiss Ephemeris cartographie chaque planète au moment exact de votre naissance, et une IA explique ce que cela signifie en langage clair — en 13 langues.',
     'Try the free Moon sign tool': "Essayez l'outil de signe lunaire gratuit",

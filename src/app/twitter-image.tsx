@@ -3,10 +3,13 @@ import { ImageResponse } from 'next/og';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-const INK = '#141418';
-const ACCENT = '#2A3A7C';
-const ACCENT_SOFT = '#77777F';
-const PAPER = '#FAF8F5';
+const INK = '#1B1912';
+// Amber carries the brand on the decorative rings, but it only reaches ~2.3:1
+// against paper — so running text uses ink-2 instead.
+const ACCENT = '#D98A2B';
+const SUBTITLE = '#57544B';
+const ACCENT_SOFT = '#7C786E';
+const PAPER = '#F2ECDF';
 
 export default async function Image() {
   return new ImageResponse(
@@ -82,7 +85,7 @@ export default async function Image() {
               fontSize: 34,
               fontFamily: 'Arial, sans-serif',
               fontWeight: 500,
-              color: ACCENT,
+              color: SUBTITLE,
               letterSpacing: '0.01em',
             }}
           >

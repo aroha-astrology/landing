@@ -11,13 +11,14 @@ const NAV_LINKS: { href: string; label: string }[] = [
 ];
 
 /**
- * Sticky top navigation on the light paper surface. A single hairline keeps
- * it grounded — no scroll-state JS needed for a bar this simple.
+ * Sticky top navigation on the light paper surface. A translucent paper fill
+ * plus backdrop-blur (not solid) so content scrolling underneath still reads
+ * as "paper behind frosted glass" rather than a hard-edged bar.
  */
 export function Navbar() {
   return (
-    <nav className="sticky top-0 z-40 border-b border-rule bg-paper">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
+    <nav className="sticky top-0 z-50 border-b border-rule bg-paper/92 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-[clamp(20px,4vw,56px)] py-4">
         <a href="/" aria-label="Aroha home">
           <Logo />
         </a>
@@ -27,7 +28,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-2 transition-colors hover:text-accent"
+              className="text-sm font-medium text-ink transition-colors hover:text-accent"
             >
               {link.label}
             </a>

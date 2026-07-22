@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import {
-  Inter,
-  Fraunces,
+  Public_Sans,
+  Newsreader,
   Noto_Sans_Devanagari,
   Noto_Sans_Bengali,
   Noto_Sans_Tamil,
@@ -18,19 +18,19 @@ import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import { AppDownloadBanner } from '@/components/landing/AppDownloadBanner';
 import AnalyticsConsentBanner from '@/components/AnalyticsConsentBanner';
 
-const inter = Inter({
+const publicSans = Public_Sans({
   subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  variable: '--font-inter',
-  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-public-sans',
+  weight: ['400', '500', '600', '700'],
 });
 
-// Editorial display serif for H1/H2 — variable + optical sizing, so one
-// family covers hero-scale headlines down to card titles.
-const fraunces = Fraunces({
+// Editorial display serif for H1/H2 and for the italic numerals in stat
+// blocks — one family covers hero-scale headlines down to card titles.
+const newsreader = Newsreader({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-fraunces',
+  variable: '--font-newsreader',
   style: ['normal', 'italic'],
   weight: ['400', '500', '600'],
 });
@@ -95,7 +95,7 @@ const SITE_DESCRIPTION =
   'Free Vedic birth chart, Moon sign calculator and daily Panchang — Swiss Ephemeris precision with an AI astrologer that explains what it means, in your language.';
 
 export const viewport: Viewport = {
-  themeColor: '#FAF8F5',
+  themeColor: '#F2ECDF',
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
@@ -191,7 +191,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body
-        className={`${inter.variable} ${fraunces.variable} ${notoDevanagari.variable} ${notoBengali.variable} ${notoTamil.variable} ${notoTelugu.variable} ${notoGujarati.variable} ${notoKannada.variable} ${notoMalayalam.variable} ${notoGurmukhi.variable} antialiased`}
+        className={`${publicSans.variable} ${newsreader.variable} ${notoDevanagari.variable} ${notoBengali.variable} ${notoTamil.variable} ${notoTelugu.variable} ${notoGujarati.variable} ${notoKannada.variable} ${notoMalayalam.variable} ${notoGurmukhi.variable} antialiased`}
       >
         <PostHogProvider>
           <TranslationProvider>

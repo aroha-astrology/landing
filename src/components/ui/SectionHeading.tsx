@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Eyebrow } from './Eyebrow';
 
 /**
- * Shared section header: an eyebrow over a Fraunces display headline.
+ * Shared section header: an eyebrow over a Newsreader display headline.
  * Reveals once on scroll-into-view so every section opens the same way.
  * Pass `dark` inside a night-tone Section; `as="h1"` only for the hero.
  */
@@ -23,7 +23,9 @@ export function SectionHeading({
   title,
   subtitle,
   dark = false,
-  align = 'center',
+  // The design sets every section heading flush left against a 640px
+  // measure — centred headings were the previous art direction.
+  align = 'left',
   as = 'h2',
   className = '',
 }: SectionHeadingProps) {

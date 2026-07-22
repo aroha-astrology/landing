@@ -1,28 +1,35 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
-const READOUTS = ['Ayanamsa 24.13°', '9 Grahas', 'D1–D60'];
+// Ayanamsa drifts about 1 arcsecond a year, so hardcoding today's value here
+// (rather than fetching it) is an acceptable approximation for a marketing
+// stat — the real, live figure is what the app computes per-chart.
+const STATS = [
+  { value: '24.13°', label: 'Ayanamsa today', pct: 24 },
+  { value: '9', label: 'Grahas mapped', pct: 90 },
+  { value: 'D1–D60', label: 'Divisional charts', pct: 100 },
+];
 
-const SPOKES = Array.from({ length: 12 }, (_, i) => i * 30);
+// 12 evenly-spaced ticks around the dial, one per 30°.
+const TICKS = Array.from({ length: 12 }, (_, i) => i * 30);
+const AYANAMSA_DEG = 24.13;
 
 export function PrecisionSection() {
-  const reduce = useReducedMotion();
-
   return (
     <Section tone="night" id="precision">
-      <SectionHeading eyebrow="The method" title="Precision, not vibes" dark />
-
-      <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div className="grid gap-12 lg:grid-cols-[minmax(280px,1fr)_minmax(240px,340px)] lg:items-center lg:gap-14">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-base text-night-ink-2 sm:text-lg">
+          <SectionHeading eyebrow="The method" title="Precision, not vibes" dark align="left" />
+
+          <p className="mt-6 text-base text-night-ink-2 sm:text-lg">
             Every chart starts with the Swiss Ephemeris — the same astronomical calculation
             engine observatories rely on — to place all nine grahas to sub-degree accuracy at
             your exact moment and place of birth.
@@ -34,11 +41,22 @@ export function PrecisionSection() {
             chart.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-night-rule pt-6">
-            {READOUTS.map((r) => (
-              <span key={r} className="font-data text-lg" data-no-translate>
-                {r}
-              </span>
+          <div className="mt-8 grid grid-cols-1 gap-6 border-t border-night-rule pt-7 sm:grid-cols-3">
+            {STATS.map((stat) => (
+              <div key={stat.label}>
+                <div className="font-display text-2xl italic text-night-accent" data-no-translate>
+                  {stat.value}
+                </div>
+                <div className="mt-1 text-xs text-night-ink-2">{stat.label}</div>
+                {/* Track + fill rather than a single gradient bar, so the
+                    filled portion stays a flat, legible amber at any width. */}
+                <div className="relative mt-2.5 h-0.5 bg-night-rule">
+                  <div
+                    className="absolute inset-y-0 left-0 bg-night-accent"
+                    style={{ width: `${stat.pct}%` }}
+                  />
+                </div>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -50,58 +68,34 @@ export function PrecisionSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <svg
-            viewBox="0 0 300 300"
-            className="h-[260px] w-[260px] sm:h-[320px] sm:w-[320px] lg:h-[380px] lg:w-[380px]"
-            role="img"
-            aria-label="A decorative chart-wheel outline"
-          >
-            <defs>
-              <radialGradient id="precision-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="var(--night-accent)" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="var(--night-accent)" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-
-            <circle cx={150} cy={150} r={90} fill="url(#precision-glow)" aria-hidden />
-
-            <g
-              style={
-                reduce
-                  ? undefined
-                  : {
-                      transformBox: 'fill-box',
-                      transformOrigin: 'center',
-                      animation: 'wheel-spin 90s linear infinite',
-                    }
-              }
+          {/* A static instrument dial (not the orbiting-rings treatment used
+              for Navagraha above) — ticks + one amber marker read as a
+              precision gauge, echoing the "instrument, not poetry" copy. */}
+          <div className="relative aspect-square w-full max-w-[300px] rounded-full border border-night-rule">
+            {TICKS.map((deg) => (
+              <div
+                key={deg}
+                className="absolute inset-0"
+                style={{ transform: `rotate(${deg}deg)` }}
+                aria-hidden
+              >
+                <div className="absolute left-1/2 top-[6px] h-[10px] w-px -translate-x-1/2 bg-night-ink opacity-[0.35]" />
+              </div>
+            ))}
+            <div
+              className="absolute inset-0"
+              style={{ transform: `rotate(${AYANAMSA_DEG}deg)` }}
+              aria-hidden
             >
-              <circle cx={150} cy={150} r={135} fill="none" stroke="var(--night-rule)" strokeWidth={1.5} />
-              <circle cx={150} cy={150} r={95} fill="none" stroke="var(--night-rule)" strokeWidth={1} />
-              {SPOKES.map((deg) => {
-                const rad = (deg * Math.PI) / 180;
-                // Rounded to 2dp: Math.cos/sin can differ in the last bit
-                // between the SSR pass and the client's hydration pass, and
-                // React compares numeric SVG attributes as exact strings.
-                const x1 = Math.round((150 + 95 * Math.cos(rad)) * 100) / 100;
-                const y1 = Math.round((150 + 95 * Math.sin(rad)) * 100) / 100;
-                const x2 = Math.round((150 + 135 * Math.cos(rad)) * 100) / 100;
-                const y2 = Math.round((150 + 135 * Math.sin(rad)) * 100) / 100;
-                return (
-                  <g key={deg}>
-                    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--night-rule)" strokeWidth={1} />
-                    <circle cx={x2} cy={y2} r={2.5} fill="var(--night-accent)" fillOpacity={0.7} />
-                  </g>
-                );
-              })}
-            </g>
-            <circle cx={150} cy={150} r={4} fill="var(--night-accent)" />
-          </svg>
-          {!reduce && (
-            <style>{`
-              @keyframes wheel-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-            `}</style>
-          )}
+              <div className="absolute left-1/2 top-1 h-4 w-0.5 -translate-x-1/2 bg-night-accent" />
+            </div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="font-display text-3xl italic text-night-accent" data-no-translate>
+                {AYANAMSA_DEG}°
+              </div>
+              <div className="mt-1 text-[11px] uppercase tracking-wide text-night-ink-2">Lahiri</div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </Section>

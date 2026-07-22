@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
-import { Button } from '@/components/ui/Button';
 import { AppStoreBadges } from '@/components/ui/AppStoreBadges';
 import { Stat } from '@/components/ui/Stat';
 
@@ -13,7 +12,7 @@ import { Stat } from '@/components/ui/Stat';
  */
 export function HeroSection() {
   return (
-    <section className="relative bg-paper px-5 pb-20 pt-16 text-center text-ink sm:px-8 sm:pb-28 sm:pt-24">
+    <section className="relative bg-paper px-[clamp(20px,4vw,56px)] pb-[clamp(56px,7vw,88px)] pt-[clamp(64px,10vw,120px)] text-center text-ink">
       <motion.div
         className="mx-auto max-w-5xl"
         initial={{ opacity: 0, y: 16 }}
@@ -22,28 +21,27 @@ export function HeroSection() {
       >
         <Eyebrow>Vedic astrology, done properly</Eyebrow>
 
-        <h1 className="font-display text-[2.5rem] font-medium leading-[1.1] sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="mx-auto mb-[26px] max-w-[920px] font-display text-[clamp(42px,6.5vw,80px)] font-medium leading-[1.04]">
           Your birth chart, read properly.
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-base text-ink-2 sm:text-lg lg:text-xl">
-          Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI
-          explains what it means in plain language — in 13 languages.
+        <p className="mx-auto mb-10 max-w-[560px] text-[19px] leading-[1.55] text-ink-2">
+          Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.
         </p>
 
-        <div className="mt-9">
+        <div className="mb-11 flex flex-wrap items-center justify-center gap-4">
           <AppStoreBadges />
-        </div>
-
-        <div className="mt-5">
-          <Button variant="outline" href="#moon-sign">
-            Try the free Moon sign tool
-          </Button>
+          {/* Plain prose link (not the pill Button) to match the design's
+              quieter secondary CTA here — the two store badges already carry
+              the visual weight of "get started". */}
+          <a href="#moon-sign" className="j-link border-b border-current pb-0.5 text-[15px] font-semibold">
+            Try the free Moon sign tool →
+          </a>
         </div>
       </motion.div>
 
       <motion.div
-        className="mx-auto mt-16 grid max-w-md grid-cols-3 gap-6 sm:mt-20"
+        className="mx-auto grid max-w-md grid-cols-3 gap-[clamp(28px,5vw,64px)] border-t border-rule pt-9"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}

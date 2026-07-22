@@ -10,6 +10,7 @@ const PRODUCT_LINKS: { href: string; label: string }[] = [
   { href: '#moon-sign', label: 'Moon sign tool' },
   { href: '#languages', label: 'Languages' },
   { href: '#faq', label: 'FAQ' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 const LEGAL_LINKS: { href: string; label: string }[] = [
@@ -24,9 +25,9 @@ const LEGAL_LINKS: { href: string; label: string }[] = [
  */
 export function Footer() {
   return (
-    <footer className="bg-night px-5 py-16 text-night-ink sm:px-8 sm:py-20 lg:px-12">
+    <footer className="bg-night px-[clamp(20px,4vw,56px)] pb-8 pt-[clamp(56px,7vw,80px)] text-night-ink">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 border-b border-night-rule pb-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <a href="/" aria-label="Aroha home">
               <Logo dark />
@@ -78,7 +79,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-night-rule pt-8 text-xs text-night-ink-2">
+        <div className="pt-6 text-xs text-night-ink-2">
           <span data-no-translate>© {new Date().getFullYear()} Aroha Astrology</span>
         </div>
       </div>

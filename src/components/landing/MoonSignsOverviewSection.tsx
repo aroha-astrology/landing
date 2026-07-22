@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Link2 } from 'lucide-react';
 import Link from 'next/link';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -13,6 +12,10 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
  * generic sun-sign copy), then hands off to the real calculator on
  * /moon-sign for anyone who wants their own result. Keeps id="moon-sign"
  * so the nav/footer in-page anchors still resolve to this section.
+ *
+ * The grid uses the "hairline" technique: a 1px gap over a rule-coloured
+ * background, with every cell filled in the section's own surface colour —
+ * that gap is what reads as single-pixel dividers, not a per-cell border.
  */
 const RASHIS = [
   { sanskrit: 'Mesha', english: 'Aries', trait: 'Quick emotional reactions and bold instincts — needs action to feel settled.' },
@@ -40,6 +43,9 @@ const itemVariants = {
 
 export function MoonSignsOverviewSection() {
   return (
+    // `!py-` forces the fluid clamp() rhythm over Section's own fixed
+    // py-20/sm:py-28 — two same-specificity utilities on one element aren't
+    // resolved by attribute order, so importance is what guarantees this.
     <Section tone="paper" id="moon-sign">
       <SectionHeading
         eyebrow="Chandra Rashi"
@@ -48,7 +54,7 @@ export function MoonSignsOverviewSection() {
       />
 
       <motion.div
-        className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-[2px] border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.1 }}
@@ -58,23 +64,23 @@ export function MoonSignsOverviewSection() {
           <motion.div
             key={r.sanskrit}
             variants={itemVariants}
-            className="rounded-2xl border border-rule bg-paper-raised p-6"
+            className="flex min-h-[150px] flex-col justify-between bg-paper px-[22px] py-[26px]"
           >
-            <h3 className="font-display text-lg font-medium text-ink">
-              {r.sanskrit} <span className="text-base font-normal text-ink-muted">({r.english})</span>
-            </h3>
-            <p className="mt-2 text-sm text-ink-2">{r.trait}</p>
+            <div>
+              <h3 className="font-display text-[20px] text-ink">{r.sanskrit}</h3>
+              <div className="mt-0.5 text-[12px] uppercase tracking-[0.06em] text-accent">{r.english}</div>
+            </div>
+            <p className="mt-3.5 text-[13.5px] leading-[1.5] text-ink-muted">{r.trait}</p>
           </motion.div>
         ))}
       </motion.div>
 
-      <div className="mt-12 flex justify-center">
+      <div className="mt-8 flex justify-center">
         <Link
           href="/moon-sign"
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-accent-hover"
+          className="j-link inline-flex items-center gap-1.5 border-b border-current pb-0.5 text-[15px] font-semibold"
         >
-          <Link2 size={16} strokeWidth={2} aria-hidden />
-          Calculate your real Moon sign
+          Open the full Moon sign calculator <span aria-hidden>→</span>
         </Link>
       </div>
     </Section>
