@@ -1,70 +1,45 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { Instagram, Youtube, Twitter } from 'lucide-react';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { AppCTA } from '@/components/ui/AppCTA';
+import { Logo } from '@/components/ui/Logo';
 
-const NAV_LINKS = ['Horoscope', 'Panchang', 'Astrologers'];
+const NAV_LINKS: { href: string; label: string }[] = [
+  { href: '#how-it-works', label: 'How it works' },
+  { href: '#features', label: 'Features' },
+  { href: '#moon-sign', label: 'Moon sign tool' },
+  { href: '#languages', label: 'Languages' },
+  { href: '#faq', label: 'FAQ' },
+];
 
 /**
- * Fixed top navigation. Transparent over the hero, then fades to a thin glass
- * bar once the user scrolls — keeps the brand + language switcher always reachable.
+ * Sticky top navigation on the light paper surface. A translucent paper fill
+ * plus backdrop-blur (not solid) so content scrolling underneath still reads
+ * as "paper behind frosted glass" rather than a hard-edged bar.
  */
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <nav
-      className={`fixed inset-x-0 top-[var(--app-banner-h,0px)] z-40 transition-colors duration-300 ${
-        scrolled
-          ? 'border-b border-primary/20 bg-[#0a0616]/70 backdrop-blur-md'
-          : 'border-b border-transparent'
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        {/* Brand — never translated. */}
-        <a
-          href="#"
-          data-no-translate
-          className="font-cinzel text-2xl font-bold tracking-wide text-primary-ink"
-        >
-          Aroha
+    <nav className="sticky top-0 z-50 border-b border-rule bg-paper/92 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-[clamp(20px,4vw,56px)] py-4">
+        <a href="/" aria-label="Aroha home">
+          <Logo />
         </a>
 
-        {/* Center links — visible text auto-translates via TranslationProvider. */}
-        <div className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((label) => (
+        <div className="hidden items-center gap-7 lg:flex">
+          {NAV_LINKS.map((link) => (
             <a
-              key={label}
-              href="#"
-              className="text-sm font-medium tracking-wide text-text-2 transition-colors hover:text-primary-ink"
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-ink transition-colors hover:text-accent"
             >
-              {label}
+              {link.label}
             </a>
           ))}
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="hidden items-center gap-3 sm:flex" data-no-translate>
-            {[Instagram, Youtube, Twitter].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                aria-label={Icon.displayName ?? 'social'}
-                className="text-text-muted transition-colors hover:text-primary-ink"
-              >
-                <Icon size={18} strokeWidth={1.75} />
-              </a>
-            ))}
-          </div>
           <LanguageSwitcher />
+          <AppCTA variant="solid" align="right" className="hidden sm:inline-flex">
+            Get my free chart
+          </AppCTA>
         </div>
       </div>
     </nav>
