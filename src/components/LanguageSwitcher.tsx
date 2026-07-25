@@ -17,6 +17,9 @@ export const LANGUAGES: LangOption[] = [
   { code: 'kn', label: 'Kannada', native: 'ಕನ್ನಡ' },
   { code: 'ml', label: 'Malayalam', native: 'മലയാളം' },
   { code: 'pa', label: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
+  { code: 'es', label: 'Spanish', native: 'Español' },
+  { code: 'fr', label: 'French', native: 'Français' },
+  { code: 'de', label: 'German', native: 'Deutsch' },
 ];
 
 export function LanguageSwitcher() {
@@ -39,7 +42,7 @@ export function LanguageSwitcher() {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex h-9 items-center gap-1.5 rounded-full border border-white/30 bg-white/20 px-3 text-white backdrop-blur-md transition-colors hover:bg-white/30"
+        className="flex h-9 items-center gap-1.5 rounded-full border border-ink/15 bg-paper px-3 text-ink transition-colors hover:border-accent hover:text-accent"
         aria-label="Change language"
         data-no-translate
       >
@@ -61,11 +64,11 @@ export function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -4, scale: 0.97 }}
             transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute right-0 top-11 w-52 overflow-y-auto rounded-[14px] border border-border-strong p-1.5 shadow-[0_18px_40px_rgba(0,0,0,0.55),0_0_24px_rgba(212,175,55,0.18)] max-h-[60vh] z-50"
-            style={{ transformOrigin: 'top right', background: 'var(--surface-2)' }}
+            className="absolute right-0 top-11 z-50 max-h-[60vh] w-52 overflow-y-auto rounded-2xl border border-rule bg-paper-raised p-1.5 shadow-[0_18px_40px_rgba(20,20,24,0.18)]"
+            style={{ transformOrigin: 'top right' }}
             data-no-translate
           >
-            <div className="j-eyebrow border-b border-border px-2.5 py-1.5 text-[10px] font-bold">
+            <div className="j-eyebrow border-b border-rule px-2.5 py-1.5 text-[10px] font-bold">
               Language
             </div>
             {LANGUAGES.map((l) => {
@@ -77,11 +80,12 @@ export function LanguageSwitcher() {
                     setLanguage(l.code);
                     setOpen(false);
                   }}
-                  className="flex w-full cursor-pointer items-center justify-between rounded-lg border-none bg-transparent px-2.5 py-1.5 text-left transition-colors hover:bg-surface-3"
-                  style={{ color: active ? 'var(--primary)' : 'var(--text)' }}
+                  className={`flex w-full cursor-pointer items-center justify-between rounded-lg border-none bg-transparent px-2.5 py-1.5 text-left transition-colors hover:bg-paper-sunk ${
+                    active ? 'text-accent' : 'text-ink'
+                  }`}
                 >
                   <span className="text-[12px] font-semibold">{l.native}</span>
-                  <span className="flex items-center gap-1.5 text-[10px] text-text-muted">
+                  <span className="flex items-center gap-1.5 text-[10px] text-ink-muted">
                     {active ? '✓' : l.label}
                   </span>
                 </button>

@@ -1,75 +1,83 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { TiltCard } from '@/components/ui/TiltCard';
+import { motion } from 'framer-motion';
+import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
 /**
- * The Navagraha — the nine influences of Jyotish. A grid of tilt cards, each
- * with a glowing orb tinted to match its planet in the 3D scene, the Sanskrit
- * name, its English counterpart, and the life-domain it governs. The grid
- * parallax-drifts as the section scrolls through the viewport.
+ * Dark Act I, rendered as an "instrument strip" — a single hairline with the
+ * nine grahas marked along it at even intervals, echoing an instrument's
+ * calibration scale rather than a chart of orbiting bodies. Every mark is
+ * uniform amber (no per-planet colour): the point is that we read every
+ * graha's position with the same precision, not that they look different
+ * from each other.
  */
 
 const GRAHAS = [
-  { sanskrit: 'Surya', english: 'Sun', domain: 'Vitality & soul', color: '#F2CA50' },
-  { sanskrit: 'Chandra', english: 'Moon', domain: 'Mind & emotion', color: '#E8EAF0' },
-  { sanskrit: 'Mangala', english: 'Mars', domain: 'Energy & courage', color: '#E0533B' },
-  { sanskrit: 'Budha', english: 'Mercury', domain: 'Intellect & speech', color: '#7FD1A0' },
-  { sanskrit: 'Guru', english: 'Jupiter', domain: 'Wisdom & fortune', color: '#E8B04B' },
-  { sanskrit: 'Shukra', english: 'Venus', domain: 'Love & beauty', color: '#F2D7D5' },
-  { sanskrit: 'Shani', english: 'Saturn', domain: 'Discipline & karma', color: '#5A82C2' },
-  { sanskrit: 'Rahu', english: 'North Node', domain: 'Desire & ambition', color: '#9A6FC4' },
-  { sanskrit: 'Ketu', english: 'South Node', domain: 'Detachment & moksha', color: '#B8BEC6' },
+  { sanskrit: 'Surya', english: 'Sun', domain: 'Soul & vitality' },
+  { sanskrit: 'Chandra', english: 'Moon', domain: 'Mind & emotion' },
+  { sanskrit: 'Mangala', english: 'Mars', domain: 'Drive & courage' },
+  { sanskrit: 'Budha', english: 'Mercury', domain: 'Intellect & speech' },
+  { sanskrit: 'Guru', english: 'Jupiter', domain: 'Wisdom & growth' },
+  { sanskrit: 'Shukra', english: 'Venus', domain: 'Love & pleasure' },
+  { sanskrit: 'Shani', english: 'Saturn', domain: 'Discipline & time' },
+  { sanskrit: 'Rahu', english: 'North Node', domain: 'Ambition & illusion' },
+  { sanskrit: 'Ketu', english: 'South Node', domain: 'Detachment & release' },
 ];
 
-const item = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+const listVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+};
+const itemVariants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 export function NavagrahaSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], [70, -70]);
-
   return (
-    <section ref={ref} className="relative px-5 py-24 sm:px-8">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading eyebrow="The Nine Influences" title="Navagraha" className="mb-12" />
+    // `!py-` forces the fluid clamp() rhythm over Section's own fixed
+    // py-20/sm:py-28 — two same-specificity utilities on one element aren't
+    // resolved by attribute order, so importance is what guarantees this.
+    <Section tone="night" id="navagraha">
+      <SectionHeading
+        eyebrow="The Nine Influences"
+        title="Navagraha"
+        subtitle="Each Graha governs a domain of your chart. We read their positions the way an instrument reads a scale — precisely, not poetically."
+        dark
+      />
 
-        <motion.div
-          style={{ y }}
-          className="grid grid-cols-2 gap-5 md:grid-cols-3"
+      <div className="relative mt-16">
+        {/* The hairline itself; each dot's fill matches the section
+            background so it reads as a notch cut into the line rather than
+            a dot sitting on top of it. */}
+        <div className="relative mb-11 h-px bg-night-rule">
+          {GRAHAS.map((g, i) => (
+            <div
+              key={g.sanskrit}
+              className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-accent bg-night"
+              style={{ left: `${(i / (GRAHAS.length - 1)) * 100}%` }}
+              aria-hidden
+            />
+          ))}
+        </div>
+
+        <motion.ul
+          className="grid grid-cols-[repeat(auto-fit,minmax(110px,1fr))] gap-x-3 gap-y-5"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ staggerChildren: 0.07 }}
+          viewport={{ once: true, amount: 0.2 }}
+          variants={listVariants}
         >
           {GRAHAS.map((g) => (
-            <motion.div key={g.sanskrit} variants={item}>
-              <TiltCard className="flex flex-col items-center gap-3 p-6 text-center">
-                {/* Glowing orb tinted to match the 3D planet. */}
-                <span
-                  className="h-12 w-12 rounded-full"
-                  data-no-translate
-                  style={{
-                    background: `radial-gradient(circle at 35% 30%, ${g.color}, ${g.color}55 55%, transparent 75%)`,
-                    boxShadow: `0 0 22px ${g.color}88`,
-                  }}
-                  aria-hidden
-                />
-                <h3 className="font-cinzel text-xl text-text">{g.sanskrit}</h3>
-                <p className="-mt-2 text-xs uppercase tracking-[0.2em] text-text-muted">
-                  {g.english}
-                </p>
-                <p className="font-cormorant text-base italic text-primary/80">{g.domain}</p>
-              </TiltCard>
-            </motion.div>
+            <motion.li key={g.sanskrit} variants={itemVariants}>
+              <p className="font-display text-[17px] text-night-ink">{g.sanskrit}</p>
+              <p className="mt-0.5 text-[11px] uppercase tracking-[0.04em] text-night-accent">{g.english}</p>
+              <p className="mt-1.5 text-[12px] leading-[1.4] text-night-ink-2">{g.domain}</p>
+            </motion.li>
           ))}
-        </motion.div>
+        </motion.ul>
       </div>
-    </section>
+    </Section>
   );
 }

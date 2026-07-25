@@ -2068,6 +2068,144 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Discipline & karma': 'अनुशासन और कर्म',
     'Desire & ambition': 'इच्छा और महत्वाकांक्षा',
     'Detachment & moksha': 'वैराग्य और मोक्ष',
+
+    // ─── 2026-07-22 redesign additions ────────────────────────────────────
+    'How it works': 'यह कैसे काम करता है',
+    'Features': 'विशेषताएँ',
+    'Moon sign tool': 'चंद्र राशि टूल',
+    'Languages': 'भाषाएँ',
+    'FAQ': 'सामान्य प्रश्न',
+    'Get my free chart': 'मेरी मुफ़्त कुंडली प्राप्त करें',
+    'Vedic astrology, done properly': 'वैदिक ज्योतिष, सही तरीके से',
+    'Your birth chart, read properly.': 'आपकी जन्म कुंडली, सही ढंग से पढ़ी गई।',
+    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
+      'स्विस एफेमेरिस की सटीकता, और एक AI ज्योतिषी जो कुछ भी पूछने पर बता सके — 13 भाषाओं में।',
+    'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
+      'स्विस एफेमेरिस की सटीकता आपके जन्म के सटीक क्षण में प्रत्येक ग्रह को मैप करती है, और एक AI सरल भाषा में इसका अर्थ समझाता है — 13 भाषाओं में।',
+    'Try the free Moon sign tool': 'मुफ़्त चंद्र राशि टूल आज़माएं',
+    'Grahas mapped': 'ग्रह मैप किए गए',
+    'Nakshatras': 'नक्षत्र',
+    'Free tool': 'मुफ़्त टूल',
+    "What's your Moon sign?": 'आपकी चंद्र राशि क्या है?',
+    'Vedic astrology reads the Moon, not the Sun — enter your birth details for your real Chandra Rashi.':
+      'वैदिक ज्योतिष सूर्य को नहीं, चंद्रमा को पढ़ता है — अपनी असली चंद्र राशि के लिए अपने जन्म का विवरण दर्ज करें।',
+    'Date of birth': 'जन्म तिथि',
+    'Time of birth': 'जन्म का समय',
+    'Place of birth': 'जन्म स्थान',
+    'City, country': 'शहर, देश',
+    'Select a city from the list.': 'सूची से एक शहर चुनें।',
+    'Timezone:': 'समय क्षेत्र:',
+    'Calculating…': 'गणना की जा रही है…',
+    'Reveal my Moon sign': 'मेरी चंद्र राशि दिखाएं',
+    'Check your birth details and try again.': 'अपने जन्म विवरण की जाँच करें और पुनः प्रयास करें।',
+    'Too many requests — try again in a minute.': 'बहुत अधिक अनुरोध — एक मिनट में पुनः प्रयास करें।',
+    'Something went wrong. Please try again.': 'कुछ गलत हो गया। कृपया पुनः प्रयास करें।',
+    'Your Chandra Rashi': 'आपकी चंद्र राशि',
+    'See your full chart →': 'अपनी पूरी कुंडली देखें →',
+    'From birth details to a chart you understand': 'जन्म विवरण से लेकर आपके समझने योग्य कुंडली तक',
+    'Enter your birth details': 'अपना जन्म विवरण दर्ज करें',
+    'We compute your exact chart': 'हम आपकी सटीक कुंडली की गणना करते हैं',
+    'Ask anything': 'कुछ भी पूछें',
+    'Your birth date, time and place — that’s all the chart needs to get started.':
+      'आपकी जन्म तिथि, समय और स्थान — शुरू करने के लिए कुंडली को बस इसी की आवश्यकता है।',
+    'Swiss Ephemeris precision and the Lahiri ayanamsa — the same standard India’s government almanac uses.':
+      'स्विस एफेमेरिस सटीकता और लाहिरी अयनांश — वही मानक जिसका उपयोग भारत सरकार का पंचांग करता है।',
+    'An AI grounded in your real chart data answers follow-up questions, in your language.':
+      'आपके वास्तविक कुंडली डेटा पर आधारित एक AI आपकी भाषा में आपके सवालों के जवाब देता है।',
+    'What you get': 'आपको क्या मिलता है',
+    'Everything in one chart': 'एक ही कुंडली में सब कुछ',
+    'Explore the app': 'ऐप एक्सप्लोर करें',
+    'Janma Kundli': 'जन्म कुंडली',
+    'Your full Vedic birth chart, computed from your exact birth details.':
+      'आपके सटीक जन्म विवरण से गणना की गई आपकी पूरी वैदिक जन्म कुंडली।',
+    'Vimshottari Dasha': 'विंशोत्तरी दशा',
+    'The timeline of planetary periods shaping different phases of your life.':
+      'आपके जीवन के विभिन्न चरणों को आकार देने वाली ग्रहों की अवधियों की समयरेखा।',
+    'AI chat astrologer': 'AI चैट ज्योतिषी',
+    'Ask follow-up questions, grounded in your actual chart, in your language.':
+      'अपनी भाषा में, अपनी वास्तविक कुंडली पर आधारित प्रश्न पूछें।',
+    'Divisional charts (D1–D60)': 'वर्गीय कुंडलियाँ (D1-D60)',
+    'Navamsa, Dasamsa and more, for deeper analysis beyond the main chart.':
+      'मुख्य कुंडली से परे गहन विश्लेषण के लिए नवमांश, दशमांश और बहुत कुछ।',
+    'Gemstone recommendations': 'रत्न संबंधी सुझाव',
+    'Personalized suggestions based on your own planetary placements.':
+      'आपके स्वयं के ग्रहों की स्थिति के आधार पर व्यक्तिगत सुझाव।',
+    'Vastu planner': 'वास्तु प्लानर',
+    'A 2D floor-plan tool for laying out your home or office.':
+      'आपके घर या कार्यालय को डिजाइन करने के लिए एक 2D फ़्लोर-प्लान टूल।',
+    'Daily, weekly, monthly & yearly horoscope': 'दैनिक, साप्ताहिक, मासिक और वार्षिक राशिफल',
+    'Ongoing readings that track how transits affect your chart over time.':
+      'चल रही रीडिंग जो यह ट्रैक करती है कि गोचर समय के साथ आपकी कुंडली को कैसे प्रभावित करते हैं।',
+    'Compatibility matching': 'अनुकूलता मिलान',
+    'Compare two charts to see how a couple’s placements align.':
+      'यह देखने के लिए दो कुंडलियों की तुलना करें कि जोड़े के ग्रह कैसे मिलते हैं।',
+    'The method': 'विधि',
+    'Precision, not vibes': 'सटीकता, न कि केवल अंदाज़ा',
+    'Every chart starts with the Swiss Ephemeris — the same astronomical calculation engine observatories rely on — to place all nine grahas to sub-degree accuracy at your exact moment and place of birth.':
+      'प्रत्येक कुंडली स्विस एफेमेरिस से शुरू होती है — वही खगोलीय गणना इंजन जिस पर वेधशालाएँ भरोसा करती हैं — ताकि आपके जन्म के सटीक क्षण और स्थान पर सभी नौ ग्रहों को उप-डिग्री सटीकता तक रखा जा सके।',
+    'Vedic astrology tracks the actual visible constellations rather than the fixed Western calendar zodiac, so we apply the Lahiri ayanamsa — India’s official sidereal correction — before deriving divisional charts, from D1 through D60, off that base chart.':
+      'वैदिक ज्योतिष निश्चित पश्चिमी कैलेंडर राशि चक्र के बजाय वास्तविक दृश्य नक्षत्रों को ट्रैक करता है, इसलिए हम आधार कुंडली से D1 से D60 तक वर्गीय कुंडलियाँ प्राप्त करने से पहले लाहिरी अयनांश — भारत का आधिकारिक नाक्षत्र सुधार — लागू करते हैं।',
+    'Live': 'लाइव',
+    'Panchang is temporarily unavailable — check it in the app.':
+      'पंचांग अस्थायी रूप से अनुपलब्ध है — इसे ऐप में देखें।',
+    'Open Panchang in the app →': 'ऐप में पंचांग खोलें →',
+    'Rahu Kaal': 'राहु काल',
+    'However you think': 'जैसे भी आप सोचते हैं',
+    'Available in 13 languages': '13 भाषाओं में उपलब्ध है',
+    'Questions': 'प्रश्न',
+    'Before you start': 'शुरू करने से पहले',
+    'What is a Vedic birth chart (Kundli)?': 'वैदिक जन्म कुंडली (कुंडली) क्या है?',
+    'A Kundli is a map of where the sun, moon and planets sat in the sky at the exact moment and place you were born, laid out according to Vedic (Jyotish) astrology. Aroha computes yours from your birth date, time and place and uses it as the basis for every reading.':
+      'कुंडली इस बात का मानचित्र है कि आपके जन्म के सटीक क्षण और स्थान पर सूर्य, चंद्रमा और ग्रह आकाश में कहाँ बैठे थे, जिसे वैदिक (ज्योतिष) के अनुसार तैयार किया गया है। आरोहा आपकी जन्म तिथि, समय और स्थान से इसकी गणना करता है और हर रीडिंग के आधार के रूप में इसका उपयोग करता है।',
+    "How is this different from the astrology I'm used to?": 'यह मेरे द्वारा इस्तेमाल किए जाने वाले ज्योतिष से कैसे अलग है?',
+    'Is my birth data kept private?': 'क्या मेरा जन्म डेटा निजी रखा जाता है?',
+    "Yes. Your birth details are used to compute your chart and are handled according to our privacy policy — see https://app.arohaastrology.in/legal/privacy for the full details on what's stored and how.":
+      'हां। आपके जन्म के विवरण का उपयोग आपकी कुंडली की गणना करने के लिए किया जाता है और हमारी गोपनीयता नीति के अनुसार नियंत्रित किया जाता है — क्या संग्रहीत है और कैसे, इस पर पूर्ण विवरण के लिए https://app.arohaastrology.in/legal/privacy देखें।',
+    'Is it really free?': 'क्या यह वास्तव में मुफ़्त है?',
+    'Generating your birth chart and using the free Moon-sign tool cost nothing. Some deeper reports and features run on a credit system, which is shown clearly before you use them.':
+      'आपकी जन्म कुंडली बनाने और मुफ़्त चंद्र-राशि टूल का उपयोग करने में कोई लागत नहीं आती है। कुछ गहरी रिपोर्ट और सुविधाएँ क्रेडिट प्रणाली पर चलती हैं, जो उनका उपयोग करने से पहले स्पष्ट रूप से दिखाई जाती हैं।',
+    'What languages does it support?': 'यह किन भाषाओं का समर्थन करता है?',
+    'Aroha currently supports 13 languages, so you can read your chart and chat with the AI astrologer in the language you think in.':
+      'आरोहा वर्तमान में 13 भाषाओं का समर्थन करता है, इसलिए आप अपनी कुंडली पढ़ सकते हैं और अपनी सोचने वाली भाषा में AI ज्योतिषी के साथ चैट कर सकते हैं।',
+    "Does this work if I wasn't born in India?": 'क्या यह काम करता है अगर मैं भारत में पैदा नहीं हुआ था?',
+    'Yes. The underlying calculation, the Swiss Ephemeris, works for any birth location worldwide — it needs only your birth date, time and place, wherever that was.':
+      'हां। अंतर्निहित गणना, स्विस एफेमेरिस, दुनिया भर में किसी भी जन्म स्थान के लिए काम करती है — इसे केवल आपके जन्म की तारीख, समय और स्थान की आवश्यकता होती है, चाहे वह कहीं भी हो।',
+    'Product': 'उत्पाद',
+    'Legal': 'कानूनी',
+    'Get started': 'आरंभ करें',
+    'Disclaimer': 'अस्वीकरण',
+    'Vedic astrology backed by Swiss Ephemeris precision, explained in plain language. You can change your language any time from the switcher in the navigation bar above.':
+      'स्विस एफेमेरिस की सटीकता द्वारा समर्थित वैदिक ज्योतिष, सरल भाषा में समझाया गया। आप ऊपर नेविगेशन बार में स्विचर से किसी भी समय अपनी भाषा बदल सकते हैं।',
+    'Your chart takes a minute to generate, no cost to see it.': 'आपकी कुंडली बनने में एक मिनट का समय लगता है, इसे देखने की कोई लागत नहीं है।',
+    'Start your free reading': 'अपनी मुफ़्त रीडिंग शुरू करें',
+    'What is a Vedic Moon sign?': 'वैदिक चंद्र राशि क्या है?',
+    'Why is it different from my Western sun sign?': 'यह मेरी पश्चिमी सूर्य राशि से अलग क्यों है?',
+
+    // ─── 2026-07-22 follow-up: AppCTA + Moon-signs overview ───────────────
+    'Get the app': 'ऐप प्राप्त करें',
+    'Coming soon': 'जल्द आ रहा है',
+    'Chandra Rashi': 'चंद्र राशि',
+    'What your Moon sign says about you': 'आपकी चंद्र राशि आपके बारे में क्या कहती है',
+    "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
+      'वैदिक ज्योतिष मन और भावना के लिए चंद्रमा को पढ़ता है, सूर्य को नहीं। यहां बताया गया है कि सभी 12 राशियों का चंद्रमा के लिए विशेष रूप से क्या अर्थ है।',
+    'Calculate your real Moon sign': 'अपनी असली चंद्र राशि की गणना करें',
+
+    // ─── 2026-07-22 follow-up: expanded FAQ ──────────────────────────────
+    'Do I need to know my exact birth time?': 'क्या मुझे अपने जन्म का सटीक समय पता होना चाहिए?',
+    "Ideally, yes, to the minute. The Moon moves fast enough that even a 15-20 minute error can shift your Nakshatra, and a bigger error can move your Ascendant into a different sign entirely. If you're not sure, your birth certificate or hospital records usually have it.":
+      'आदर्श रूप से, हां, मिनट तक। चंद्रमा इतनी तेजी से चलता है कि 15-20 मिनट की त्रुटि भी आपके नक्षत्र को बदल सकती है, और एक बड़ी त्रुटि आपके लग्न को पूरी तरह से एक अलग राशि में बदल सकती है। यदि आपको यकीन नहीं है, तो आपके जन्म प्रमाण पत्र या अस्पताल के रिकॉर्ड में आमतौर पर यह जानकारी होती है।',
+    'What is a rising sign (Lagna / Ascendant)?': 'लग्न (उदय राशि) क्या है?',
+    "Your rising sign is whichever zodiac sign was crossing the eastern horizon at your exact moment of birth. In Vedic astrology it's called your Lagna, and it sets the entire house structure of your chart — where your career, relationships and health placements fall are all measured from it.":
+      'आपकी उदय राशि वह राशि है जो आपके जन्म के सटीक क्षण में पूर्वी क्षितिज को पार कर रही थी। वैदिक ज्योतिष में इसे लग्न कहा जाता है, और यह आपकी कुंडली की पूरी भाव संरचना तय करती है — आपके करियर, रिश्ते और स्वास्थ्य से जुड़े भाव इसी से मापे जाते हैं।',
+    'What is a Nakshatra?': 'नक्षत्र क्या है?',
+    "A Nakshatra is one of 27 lunar mansions the Moon's path is divided into, each spanning 13°20' of the zodiac. It gives a more precise reading than your Moon sign alone, and traditionally factors into naming conventions and marriage compatibility (Guna Milan).":
+      "नक्षत्र चंद्रमा के पथ को विभाजित करने वाले 27 चंद्र मंडलों में से एक है, जिनमें से प्रत्येक राशि चक्र के 13°20' तक फैला हुआ है। यह आपकी चंद्र राशि से भी अधिक सटीक जानकारी देता है, और परंपरागत रूप से नामकरण और विवाह अनुकूलता (गुण मिलान) में इसका उपयोग होता है।",
+    'Can I check compatibility with a partner?': 'क्या मैं किसी साथी के साथ अनुकूलता जांच सकता/सकती हूं?',
+    "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
+      'हां — आरोहा में अष्टकूट (गुण मिलान) शैली की अनुकूलता मिलान शामिल है, जो ऐप में जाने पर दो कुंडलियों की तुलना करके देखती है कि मुख्य ग्रह स्थितियां कैसे मेल खाती हैं।',
+    "How accurate is the AI astrologer's interpretation?": 'AI ज्योतिषी की व्याख्या कितनी सटीक है?',
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      'कुंडली स्वयं — ग्रह स्थिति, भाव, दशाएं — स्विस एफेमेरिस द्वारा गणना की जाती है, वही सटीकता इंजन जिस पर वेधशालाएं भरोसा करती हैं, इसलिए वह हिस्सा खगोलीय रूप से सटीक है। AI का काम केवल यह समझाना है कि वह डेटा परंपरागत रूप से क्या अर्थ रखता है, सरल भाषा में; किसी भी ज्योतिषीय रीडिंग की तरह, यह चिंतन का एक साधन है, वैज्ञानिक भविष्यवाणी नहीं।',
   },
   bn: {
     'Horoscope': 'রাশিফল',
@@ -2338,6 +2476,309 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Discipline & karma': 'શિસ્ત અને કર્મ',
     'Desire & ambition': 'ઇચ્છા અને મહત્વાકાંક્ષા',
     'Detachment & moksha': 'વૈરાગ્ય અને મોક્ષ',
+  },
+
+  // ─── 2026-07-22 redesign — es/fr added alongside the 9 Indian languages ──
+  es: {
+    'How it works': 'Cómo funciona',
+    'Features': 'Características',
+    'Moon sign tool': 'Herramienta de signo lunar',
+    'Languages': 'Idiomas',
+    'FAQ': 'Preguntas frecuentes',
+    'Get my free chart': 'Obtén mi carta astral gratis',
+    'Vedic astrology, done properly': 'Astrología védica, hecha correctamente',
+    'Your birth chart, read properly.': 'Tu carta astral, leída correctamente.',
+    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
+      'La precisión de Swiss Ephemeris y un astrólogo con IA que responde lo que sea, en 13 idiomas.',
+    'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
+      'La precisión de Swiss Ephemeris mapea cada planeta en tu momento exacto de nacimiento, y una IA explica lo que significa en lenguaje sencillo, en 13 idiomas.',
+    'Try the free Moon sign tool': 'Prueba la herramienta gratuita de signo lunar',
+    'Grahas mapped': 'Grahas mapeados',
+    'Nakshatras': 'Nakshatras',
+    'Free tool': 'Herramienta gratuita',
+    "What's your Moon sign?": '¿Cuál es tu signo lunar?',
+    'Vedic astrology reads the Moon, not the Sun — enter your birth details for your real Chandra Rashi.':
+      'La astrología védica lee la Luna, no el Sol: ingresa tus datos de nacimiento para conocer tu verdadero Chandra Rashi.',
+    'Date of birth': 'Fecha de nacimiento',
+    'Time of birth': 'Hora de nacimiento',
+    'Place of birth': 'Lugar de nacimiento',
+    'City, country': 'Ciudad, país',
+    'Select a city from the list.': 'Selecciona una ciudad de la lista.',
+    'Timezone:': 'Zona horaria:',
+    'Calculating…': 'Calculando…',
+    'Reveal my Moon sign': 'Revelar mi signo lunar',
+    'Check your birth details and try again.': 'Revisa tus datos de nacimiento e inténtalo de nuevo.',
+    'Too many requests — try again in a minute.': 'Demasiadas solicitudes: inténtalo de nuevo en un minuto.',
+    'Something went wrong. Please try again.': 'Algo salió mal. Por favor, inténtalo de nuevo.',
+    'Your Chandra Rashi': 'Tu Chandra Rashi',
+    'See your full chart →': 'Ver tu carta astral completa →',
+    'The Nine Influences': 'Las Nueve Influencias',
+    '(Sun)': '(Sol)', '(Moon)': '(Luna)', '(Mars)': '(Marte)', '(Mercury)': '(Mercurio)',
+    '(Jupiter)': '(Júpiter)', '(Venus)': '(Venus)', '(Saturn)': '(Saturno)',
+    '(North Node)': '(Nodo Norte)', '(South Node)': '(Nodo Sur)',
+    'Vitality & soul': 'Vitalidad y alma',
+    'Mind & emotion': 'Mente y emoción',
+    'Energy & courage': 'Energía y coraje',
+    'Intellect & speech': 'Intelecto y habla',
+    'Wisdom & fortune': 'Sabiduría y fortuna',
+    'Love & beauty': 'Amor y belleza',
+    'Discipline & karma': 'Disciplina y karma',
+    'Desire & ambition': 'Deseo y ambición',
+    'Detachment & moksha': 'Desapego y moksha',
+    'From birth details to a chart you understand': 'De los detalles de nacimiento a una carta que entiendes',
+    'Enter your birth details': 'Ingresa tus datos de nacimiento',
+    'We compute your exact chart': 'Calculamos tu carta exacta',
+    'Ask anything': 'Pregunta lo que sea',
+    'Your birth date, time and place — that’s all the chart needs to get started.':
+      'Tu fecha, hora y lugar de nacimiento: eso es todo lo que la carta necesita para empezar.',
+    'Swiss Ephemeris precision and the Lahiri ayanamsa — the same standard India’s government almanac uses.':
+      'La precisión de Swiss Ephemeris y el ayanamsa de Lahiri: el mismo estándar que utiliza el almanaque del gobierno de la India.',
+    'An AI grounded in your real chart data answers follow-up questions, in your language.':
+      'Una IA basada en los datos reales de tu carta responde a preguntas de seguimiento, en tu idioma.',
+    'What you get': 'Lo que obtienes',
+    'Everything in one chart': 'Todo en una sola carta',
+    'Explore the app': 'Explora la aplicación',
+    'Janma Kundli': 'Janma Kundli',
+    'Your full Vedic birth chart, computed from your exact birth details.':
+      'Tu carta astral védica completa, calculada a partir de tus detalles exactos de nacimiento.',
+    'Vimshottari Dasha': 'Vimshottari Dasha',
+    'The timeline of planetary periods shaping different phases of your life.':
+      'La línea de tiempo de los períodos planetarios que dan forma a diferentes fases de tu vida.',
+    'AI chat astrologer': 'Astrólogo de chat con IA',
+    'Ask follow-up questions, grounded in your actual chart, in your language.':
+      'Haz preguntas de seguimiento, basadas en tu carta real, en tu idioma.',
+    'Divisional charts (D1–D60)': 'Cartas divisionales (D1-D60)',
+    'Navamsa, Dasamsa and more, for deeper analysis beyond the main chart.':
+      'Navamsa, Dasamsa y más, para un análisis más profundo más allá de la carta principal.',
+    'Gemstone recommendations': 'Recomendaciones de gemas',
+    'Personalized suggestions based on your own planetary placements.':
+      'Sugerencias personalizadas basadas en tus propias posiciones planetarias.',
+    'Vastu planner': 'Planificador Vastu',
+    'A 2D floor-plan tool for laying out your home or office.':
+      'Una herramienta de plano en 2D para diseñar tu hogar u oficina.',
+    'Daily, weekly, monthly & yearly horoscope': 'Horóscopo diario, semanal, mensual y anual',
+    'Ongoing readings that track how transits affect your chart over time.':
+      'Lecturas continuas que rastrean cómo los tránsitos afectan tu carta a lo largo del tiempo.',
+    'Compatibility matching': 'Emparejamiento de compatibilidad',
+    'Compare two charts to see how a couple’s placements align.':
+      'Compara dos cartas para ver cómo se alinean las posiciones de una pareja.',
+    'The method': 'El método',
+    'Precision, not vibes': 'Precisión, no solo vibras',
+    'Every chart starts with the Swiss Ephemeris — the same astronomical calculation engine observatories rely on — to place all nine grahas to sub-degree accuracy at your exact moment and place of birth.':
+      'Cada carta comienza con Swiss Ephemeris (el mismo motor de cálculo astronómico en el que confían los observatorios) para ubicar los nueve grahas con precisión sub-grado en tu momento y lugar exacto de nacimiento.',
+    'Vedic astrology tracks the actual visible constellations rather than the fixed Western calendar zodiac, so we apply the Lahiri ayanamsa — India’s official sidereal correction — before deriving divisional charts, from D1 through D60, off that base chart.':
+      'La astrología védica rastrea las constelaciones visibles reales en lugar del zodíaco occidental fijo, por lo que aplicamos el ayanamsa de Lahiri (la corrección sideral oficial de la India) antes de derivar las cartas divisionales, del D1 al D60, a partir de esa carta base.',
+    'Live': 'En vivo',
+    'Panchang is temporarily unavailable — check it in the app.':
+      'Panchang no está disponible temporalmente; revísalo en la aplicación.',
+    'Open Panchang in the app →': 'Abrir Panchang en la aplicación →',
+    'Rahu Kaal': 'Rahu Kaal',
+    'However you think': 'Como sea que pienses',
+    'Available in 13 languages': 'Disponible en 13 idiomas',
+    'Questions': 'Preguntas',
+    'Before you start': 'Antes de empezar',
+    'What is a Vedic birth chart (Kundli)?': '¿Qué es una carta astral védica (Kundli)?',
+    'A Kundli is a map of where the sun, moon and planets sat in the sky at the exact moment and place you were born, laid out according to Vedic (Jyotish) astrology. Aroha computes yours from your birth date, time and place and uses it as the basis for every reading.':
+      'Un Kundli es un mapa de dónde estaban el sol, la luna y los planetas en el cielo en el momento y lugar exacto en que naciste, diseñado de acuerdo con la astrología védica (Jyotish). Aroha calcula el tuyo a partir de tu fecha, hora y lugar de nacimiento y lo utiliza como base para cada lectura.',
+    "How is this different from the astrology I'm used to?": '¿En qué se diferencia esto de la astrología a la que estoy acostumbrado?',
+    'Is my birth data kept private?': '¿Mis datos de nacimiento se mantienen privados?',
+    "Yes. Your birth details are used to compute your chart and are handled according to our privacy policy — see https://app.arohaastrology.in/legal/privacy for the full details on what's stored and how.":
+      'Sí. Tus datos de nacimiento se utilizan para calcular tu carta y se manejan de acuerdo con nuestra política de privacidad: consulta https://app.arohaastrology.in/legal/privacy para obtener todos los detalles sobre qué se almacena y cómo.',
+    'Is it really free?': '¿Es realmente gratis?',
+    'Generating your birth chart and using the free Moon-sign tool cost nothing. Some deeper reports and features run on a credit system, which is shown clearly before you use them.':
+      'Generar tu carta astral y usar la herramienta gratuita de signo lunar no cuesta nada. Algunos informes y funciones más profundos funcionan con un sistema de créditos, que se muestra claramente antes de usarlos.',
+    'What languages does it support?': '¿Qué idiomas admite?',
+    'Aroha currently supports 13 languages, so you can read your chart and chat with the AI astrologer in the language you think in.':
+      'Aroha actualmente admite 13 idiomas, para que puedas leer tu carta y chatear con el astrólogo de IA en el idioma en el que piensas.',
+    "Does this work if I wasn't born in India?": '¿Funciona esto si no nací en la India?',
+    'Yes. The underlying calculation, the Swiss Ephemeris, works for any birth location worldwide — it needs only your birth date, time and place, wherever that was.':
+      'Sí. El cálculo subyacente, Swiss Ephemeris, funciona para cualquier lugar de nacimiento en todo el mundo: solo necesita tu fecha, hora y lugar de nacimiento, sea donde sea.',
+    'Product': 'Producto',
+    'Legal': 'Legal',
+    'Get started': 'Empezar',
+    'Disclaimer': 'Descargo de responsabilidad',
+    'Vedic astrology backed by Swiss Ephemeris precision, explained in plain language. You can change your language any time from the switcher in the navigation bar above.':
+      'Astrología védica respaldada por la precisión de Swiss Ephemeris, explicada en lenguaje sencillo. Puedes cambiar tu idioma en cualquier momento desde el selector en la barra de navegación superior.',
+    'Your chart takes a minute to generate, no cost to see it.': 'Tu carta tarda un minuto en generarse, no tiene costo verla.',
+    'Start your free reading': 'Comienza tu lectura gratuita',
+    'What is a Vedic Moon sign?': '¿Qué es un signo lunar védico?',
+    'Why is it different from my Western sun sign?': '¿Por qué es diferente de mi signo solar occidental?',
+
+    // ─── 2026-07-22 follow-up: AppCTA + Moon-signs overview ───────────────
+    'Get the app': 'Obtén la app',
+    'Coming soon': 'Próximamente',
+    'What your Moon sign says about you': 'Lo que dice tu signo lunar sobre ti',
+    "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
+      'La astrología védica lee la Luna para la mente y la emoción, no el Sol. Esto es lo que significa cada uno de los 12 signos específicamente para la Luna.',
+    'Calculate your real Moon sign': 'Calcula tu verdadero signo lunar',
+
+    // ─── 2026-07-22 follow-up: expanded FAQ ──────────────────────────────
+    'Do I need to know my exact birth time?': '¿Necesito saber mi hora de nacimiento exacta?',
+    "Ideally, yes, to the minute. The Moon moves fast enough that even a 15-20 minute error can shift your Nakshatra, and a bigger error can move your Ascendant into a different sign entirely. If you're not sure, your birth certificate or hospital records usually have it.":
+      'Idealmente sí, al minuto. La Luna se mueve tan rápido que incluso un error de 15-20 minutos puede cambiar tu Nakshatra, y un error mayor puede mover tu Ascendente a un signo completamente diferente. Si no estás seguro, tu certificado de nacimiento o los registros del hospital suelen tenerlo.',
+    'What is a rising sign (Lagna / Ascendant)?': '¿Qué es un signo ascendente (Lagna)?',
+    "Your rising sign is whichever zodiac sign was crossing the eastern horizon at your exact moment of birth. In Vedic astrology it's called your Lagna, and it sets the entire house structure of your chart — where your career, relationships and health placements fall are all measured from it.":
+      'Tu signo ascendente es el signo del zodíaco que cruzaba el horizonte este en el momento exacto de tu nacimiento. En la astrología védica se llama Lagna, y establece toda la estructura de casas de tu carta: de ahí se miden tus posiciones de carrera, relaciones y salud.',
+    'What is a Nakshatra?': '¿Qué es un Nakshatra?',
+    "A Nakshatra is one of 27 lunar mansions the Moon's path is divided into, each spanning 13°20' of the zodiac. It gives a more precise reading than your Moon sign alone, and traditionally factors into naming conventions and marriage compatibility (Guna Milan).":
+      'Un Nakshatra es una de las 27 mansiones lunares en las que se divide el recorrido de la Luna, cada una de 13°20\' del zodíaco. Ofrece una lectura más precisa que tu signo lunar por sí solo, y tradicionalmente influye en las convenciones de nombres y la compatibilidad matrimonial (Guna Milan).',
+    'Can I check compatibility with a partner?': '¿Puedo comprobar la compatibilidad con una pareja?',
+    "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
+      'Sí — Aroha incluye emparejamiento de compatibilidad estilo Ashtakoota (Guna Milan), que compara dos cartas astrales para ver cómo se alinean las posiciones clave, una vez que estés en la aplicación.',
+    "How accurate is the AI astrologer's interpretation?": '¿Qué tan precisa es la interpretación del astrólogo de IA?',
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      'La carta en sí (posiciones planetarias, casas, dashas) se calcula con Swiss Ephemeris, el mismo motor de precisión que usan los observatorios, así que esa parte es astronómicamente exacta. El trabajo de la IA es solo explicar qué significa tradicionalmente esa información, en lenguaje sencillo; como cualquier lectura astrológica, es una herramienta de reflexión, no una predicción científica.',
+  },
+
+  fr: {
+    'How it works': 'Comment ça marche',
+    'Features': 'Fonctionnalités',
+    'Moon sign tool': 'Outil de signe lunaire',
+    'Languages': 'Langues',
+    'FAQ': 'FAQ',
+    'Get my free chart': 'Obtenir mon thème astral gratuit',
+    'Vedic astrology, done properly': "L'astrologie védique, faite correctement",
+    'Your birth chart, read properly.': 'Votre thème astral, lu correctement.',
+    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
+      'La précision de Swiss Ephemeris et un astrologue IA qui répond à tout, en 13 langues.',
+    'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
+      'La précision de Swiss Ephemeris cartographie chaque planète au moment exact de votre naissance, et une IA explique ce que cela signifie en langage clair — en 13 langues.',
+    'Try the free Moon sign tool': "Essayez l'outil de signe lunaire gratuit",
+    'Grahas mapped': 'Grahas cartographiés',
+    'Nakshatras': 'Nakshatras',
+    'Free tool': 'Outil gratuit',
+    "What's your Moon sign?": 'Quel est votre signe lunaire ?',
+    'Vedic astrology reads the Moon, not the Sun — enter your birth details for your real Chandra Rashi.':
+      "L'astrologie védique lit la Lune, pas le Soleil — entrez vos détails de naissance pour votre véritable Chandra Rashi.",
+    'Date of birth': 'Date de naissance',
+    'Time of birth': 'Heure de naissance',
+    'Place of birth': 'Lieu de naissance',
+    'City, country': 'Ville, pays',
+    'Select a city from the list.': 'Sélectionnez une ville dans la liste.',
+    'Timezone:': 'Fuseau horaire :',
+    'Calculating…': 'Calcul en cours…',
+    'Reveal my Moon sign': 'Révéler mon signe lunaire',
+    'Check your birth details and try again.': 'Vérifiez vos détails de naissance et réessayez.',
+    'Too many requests — try again in a minute.': 'Trop de requêtes — réessayez dans une minute.',
+    'Something went wrong. Please try again.': "Quelque chose s'est mal passé. Veuillez réessayer.",
+    'Your Chandra Rashi': 'Votre Chandra Rashi',
+    'See your full chart →': 'Voir votre thème astral complet →',
+    'The Nine Influences': 'Les Neuf Influences',
+    '(Sun)': '(Soleil)', '(Moon)': '(Lune)', '(Mars)': '(Mars)', '(Mercury)': '(Mercure)',
+    '(Jupiter)': '(Jupiter)', '(Venus)': '(Vénus)', '(Saturn)': '(Saturne)',
+    '(North Node)': '(Nœud Nord)', '(South Node)': '(Nœud Sud)',
+    'Vitality & soul': 'Vitalité et âme',
+    'Mind & emotion': 'Esprit et émotion',
+    'Energy & courage': 'Énergie et courage',
+    'Intellect & speech': 'Intellect et parole',
+    'Wisdom & fortune': 'Sagesse et fortune',
+    'Love & beauty': 'Amour et beauté',
+    'Discipline & karma': 'Discipline et karma',
+    'Desire & ambition': 'Désir et ambition',
+    'Detachment & moksha': 'Détachement et moksha',
+    'From birth details to a chart you understand': 'Des détails de naissance à un thème que vous comprenez',
+    'Enter your birth details': 'Entrez vos détails de naissance',
+    'We compute your exact chart': 'Nous calculons votre thème exact',
+    'Ask anything': "Demandez n'importe quoi",
+    'Your birth date, time and place — that’s all the chart needs to get started.':
+      "Votre date, heure et lieu de naissance — c'est tout ce dont le thème a besoin pour commencer.",
+    'Swiss Ephemeris precision and the Lahiri ayanamsa — the same standard India’s government almanac uses.':
+      "La précision de Swiss Ephemeris et l'ayanamsa de Lahiri — la même norme utilisée par l'almanach du gouvernement indien.",
+    'An AI grounded in your real chart data answers follow-up questions, in your language.':
+      'Une IA basée sur les données réelles de votre thème répond aux questions de suivi, dans votre langue.',
+    'What you get': 'Ce que vous obtenez',
+    'Everything in one chart': 'Tout dans un seul thème',
+    'Explore the app': "Explorer l'application",
+    'Janma Kundli': 'Janma Kundli',
+    'Your full Vedic birth chart, computed from your exact birth details.':
+      'Votre thème astral védique complet, calculé à partir de vos détails de naissance exacts.',
+    'Vimshottari Dasha': 'Vimshottari Dasha',
+    'The timeline of planetary periods shaping different phases of your life.':
+      'La chronologie des périodes planétaires qui façonnent les différentes phases de votre vie.',
+    'AI chat astrologer': 'Astrologue de chat IA',
+    'Ask follow-up questions, grounded in your actual chart, in your language.':
+      'Posez des questions de suivi, basées sur votre thème réel, dans votre langue.',
+    'Divisional charts (D1–D60)': 'Thèmes divisionnels (D1-D60)',
+    'Navamsa, Dasamsa and more, for deeper analysis beyond the main chart.':
+      'Navamsa, Dasamsa et plus, pour une analyse plus approfondie au-delà du thème principal.',
+    'Gemstone recommendations': 'Recommandations de pierres précieuses',
+    'Personalized suggestions based on your own planetary placements.':
+      'Suggestions personnalisées basées sur vos propres placements planétaires.',
+    'Vastu planner': "Planificateur Vastu",
+    'A 2D floor-plan tool for laying out your home or office.':
+      "Un outil de plan d'étage 2D pour aménager votre maison ou votre bureau.",
+    'Daily, weekly, monthly & yearly horoscope': 'Horoscope quotidien, hebdomadaire, mensuel et annuel',
+    'Ongoing readings that track how transits affect your chart over time.':
+      'Des lectures continues qui suivent comment les transits affectent votre thème au fil du temps.',
+    'Compatibility matching': 'Compatibilité',
+    'Compare two charts to see how a couple’s placements align.':
+      "Comparez deux thèmes pour voir comment les placements d'un couple s'alignent.",
+    'The method': 'La méthode',
+    'Precision, not vibes': 'Précision, pas de vagues impressions',
+    'Every chart starts with the Swiss Ephemeris — the same astronomical calculation engine observatories rely on — to place all nine grahas to sub-degree accuracy at your exact moment and place of birth.':
+      'Chaque thème commence par la Swiss Ephemeris — le même moteur de calcul astronomique auquel les observatoires font confiance — pour placer les neuf grahas avec une précision inférieure au degré à votre moment et lieu exacts de naissance.',
+    'Vedic astrology tracks the actual visible constellations rather than the fixed Western calendar zodiac, so we apply the Lahiri ayanamsa — India’s official sidereal correction — before deriving divisional charts, from D1 through D60, off that base chart.':
+      "L'astrologie védique suit les constellations visibles réelles plutôt que le zodiaque fixe du calendrier occidental, nous appliquons donc l'ayanamsa de Lahiri — la correction sidérale officielle de l'Inde — avant de dériver les thèmes divisionnels, de D1 à D60, à partir de ce thème de base.",
+    'Live': 'En direct',
+    'Panchang is temporarily unavailable — check it in the app.':
+      'Le Panchang est temporairement indisponible — vérifiez-le dans l\'application.',
+    'Open Panchang in the app →': "Ouvrir le Panchang dans l'application →",
+    'Rahu Kaal': 'Rahu Kaal',
+    'However you think': 'Peu importe comment vous pensez',
+    'Available in 13 languages': 'Disponible en 13 langues',
+    'Questions': 'Questions',
+    'Before you start': 'Avant de commencer',
+    'What is a Vedic birth chart (Kundli)?': "Qu'est-ce qu'un thème astral védique (Kundli) ?",
+    'A Kundli is a map of where the sun, moon and planets sat in the sky at the exact moment and place you were born, laid out according to Vedic (Jyotish) astrology. Aroha computes yours from your birth date, time and place and uses it as the basis for every reading.':
+      "Un Kundli est une carte de l'emplacement du soleil, de la lune et des planètes dans le ciel au moment et à l'endroit exacts de votre naissance, établie selon l'astrologie védique (Jyotish). Aroha calcule le vôtre à partir de votre date, heure et lieu de naissance et l'utilise comme base pour chaque lecture.",
+    "How is this different from the astrology I'm used to?": "En quoi cela diffère-t-il de l'astrologie à laquelle je suis habitué ?",
+    'Is my birth data kept private?': 'Mes données de naissance sont-elles gardées privées ?',
+    "Yes. Your birth details are used to compute your chart and are handled according to our privacy policy — see https://app.arohaastrology.in/legal/privacy for the full details on what's stored and how.":
+      "Oui. Vos détails de naissance sont utilisés pour calculer votre thème et sont traités conformément à notre politique de confidentialité — voir https://app.arohaastrology.in/legal/privacy pour les détails complets sur ce qui est stocké et comment.",
+    'Is it really free?': 'Est-ce vraiment gratuit ?',
+    'Generating your birth chart and using the free Moon-sign tool cost nothing. Some deeper reports and features run on a credit system, which is shown clearly before you use them.':
+      'La génération de votre thème astral et l\'utilisation de l\'outil gratuit de signe lunaire ne coûtent rien. Certains rapports et fonctionnalités plus approfondis fonctionnent sur un système de crédits, qui est clairement affiché avant que vous ne les utilisiez.',
+    'What languages does it support?': 'Quelles langues sont prises en charge ?',
+    'Aroha currently supports 13 languages, so you can read your chart and chat with the AI astrologer in the language you think in.':
+      "Aroha prend actuellement en charge 13 langues, vous pouvez donc lire votre thème et discuter avec l'astrologue IA dans la langue dans laquelle vous pensez.",
+    "Does this work if I wasn't born in India?": 'Est-ce que cela fonctionne si je ne suis pas né en Inde ?',
+    'Yes. The underlying calculation, the Swiss Ephemeris, works for any birth location worldwide — it needs only your birth date, time and place, wherever that was.':
+      "Oui. Le calcul sous-jacent, la Swiss Ephemeris, fonctionne pour n'importe quel lieu de naissance dans le monde — il a seulement besoin de votre date, heure et lieu de naissance, où que ce soit.",
+    'Product': 'Produit',
+    'Legal': 'Légal',
+    'Get started': 'Commencer',
+    'Disclaimer': 'Avis de non-responsabilité',
+    'Vedic astrology backed by Swiss Ephemeris precision, explained in plain language. You can change your language any time from the switcher in the navigation bar above.':
+      "L'astrologie védique soutenue par la précision de la Swiss Ephemeris, expliquée en langage clair. Vous pouvez changer de langue à tout moment à l'aide du sélecteur dans la barre de navigation ci-dessus.",
+    'Your chart takes a minute to generate, no cost to see it.': 'La génération de votre thème prend une minute, sa consultation est gratuite.',
+    'Start your free reading': 'Commencez votre lecture gratuite',
+    'What is a Vedic Moon sign?': "Qu'est-ce qu'un signe lunaire védique ?",
+    'Why is it different from my Western sun sign?': 'Pourquoi est-ce différent de mon signe solaire occidental ?',
+
+    // ─── 2026-07-22 follow-up: AppCTA + Moon-signs overview ───────────────
+    'Get the app': "Obtenir l'app",
+    'Coming soon': 'Bientôt disponible',
+    'What your Moon sign says about you': 'Ce que votre signe lunaire dit de vous',
+    "Vedic astrology reads the Moon for mind and emotion, not the Sun. Here's what each of the 12 signs means for the Moon specifically.":
+      "L'astrologie védique lit la Lune pour l'esprit et l'émotion, pas le Soleil. Voici ce que chacun des 12 signes signifie spécifiquement pour la Lune.",
+    'Calculate your real Moon sign': 'Calculez votre vrai signe lunaire',
+
+    // ─── 2026-07-22 follow-up: expanded FAQ ──────────────────────────────
+    'Do I need to know my exact birth time?': 'Dois-je connaître mon heure de naissance exacte ?',
+    "Ideally, yes, to the minute. The Moon moves fast enough that even a 15-20 minute error can shift your Nakshatra, and a bigger error can move your Ascendant into a different sign entirely. If you're not sure, your birth certificate or hospital records usually have it.":
+      "Idéalement, oui, à la minute près. La Lune se déplace assez vite pour qu'une erreur de 15 à 20 minutes puisse changer votre Nakshatra, et une erreur plus importante peut déplacer votre Ascendant vers un signe complètement différent. Si vous n'êtes pas sûr, votre certificat de naissance ou les dossiers de l'hôpital l'indiquent généralement.",
+    'What is a rising sign (Lagna / Ascendant)?': "Qu'est-ce qu'un signe ascendant (Lagna) ?",
+    "Your rising sign is whichever zodiac sign was crossing the eastern horizon at your exact moment of birth. In Vedic astrology it's called your Lagna, and it sets the entire house structure of your chart — where your career, relationships and health placements fall are all measured from it.":
+      "Votre signe ascendant est le signe du zodiaque qui traversait l'horizon est au moment exact de votre naissance. En astrologie védique, on l'appelle le Lagna, et il détermine toute la structure des maisons de votre thème — vos placements de carrière, de relations et de santé en sont tous mesurés.",
+    'What is a Nakshatra?': "Qu'est-ce qu'un Nakshatra ?",
+    "A Nakshatra is one of 27 lunar mansions the Moon's path is divided into, each spanning 13°20' of the zodiac. It gives a more precise reading than your Moon sign alone, and traditionally factors into naming conventions and marriage compatibility (Guna Milan).":
+      "Un Nakshatra est l'une des 27 maisons lunaires dans lesquelles la trajectoire de la Lune est divisée, chacune couvrant 13°20' du zodiaque. Il offre une lecture plus précise que votre seul signe lunaire, et intervient traditionnellement dans les conventions de prénoms et la compatibilité matrimoniale (Guna Milan).",
+    'Can I check compatibility with a partner?': 'Puis-je vérifier la compatibilité avec un partenaire ?',
+    "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
+      "Oui — Aroha comprend un système de compatibilité de type Ashtakoota (Guna Milan), qui compare deux thèmes astraux pour voir comment les placements clés s'alignent, une fois que vous êtes dans l'application.",
+    "How accurate is the AI astrologer's interpretation?": "Quelle est la précision de l'interprétation de l'astrologue IA ?",
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      "Le thème lui-même — positions planétaires, maisons, dashas — est calculé par la Swiss Ephemeris, le même moteur de précision utilisé par les observatoires, donc cette partie est astronomiquement exacte. Le rôle de l'IA est seulement d'expliquer ce que ces données signifient traditionnellement, en langage clair ; comme toute lecture astrologique, c'est un outil de réflexion, pas une prédiction scientifique.",
   },
 };
 
