@@ -16,7 +16,6 @@ import { TranslationProvider } from '@/components/providers/TranslationProvider'
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import { AppDownloadBanner } from '@/components/landing/AppDownloadBanner';
-import AnalyticsConsentBanner from '@/components/AnalyticsConsentBanner';
 
 const publicSans = Public_Sans({
   subsets: ['latin', 'latin-ext'],
@@ -197,7 +196,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <TranslationProvider>
             <AppDownloadBanner />
             <SmoothScrollProvider>{children}</SmoothScrollProvider>
-            <AnalyticsConsentBanner />
           </TranslationProvider>
         </PostHogProvider>
       </body>
