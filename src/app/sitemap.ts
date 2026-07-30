@@ -1,7 +1,9 @@
 import type { MetadataRoute } from 'next';
 import { getAllSlugs } from '@/lib/blog';
 
-const SITE_URL = 'https://arohaastrology.in';
+// Keep in sync with SITE_URL in layout.tsx — see the note there on why every
+// entry must be the www host. A sitemap of redirecting URLs indexes nothing.
+const SITE_URL = 'https://www.arohaastrology.in';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

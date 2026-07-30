@@ -88,7 +88,11 @@ const notoGurmukhi = Noto_Sans_Gurmukhi({
   weight: ['400', '500', '600', '700'],
 });
 
-const SITE_URL = 'https://arohaastrology.in';
+// MUST include `www.` — the apex domain 308-redirects to www at the edge, so a
+// bare-apex canonical points every page at a URL that redirects away from
+// itself. That mismatch is what made Google report "Redirect error" for the
+// whole sitemap and index exactly one URL. Do not "tidy" the www off.
+const SITE_URL = 'https://www.arohaastrology.in';
 const SITE_NAME = 'Aroha Astrology';
 const SITE_DESCRIPTION =
   'Free Vedic birth chart, Moon sign calculator and daily Panchang — Swiss Ephemeris precision with an AI astrologer that explains what it means, in your language.';

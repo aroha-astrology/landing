@@ -6,6 +6,8 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://arohaastrology.in/sitemap.xml',
+    // www host, not the apex — the apex 308-redirects, and Google deprioritized
+    // re-reading this sitemap for 2.5 months after hitting that redirect.
+    sitemap: 'https://www.arohaastrology.in/sitemap.xml',
   };
 }
