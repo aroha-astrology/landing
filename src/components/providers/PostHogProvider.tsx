@@ -6,9 +6,9 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { getAnalyticsConsent } from "@/lib/analytics-consent";
 
 /**
- * Only inits PostHog once analytics consent has been explicitly granted
- * (see lib/analytics-consent.ts + components/AnalyticsConsentBanner.tsx).
- * Idempotent — safe to call again after consent changes.
+ * Inits PostHog unless the visitor has explicitly opted out (see
+ * lib/analytics-consent.ts). Idempotent — safe to call again after
+ * consent changes.
  */
 export function initPostHogIfConsented(): void {
   if (typeof window === "undefined") return;
@@ -31,8 +31,8 @@ export function initPostHogIfConsented(): void {
 }
 
 // Runs once at module-evaluation time (before any component mounts), so it
-// can't race with PostHogPageView's effect. Only actually inits if consent
-// was already granted in a prior session.
+// can't race with PostHogPageView's effect. Skips only if the visitor
+// previously opted out.
 if (typeof window !== "undefined") {
   initPostHogIfConsented();
 }
