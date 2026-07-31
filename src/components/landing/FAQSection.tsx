@@ -3,10 +3,11 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Accordion, type AccordionItem } from '@/components/ui/Accordion';
 import { LINKS } from '@/lib/links';
 
-// Single source of truth for the FAQ copy — rendered into the accordion below
-// and used to generate the matching FAQPage JSON-LD, so the two can never
-// drift out of sync.
-const faqItems: AccordionItem[] = [
+// Single source of truth for the homepage FAQ copy — rendered into the
+// accordion below and used to generate the matching FAQPage JSON-LD, so the
+// two can never drift out of sync. Other pages (e.g. /panchang, /kundli)
+// pass their own `items` instead of this default.
+const homeFaqItems: AccordionItem[] = [
   {
     question: 'What is a Vedic birth chart (Kundli)?',
     answer:
@@ -62,15 +63,25 @@ const faqItems: AccordionItem[] = [
   },
 ];
 
-export function FAQSection() {
+export function FAQSection({
+  id = 'faq',
+  eyebrow = 'Questions',
+  title = 'Before you start',
+  items = homeFaqItems,
+}: {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  items?: AccordionItem[];
+} = {}) {
   return (
-    <Section tone="paper" id="faq">
-      <SectionHeading eyebrow="Questions" title="Before you start" />
+    <Section tone="paper" id={id}>
+      <SectionHeading eyebrow={eyebrow} title={title} />
 
       {/* 840px per the redesign spec (was max-w-2xl/672px) — gives the
           longer answers more room per line. */}
       <div className="mx-auto mt-12 max-w-[840px]">
-        <Accordion items={faqItems} />
+        <Accordion items={items} />
       </div>
 
       <script
@@ -79,7 +90,7 @@ export function FAQSection() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: faqItems.map((f) => ({
+            mainEntity: items.map((f) => ({
               '@type': 'Question',
               name: f.question,
               acceptedAnswer: { '@type': 'Answer', text: f.answer },

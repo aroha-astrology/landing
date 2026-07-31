@@ -18,6 +18,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/panchang`,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/kundli`,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/blog`,
       changeFrequency: 'weekly',
       priority: 0.8,
