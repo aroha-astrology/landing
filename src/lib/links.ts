@@ -17,7 +17,14 @@ export const LINKS = {
   panchang: `${APP_URL}/panchang`,
   compatibility: `${APP_URL}/compatibility`,
   vastu: `${APP_URL}/vastu`,
-  privacy: `${APP_URL}/legal/privacy`,
-  terms: `${APP_URL}/legal/terms`,
-  disclaimer: `${APP_URL}/legal/disclaimer`,
+  // Legal documents are served by THIS site, not the app. These are the URLs
+  // the Play Store listing and the backend's GET /legal/current point at, and
+  // they must resolve without a login — a reviewer will not install the app to
+  // read the privacy policy. They used to point at app.arohaastrology.in while
+  // arohaastrology.in/legal/* 404'd. The app renders its own in-app copies at
+  // the same paths for the point-of-consent flow; both exist on purpose.
+  privacy: '/legal/privacy',
+  terms: '/legal/terms',
+  disclaimer: '/legal/disclaimer',
+  deleteAccount: '/delete-account',
 } as const;

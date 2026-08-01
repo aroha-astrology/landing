@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getAllSlugs } from '@/lib/blog';
+import { LEGAL_DOCS } from '@/lib/legal-content';
 
 // Keep in sync with SITE_URL in layout.tsx — see the note there on why every
 // entry must be the www host. A sitemap of redirecting URLs indexes nothing.
@@ -32,7 +33,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    // Low priority but deliberately listed: these are the URLs the Play Store
+    // listing points at, and an unindexed policy page is a reviewer's 404
+    // waiting to happen.
+    {
+      url: `${SITE_URL}/delete-account`,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
+
+  const legalRoutes: MetadataRoute.Sitemap = (
+    Object.keys(LEGAL_DOCS) as (keyof typeof LEGAL_DOCS)[]
+  ).map((slug) => ({
+    url: `${SITE_URL}/legal/${slug}`,
+    changeFrequency: 'yearly',
+    priority: 0.3,
+  }));
 
   const postRoutes: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
     url: `${SITE_URL}/blog/${slug}`,
@@ -40,5 +57,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...postRoutes];
+  return [...staticRoutes, ...legalRoutes, ...postRoutes];
 }
