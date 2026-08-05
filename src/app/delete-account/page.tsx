@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Section } from '@/components/ui/Section';
-import { LINKS } from '@/lib/links';
+import { PLAY_STORE_URL } from '@/lib/links';
 
 /**
  * Google Play requires an account-deletion request URL that is reachable
@@ -62,7 +62,7 @@ export default function DeleteAccountPage() {
               on you first — Settings → Download My Data.
             </p>
             <p className="mt-4">
-              <Link href={LINKS.app} className="text-accent hover:underline">
+              <Link href={PLAY_STORE_URL} className="text-accent hover:underline">
                 Open the app
               </Link>
             </p>
