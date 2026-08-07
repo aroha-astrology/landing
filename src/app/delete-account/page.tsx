@@ -61,8 +61,8 @@ export default function DeleteAccountPage() {
               This submits a deletion request, which we review before acting on it — normally
               within three to seven business days. Nothing is erased until then, so your account
               keeps working, though we stop sending you notifications and stop generating new
-              readings from the moment you ask. You can also export a copy of everything we hold
-              on you first — Settings → Download My Data.
+              readings from the moment you ask. You can also request a copy of everything we hold
+              on you first — write to the Grievance Officer before confirming deletion.
             </p>
             <p className="mt-4">
               <Link href={PLAY_STORE_URL} className="text-accent hover:underline">
