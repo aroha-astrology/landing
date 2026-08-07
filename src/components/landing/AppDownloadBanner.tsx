@@ -112,21 +112,12 @@ export function AppDownloadBanner() {
 
       <div className="flex gap-1.5 flex-shrink-0" data-no-translate>
         {platform === 'android' ? (
-          <>
-            <a
-              href={intentUrl(window.location.pathname)}
-              className="px-3 py-1.5 rounded-full text-[12px] font-semibold no-underline border border-accent/50 text-accent"
-            >
-              Open
-            </a>
-            <a
-              href={APK_URL}
-              download
-              className="px-3 py-1.5 rounded-full text-[12px] font-bold no-underline bg-accent text-white"
-            >
-              Install
-            </a>
-          </>
+          <a
+            href={intentUrl(window.location.pathname)}
+            className="px-3 py-1.5 rounded-full text-[12px] font-bold no-underline bg-accent text-white"
+          >
+            Open
+          </a>
         ) : (
           <span className="px-3 py-1.5 rounded-full text-[12px] font-semibold border border-accent/25 text-ink-muted opacity-70">
             Coming soon
