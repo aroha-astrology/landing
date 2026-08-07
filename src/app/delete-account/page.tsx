@@ -58,7 +58,10 @@ export default function DeleteAccountPage() {
               </li>
             </ol>
             <p className="mt-3 leading-relaxed text-ink-2">
-              Deletion takes effect immediately. You can also export a copy of everything we hold
+              This submits a deletion request, which we review before acting on it — normally
+              within three to seven business days. Nothing is erased until then, so your account
+              keeps working, though we stop sending you notifications and stop generating new
+              readings from the moment you ask. You can also export a copy of everything we hold
               on you first — Settings → Download My Data.
             </p>
             <p className="mt-4">
@@ -102,10 +105,13 @@ export default function DeleteAccountPage() {
             <h2 className="font-display text-xl font-medium text-ink">What is retained, and why</h2>
             <p className="mt-3 leading-relaxed text-ink-2">
               Your mobile number and authentication identifier stay on the emptied account shell.
-              This is a security measure rather than a use of your data: mobile numbers in India are
-              recycled to new subscribers, and keeping the shell is what guarantees that whoever is
-              issued your number next gets a blank, freshly-onboardable account instead of
-              inheriting anything of yours.
+              This is a security and anti-abuse measure rather than a use of your data. Mobile
+              numbers in India are recycled to new subscribers, and keeping the shell is what
+              guarantees that whoever is issued your number next gets a blank, freshly-onboardable
+              account instead of inheriting anything of yours. It also means the one-time sign-up
+              credit cannot be claimed again and again by deleting and re-registering the same
+              number. If you sign in on that number later you return to the same emptied account —
+              we will say so, and you will need to enter your details afresh.
             </p>
             <p className="mt-3 leading-relaxed text-ink-2">
               The consent audit log keeps a skeleton record — which consent, which document version,
