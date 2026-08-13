@@ -2,6 +2,12 @@
 // Nothing should ever hardcode `app.arohaastrology.in` or `href="#"` — import
 // from here so a domain change is a one-line edit.
 
+// MUST include `www.` — the apex domain 308-redirects to www at the edge, so
+// a bare-apex URL in JSON-LD @id/url fields points at something that
+// redirects away from itself. Used to link Organization/WebSite/WebPage
+// entities together across pages via matching @id values.
+export const SITE_URL = 'https://www.arohaastrology.in';
+
 // Not live on the App Store yet — every "get the app" CTA on the site opens
 // the AppCTA picker (Android via this link, iOS marked Coming soon) rather
 // than linking straight into the web app. See src/components/ui/AppCTA.tsx.

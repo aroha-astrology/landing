@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Section } from '@/components/ui/Section';
 import { getAllSlugs, getPost } from '@/lib/blog';
+import { SITE_URL } from '@/lib/links';
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -62,14 +63,34 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   const { title, description, date, tags } = post.frontmatter;
+  const pageUrl = `${SITE_URL}/blog/${slug}`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: title,
-    description,
-    datePublished: date,
-    author: { '@type': 'Organization', name: 'Aroha Astrology' },
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        '@id': `${pageUrl}#article`,
+        headline: title,
+        description,
+        datePublished: date,
+        url: pageUrl,
+        mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+        isPartOf: { '@id': `${SITE_URL}/blog#webpage` },
+        author: { '@id': `${SITE_URL}/#organization` },
+        publisher: { '@id': `${SITE_URL}/#organization` },
+        keywords: tags?.length ? tags.join(', ') : undefined,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+          { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
+        ],
+      },
+    ],
   };
 
   return (

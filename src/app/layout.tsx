@@ -16,6 +16,7 @@ import { TranslationProvider } from '@/components/providers/TranslationProvider'
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import { AppDownloadBanner } from '@/components/landing/AppDownloadBanner';
+import { SITE_URL, PLAY_STORE_URL } from '@/lib/links';
 
 const publicSans = Public_Sans({
   subsets: ['latin', 'latin-ext'],
@@ -88,11 +89,6 @@ const notoGurmukhi = Noto_Sans_Gurmukhi({
   weight: ['400', '500', '600', '700'],
 });
 
-// MUST include `www.` — the apex domain 308-redirects to www at the edge, so a
-// bare-apex canonical points every page at a URL that redirects away from
-// itself. That mismatch is what made Google report "Redirect error" for the
-// whole sitemap and index exactly one URL. Do not "tidy" the www off.
-const SITE_URL = 'https://www.arohaastrology.in';
 const SITE_NAME = 'Aroha Astrology';
 const SITE_DESCRIPTION =
   'Free Vedic birth chart, Moon sign calculator and daily Panchang — Swiss Ephemeris precision with an AI astrologer that explains what it means, in your language.';
@@ -151,37 +147,58 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: SITE_NAME,
-    url: SITE_URL,
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: SITE_NAME,
-    url: SITE_URL,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE_URL}/blog?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
+// One entry per script the LanguageSwitcher exposes — mirrors the Noto font
+// set above (Devanagari also covers Marathi, Gurmukhi covers Punjabi).
+const AVAILABLE_LANGUAGES = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'es', 'fr', 'de'];
+
+// Organization + WebSite load on every page via this root layout, so any
+// page-level JSON-LD can link back to them by @id (e.g. WebPage.about,
+// SoftwareApplication.publisher) without redeclaring the whole entity.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        '@id': `${SITE_URL}/#logo`,
+        url: `${SITE_URL}/brand/aroha-logo-navy.png`,
+      },
+      image: { '@id': `${SITE_URL}/#logo` },
+      description: SITE_DESCRIPTION,
+      founder: { '@type': 'Person', name: 'Subir Dutta', jobTitle: 'Founder & Developer' },
+      sameAs: [PLAY_STORE_URL],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: 'subir@arohaastrology.in',
+        areaServed: 'IN',
+        availableLanguage: AVAILABLE_LANGUAGES,
+      },
+      foundingLocation: {
+        '@type': 'Place',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Bengaluru',
+          addressRegion: 'Karnataka',
+          addressCountry: 'IN',
+        },
+      },
     },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: SITE_NAME,
-    applicationCategory: 'LifestyleApplication',
-    operatingSystem: 'Android, iOS, Web',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: 'en',
     },
-  },
-];
+  ],
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
