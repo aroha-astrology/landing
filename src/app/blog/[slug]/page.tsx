@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Section } from '@/components/ui/Section';
+import { AppCTA } from '@/components/ui/AppCTA';
 import { getAllSlugs, getPost } from '@/lib/blog';
 import { SITE_URL } from '@/lib/links';
 
@@ -102,6 +103,13 @@ export default async function BlogPostPage({ params }: PageProps) {
       />
 
       <article className="mx-auto max-w-3xl">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-rule bg-paper-raised px-5 py-4">
+          <p className="text-sm font-medium text-ink-2">
+            Want your own chart, not just the theory? Get the free Aroha Astrology app.
+          </p>
+          <AppCTA variant="outline">Get the App</AppCTA>
+        </div>
+
         <header className="mb-10">
           <time
             dateTime={date}
