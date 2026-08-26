@@ -24,4 +24,5 @@ export const LINKS = {
   terms: '/legal/terms',
   disclaimer: '/legal/disclaimer',
   deleteAccount: '/delete-account',
+  support: '/support',
 } as const;

@@ -18,6 +18,7 @@ const LEGAL_LINKS: { href: string; label: string }[] = [
   { href: LINKS.terms, label: 'Terms' },
   { href: LINKS.disclaimer, label: 'Disclaimer' },
   { href: LINKS.deleteAccount, label: 'Delete account' },
+  { href: LINKS.support, label: 'Support' },
 ];
 
 /**
