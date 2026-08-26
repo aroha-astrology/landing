@@ -4,6 +4,7 @@ import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Accordion, type AccordionItem } from '@/components/ui/Accordion';
 import { LINKS } from '@/lib/links';
+import { SupportForm } from '@/components/support/SupportForm';
 
 /**
  * The App Store Connect "Support URL" field pointed at the site root, which
@@ -13,10 +14,12 @@ import { LINKS } from '@/lib/links';
  * behind sign-in, so a reviewer can never reach it. This page is the public,
  * unauthenticated substitute App Store Connect's Support URL should point at.
  *
- * Deliberately static: no form, no backend. A public unauthenticated ticket
- * endpoint would be a new spam surface and a second, less-tested path into
- * the support pipeline the app already runs correctly — same reasoning
- * delete-account/page.tsx used for account deletion.
+ * The form below posts to /api/support, which proxies POST
+ * /v1/public/support/tickets on the backend — a real ticket row
+ * (contactName/contactEmail instead of userId) that lands in the SAME admin
+ * queue as in-app tickets (frontend/app/admin/tickets/page.tsx), not a side
+ * channel. See jyotish-backend's
+ * docs/superpowers/specs/2026-08-26-public-support-tickets-design.md.
  */
 
 const SUPPORT_EMAIL = 'subir@arohaastrology.in';
@@ -84,6 +87,16 @@ export default function SupportPage() {
               with your registered mobile number and a description of the issue. We acknowledge
               every message within 24 hours and aim to resolve it within 15 days.
             </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-xl font-medium text-ink">Send us a message</h2>
+            <p className="mt-3 leading-relaxed text-ink-2">
+              Prefer a form? Fill this in and we&apos;ll reply by email.
+            </p>
+            <div className="mt-4">
+              <SupportForm />
+            </div>
           </section>
 
           <section>
