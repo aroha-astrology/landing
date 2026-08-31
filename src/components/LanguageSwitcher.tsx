@@ -6,20 +6,18 @@ import { useStore } from '@/store/useStore';
 
 type LangOption = { code: string; label: string; native: string };
 
+// Only languages with full LANDING_DICT coverage for the current homepage copy
+// belong here — bn/ta/te/mr/gu/kn/ml/pa/de were listed but silently no-op on
+// this page (their dictionary entries are either missing or leftover from an
+// older redesign), which read as a broken switcher rather than an untranslated
+// one. Re-add a code here only once its LANDING_DICT block covers this page's
+// actual strings (see src/lib/i18n/dictionary.ts's "2026-07-22 redesign
+// additions" sections for hi/es/fr as the template).
 export const LANGUAGES: LangOption[] = [
   { code: 'en', label: 'English', native: 'English' },
   { code: 'hi', label: 'Hindi', native: 'हिन्दी' },
-  { code: 'bn', label: 'Bengali', native: 'বাংলা' },
-  { code: 'ta', label: 'Tamil', native: 'தமிழ்' },
-  { code: 'te', label: 'Telugu', native: 'తెలుగు' },
-  { code: 'mr', label: 'Marathi', native: 'मराठी' },
-  { code: 'gu', label: 'Gujarati', native: 'ગુજરાતી' },
-  { code: 'kn', label: 'Kannada', native: 'ಕನ್ನಡ' },
-  { code: 'ml', label: 'Malayalam', native: 'മലയാളം' },
-  { code: 'pa', label: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
   { code: 'es', label: 'Spanish', native: 'Español' },
   { code: 'fr', label: 'French', native: 'Français' },
-  { code: 'de', label: 'German', native: 'Deutsch' },
 ];
 
 export function LanguageSwitcher() {
