@@ -28,6 +28,15 @@ const jsonLd = {
       operatingSystem: 'Android',
       publisher: { '@id': `${SITE_URL}/#organization` },
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: PLAY_STORE_URL },
+      // Real Play Store numbers as of 2026-08-31 — update by hand when they
+      // drift meaningfully; a stale rating here is worse than none.
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        ratingCount: '19',
+        reviewCount: '19',
+        bestRating: '5',
+      },
       featureList: [
         'Janma Kundli (Vedic birth chart)',
         'Vimshottari Dasha timeline',
