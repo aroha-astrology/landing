@@ -2174,6 +2174,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Product': 'उत्पाद',
     'Legal': 'कानूनी',
     'Get started': 'आरंभ करें',
+    'About': 'हमारे बारे में',
     'Disclaimer': 'अस्वीकरण',
     'Vedic astrology backed by Swiss Ephemeris precision, explained in plain language. You can change your language any time from the switcher in the navigation bar above.':
       'स्विस एफेमेरिस की सटीकता द्वारा समर्थित वैदिक ज्योतिष, सरल भाषा में समझाया गया। आप ऊपर नेविगेशन बार में स्विचर से किसी भी समय अपनी भाषा बदल सकते हैं।',
@@ -2598,6 +2599,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Product': 'Producto',
     'Legal': 'Legal',
     'Get started': 'Empezar',
+    'About': 'Acerca de',
     'Disclaimer': 'Descargo de responsabilidad',
     'Vedic astrology backed by Swiss Ephemeris precision, explained in plain language. You can change your language any time from the switcher in the navigation bar above.':
       'Astrología védica respaldada por la precisión de Swiss Ephemeris, explicada en lenguaje sencillo. Puedes cambiar tu idioma en cualquier momento desde el selector en la barra de navegación superior.',
@@ -2750,6 +2752,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Product': 'Produit',
     'Legal': 'Légal',
     'Get started': 'Commencer',
+    'About': 'À propos',
     'Disclaimer': 'Avis de non-responsabilité',
     'Vedic astrology backed by Swiss Ephemeris precision, explained in plain language. You can change your language any time from the switcher in the navigation bar above.':
       "L'astrologie védique soutenue par la précision de la Swiss Ephemeris, expliquée en langage clair. Vous pouvez changer de langue à tout moment à l'aide du sélecteur dans la barre de navigation ci-dessus.",

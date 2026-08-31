@@ -14,6 +14,7 @@ const PRODUCT_LINKS: { href: string; label: string }[] = [
 ];
 
 const LEGAL_LINKS: { href: string; label: string }[] = [
+  { href: '/about', label: 'About' },
   { href: LINKS.privacy, label: 'Privacy' },
   { href: LINKS.terms, label: 'Terms' },
   { href: LINKS.disclaimer, label: 'Disclaimer' },

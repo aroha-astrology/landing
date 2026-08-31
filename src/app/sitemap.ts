@@ -30,6 +30,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${SITE_URL}/about`,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
     // Low priority but deliberately listed: these are the URLs the Play Store
     // listing points at, and an unindexed policy page is a reviewer's 404
     // waiting to happen.
