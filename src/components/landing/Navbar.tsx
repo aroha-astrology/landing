@@ -7,6 +7,7 @@ const NAV_LINKS: { href: string; label: string }[] = [
   { href: '#features', label: 'Features' },
   { href: '#moon-sign', label: 'Moon sign tool' },
   { href: '#languages', label: 'Languages' },
+  { href: '/blog', label: 'Blog' },
   { href: '#faq', label: 'FAQ' },
 ];
 

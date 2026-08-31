@@ -9,6 +9,7 @@ export type BlogFrontmatter = {
   description: string;
   date: string; // YYYY-MM-DD
   tags: string[];
+  faqs?: { question: string; answer: string }[];
 };
 
 export type BlogPost = { slug: string; frontmatter: BlogFrontmatter; content: string };

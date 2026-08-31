@@ -63,7 +63,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const { title, description, date, tags } = post.frontmatter;
+  const { title, description, date, tags, faqs } = post.frontmatter;
   const pageUrl = `${SITE_URL}/blog/${slug}`;
 
   const jsonLd = {
@@ -91,6 +91,19 @@ export default async function BlogPostPage({ params }: PageProps) {
           { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
         ],
       },
+      ...(faqs?.length
+        ? [
+            {
+              '@type': 'FAQPage',
+              '@id': `${pageUrl}#faq`,
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.question,
+                acceptedAnswer: { '@type': 'Answer', text: f.answer },
+              })),
+            },
+          ]
+        : []),
     ],
   };
 
