@@ -3,7 +3,7 @@ import { PanchangSection } from '@/components/landing/PanchangSection';
 import { FAQSection } from '@/components/landing/FAQSection';
 
 export const metadata: Metadata = {
-  title: "Today's Panchang — Tithi, Nakshatra, Rahu Kaal | Aroha Astrology",
+  title: "Today's Panchang — Tithi, Nakshatra, Rahu Kaal",
   description:
     "Today's Panchang computed live from the Swiss Ephemeris — tithi, nakshatra, yoga, karana, sunrise/sunset and Rahu Kaal, updated daily.",
   alternates: { canonical: '/panchang' },

@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}/about`;
 const CONTACT_EMAIL = 'subir@arohaastrology.in';
 
 export const metadata: Metadata = {
-  title: 'About — Aroha Astrology',
+  title: 'About',
   description:
     'Who builds Aroha Astrology, how its readings are generated (Swiss Ephemeris computation plus AI-explained classical Vedic texts), and our approach to accuracy.',
   alternates: { canonical: '/about' },

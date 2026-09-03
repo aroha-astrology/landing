@@ -8,7 +8,7 @@ import { SITE_URL } from '@/lib/links';
 const PAGE_URL = `${SITE_URL}/blog`;
 
 export const metadata: Metadata = {
-  title: 'Blog — Aroha Astrology',
+  title: 'Blog',
   description:
     'Guides to Vedic astrology — Moon signs, Rashi, Nakshatras, Vimshottari Dasha and more, explained clearly and accurately.',
   alternates: { canonical: '/blog' },

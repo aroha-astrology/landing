@@ -3,9 +3,9 @@ import { MoonSignSection } from '@/components/landing/MoonSignSection';
 import { SITE_URL } from '@/lib/links';
 
 const PAGE_URL = `${SITE_URL}/moon-sign`;
-const TITLE = 'Free Moon Sign Calculator (Rashi) — Aroha Astrology';
+const TITLE = 'Free Moon Sign Calculator (Rashi)';
 const DESCRIPTION =
-  'Calculate your real Vedic Moon sign (Chandra Rashi) free, using the sidereal zodiac — enter your birth date, time and place for an instant, accurate result.';
+  'Calculate your real Vedic Moon sign (Chandra Rashi) free, using the sidereal zodiac and your birth date, time and place.';
 
 export const metadata: Metadata = {
   title: TITLE,

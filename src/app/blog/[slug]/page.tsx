@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         url: pageUrl,
         mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
         isPartOf: { '@id': `${SITE_URL}/blog#webpage` },
-        author: { '@id': `${SITE_URL}/#organization` },
+        author: { '@id': `${SITE_URL}/#author-yogi-baba` },
         publisher: { '@id': `${SITE_URL}/#organization` },
         keywords: tags?.length ? tags.join(', ') : undefined,
       },

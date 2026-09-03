@@ -55,7 +55,7 @@ const faqItems: AccordionItem[] = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Support — Aroha Astrology',
+  title: 'Support',
   description: 'Get help with your Aroha Astrology account, reports, or payments.',
   alternates: { canonical: '/support' },
 };

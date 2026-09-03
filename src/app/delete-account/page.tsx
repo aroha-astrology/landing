@@ -22,7 +22,7 @@ import { PLAY_STORE_URL } from '@/lib/links';
 const GRIEVANCE_EMAIL = 'subir@arohaastrology.in';
 
 export const metadata: Metadata = {
-  title: 'Delete Your Account — Aroha Astrology',
+  title: 'Delete Your Account',
   description:
     'How to delete your Aroha Astrology account and what happens to your data when you do.',
   alternates: { canonical: '/delete-account' },

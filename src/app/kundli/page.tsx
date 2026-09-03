@@ -3,7 +3,7 @@ import { KundliSection } from '@/components/landing/KundliSection';
 import { FAQSection } from '@/components/landing/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Free Kundli Generator — Vedic Birth Chart Online | Aroha Astrology',
+  title: 'Free Kundli Generator — Vedic Birth Chart Online',
   description:
     'Generate your free Kundli (Vedic birth chart) online — ascendant, houses and planet placements computed from real Swiss Ephemeris data, not a template.',
   alternates: { canonical: '/kundli' },

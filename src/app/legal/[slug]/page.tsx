@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const doc = LEGAL_DOCS[slug as LegalDoc['slug']];
   if (!doc) return {};
 
-  const title = `${doc.title} — Aroha Astrology`;
+  const title = doc.title;
   const description = DESCRIPTIONS[doc.slug];
 
   return {

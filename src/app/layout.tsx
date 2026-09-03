@@ -120,7 +120,7 @@ export const metadata: Metadata = {
     'swiss ephemeris',
   ],
   applicationName: SITE_NAME,
-  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  authors: [{ name: 'Yogi Baba', url: SITE_URL }],
   alternates: { canonical: '/' },
   robots: {
     index: true,
@@ -187,6 +187,15 @@ const jsonLd = {
           addressCountry: 'IN',
         },
       },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#author-yogi-baba`,
+      name: 'Yogi Baba',
+      jobTitle: 'Vedic Astrology Content Advisor',
+      description:
+        'Reviews and guides the Vedic astrology methodology behind Aroha Astrology — classical Parashari, Jaimini and KP traditions, expressed through Swiss Ephemeris-accurate, AI-generated explanations.',
+      worksFor: { '@id': `${SITE_URL}/#organization` },
     },
     {
       '@type': 'WebSite',
