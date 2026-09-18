@@ -147,7 +147,6 @@ export const DICT: Record<Lang, Record<string, string>> = {
     // Kundli Generate
     'Generate Kundli': 'कुंडली बनाएं',
     '🪐 Generate Kundli': '🪐 कुंडली बनाएं',
-    'Swiss Ephemeris precision · AI-powered interpretation': 'स्विस एफेमेरिस सटीकता · AI-संचालित व्याख्या',
     'Birth Details': 'जन्म विवरण',
     'Additional Info': 'अतिरिक्त जानकारी',
     'Preferences': 'प्राथमिकताएं',
@@ -338,7 +337,6 @@ export const DICT: Record<Lang, Record<string, string>> = {
     'Credits & Payments': 'क्रेडिट और भुगतान',
     'Current Balance': 'वर्तमान शेष',
     'credits available': 'क्रेडिट उपलब्ध',
-    '✦ 1 credit = 1 AI reading': '✦ 1 क्रेडिट = 1 AI पाठन',
     '✦ Never expires': '✦ कभी समाप्त नहीं होता',
     'Starter': 'स्टार्टर',
     'Popular': 'लोकप्रिय',
@@ -2079,10 +2077,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Get my free chart': 'मेरी मुफ़्त कुंडली प्राप्त करें',
     'Vedic astrology, done properly': 'वैदिक ज्योतिष, सही तरीके से',
     'Your birth chart, read properly.': 'आपकी जन्म कुंडली, सही ढंग से पढ़ी गई।',
-    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
-      'स्विस एफेमेरिस की सटीकता, और एक AI ज्योतिषी जो कुछ भी पूछने पर बता सके — 13 भाषाओं में।',
-    'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
-      'स्विस एफेमेरिस की सटीकता आपके जन्म के सटीक क्षण में प्रत्येक ग्रह को मैप करती है, और एक AI सरल भाषा में इसका अर्थ समझाता है — 13 भाषाओं में।',
+    'Swiss Ephemeris precision, a Vedic Astrologer that can answer anything, in 7 Indian languages.':
+      'स्विस एफेमेरिस की सटीकता, और एक वैदिक ज्योतिषी जो कुछ भी पूछने पर बता सके — 7 भारतीय भाषाओं में।',
     'Try the free Moon sign tool': 'मुफ़्त चंद्र राशि टूल आज़माएं',
     'Grahas mapped': 'ग्रह मैप किए गए',
     'Nakshatras': 'नक्षत्र',
@@ -2111,8 +2107,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
       'आपकी जन्म तिथि, समय और स्थान — शुरू करने के लिए कुंडली को बस इसी की आवश्यकता है।',
     'Swiss Ephemeris precision and the Lahiri ayanamsa — the same standard India’s government almanac uses.':
       'स्विस एफेमेरिस सटीकता और लाहिरी अयनांश — वही मानक जिसका उपयोग भारत सरकार का पंचांग करता है।',
-    'An AI grounded in your real chart data answers follow-up questions, in your language.':
-      'आपके वास्तविक कुंडली डेटा पर आधारित एक AI आपकी भाषा में आपके सवालों के जवाब देता है।',
+    'Grounded in your real chart data, the Vedic Astrologer answers follow-up questions, in your language.':
+      'आपके वास्तविक कुंडली डेटा पर आधारित, वैदिक ज्योतिषी आपकी भाषा में आपके सवालों के जवाब देता है।',
     'What you get': 'आपको क्या मिलता है',
     'Everything in one chart': 'एक ही कुंडली में सब कुछ',
     'Explore the app': 'ऐप एक्सप्लोर करें',
@@ -2122,7 +2118,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Vimshottari Dasha': 'विंशोत्तरी दशा',
     'The timeline of planetary periods shaping different phases of your life.':
       'आपके जीवन के विभिन्न चरणों को आकार देने वाली ग्रहों की अवधियों की समयरेखा।',
-    'AI chat astrologer': 'AI चैट ज्योतिषी',
+    'Vedic Astrologer chat': 'वैदिक ज्योतिषी चैट',
     'Ask follow-up questions, grounded in your actual chart, in your language.':
       'अपनी भाषा में, अपनी वास्तविक कुंडली पर आधारित प्रश्न पूछें।',
     'Divisional charts (D1–D60)': 'वर्गीय कुंडलियाँ (D1-D60)',
@@ -2166,8 +2162,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Generating your birth chart and using the free Moon-sign tool cost nothing. Some deeper reports and features run on a credit system, which is shown clearly before you use them.':
       'आपकी जन्म कुंडली बनाने और मुफ़्त चंद्र-राशि टूल का उपयोग करने में कोई लागत नहीं आती है। कुछ गहरी रिपोर्ट और सुविधाएँ क्रेडिट प्रणाली पर चलती हैं, जो उनका उपयोग करने से पहले स्पष्ट रूप से दिखाई जाती हैं।',
     'What languages does it support?': 'यह किन भाषाओं का समर्थन करता है?',
-    'Aroha currently supports 13 languages, so you can read your chart and chat with the AI astrologer in the language you think in.':
-      'आरोहा वर्तमान में 13 भाषाओं का समर्थन करता है, इसलिए आप अपनी कुंडली पढ़ सकते हैं और अपनी सोचने वाली भाषा में AI ज्योतिषी के साथ चैट कर सकते हैं।',
+    'Aroha currently supports 7 Indian languages, so you can read your chart and chat with the Vedic Astrologer in the language you think in.':
+      'आरोहा वर्तमान में 7 भारतीय भाषाओं का समर्थन करता है, इसलिए आप अपनी कुंडली पढ़ सकते हैं और अपनी सोचने वाली भाषा में वैदिक ज्योतिषी के साथ चैट कर सकते हैं।',
     "Does this work if I wasn't born in India?": 'क्या यह काम करता है अगर मैं भारत में पैदा नहीं हुआ था?',
     'Yes. The underlying calculation, the Swiss Ephemeris, works for any birth location worldwide — it needs only your birth date, time and place, wherever that was.':
       'हां। अंतर्निहित गणना, स्विस एफेमेरिस, दुनिया भर में किसी भी जन्म स्थान के लिए काम करती है — इसे केवल आपके जन्म की तारीख, समय और स्थान की आवश्यकता होती है, चाहे वह कहीं भी हो।',
@@ -2205,9 +2201,9 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Can I check compatibility with a partner?': 'क्या मैं किसी साथी के साथ अनुकूलता जांच सकता/सकती हूं?',
     "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
       'हां — आरोहा में अष्टकूट (गुण मिलान) शैली की अनुकूलता मिलान शामिल है, जो ऐप में जाने पर दो कुंडलियों की तुलना करके देखती है कि मुख्य ग्रह स्थितियां कैसे मेल खाती हैं।',
-    "How accurate is the AI astrologer's interpretation?": 'AI ज्योतिषी की व्याख्या कितनी सटीक है?',
-    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
-      'कुंडली स्वयं — ग्रह स्थिति, भाव, दशाएं — स्विस एफेमेरिस द्वारा गणना की जाती है, वही सटीकता इंजन जिस पर वेधशालाएं भरोसा करती हैं, इसलिए वह हिस्सा खगोलीय रूप से सटीक है। AI का काम केवल यह समझाना है कि वह डेटा परंपरागत रूप से क्या अर्थ रखता है, सरल भाषा में; किसी भी ज्योतिषीय रीडिंग की तरह, यह चिंतन का एक साधन है, वैज्ञानिक भविष्यवाणी नहीं।',
+    "How accurate is the Vedic Astrologer's interpretation?": 'वैदिक ज्योतिषी की व्याख्या कितनी सटीक है?',
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The Vedic Astrologer's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      'कुंडली स्वयं — ग्रह स्थिति, भाव, दशाएं — स्विस एफेमेरिस द्वारा गणना की जाती है, वही सटीकता इंजन जिस पर वेधशालाएं भरोसा करती हैं, इसलिए वह हिस्सा खगोलीय रूप से सटीक है। वैदिक ज्योतिषी का काम केवल यह समझाना है कि वह डेटा परंपरागत रूप से क्या अर्थ रखता है, सरल भाषा में; किसी भी ज्योतिषीय रीडिंग की तरह, यह चिंतन का एक साधन है, वैज्ञानिक भविष्यवाणी नहीं।',
   },
   bn: {
     'Horoscope': 'রাশিফল',
@@ -2491,10 +2487,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Get my free chart': 'Obtén mi carta astral gratis',
     'Vedic astrology, done properly': 'Astrología védica, hecha correctamente',
     'Your birth chart, read properly.': 'Tu carta astral, leída correctamente.',
-    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
-      'La precisión de Swiss Ephemeris y un astrólogo con IA que responde lo que sea, en 13 idiomas.',
-    'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
-      'La precisión de Swiss Ephemeris mapea cada planeta en tu momento exacto de nacimiento, y una IA explica lo que significa en lenguaje sencillo, en 13 idiomas.',
+    'Swiss Ephemeris precision, a Vedic Astrologer that can answer anything, in 7 Indian languages.':
+      'La precisión de Swiss Ephemeris y un astrólogo védico que responde lo que sea, en 7 idiomas de la India.',
     'Try the free Moon sign tool': 'Prueba la herramienta gratuita de signo lunar',
     'Grahas mapped': 'Grahas mapeados',
     'Nakshatras': 'Nakshatras',
@@ -2536,8 +2530,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
       'Tu fecha, hora y lugar de nacimiento: eso es todo lo que la carta necesita para empezar.',
     'Swiss Ephemeris precision and the Lahiri ayanamsa — the same standard India’s government almanac uses.':
       'La precisión de Swiss Ephemeris y el ayanamsa de Lahiri: el mismo estándar que utiliza el almanaque del gobierno de la India.',
-    'An AI grounded in your real chart data answers follow-up questions, in your language.':
-      'Una IA basada en los datos reales de tu carta responde a preguntas de seguimiento, en tu idioma.',
+    'Grounded in your real chart data, the Vedic Astrologer answers follow-up questions, in your language.':
+      'Basado en los datos reales de tu carta, el astrólogo védico responde a preguntas de seguimiento, en tu idioma.',
     'What you get': 'Lo que obtienes',
     'Everything in one chart': 'Todo en una sola carta',
     'Explore the app': 'Explora la aplicación',
@@ -2547,7 +2541,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Vimshottari Dasha': 'Vimshottari Dasha',
     'The timeline of planetary periods shaping different phases of your life.':
       'La línea de tiempo de los períodos planetarios que dan forma a diferentes fases de tu vida.',
-    'AI chat astrologer': 'Astrólogo de chat con IA',
+    'Vedic Astrologer chat': 'Chat con el astrólogo védico',
     'Ask follow-up questions, grounded in your actual chart, in your language.':
       'Haz preguntas de seguimiento, basadas en tu carta real, en tu idioma.',
     'Divisional charts (D1–D60)': 'Cartas divisionales (D1-D60)',
@@ -2591,8 +2585,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Generating your birth chart and using the free Moon-sign tool cost nothing. Some deeper reports and features run on a credit system, which is shown clearly before you use them.':
       'Generar tu carta astral y usar la herramienta gratuita de signo lunar no cuesta nada. Algunos informes y funciones más profundos funcionan con un sistema de créditos, que se muestra claramente antes de usarlos.',
     'What languages does it support?': '¿Qué idiomas admite?',
-    'Aroha currently supports 13 languages, so you can read your chart and chat with the AI astrologer in the language you think in.':
-      'Aroha actualmente admite 13 idiomas, para que puedas leer tu carta y chatear con el astrólogo de IA en el idioma en el que piensas.',
+    'Aroha currently supports 7 Indian languages, so you can read your chart and chat with the Vedic Astrologer in the language you think in.':
+      'Aroha actualmente admite 7 idiomas de la India, para que puedas leer tu carta y chatear con el astrólogo védico en el idioma en el que piensas.',
     "Does this work if I wasn't born in India?": '¿Funciona esto si no nací en la India?',
     'Yes. The underlying calculation, the Swiss Ephemeris, works for any birth location worldwide — it needs only your birth date, time and place, wherever that was.':
       'Sí. El cálculo subyacente, Swiss Ephemeris, funciona para cualquier lugar de nacimiento en todo el mundo: solo necesita tu fecha, hora y lugar de nacimiento, sea donde sea.',
@@ -2629,9 +2623,9 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Can I check compatibility with a partner?': '¿Puedo comprobar la compatibilidad con una pareja?',
     "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
       'Sí — Aroha incluye emparejamiento de compatibilidad estilo Ashtakoota (Guna Milan), que compara dos cartas astrales para ver cómo se alinean las posiciones clave, una vez que estés en la aplicación.',
-    "How accurate is the AI astrologer's interpretation?": '¿Qué tan precisa es la interpretación del astrólogo de IA?',
-    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
-      'La carta en sí (posiciones planetarias, casas, dashas) se calcula con Swiss Ephemeris, el mismo motor de precisión que usan los observatorios, así que esa parte es astronómicamente exacta. El trabajo de la IA es solo explicar qué significa tradicionalmente esa información, en lenguaje sencillo; como cualquier lectura astrológica, es una herramienta de reflexión, no una predicción científica.',
+    "How accurate is the Vedic Astrologer's interpretation?": '¿Qué tan precisa es la interpretación del astrólogo védico?',
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The Vedic Astrologer's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      'La carta en sí (posiciones planetarias, casas, dashas) se calcula con Swiss Ephemeris, el mismo motor de precisión que usan los observatorios, así que esa parte es astronómicamente exacta. El trabajo del astrólogo védico es solo explicar qué significa tradicionalmente esa información, en lenguaje sencillo; como cualquier lectura astrológica, es una herramienta de reflexión, no una predicción científica.',
   },
 
   fr: {
@@ -2644,10 +2638,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Get my free chart': 'Obtenir mon thème astral gratuit',
     'Vedic astrology, done properly': "L'astrologie védique, faite correctement",
     'Your birth chart, read properly.': 'Votre thème astral, lu correctement.',
-    'Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.':
-      'La précision de Swiss Ephemeris et un astrologue IA qui répond à tout, en 13 langues.',
-    'Swiss Ephemeris precision maps every planet at your exact moment of birth, and an AI explains what it means in plain language — in 13 languages.':
-      'La précision de Swiss Ephemeris cartographie chaque planète au moment exact de votre naissance, et une IA explique ce que cela signifie en langage clair — en 13 langues.',
+    'Swiss Ephemeris precision, a Vedic Astrologer that can answer anything, in 7 Indian languages.':
+      'La précision de Swiss Ephemeris et un astrologue védique qui répond à tout, en 7 langues indiennes.',
     'Try the free Moon sign tool': "Essayez l'outil de signe lunaire gratuit",
     'Grahas mapped': 'Grahas cartographiés',
     'Nakshatras': 'Nakshatras',
@@ -2689,8 +2681,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
       "Votre date, heure et lieu de naissance — c'est tout ce dont le thème a besoin pour commencer.",
     'Swiss Ephemeris precision and the Lahiri ayanamsa — the same standard India’s government almanac uses.':
       "La précision de Swiss Ephemeris et l'ayanamsa de Lahiri — la même norme utilisée par l'almanach du gouvernement indien.",
-    'An AI grounded in your real chart data answers follow-up questions, in your language.':
-      'Une IA basée sur les données réelles de votre thème répond aux questions de suivi, dans votre langue.',
+    'Grounded in your real chart data, the Vedic Astrologer answers follow-up questions, in your language.':
+      'Basé sur les données réelles de votre thème, l\'astrologue védique répond aux questions de suivi, dans votre langue.',
     'What you get': 'Ce que vous obtenez',
     'Everything in one chart': 'Tout dans un seul thème',
     'Explore the app': "Explorer l'application",
@@ -2700,7 +2692,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Vimshottari Dasha': 'Vimshottari Dasha',
     'The timeline of planetary periods shaping different phases of your life.':
       'La chronologie des périodes planétaires qui façonnent les différentes phases de votre vie.',
-    'AI chat astrologer': 'Astrologue de chat IA',
+    'Vedic Astrologer chat': 'Chat avec l\'astrologue védique',
     'Ask follow-up questions, grounded in your actual chart, in your language.':
       'Posez des questions de suivi, basées sur votre thème réel, dans votre langue.',
     'Divisional charts (D1–D60)': 'Thèmes divisionnels (D1-D60)',
@@ -2744,8 +2736,8 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Generating your birth chart and using the free Moon-sign tool cost nothing. Some deeper reports and features run on a credit system, which is shown clearly before you use them.':
       'La génération de votre thème astral et l\'utilisation de l\'outil gratuit de signe lunaire ne coûtent rien. Certains rapports et fonctionnalités plus approfondis fonctionnent sur un système de crédits, qui est clairement affiché avant que vous ne les utilisiez.',
     'What languages does it support?': 'Quelles langues sont prises en charge ?',
-    'Aroha currently supports 13 languages, so you can read your chart and chat with the AI astrologer in the language you think in.':
-      "Aroha prend actuellement en charge 13 langues, vous pouvez donc lire votre thème et discuter avec l'astrologue IA dans la langue dans laquelle vous pensez.",
+    'Aroha currently supports 7 Indian languages, so you can read your chart and chat with the Vedic Astrologer in the language you think in.':
+      "Aroha prend actuellement en charge 7 langues indiennes, vous pouvez donc lire votre thème et discuter avec l'astrologue védique dans la langue dans laquelle vous pensez.",
     "Does this work if I wasn't born in India?": 'Est-ce que cela fonctionne si je ne suis pas né en Inde ?',
     'Yes. The underlying calculation, the Swiss Ephemeris, works for any birth location worldwide — it needs only your birth date, time and place, wherever that was.':
       "Oui. Le calcul sous-jacent, la Swiss Ephemeris, fonctionne pour n'importe quel lieu de naissance dans le monde — il a seulement besoin de votre date, heure et lieu de naissance, où que ce soit.",
@@ -2782,9 +2774,9 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Can I check compatibility with a partner?': 'Puis-je vérifier la compatibilité avec un partenaire ?',
     "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.":
       "Oui — Aroha comprend un système de compatibilité de type Ashtakoota (Guna Milan), qui compare deux thèmes astraux pour voir comment les placements clés s'alignent, une fois que vous êtes dans l'application.",
-    "How accurate is the AI astrologer's interpretation?": "Quelle est la précision de l'interprétation de l'astrologue IA ?",
-    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
-      "Le thème lui-même — positions planétaires, maisons, dashas — est calculé par la Swiss Ephemeris, le même moteur de précision utilisé par les observatoires, donc cette partie est astronomiquement exacte. Le rôle de l'IA est seulement d'expliquer ce que ces données signifient traditionnellement, en langage clair ; comme toute lecture astrologique, c'est un outil de réflexion, pas une prédiction scientifique.",
+    "How accurate is the Vedic Astrologer's interpretation?": "Quelle est la précision de l'interprétation de l'astrologue védique ?",
+    "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The Vedic Astrologer's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.":
+      "Le thème lui-même — positions planétaires, maisons, dashas — est calculé par la Swiss Ephemeris, le même moteur de précision utilisé par les observatoires, donc cette partie est astronomiquement exacte. Le rôle de l'astrologue védique est seulement d'expliquer ce que ces données signifient traditionnellement, en langage clair ; comme toute lecture astrologique, c'est un outil de réflexion, pas une prédiction scientifique.",
   },
 };
 

@@ -91,7 +91,7 @@ const notoGurmukhi = Noto_Sans_Gurmukhi({
 
 const SITE_NAME = 'Aroha Astrology';
 const SITE_DESCRIPTION =
-  'Free Vedic birth chart, Moon sign calculator and daily Panchang — Swiss Ephemeris precision with an AI astrologer that explains what it means, in your language.';
+  'Free Vedic birth chart, Moon sign calculator and daily Panchang — Swiss Ephemeris precision, explained in plain language, in 7 Indian languages.';
 
 export const viewport: Viewport = {
   themeColor: '#F2ECDF',
@@ -103,7 +103,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & AI Astrologer',
+    default: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & Daily Panchang',
     template: '%s | Aroha Astrology',
   },
   description: SITE_DESCRIPTION,
@@ -116,7 +116,9 @@ export const metadata: Metadata = {
     'janma kundli',
     'panchang today',
     'vimshottari dasha',
-    'ai astrologer',
+    'jyotish',
+    'kundli milan',
+    'guna milan',
     'swiss ephemeris',
   ],
   applicationName: SITE_NAME,
@@ -135,14 +137,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
-    title: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & AI Astrologer',
+    title: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & Daily Panchang',
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & AI Astrologer',
+    title: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & Daily Panchang',
     description: SITE_DESCRIPTION,
   },
 };
@@ -194,7 +196,7 @@ const jsonLd = {
       name: 'Yogi Baba',
       jobTitle: 'Vedic Astrology Content Advisor',
       description:
-        'Reviews and guides the Vedic astrology methodology behind Aroha Astrology — classical Parashari, Jaimini and KP traditions, expressed through Swiss Ephemeris-accurate, AI-generated explanations.',
+        'Reviews and guides the Vedic astrology methodology behind Aroha Astrology — classical Parashari, Jaimini and KP traditions, expressed through Swiss Ephemeris-accurate calculations and plain-language explanations.',
       worksFor: { '@id': `${SITE_URL}/#organization` },
     },
     {

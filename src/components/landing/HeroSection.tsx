@@ -26,7 +26,7 @@ export function HeroSection() {
         </h1>
 
         <p className="mx-auto mb-10 max-w-[560px] text-[19px] leading-[1.55] text-ink-2">
-          Swiss Ephemeris precision, an AI astrologer that can answer anything, in 13 languages.
+          Swiss Ephemeris precision, a Vedic Astrologer that can answer anything, in 7 Indian languages.
         </p>
 
         <div className="mb-11 flex flex-wrap items-center justify-center gap-4">

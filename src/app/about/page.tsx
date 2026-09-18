@@ -9,7 +9,7 @@ const CONTACT_EMAIL = 'subir@arohaastrology.in';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Who builds Aroha Astrology, how its readings are generated (Swiss Ephemeris computation plus AI-explained classical Vedic texts), and our approach to accuracy.',
+    'Who builds Aroha Astrology, how its readings are generated (Swiss Ephemeris computation grounded in classical Vedic texts), and our approach to accuracy.',
   alternates: { canonical: '/about' },
 };
 
@@ -49,11 +49,11 @@ export default function AboutPage() {
             <h2 className="font-display text-xl font-medium text-ink">What we build</h2>
             <p className="mt-3 leading-relaxed text-ink-2">
               Aroha Astrology is a Vedic (Jyotish) astrology app and website: a free Kundli
-              (birth chart) generator, daily Panchang, Moon sign and Nakshatra tools, and an AI
-              astrologer that explains what a chart means in plain language, in 13 languages.
-              We built it because most Kundli tools online either stop at a raw chart with no
-              explanation, or explain in astrology jargon that assumes you already know the
-              subject.
+              (birth chart) generator, daily Panchang, Moon sign and Nakshatra tools, and a
+              Vedic Astrologer that explains what a chart means in plain language, in 7 Indian
+              languages. We built it because most Kundli tools online either stop at a raw
+              chart with no explanation, or explain in astrology jargon that assumes you
+              already know the subject.
             </p>
           </section>
 

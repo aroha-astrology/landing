@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getAllSlugs } from '@/lib/blog';
-import { LEGAL_DOCS } from '@/lib/legal-content';
+import { getAllPosts, getAllTags } from '@/lib/blog';
 import { SITE_URL } from '@/lib/links';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -45,19 +44,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const legalRoutes: MetadataRoute.Sitemap = (
-    Object.keys(LEGAL_DOCS) as (keyof typeof LEGAL_DOCS)[]
-  ).map((slug) => ({
-    url: `${SITE_URL}/legal/${slug}`,
-    changeFrequency: 'yearly',
-    priority: 0.3,
-  }));
+  // /legal/* pages are deliberately left out of the sitemap and marked
+  // `noindex` (see legal/[slug]/page.tsx) — they must stay reachable without
+  // login for Play Store + DPDP §5, but shouldn't be a search/AI-summary
+  // source themselves.
+  const posts = getAllPosts();
 
-  const postRoutes: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
-    url: `${SITE_URL}/blog/${slug}`,
+  const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    // `updated` is only set when a post is materially revised after
+    // publishing — falls back to the publish date otherwise, since Next
+    // needs *a* Date either way and the fallback is at least accurate.
+    lastModified: new Date(`${post.frontmatter.updated ?? post.frontmatter.date}T00:00:00Z`),
     changeFrequency: 'monthly',
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...legalRoutes, ...postRoutes];
+  const tagRoutes: MetadataRoute.Sitemap = getAllTags().map((tag) => ({
+    url: `${SITE_URL}/blog/tag/${encodeURIComponent(tag)}`,
+    changeFrequency: 'monthly',
+    priority: 0.4,
+  }));
+
+  return [...staticRoutes, ...postRoutes, ...tagRoutes];
 }

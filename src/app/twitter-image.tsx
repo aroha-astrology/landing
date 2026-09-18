@@ -89,7 +89,7 @@ export default async function Image() {
               letterSpacing: '0.01em',
             }}
           >
-            Vedic Birth Chart · Moon Sign · AI Astrologer
+            Vedic Birth Chart · Moon Sign · Daily Panchang
           </div>
           <div
             style={{

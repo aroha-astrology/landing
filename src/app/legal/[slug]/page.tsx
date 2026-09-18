@@ -27,7 +27,7 @@ const DESCRIPTIONS: Record<LegalDoc['slug'], string> = {
   privacy:
     'How Aroha Astrology collects, uses, and protects your personal data, under the Digital Personal Data Protection Act, 2023.',
   disclaimer:
-    'What astrology and AI-generated readings on Aroha Astrology are — and what they are not.',
+    'What astrology readings on Aroha Astrology are — and what they are not.',
 };
 
 export function generateStaticParams() {
@@ -47,6 +47,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     alternates: { canonical: `/legal/${doc.slug}` },
     openGraph: { type: 'article', title, description, url: `/legal/${doc.slug}` },
+    // Legal text must stay reachable without login (Play Store + DPDP §5 require it —
+    // see the file-level doc comment), but it shouldn't itself be a search/AI-summary
+    // source: it necessarily uses "AI" in its literal, legally-required sense.
+    robots: { index: false, follow: true },
   };
 }
 

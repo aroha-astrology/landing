@@ -22,7 +22,7 @@ const STEPS = [
   },
   {
     title: 'Ask anything',
-    description: 'An AI grounded in your real chart data answers follow-up questions, in your language.',
+    description: 'Grounded in your real chart data, the Vedic Astrologer answers follow-up questions, in your language.',
   },
 ];
 

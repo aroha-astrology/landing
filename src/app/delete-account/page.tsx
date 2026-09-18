@@ -95,7 +95,7 @@ export default function DeleteAccountPage() {
               birth profile you created for someone else.
             </p>
             <p className="mt-3 leading-relaxed text-ink-2">
-              Your palm photographs, chat transcripts, saved AI memory, and feedback are destroyed
+              Your palm photographs, chat transcripts, saved chat memory, and feedback are destroyed
               outright rather than overwritten. Push notification tokens for your devices are
               revoked.
             </p>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -77,25 +78,40 @@ export default function BlogIndexPage() {
 
       <div className="mt-14 flex flex-col divide-y divide-rule">
         {posts.map((post) => (
-          <article key={post.slug} className="py-8 first:pt-0">
-            <Link href={`/blog/${post.slug}`} className="group">
-              <h2 className="font-display text-2xl font-medium text-ink transition-colors group-hover:text-accent sm:text-3xl">
-                {post.frontmatter.title}
-              </h2>
-            </Link>
-            <time
-              dateTime={post.frontmatter.date}
-              className="mt-2 block text-sm font-medium uppercase tracking-[0.1em] text-ink-muted"
-            >
-              {formatDate(post.frontmatter.date)}
-            </time>
-            <p className="mt-3 max-w-2xl text-base text-ink-2">{post.frontmatter.description}</p>
-            <Link
-              href={`/blog/${post.slug}`}
-              className="mt-4 inline-block text-sm font-semibold text-accent underline underline-offset-4"
-            >
-              Read more
-            </Link>
+          <article key={post.slug} className="flex gap-6 py-8 first:pt-0">
+            {post.frontmatter.hero && (
+              <Link
+                href={`/blog/${post.slug}`}
+                className="relative hidden h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-rule bg-paper-sunk sm:block"
+              >
+                <Image
+                  src={post.frontmatter.hero}
+                  alt=""
+                  fill
+                  sizes="96px"
+                  className="object-contain p-3"
+                />
+              </Link>
+            )}
+            <div className="min-w-0 flex-1">
+              <Link href={`/blog/${post.slug}`} className="group">
+                <h2 className="font-display text-2xl font-medium text-ink transition-colors group-hover:text-accent sm:text-3xl">
+                  {post.frontmatter.title}
+                </h2>
+              </Link>
+              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium uppercase tracking-[0.1em] text-ink-muted">
+                <time dateTime={post.frontmatter.date}>{formatDate(post.frontmatter.date)}</time>
+                <span aria-hidden>·</span>
+                <span data-no-translate>{post.readingTime} min read</span>
+              </div>
+              <p className="mt-3 max-w-2xl text-base text-ink-2">{post.frontmatter.description}</p>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="mt-4 inline-block text-sm font-semibold text-accent underline underline-offset-4"
+              >
+                Read more
+              </Link>
+            </div>
           </article>
         ))}
       </div>

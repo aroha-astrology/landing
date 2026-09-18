@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Section } from '@/components/ui/Section';
 import { AppCTA } from '@/components/ui/AppCTA';
-import { getAllSlugs, getPost } from '@/lib/blog';
+import { mdxComponents } from '@/components/blog/MdxComponents';
+import { getAllSlugs, getPost, getRelatedPosts } from '@/lib/blog';
 import { SITE_URL } from '@/lib/links';
+
+const DEFAULT_AUTHOR = 'Yogi Baba';
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -63,8 +68,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const { title, description, date, tags, faqs } = post.frontmatter;
+  const { title, description, date, updated, tags, faqs, hero, heroAlt, author } = post.frontmatter;
   const pageUrl = `${SITE_URL}/blog/${slug}`;
+  const relatedPosts = getRelatedPosts(post);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -75,6 +81,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         headline: title,
         description,
         datePublished: date,
+        dateModified: updated ?? date,
         url: pageUrl,
         mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
         isPartOf: { '@id': `${SITE_URL}/blog#webpage` },
@@ -124,12 +131,25 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
 
         <header className="mb-10">
-          <time
-            dateTime={date}
-            className="block text-sm font-medium uppercase tracking-[0.1em] text-ink-muted"
-          >
-            {formatDate(date)}
-          </time>
+          {hero && (
+            <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-rule bg-paper-sunk">
+              <Image
+                src={hero}
+                alt={heroAlt ?? ''}
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                priority
+                className="object-contain p-10"
+              />
+            </div>
+          )}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium uppercase tracking-[0.1em] text-ink-muted">
+            <time dateTime={date}>{formatDate(date)}</time>
+            <span aria-hidden>·</span>
+            <span data-no-translate>{post.readingTime} min read</span>
+            <span aria-hidden>·</span>
+            <span>{author ?? DEFAULT_AUTHOR}</span>
+          </div>
           <h1 className="font-display mt-3 text-3xl font-medium leading-[1.15] text-ink sm:text-4xl md:text-5xl">
             {title}
           </h1>
@@ -137,11 +157,13 @@ export default async function BlogPostPage({ params }: PageProps) {
           {tags?.length > 0 && (
             <ul className="mt-5 flex flex-wrap gap-2">
               {tags.map((tag) => (
-                <li
-                  key={tag}
-                  className="rounded-pill bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-accent"
-                >
-                  {tag}
+                <li key={tag}>
+                  <Link
+                    href={`/blog/tag/${encodeURIComponent(tag)}`}
+                    className="block rounded-pill bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-accent transition-colors hover:bg-accent hover:text-accent-ink"
+                  >
+                    {tag}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -160,8 +182,41 @@ export default async function BlogPostPage({ params }: PageProps) {
             [&_strong]:font-semibold [&_strong]:text-ink
           "
         >
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} components={mdxComponents} />
         </div>
+
+        <footer className="mt-14 border-t border-rule pt-8">
+          <p className="text-sm text-ink-muted">
+            Written and reviewed by <span className="font-semibold text-ink">{author ?? DEFAULT_AUTHOR}</span>,
+            Vedic Astrology Content Advisor at Aroha Astrology.
+          </p>
+        </footer>
+
+        {relatedPosts.length > 0 && (
+          <aside className="mt-14 border-t border-rule pt-10">
+            <h2 className="font-display text-xl font-medium text-ink">Related guides</h2>
+            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {relatedPosts.map((related) => (
+                <Link key={related.slug} href={`/blog/${related.slug}`} className="group block">
+                  {related.frontmatter.hero && (
+                    <div className="relative mb-3 aspect-[4/3] w-full overflow-hidden rounded-xl border border-rule bg-paper-sunk">
+                      <Image
+                        src={related.frontmatter.hero}
+                        alt=""
+                        fill
+                        sizes="(min-width: 640px) 33vw, 100vw"
+                        className="object-contain p-6"
+                      />
+                    </div>
+                  )}
+                  <h3 className="font-display text-base leading-snug text-ink transition-colors group-hover:text-accent">
+                    {related.frontmatter.title}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
       </article>
     </Section>
   );

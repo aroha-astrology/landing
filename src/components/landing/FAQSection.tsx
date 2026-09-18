@@ -25,11 +25,16 @@ const homeFaqItems: AccordionItem[] = [
   {
     question: 'Is it really free?',
     answer:
-      'Generating your birth chart and using the free Moon-sign tool cost nothing. Some deeper reports and features run on a credit system, which is shown clearly before you use them.',
+      'Your birth chart, daily Panchang, horoscope, the free Moon-sign tool, 36-point Guna Milan compatibility check, shlokas library and the Bhagavad Gita all cost nothing. New accounts also start with a welcome wallet balance to try paid features. Deeper reports and chat run on a simple credit system, shown clearly before you use them, and every report gives you a blurred free preview first.',
+  },
+  {
+    question: 'What reports can I generate, and what do they cover?',
+    answer:
+      'Aroha generates 14 personalized reports from your own chart — Marriage, Kundli Milan (compatibility), True Love, Wealth, Progeny, Numerology, Lal Kitab Remedies, Baby Name, Name Change, Past Life, and monthly Career, Health, Finance and Relationship reports. Each one answers a fixed set of specific questions (for example, Marriage covers timing, partner traits and Manglik status) rather than generating generic text — see the reports section above for the full list.',
   },
   {
     question: 'What languages does it support?',
-    answer: 'Aroha currently supports 13 languages, so you can read your chart and chat with the AI astrologer in the language you think in.',
+    answer: 'Aroha currently supports 7 Indian languages, so you can read your chart and chat with the Vedic Astrologer in the language you think in.',
   },
   {
     question: "Does this work if I wasn't born in India?",
@@ -57,9 +62,9 @@ const homeFaqItems: AccordionItem[] = [
       "Yes — Aroha includes Ashtakoota (Guna Milan) style compatibility matching, comparing two birth charts to see how key placements align, once you're in the app.",
   },
   {
-    question: "How accurate is the AI astrologer's interpretation?",
+    question: "How accurate is the Vedic Astrologer's interpretation?",
     answer:
-      "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The AI's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.",
+      "The chart itself — planet positions, houses, dashas — is computed by the Swiss Ephemeris, the same precision engine observatories use, so that part is astronomically exact. The Vedic Astrologer's job is only to explain what that data traditionally means in plain language; like any astrological reading, it's a tool for reflection, not a scientific prediction.",
   },
 ];
 
