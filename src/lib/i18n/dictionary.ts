@@ -343,7 +343,6 @@ export const DICT: Record<Lang, Record<string, string>> = {
     'Best Value': 'सर्वोत्तम मूल्य',
     'per credit': 'प्रति क्रेडिट',
     'Buy Now': 'अभी खरीदें',
-    '🔒 Secure Razorpay Payment': '🔒 सुरक्षित रेज़रपे भुगतान',
     '⚡ Instant Credit Delivery': '⚡ तत्काल क्रेडिट डिलीवरी',
     '✦ Credits Never Expire': '✦ क्रेडिट कभी समाप्त नहीं होते',
     '🔄 No Hidden Charges': '🔄 कोई छुपा शुल्क नहीं',
