@@ -3,13 +3,14 @@ import { Logo } from '@/components/ui/Logo';
 import { LINKS } from '@/lib/links';
 
 const PRODUCT_LINKS: { href: string; label: string }[] = [
-  { href: '#how-it-works', label: 'How it works' },
-  { href: '#features', label: 'Features' },
-  { href: '#navagraha', label: 'Navagraha' },
-  { href: '#precision', label: 'Our method' },
-  { href: '#moon-sign', label: 'Moon sign tool' },
-  { href: '#languages', label: 'Languages' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/#how-it-works', label: 'How it works' },
+  { href: '/#features', label: 'Features' },
+  { href: '/#navagraha', label: 'Navagraha' },
+  { href: '/#precision', label: 'Our method' },
+  { href: '/#moon-sign', label: 'Moon sign tool' },
+  { href: '/#languages', label: 'Languages' },
+  { href: '/#faq', label: 'FAQ' },
+  { href: '/vastu', label: 'Vastu Studio' },
   { href: '/blog', label: 'Blog' },
 ];
 

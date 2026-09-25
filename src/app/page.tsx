@@ -49,7 +49,7 @@ const jsonLd = {
         'Lal Kitab remedies',
         'Numerology',
         'Palm reading',
-        'Vastu planner',
+        'Vastu Studio: floor plan Vastu check with live room ratings, fixes and 3D view',
         'Marriage, Kundli Milan, Wealth and 10 other personalized reports',
         'Vedic Astrologer chat',
       ],

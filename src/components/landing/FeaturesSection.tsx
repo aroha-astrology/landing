@@ -56,8 +56,8 @@ const FEATURES: Feature[] = [
     description: 'Nine lines, nine mounts — read from your photos and cross-checked against your chart.',
   },
   {
-    title: 'Vastu planner',
-    description: 'A 2D floor-plan tool for laying out your home or office.',
+    title: 'Vastu Studio',
+    description: 'Draw your home, point it north, and see every room’s Vastu rating — with fixes, a 3D view and a report.',
   },
   {
     title: 'Birth-time rectification',
