@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Section } from '@/components/ui/Section';
 import { AppCTA } from '@/components/ui/AppCTA';
+import { PromoVideo, promoVideoForSlug } from '@/components/ui/PromoVideo';
 import { mdxComponents } from '@/components/blog/MdxComponents';
 import { getAllSlugs, getPost, getRelatedPosts } from '@/lib/blog';
 import { SITE_URL } from '@/lib/links';
@@ -71,6 +72,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const { title, description, date, updated, tags, faqs, hero, heroAlt, author } = post.frontmatter;
   const pageUrl = `${SITE_URL}/blog/${slug}`;
   const relatedPosts = getRelatedPosts(post);
+  const promoVideo = promoVideoForSlug(slug);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -191,6 +193,21 @@ export default async function BlogPostPage({ params }: PageProps) {
             Vedic Astrology Content Advisor at Aroha Astrology.
           </p>
         </footer>
+
+        <aside className="mt-14 flex flex-col items-center gap-8 rounded-2xl border border-rule bg-paper-raised px-6 py-8 sm:flex-row sm:px-8">
+          <PromoVideo video={promoVideo} className="max-w-[260px]" />
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.1em] text-ink-muted">See it in action</p>
+            <h2 className="font-display mt-2 text-2xl font-medium text-ink">Your own chart, read properly</h2>
+            <p className="mt-3 text-ink-2">
+              Free Vedic Kundli, a Vedic Astrologer chat in 7 Indian languages, and 14 personal reports. Available on
+              Android. iOS coming soon.
+            </p>
+            <div className="mt-5">
+              <AppCTA>Get the App</AppCTA>
+            </div>
+          </div>
+        </aside>
 
         {relatedPosts.length > 0 && (
           <aside className="mt-14 border-t border-rule pt-10">

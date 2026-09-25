@@ -5,6 +5,7 @@ import { NavagrahaSection } from './NavagrahaSection';
 import { HowItWorksSection } from './HowItWorksSection';
 import { FeaturesSection } from './FeaturesSection';
 import { ReportsSection } from './ReportsSection';
+import { VideoSection } from './VideoSection';
 import { PrecisionSection } from './PrecisionSection';
 import { PanchangSection } from './PanchangSection';
 import { LanguagesSection } from './LanguagesSection';
@@ -15,7 +16,7 @@ import { Footer } from './Footer';
  * Light editorial landing page with two full-bleed dark "acts"
  * (Navagraha, Precision) breaking up the paper surface. Order:
  * Hero → Moon-sign overview (no form — the real calculator lives at
- * /moon-sign) → Navagraha (dark) → How it works → Features → Reports →
+ * /moon-sign) → Navagraha (dark) → How it works → Features → Videos (dark) → Reports →
  * Precision (dark) → Panchang (live data) → Languages → FAQ → Footer.
  */
 export function LandingPage() {
@@ -28,6 +29,7 @@ export function LandingPage() {
         <NavagrahaSection />
         <HowItWorksSection />
         <FeaturesSection />
+        <VideoSection />
         <ReportsSection />
         <PrecisionSection />
         <PanchangSection />
