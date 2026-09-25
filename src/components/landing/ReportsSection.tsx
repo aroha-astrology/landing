@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { MessageCircleQuestion, Sparkles } from 'lucide-react';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -164,6 +165,74 @@ const REPORTS: Report[] = [
   },
 ];
 
+// The KP Year Ahead report (backend `kp_annual`) — featured above the grid rather than
+// dropped into it: it is the one report that answers the reader's OWN questions, and the
+// one with a launch price (₹101 against a ₹251 MRP — backend features.ts
+// `reports.kp_annual` defaultPricePaise / defaultOriginalPricePaise).
+const KP_REPORT = {
+  key: 'kp_annual',
+  title: 'KP Year Ahead Report',
+  priceRupees: 101,
+  mrpRupees: 251,
+  points: [
+    'Your next 12 months, from the day you order it — month by month, with the best windows named',
+    'Read the Krishnamurti Paddhati (KP) way: Placidus cusps, sub lords, dasha–bhukti–antara and transits',
+    'Career, money, love, health, home, travel, studies and family — what the year truly promises',
+    'Ask up to 3 questions of your own while ordering, and get them answered in the report',
+  ],
+};
+
+function FeaturedKpReport() {
+  return (
+    <motion.div
+      variants={itemVariants}
+      className="relative overflow-hidden rounded-2xl border border-accent/40 bg-paper-raised sm:col-span-2 lg:col-span-3"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr]">
+        <div className="relative h-48 w-full bg-[#0e0a1c] md:h-auto md:min-h-[260px]">
+          <Image
+            src={`/reports/${KP_REPORT.key}.png`}
+            alt="The zodiac wheel with the nine planets in orbit"
+            fill
+            sizes="(min-width: 768px) 55vw, 100vw"
+            className="object-cover object-right"
+          />
+          <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-pill bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-[0.06em] text-accent-ink">
+            <Sparkles className="h-3.5 w-3.5" aria-hidden />
+            New
+          </span>
+        </div>
+        <div className="flex flex-col px-6 py-7 md:px-8">
+          <div className="mb-3 flex flex-wrap items-baseline justify-between gap-3">
+            <h3 className="font-display text-2xl leading-tight text-ink">{KP_REPORT.title}</h3>
+            <span className="flex items-baseline gap-2" data-no-translate>
+              <span className="font-display text-2xl text-accent">₹{KP_REPORT.priceRupees}</span>
+              <span className="text-sm text-ink-muted line-through">₹{KP_REPORT.mrpRupees}</span>
+            </span>
+          </div>
+          <ul className="space-y-2.5 text-[14px] leading-snug text-ink-muted">
+            {KP_REPORT.points.map((p) => (
+              <li key={p} className="flex gap-2">
+                <span className="mt-[3px] text-accent" aria-hidden>
+                  •
+                </span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 flex items-start gap-2 rounded-xl bg-accent-soft px-4 py-3 text-[13px] leading-snug text-ink">
+            <MessageCircleQuestion className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+            <span>
+              “Will I get a better job this year?” “When is a good time to marry?” — ask it while you order, and
+              your report answers it from your own KP chart.
+            </span>
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 const listVariants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.05 } },
@@ -178,7 +247,7 @@ export function ReportsSection() {
     <Section tone="paper" id="reports">
       <SectionHeading
         eyebrow="Go deeper"
-        title="14 reports, grounded in your real chart"
+        title="15 reports, grounded in your real chart"
         subtitle="Every report runs your own birth chart through a fixed set of classical calculations — not a generic template. A blurred preview is always free before you unlock the full reading."
       />
 
@@ -189,6 +258,7 @@ export function ReportsSection() {
         viewport={{ once: true, amount: 0.1 }}
         variants={listVariants}
       >
+        <FeaturedKpReport />
         {REPORTS.map((report) => (
           <motion.div
             key={report.key}

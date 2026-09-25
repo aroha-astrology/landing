@@ -30,7 +30,12 @@ const homeFaqItems: AccordionItem[] = [
   {
     question: 'What reports can I generate, and what do they cover?',
     answer:
-      'Aroha generates 14 personalized reports from your own chart — Marriage, Kundli Milan (compatibility), True Love, Wealth, Progeny, Numerology, Lal Kitab Remedies, Baby Name, Name Change, Past Life, and monthly Career, Health, Finance and Relationship reports. Each one answers a fixed set of specific questions (for example, Marriage covers timing, partner traits and Manglik status) rather than generating generic text — see the reports section above for the full list.',
+      'Aroha generates 15 personalized reports from your own chart — the KP Year Ahead report, Marriage, Kundli Milan (compatibility), True Love, Wealth, Progeny, Numerology, Lal Kitab Remedies, Baby Name, Name Change, Past Life, and monthly Career, Health, Finance and Relationship reports. Each one answers a fixed set of specific questions (for example, Marriage covers timing, partner traits and Manglik status) rather than generating generic text — see the reports section above for the full list.',
+  },
+  {
+    question: 'What is the KP Year Ahead report?',
+    answer:
+      'It reads the 12 months from the day you order it using Krishnamurti Paddhati (KP) — Placidus house cusps, the sub lord of each cusp, your dasha, bhukti and antara periods, and the transits of Jupiter, Saturn, Rahu and Ketu. You get what the year promises for career, money, love, health, home, travel, studies and family, a month-by-month guide, and answers to up to 3 questions you type in yourself. Questions about death, lifespan or self-harm are not answered. It is ₹101 (MRP ₹251).',
   },
   {
     question: 'What languages does it support?',
