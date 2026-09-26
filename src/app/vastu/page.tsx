@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
-import { Logo } from '@/components/ui/Logo';
 import { AppCTA } from '@/components/ui/AppCTA';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { PhoneShot } from '@/components/ui/PhoneShot';
 import { FAQSection } from '@/components/landing/FAQSection';
-import { Footer } from '@/components/landing/Footer';
 import { PLAY_STORE_URL, SITE_URL } from '@/lib/links';
 
 export const metadata: Metadata = {
@@ -182,17 +180,6 @@ const jsonLd = {
 export default function VastuPage() {
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-rule bg-paper/92 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-[clamp(20px,4vw,56px)] py-4">
-          <a href="/" aria-label="Aroha home">
-            <Logo />
-          </a>
-          <AppCTA variant="solid" align="right">
-            Open Vastu Studio
-          </AppCTA>
-        </div>
-      </header>
-
       <main>
         <Section tone="paper" className="overflow-hidden">
           <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
@@ -314,7 +301,6 @@ export default function VastuPage() {
           </div>
         </Section>
       </main>
-      <Footer />
 
       <script
         type="application/ld+json"

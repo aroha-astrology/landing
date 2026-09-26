@@ -3,13 +3,13 @@ import { AppCTA } from '@/components/ui/AppCTA';
 import { Logo } from '@/components/ui/Logo';
 
 const NAV_LINKS: { href: string; label: string }[] = [
-  { href: '#how-it-works', label: 'How it works' },
-  { href: '#features', label: 'Features' },
-  { href: '#moon-sign', label: 'Moon sign tool' },
+  { href: '/#how-it-works', label: 'How it works' },
+  { href: '/#features', label: 'Features' },
+  { href: '/#moon-sign', label: 'Moon sign tool' },
   { href: '/vastu', label: 'Vastu' },
-  { href: '#languages', label: 'Languages' },
+  { href: '/#languages', label: 'Languages' },
   { href: '/blog', label: 'Blog' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/#faq', label: 'FAQ' },
 ];
 
 /**

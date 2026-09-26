@@ -1,4 +1,3 @@
-import { Navbar } from './Navbar';
 import { HeroSection } from './HeroSection';
 import { MoonSignsOverviewSection } from './MoonSignsOverviewSection';
 import { NavagrahaSection } from './NavagrahaSection';
@@ -11,7 +10,6 @@ import { PrecisionSection } from './PrecisionSection';
 import { PanchangSection } from './PanchangSection';
 import { LanguagesSection } from './LanguagesSection';
 import { FAQSection } from './FAQSection';
-import { Footer } from './Footer';
 
 /**
  * Light editorial landing page with two full-bleed dark "acts"
@@ -22,23 +20,19 @@ import { Footer } from './Footer';
  */
 export function LandingPage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <HeroSection />
-        <MoonSignsOverviewSection />
-        <NavagrahaSection />
-        <HowItWorksSection />
-        <FeaturesSection />
-        <VideoSection />
-        <ReportsSection />
-        <VastuSection />
-        <PrecisionSection />
-        <PanchangSection />
-        <LanguagesSection />
-        <FAQSection />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <HeroSection />
+      <MoonSignsOverviewSection />
+      <NavagrahaSection />
+      <HowItWorksSection />
+      <FeaturesSection />
+      <VideoSection />
+      <ReportsSection />
+      <VastuSection />
+      <PrecisionSection />
+      <PanchangSection />
+      <LanguagesSection />
+      <FAQSection />
+    </main>
   );
 }
