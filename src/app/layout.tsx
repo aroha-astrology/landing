@@ -16,6 +16,8 @@ import { TranslationProvider } from '@/components/providers/TranslationProvider'
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import { AppDownloadBanner } from '@/components/landing/AppDownloadBanner';
+import { Navbar } from '@/components/landing/Navbar';
+import { Footer } from '@/components/landing/Footer';
 import { SITE_URL, PLAY_STORE_URL } from '@/lib/links';
 
 const publicSans = Public_Sans({
@@ -227,7 +229,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PostHogProvider>
           <TranslationProvider>
             <AppDownloadBanner />
+            <Navbar />
             <SmoothScrollProvider>{children}</SmoothScrollProvider>
+            <Footer />
           </TranslationProvider>
         </PostHogProvider>
       </body>
