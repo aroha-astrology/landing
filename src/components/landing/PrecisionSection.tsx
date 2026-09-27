@@ -71,7 +71,7 @@ export function PrecisionSection() {
           {/* A static instrument dial (not the orbiting-rings treatment used
               for Navagraha above) — ticks + one amber marker read as a
               precision gauge, echoing the "instrument, not poetry" copy. */}
-          <div className="relative aspect-square w-full max-w-[300px] rounded-full border border-night-rule">
+          <div className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full border border-night-rule">
             {TICKS.map((deg) => (
               <div
                 key={deg}

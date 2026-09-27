@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PLAY_STORE_URL } from '@/lib/links';
 
@@ -10,7 +10,9 @@ import { PLAY_STORE_URL } from '@/lib/links';
  * real Play Store link and iOS is marked Coming soon rather than dead-ending.
  * Visually a drop-in replacement for Button (same base/variant classes);
  * `align` controls which edge the popover hangs from, since this gets used
- * both in tight corners (Navbar) and centered contexts (Hero, Footer).
+ * both in tight corners (Navbar) and centered contexts (Hero, Footer). The
+ * popover is then nudged back inside the viewport, because on phones a button
+ * near the left edge would otherwise push a centered popover off-screen.
  */
 type Variant = 'solid' | 'outline';
 type Align = 'center' | 'right';
@@ -25,10 +27,8 @@ const VARIANTS: Record<Variant, string> = {
   outline: 'border border-ink/25 text-ink hover:border-accent hover:text-accent',
 };
 
-const ALIGN_CLASSES: Record<Align, string> = {
-  center: 'left-1/2 -translate-x-1/2',
-  right: 'right-0',
-};
+// Minimum gap between the popover and either side of the viewport.
+const VIEWPORT_GUTTER = 16;
 
 export function AppCTA({
   variant = 'solid',
@@ -42,7 +42,28 @@ export function AppCTA({
   children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const [left, setLeft] = useState<number>();
   const ref = useRef<HTMLDivElement>(null);
+  const popoverRef = useRef<HTMLDivElement>(null);
+
+  // Position in px relative to the button, before paint, so there's no jump.
+  useLayoutEffect(() => {
+    if (!open) return;
+    function place() {
+      const anchor = ref.current;
+      const popover = popoverRef.current;
+      if (!anchor || !popover) return;
+      const box = anchor.getBoundingClientRect();
+      const width = popover.offsetWidth;
+      const preferred = align === 'right' ? box.width - width : (box.width - width) / 2;
+      const min = VIEWPORT_GUTTER - box.left;
+      const max = document.documentElement.clientWidth - VIEWPORT_GUTTER - width - box.left;
+      setLeft(Math.max(min, Math.min(preferred, max)));
+    }
+    place();
+    window.addEventListener('resize', place);
+    return () => window.removeEventListener('resize', place);
+  }, [open, align]);
 
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -67,11 +88,13 @@ export function AppCTA({
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={popoverRef}
+            style={{ left }}
             initial={{ opacity: 0, y: -6, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -4, scale: 0.97 }}
             transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className={`absolute top-full z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-rule bg-paper-raised p-1.5 text-left shadow-[0_18px_40px_rgba(20,20,24,0.18)] ${ALIGN_CLASSES[align]}`}
+            className={`absolute top-full z-50 mt-2 w-64 max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-rule bg-paper-raised p-1.5 text-left shadow-[0_18px_40px_rgba(20,20,24,0.18)]`}
             data-no-translate
           >
             <div className="j-eyebrow border-b border-rule px-2.5 py-1.5 text-[10px] font-bold">
