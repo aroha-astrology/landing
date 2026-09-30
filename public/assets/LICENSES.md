@@ -7,6 +7,8 @@ commercial use.
 | Path | Source | Licence | Attribution required | Modification |
 | --- | --- | --- | --- | --- |
 | `assets/blog/<category>/<slug>.webp` | Original Aroha artwork, generated in code by `scripts/blog-art/generate.mjs` from each article's `art` frontmatter | Owned by Aroha | No | Yes (regenerate from source) |
+| `assets/video/aroha-daily-panchang.{mp4,jpg}`, `assets/video/aroha-vastu-planner.{mp4,jpg}` | Aroha promo films supplied by the Aroha team (Aroha-Promo, Sept 2026), re-encoded to 720p H.264 with poster frames | Owned by Aroha | No | Yes |
+| `assets/vastu/aroha-vastu-interiors-*.webp` | Aroha Vastu Interiors promo stills supplied by the Aroha team (Aroha-Promo, Sept 2026), converted to WebP | Owned by Aroha | No | Yes; always shown captioned as in development |
 
 ## Assets outside `public/assets/` (pre-existing)
 

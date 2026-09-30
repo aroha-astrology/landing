@@ -28,6 +28,12 @@ Available MDX components: `KeyTakeaway`, `Callout`, `Checklist`,
 `RitualSteps`, `NakshatraWheel`, `DashaTimeline`, `VastuCompass`,
 `FloorPlan`, `PanchangLimbs`, `Figure`. Markdown tables are supported.
 
+Real app media is embedded by name, so its caption and status travel with it:
+`<AppVideo name="dailyPanchang" />` or `"vastuPlanner"` (films in
+`src/components/ui/PromoVideo.tsx`), and `<AppScreen name="floorPlan3d" />`,
+`"bedScore"` or `"livingRoom3d"` (Aroha Vastu screens in
+`src/components/ui/AppShot.tsx`, always captioned as in development).
+
 ## Review and publishing workflow
 
 1. Write the article with `status: "review"` and generate its hero:

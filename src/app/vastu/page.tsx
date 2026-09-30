@@ -4,6 +4,8 @@ import { ProductHero } from '@/components/product/ProductHero';
 import { GuidesStrip } from '@/components/product/GuidesStrip';
 import { TrackedLink } from '@/components/ui/TrackedLink';
 import { AppCTA } from '@/components/ui/AppCTA';
+import { AppShot, VASTU_INTERIORS_SHOTS } from '@/components/ui/AppShot';
+import { FeatureVideo, FEATURE_VIDEOS } from '@/components/ui/PromoVideo';
 import { FAQSection } from '@/components/landing/FAQSection';
 import { VastuCompass, FloorPlan } from '@/components/blog/Diagrams';
 import { VastuGlyph } from '@/components/home/Glyphs';
@@ -131,6 +133,17 @@ export default function VastuPage() {
               </li>
             ))}
           </ul>
+          <div className="mt-16">
+            <h3 className="font-display text-2xl">Early screens</h3>
+            <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-vastu-ink-2">
+              From the Aroha Vastu build in progress. Features and scores may change before launch.
+            </p>
+            <div className="mt-8 grid items-end gap-6 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1.9fr]">
+              <AppShot shot={VASTU_INTERIORS_SHOTS.floorPlan3d} tone="sand" sizes="(min-width: 1024px) 240px, (min-width: 640px) 45vw, 90vw" className="reveal mx-auto w-full max-w-[300px]" />
+              <AppShot shot={VASTU_INTERIORS_SHOTS.bedScore} tone="sand" sizes="(min-width: 1024px) 240px, (min-width: 640px) 45vw, 90vw" className="reveal mx-auto w-full max-w-[300px]" />
+              <AppShot shot={VASTU_INTERIORS_SHOTS.livingRoom3d} tone="sand" sizes="(min-width: 1024px) 480px, 90vw" className="reveal sm:col-span-2 lg:col-span-1" />
+            </div>
+          </div>
           <ol className="mt-16 grid gap-6 md:grid-cols-4">
             {STEPS.map((s, i) => (
               <li key={s.k} className="reveal border-t border-vastu-ink/25 pt-5" style={{ ['--reveal-i' as string]: i }}>
@@ -155,12 +168,16 @@ export default function VastuPage() {
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-2">
               While Aroha Vastu is being built, an early Vastu planner already ships in the Aroha Astrology app on Android: draw your home in
-              2D, check it against the eight directions and save your layouts.
+              2D, check it against the eight directions and save your layouts. Each room is scored by where it sits: in the film, a
+              kitchen moved from the north to the south-east, the traditional fire corner, goes from 70 to 88.
             </p>
           </div>
-          <AppCTA variant="solid" location="vastu_today">
-            Try Vastu Studio
-          </AppCTA>
+          <div className="flex shrink-0 flex-col items-center gap-6 sm:flex-row lg:flex-col">
+            <FeatureVideo video={FEATURE_VIDEOS.vastuPlanner} className="w-full max-w-[240px]" />
+            <AppCTA variant="solid" location="vastu_today">
+              Try Vastu Studio
+            </AppCTA>
+          </div>
         </div>
       </section>
 

@@ -11,6 +11,8 @@ import {
   RitualSteps,
   VastuCompass,
 } from './Diagrams';
+import { FeatureVideo, FEATURE_VIDEOS } from '@/components/ui/PromoVideo';
+import { AppShot, VASTU_INTERIORS_SHOTS } from '@/components/ui/AppShot';
 
 /** Plain text of a rendered heading, for its anchor id (see slugifyHeading). */
 function textOf(node: ReactNode): string {
@@ -81,12 +83,38 @@ function Callout({
   );
 }
 
+/**
+ * Real Aroha media by registry key, so posts can't point at arbitrary files
+ * and the status caption travels with the asset:
+ * `<AppVideo name="dailyPanchang" />`, `<AppScreen name="bedScore" />`.
+ */
+function AppVideo({ name }: { name: keyof typeof FEATURE_VIDEOS }) {
+  const video = FEATURE_VIDEOS[name];
+  if (!video) return null;
+  return <FeatureVideo video={video} className="mx-auto my-10 w-full max-w-[280px]" />;
+}
+
+function AppScreen({ name }: { name: keyof typeof VASTU_INTERIORS_SHOTS }) {
+  const shot = VASTU_INTERIORS_SHOTS[name];
+  if (!shot) return null;
+  const portrait = shot.height > shot.width;
+  return (
+    <AppShot
+      shot={shot}
+      sizes={portrait ? '300px' : '(min-width: 768px) 680px, 100vw'}
+      className={`mx-auto my-10 w-full ${portrait ? 'max-w-[300px]' : ''}`}
+    />
+  );
+}
+
 // Typed structurally against MDXRemote's own `components` prop
 // (React.ComponentProps<typeof MDXProvider>['components']) at the call site
 // in blog/[slug]/page.tsx, rather than importing a separate types package.
 export const mdxComponents = {
   Figure,
   Callout,
+  AppVideo,
+  AppScreen,
   KeyTakeaway,
   Checklist,
   RitualSteps,

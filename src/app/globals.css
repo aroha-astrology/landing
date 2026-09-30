@@ -315,14 +315,3 @@ a.j-link:hover {
   }
 }
 
-/* Vastu preview: the floor plan tilts from 2D into 3D as it's revealed.
-   Without JS it simply shows the tilted state. */
-.vastu-plan {
-  transform: rotateX(52deg) rotateZ(-32deg);
-  transform-style: preserve-3d;
-  transition: transform 1.6s var(--ease-out-soft) 0.2s;
-}
-.js .reveal:not(.is-in) .vastu-plan { transform: rotateX(0deg) rotateZ(0deg); }
-@media (prefers-reduced-motion: reduce) {
-  .vastu-plan { transform: none; }
-}
