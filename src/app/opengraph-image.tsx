@@ -11,7 +11,7 @@ const MUTED = '#A9AEC2';
 
 const PRODUCTS: [string, string][] = [
   ['Aroha Astrology', 'Available now'],
-  ['Aroha Vastu', 'Coming soon'],
+  ['Aroha Vastu', 'Available now'],
   ['Aroha Puja', 'Coming soon'],
 ];
 

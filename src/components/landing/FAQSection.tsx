@@ -12,7 +12,7 @@ const homeFaqItems: AccordionItem[] = [
   {
     question: 'What is Aroha?',
     answer:
-      'Aroha is an Indian spiritual-technology ecosystem with three products: Aroha Astrology for Vedic astrology, which is available now; Aroha Vastu for understanding the harmony of your home through Vastu Shastra, which is coming soon; and Aroha Puja for booking a pandit to perform pujas at home, which is also coming soon.',
+      'Aroha is an Indian spiritual-technology ecosystem with three products: Aroha Astrology for Vedic astrology, which is available now; Aroha Vastu for understanding your home through Vastu Shastra, which is also available now (a 3D version is coming soon); and Aroha Puja for booking a pandit to perform pujas at home, which is coming soon.',
   },
   {
     question: 'What can I do with Aroha Astrology today?',
@@ -20,9 +20,9 @@ const homeFaqItems: AccordionItem[] = [
       'Generate your free Janam Kundli (Lagna, Rashi, Nakshatra and all nine planets), follow your Vimshottari Dasha, check yogas and doshas, match two Kundlis with Guna Milan, read the daily Panchang and horoscope, ask the Vedic Astrologer chat about your own chart, and unlock personalised reports. It is on Android now; iOS is coming soon.',
   },
   {
-    question: 'When will Aroha Vastu and Aroha Puja launch?',
+    question: 'What is available in Aroha Vastu, and what is coming?',
     answer:
-      'Both are in development and we have not announced launch dates. This site will say clearly when each one opens. Meanwhile, an early Vastu planner is available inside the Aroha Astrology app.',
+      'Aroha Vastu is available now on Android, inside the Aroha Astrology app: draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development; we have not announced launch dates, and this site will say clearly when each opens.',
   },
   {
     question: 'How will Aroha Puja work?',

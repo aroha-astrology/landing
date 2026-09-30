@@ -1,7 +1,9 @@
+import Link from 'next/link';
 import { HeroVisual } from '@/components/three/HeroVisual';
 import { TrackedLink } from '@/components/ui/TrackedLink';
 import { StatusBadge } from '@/components/product/StatusBadge';
 import { BRAND, PRODUCTS, PRODUCT_ORDER } from '@/lib/brand';
+import { PLAY_STORE_URL } from '@/lib/links';
 
 /**
  * The front door. The H1 and copy are plain server HTML and the LCP
@@ -56,12 +58,36 @@ export function HeroSection() {
           </div>
 
           <ul aria-label="The Aroha ecosystem" className="mt-14 grid max-w-[560px] gap-3 border-t border-astro-rule pt-7 sm:grid-cols-3">
-            {PRODUCT_ORDER.map((k) => (
-              <li key={k} className="flex flex-col gap-2">
-                <span className="text-sm font-semibold text-astro-ink">{PRODUCTS[k].name}</span>
-                <StatusBadge status={PRODUCTS[k].status} tone="dark" className="self-start" />
-              </li>
-            ))}
+            {PRODUCT_ORDER.map((k) => {
+              const p = PRODUCTS[k];
+              return (
+                <li key={k} className="flex flex-col gap-2">
+                  <Link href={p.path} className="self-start text-sm font-semibold text-astro-ink underline-offset-4 hover:text-astro-gold hover:underline">
+                    {p.name}
+                  </Link>
+                  <StatusBadge status={p.status} tone="dark" className="self-start" />
+                  {k === 'astrology' ? (
+                    // The app's two stores, right where its status is stated.
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[12.5px]" data-no-translate>
+                      <TrackedLink
+                        href={PLAY_STORE_URL}
+                        cta="hero_store_android"
+                        location="hero_status"
+                        product="astrology"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-astro-gold underline underline-offset-4 hover:text-[#E6BD68]"
+                      >
+                        Android<span className="sr-only"> (opens Google Play)</span>
+                      </TrackedLink>
+                      <span className="text-astro-ink-2">iOS · coming soon</span>
+                    </div>
+                  ) : (
+                    p.note && <span className="text-[12.5px] text-astro-ink-2">{p.note}</span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
           <p className="sr-only">{BRAND.description}</p>
         </div>

@@ -1,3 +1,5 @@
+import { cos, sin } from '@/lib/svgmath';
+
 /**
  * Small product emblems, one per path. Same stroke language across all
  * three (thin line, one filled accent) so they read as a family:
@@ -11,7 +13,7 @@ export function AstrologyGlyph({ className = '' }: { className?: string }) {
       <circle cx="60" cy="60" r="40" stroke="currentColor" strokeOpacity=".5" />
       {Array.from({ length: 12 }, (_, i) => {
         const a = (i * 30 * Math.PI) / 180;
-        return <line key={i} x1={60 + 40 * Math.cos(a)} y1={60 + 40 * Math.sin(a)} x2={60 + 52 * Math.cos(a)} y2={60 + 52 * Math.sin(a)} stroke="currentColor" strokeOpacity=".8" />;
+        return <line key={i} x1={60 + 40 * cos(a)} y1={60 + 40 * sin(a)} x2={60 + 52 * cos(a)} y2={60 + 52 * sin(a)} stroke="currentColor" strokeOpacity=".8" />;
       })}
       <ellipse cx="60" cy="60" rx="40" ry="12" stroke="currentColor" strokeOpacity=".45" transform="rotate(-23.4 60 60)" />
       <circle cx="60" cy="60" r="6" fill="currentColor" />

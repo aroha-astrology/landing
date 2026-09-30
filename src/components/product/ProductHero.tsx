@@ -37,6 +37,7 @@ export function ProductHero({
           <div className="flex flex-wrap items-center gap-3">
             <p className={`text-[13px] font-bold uppercase tracking-[0.18em] ${t.eyebrow}`}>{product.name}</p>
             <StatusBadge status={product.status} tone={t.dark ? 'dark' : 'paper'} />
+            {product.note && <span className="text-sm opacity-75">{product.note}</span>}
           </div>
           <h1 id="product-title" className="font-display mt-5 text-[clamp(42px,6.2vw,80px)] font-medium leading-[1.02] text-balance">
             {title}

@@ -9,7 +9,8 @@
     "lint": "next lint",
     "blog:art": "node scripts/blog-art/generate.mjs",
     "content:check": "node scripts/content/check.mjs",
-    "content:publish": "node scripts/content/publish.mjs"
+    "content:publish": "node scripts/content/publish.mjs",
+    "planets:art": "node scripts/planets/generate.mjs"
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.1",

@@ -12,7 +12,7 @@ const PAGE_URL = `${SITE_URL}/about`;
 export const metadata: Metadata = pageMetadata({
   title: 'About Aroha',
   description:
-    'What Aroha is and why it exists: Aroha Astrology (available now), Aroha Vastu and Aroha Puja (coming soon), and how we use AI responsibly.',
+    'What Aroha is and why it exists: Aroha Astrology and Aroha Vastu (available now), Aroha Puja (coming soon), and how we use AI responsibly.',
   path: '/about',
 });
 
@@ -69,8 +69,8 @@ export default function AboutPage() {
       </p>
       <p>
         The same gap exists for the home and for ritual. Vastu advice online is often contradictory, and arranging a puja at home
-        can mean finding a pandit by word of mouth and guessing what to buy. Aroha Vastu and Aroha Puja are being built to bring the same
-        clarity to those parts of life.
+        can mean finding a pandit by word of mouth and guessing what to buy. Aroha Vastu brings the same
+        clarity to the home today, and Aroha Puja is being built to do it for ritual.
       </p>
 
       <h2>How Aroha Astrology generates a reading</h2>

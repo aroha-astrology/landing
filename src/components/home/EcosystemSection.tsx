@@ -16,11 +16,11 @@ const LOOK: Record<ProductKey, { card: string; glyph: string; cta: string; lead:
   vastu: {
     card: 'bg-vastu-sand text-vastu-ink',
     glyph: 'text-vastu-clay',
-    cta: 'See what’s coming',
+    cta: 'Explore Vastu',
     lead: 'Understand your space',
-    line: 'Your home’s directions, rooms and centre read through Vastu Shastra, and shown to you in 3D.',
+    line: 'Your home’s directions, rooms and centre read through Vastu Shastra, with a score for every room. 3D is coming soon.',
     Glyph: VastuGlyph,
-    points: ['Floor-plan analysis by direction', 'Room-by-room Vastu guidance', '3D visualisation of your home'],
+    points: ['Draw your floor plan, room by room', 'Every room judged by its direction', 'A Vastu score and live analysis'],
   },
   puja: {
     card: 'bg-puja-ivory-2 text-puja-ink',

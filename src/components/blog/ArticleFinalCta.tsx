@@ -12,9 +12,9 @@ const COPY: Record<CategoryKey, { eyebrow: string; title: string; body: string; 
     tone: 'bg-astro-night text-astro-ink',
   },
   vastu: {
-    eyebrow: 'Aroha Vastu · Coming soon',
-    title: 'From reading about Vastu to seeing your own home',
-    body: 'Aroha Vastu will read your floor plan direction by direction and show it in 3D. Until then, an early Vastu planner is available in the Aroha Astrology app.',
+    eyebrow: 'Aroha Vastu · Available now',
+    title: 'From reading about Vastu to checking your own home',
+    body: 'Draw your floor plan in Aroha Vastu and see every room judged by its direction, with a Vastu score for your home. On Android now; a 3D version is coming soon.',
     href: '/vastu',
     cta: 'Discover Aroha Vastu',
     tone: 'bg-vastu-ink text-vastu-sand',

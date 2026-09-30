@@ -1,3 +1,5 @@
+import { cos, sin } from '@/lib/svgmath';
+
 /**
  * Server-rendered stand-in for the WebGL armillary: the same composition in
  * ~3 KB of SVG. It's what phones, low-power devices, crawlers and no-JS
@@ -6,7 +8,7 @@
  */
 const polar = (r: number, deg: number): [number, number] => {
   const a = ((deg - 90) * Math.PI) / 180;
-  return [300 + r * Math.cos(a), 300 + r * Math.sin(a)];
+  return [300 + r * cos(a), 300 + r * sin(a)];
 };
 
 // Deterministic starfield (no Math.random in render: server and client agree).
@@ -49,27 +51,28 @@ export function CelestialSvg({ className = '' }: { className?: string }) {
         <ellipse cx={300} cy={300} rx={238} ry={150} fill="none" stroke="#E9CF95" strokeOpacity={0.18} transform="rotate(35 300 300)" />
       </g>
       {[
-        [40, '#F2B54A', 5],
-        [95, '#ECE6D6', 4.5],
-        [150, '#D0643C', 3.2],
-        [205, '#E3B866', 4.4],
-        [262, '#8E9BC4', 4],
-        [318, '#F1E6CF', 3.6],
-      ].map(([deg, color, r], i) => {
+        [40, 'sun', '#F2B54A', 22],
+        [95, 'moon', '#ECE6D6', 11],
+        [150, 'mars', '#D0643C', 10],
+        [205, 'jupiter', '#E3B866', 17],
+        [262, 'saturn', '#8E9BC4', 14],
+        [318, 'venus', '#F1E6CF', 11],
+      ].map(([deg, tex, color, size], i) => {
         const a = ((Number(deg) - 90) * Math.PI) / 180;
-        const x = 300 + 238 * Math.cos(a);
-        const y = 300 + 70 * Math.sin(a);
+        const x = 300 + 238 * cos(a);
+        const y = 300 + 70 * sin(a);
         const t = (-23.4 * Math.PI) / 180;
-        const X = 300 + (x - 300) * Math.cos(t) - (y - 300) * Math.sin(t);
-        const Y = 300 + (x - 300) * Math.sin(t) + (y - 300) * Math.cos(t);
+        const X = Math.round((300 + (x - 300) * cos(t) - (y - 300) * sin(t)) * 100) / 100;
+        const Y = Math.round((300 + (x - 300) * sin(t) + (y - 300) * cos(t)) * 100) / 100;
+        const d = Number(size);
         return (
           <g key={i}>
-            <circle cx={X} cy={Y} r={Number(r) * 3} fill={String(color)} opacity={0.18} />
-            <circle cx={X} cy={Y} r={Number(r)} fill={String(color)} />
+            <circle cx={X} cy={Y} r={d * (tex === 'sun' ? 1.6 : 1)} fill={String(color)} opacity={tex === 'sun' ? 0.35 : 0.12} />
+            <image href={`/assets/planets/${tex}-disc.webp`} x={X - d / 2} y={Y - d / 2} width={d} height={d} />
           </g>
         );
       })}
-      <circle cx={300} cy={300} r={9} fill="#1D2A5A" stroke="#7F8FD0" strokeOpacity={0.6} />
+      <image href="/assets/planets/earth-disc.webp" x={286} y={286} width={28} height={28} />
     </svg>
   );
 }

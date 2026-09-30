@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { NAKSHATRAS, DASHA_SEQUENCE } from '@/data/nakshatras';
 import { DIRECTIONS, type Direction } from '@/data/vastu';
+import { cos, sin } from '@/lib/svgmath';
 
 /**
  * Explanatory diagrams usable inside MDX articles. Pure server-rendered SVG:
@@ -20,7 +21,7 @@ function DiagramFigure({ caption, children, wide = false }: { caption: string; c
 
 const polar = (cx: number, cy: number, r: number, deg: number): [number, number] => {
   const a = ((deg - 90) * Math.PI) / 180;
-  return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+  return [cx + r * cos(a), cy + r * sin(a)];
 };
 
 function sector(cx: number, cy: number, r0: number, r1: number, a0: number, a1: number) {

@@ -107,7 +107,7 @@ const notoGurmukhi = Noto_Sans_Gurmukhi({
 const SITE_NAME = BRAND.name;
 const DEFAULT_TITLE = 'Aroha: Vedic Astrology, Vastu & Puja — Ancient Wisdom, Modern Guidance';
 const SITE_DESCRIPTION =
-  'Aroha brings Vedic astrology, Vastu and puja together. Aroha Astrology is available now; Aroha Vastu and Aroha Puja are coming soon.';
+  'Aroha brings Vedic astrology, Vastu and puja together. Aroha Astrology and Aroha Vastu are available now; Aroha Puja is coming soon.';
 
 export const viewport: Viewport = {
   themeColor: '#F2ECDF',

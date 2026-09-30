@@ -8,8 +8,9 @@ commercial use.
 | --- | --- | --- | --- | --- |
 | `assets/blog/<category>/<slug>.webp` | Original Aroha artwork, generated in code by `scripts/blog-art/generate.mjs` from each article's `art` frontmatter | Owned by Aroha | No | Yes (regenerate from source) |
 | `assets/blog/photos/<slug>.webp`, `assets/blog/covers/<category>.webp` | AI-generated illustrations made for Aroha with Google Gemini (Sept 2026) from the prompts in `docs/blog-image-prompts.md`; cropped to 16:9 and converted to WebP. Frontmatter `hero` points an article at its photo; the code-generated art stays as the fallback | Generated for Aroha under the provider's terms | No | Yes |
+| `assets/planets/*` | Original planet surface maps and disc renders, generated in code by `scripts/planets/generate.mjs` (3D noise, no source imagery) | Owned by Aroha | No | Yes (regenerate from source) |
 | `assets/video/aroha-daily-panchang.{mp4,jpg}`, `assets/video/aroha-vastu-planner.{mp4,jpg}` | Aroha promo films supplied by the Aroha team (Aroha-Promo, Sept 2026), re-encoded to 720p H.264 with poster frames | Owned by Aroha | No | Yes |
-| `assets/vastu/aroha-vastu-interiors-*.webp` | Aroha Vastu Interiors promo stills supplied by the Aroha team (Aroha-Promo, Sept 2026), converted to WebP | Owned by Aroha | No | Yes; always shown captioned as in development |
+| `assets/vastu/aroha-vastu-interiors-*.webp` | Aroha Vastu Interiors promo stills supplied by the Aroha team (Aroha-Promo, Sept 2026), converted to WebP | Owned by Aroha | No | Yes; always captioned as the 3D version, coming soon |
 
 ## Assets outside `public/assets/` (pre-existing)
 

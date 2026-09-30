@@ -13,7 +13,7 @@ export const BRAND = {
   tagline: 'Ancient wisdom. Modern guidance.',
   promise: 'Your life. Your space. Your journey.',
   description:
-    'Aroha is an Indian spiritual-technology ecosystem: Aroha Astrology for Vedic astrology (available now), Aroha Vastu for understanding living spaces (coming soon) and Aroha Puja for booking pujas at home (coming soon).',
+    'Aroha is an Indian spiritual-technology ecosystem: Aroha Astrology for Vedic astrology and Aroha Vastu for understanding your home (both available now on Android, with iOS and a 3D Vastu experience coming soon), and Aroha Puja for booking pujas at home (coming soon).',
   email: 'subir@arohaastrology.in',
   founder: 'Subir Dutta',
   city: 'Bengaluru',
@@ -36,6 +36,12 @@ export type Product = {
   summary: string;
   /** What it lets someone do, stated only as far as it's true today. */
   capabilities: string[];
+  /** Where to get it today, when available: "On Android, in the Aroha Astrology app". */
+  where?: string;
+  /** A short secondary status shown under the badge: "3D version coming soon". */
+  note?: string;
+  /** Announced but not shipped yet; always presented as coming soon. */
+  upcoming?: string[];
 };
 
 export const PRODUCTS: Record<ProductKey, Product> = {
@@ -60,23 +66,29 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       '14 personalised reports, gemstones, Lal Kitab remedies, numerology and palm reading',
       'Shlokas library and the Bhagavad Gita',
     ],
+    where: 'On Android. iOS is coming soon.',
+    note: 'iOS coming soon',
   },
   vastu: {
     key: 'vastu',
     name: 'Aroha Vastu',
     short: 'Vastu',
-    status: 'coming-soon',
+    status: 'available',
     path: '/vastu',
     theme: 'Space',
     realm: 'Space',
     summary:
-      'Aroha Vastu is an upcoming product for understanding the harmony of your home through Vastu Shastra: floor-plan analysis, direction and room-by-room guidance and 3D visualisation of your space. An early Vastu planner is already available inside the Aroha Astrology app.',
+      'Aroha Vastu helps you understand your home through Vastu Shastra: draw your floor plan, see every room judged by its direction with a Vastu score, and ask questions about your layout. It is available on Android in the Aroha Astrology app; a 3D version with walk-through and furniture placement is coming soon.',
     capabilities: [
-      'Floor-plan analysis against the eight directions and the centre',
-      'Room-by-room guidance for entrance, kitchen, bedrooms and pooja room',
-      '3D visualisation of your home',
-      'Saved homes with version history, to compare layouts before you change anything',
+      'Draw your floor plan in 2D, room by room',
+      'Every room checked against the eight directions and the centre',
+      'An overall Vastu score with live room-by-room analysis',
+      'Ask questions about your plan in the chat',
+      'Save your layouts and compare changes',
     ],
+    where: 'On Android, in the Aroha Astrology app.',
+    note: '3D version coming soon',
+    upcoming: ['Your home in 3D, with a walk-through view', 'Furniture placement scored against Vastu', 'Furnished 3D interiors before you change a thing'],
   },
   puja: {
     key: 'puja',

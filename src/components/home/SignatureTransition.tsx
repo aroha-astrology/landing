@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion';
+import { cos, sin } from '@/lib/svgmath';
 
 const STAGES = [
   { product: 'Astrology', realm: 'Cosmos', line: 'Understand yourself: the sky at the moment you were born.' },
@@ -99,11 +100,11 @@ export function SignatureTransition() {
               <motion.g style={{ opacity: full ?? ticks, rotate: reduce ? 0 : spin }}>
                 {Array.from({ length: 12 }, (_, i) => {
                   const a = (i * 30 * Math.PI) / 180;
-                  return <line key={i} x1={200 + 162 * Math.cos(a)} y1={200 + 162 * Math.sin(a)} x2={200 + 180 * Math.cos(a)} y2={200 + 180 * Math.sin(a)} stroke="#D4A64E" />;
+                  return <line key={i} x1={200 + 162 * cos(a)} y1={200 + 162 * sin(a)} x2={200 + 180 * cos(a)} y2={200 + 180 * sin(a)} stroke="#D4A64E" />;
                 })}
                 {Array.from({ length: 27 }, (_, i) => {
                   const a = ((i * 360) / 27) * (Math.PI / 180);
-                  return <circle key={i} cx={200 + 192 * Math.cos(a)} cy={200 + 192 * Math.sin(a)} r="1.6" fill="#E9CF95" />;
+                  return <circle key={i} cx={200 + 192 * cos(a)} cy={200 + 192 * sin(a)} r="1.6" fill="#E9CF95" />;
                 })}
               </motion.g>
               {/* Space: the square inscribed in the circle, with the Vastu grid */}
@@ -129,7 +130,7 @@ export function SignatureTransition() {
                 <circle cx="200" cy="200" r="60" fill="none" stroke="#F4EEDF" strokeOpacity=".4" />
                 {Array.from({ length: 8 }, (_, i) => {
                   const a = (i * 45 * Math.PI) / 180;
-                  return <line key={i} x1={200 + 60 * Math.cos(a)} y1={200 + 60 * Math.sin(a)} x2={200 + 127 * Math.cos(a)} y2={200 + 127 * Math.sin(a)} stroke="#F4EEDF" strokeOpacity=".25" />;
+                  return <line key={i} x1={200 + 60 * cos(a)} y1={200 + 60 * sin(a)} x2={200 + 127 * cos(a)} y2={200 + 127 * sin(a)} stroke="#F4EEDF" strokeOpacity=".25" />;
                 })}
               </motion.g>
             </svg>

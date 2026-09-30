@@ -1,18 +1,21 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Suspense, useEffect, useMemo, useRef } from 'react';
+import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useScroll } from '@/store/useScroll';
 
 /**
  * The hero's celestial armillary: ecliptic and equator rings, a 12-fold
- * zodiac band with 27 Nakshatra ticks, nine grahas moving along the
- * ecliptic at their relative speeds, a faint mandala plane and a starfield.
+ * zodiac band with 27 Nakshatra ticks, the grahas moving along the ecliptic
+ * at their relative speeds around the Earth, a faint mandala plane and a
+ * starfield.
  *
- * Everything is procedural line/point geometry — no models, no textures
- * except one 64px glow sprite drawn to a canvas — so the whole scene is a
- * few hundred KB of GPU buffers and zero network requests beyond three.js.
+ * The planets are lit spheres wearing surface maps generated in code
+ * (scripts/planets/generate.mjs, ~400 KB of WebP in all). A single point
+ * light rides with the Sun, so every body, the Moon included, shows the
+ * phase it would have from where the Sun sits. Rahu and Ketu are shadow
+ * points, so they're drawn as eclipsed discs rather than worlds.
  * Pointer and scroll come from the shared `useScroll` store (published by
  * SmoothScrollProvider), read inside useFrame so nothing re-renders React.
  */
@@ -23,16 +26,25 @@ const STARLIGHT = new THREE.Color('#F4EEDF');
 const TILT = THREE.MathUtils.degToRad(23.44);
 
 // Sidereal periods (days) set relative speeds: the Moon laps everything.
-const GRAHAS: { color: string; size: number; period: number; phase: number }[] = [
-  { color: '#F2B54A', size: 0.1, period: 365, phase: 0.2 }, // Sun
-  { color: '#ECE6D6', size: 0.085, period: 27.3, phase: 1.3 }, // Moon
-  { color: '#D0643C', size: 0.06, period: 687, phase: 2.4 }, // Mars
-  { color: '#9FC08A', size: 0.05, period: 88, phase: 3.1 }, // Mercury
-  { color: '#E3B866', size: 0.09, period: 4333, phase: 4.2 }, // Jupiter
-  { color: '#F1E6CF', size: 0.07, period: 225, phase: 5.0 }, // Venus
-  { color: '#8E9BC4', size: 0.08, period: 10759, phase: 5.8 }, // Saturn
-  { color: '#6D7291', size: 0.05, period: -6798, phase: 0.9 }, // Rahu (retrograde)
-  { color: '#A88B6C', size: 0.05, period: -6798, phase: 0.9 + Math.PI }, // Ketu (opposite)
+// Sizes are for legibility, not to scale.
+type Graha = { name: string; tex?: string; size: number; period: number; phase: number; spin: number; tilt?: number; rings?: boolean };
+const GRAHAS: Graha[] = [
+  { name: 'Sun', tex: 'sun', size: 0.34, period: 365, phase: 0.2, spin: 0.05 },
+  { name: 'Moon', tex: 'moon', size: 0.13, period: 27.3, phase: 1.3, spin: 0 },
+  { name: 'Mars', tex: 'mars', size: 0.12, period: 687, phase: 2.4, spin: 0.25, tilt: 0.44 },
+  { name: 'Mercury', tex: 'mercury', size: 0.09, period: 88, phase: 3.1, spin: 0.05 },
+  { name: 'Jupiter', tex: 'jupiter', size: 0.27, period: 4333, phase: 4.2, spin: 0.5, tilt: 0.05 },
+  { name: 'Venus', tex: 'venus', size: 0.15, period: 225, phase: 5.0, spin: -0.03 },
+  { name: 'Saturn', tex: 'saturn', size: 0.21, period: 10759, phase: 5.8, spin: 0.45, tilt: 0.47, rings: true },
+  { name: 'Rahu', size: 0.075, period: -6798, phase: 0.9, spin: 0 }, // retrograde node
+  { name: 'Ketu', size: 0.075, period: -6798, phase: 0.9 + Math.PI, spin: 0 }, // opposite node
+];
+const ORBIT = 3.14;
+const TEX_URLS = [
+  ...GRAHAS.filter((g) => g.tex).map((g) => `/assets/planets/${g.tex}.webp`),
+  '/assets/planets/earth.webp',
+  '/assets/planets/earth-clouds.webp',
+  '/assets/planets/saturn-rings.png',
 ];
 
 function circlePoints(radius: number, segments = 256): THREE.Vector3[] {
@@ -73,11 +85,111 @@ function glowTexture() {
   return tex;
 }
 
+/** Fresnel rim glow for the Earth's atmosphere (drawn on a slightly larger back-faced shell). */
+function atmosphereMaterial() {
+  return new THREE.ShaderMaterial({
+    transparent: true,
+    depthWrite: false,
+    side: THREE.BackSide,
+    blending: THREE.AdditiveBlending,
+    uniforms: { color: { value: new THREE.Color('#6FA8FF') } },
+    vertexShader: `varying vec3 vN; varying vec3 vV;
+      void main() { vec4 mv = modelViewMatrix * vec4(position, 1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }`,
+    fragmentShader: `uniform vec3 color; varying vec3 vN; varying vec3 vV;
+      void main() { float f = pow(1.0 - abs(dot(vN, vV)), 3.0); gl_FragColor = vec4(color, f * 0.55); }`,
+  });
+}
+
+/** A ring whose UVs run radially (u: inner→outer), so a 1D strip texture maps onto it. */
+function ringGeometry(inner: number, outer: number, segs: number) {
+  const geo = new THREE.RingGeometry(inner, outer, segs, 1);
+  const pos = geo.attributes.position;
+  const uv = geo.attributes.uv;
+  const v = new THREE.Vector3();
+  for (let i = 0; i < pos.count; i++) {
+    v.fromBufferAttribute(pos, i);
+    uv.setXY(i, (v.length() - inner) / (outer - inner), 0.5);
+  }
+  return geo;
+}
+
+function Body({ graha, segs, map, rings, glow }: { graha: Graha; segs: number; map?: THREE.Texture; rings?: THREE.Texture; glow: THREE.Texture }) {
+  const r = graha.size;
+  const ringGeo = useMemo(() => (graha.rings ? ringGeometry(r * 1.3, r * 2.25, 96) : null), [graha.rings, r]);
+  useEffect(() => () => ringGeo?.dispose(), [ringGeo]);
+
+  if (graha.name === 'Sun') {
+    return (
+      <group>
+        <mesh>
+          <sphereGeometry args={[r, segs, segs]} />
+          <meshBasicMaterial map={map} />
+        </mesh>
+        <sprite scale={[r * 5, r * 5, 1]}>
+          <spriteMaterial map={glow} color="#FFB347" transparent opacity={0.85} depthWrite={false} blending={THREE.AdditiveBlending} />
+        </sprite>
+        <sprite scale={[r * 11, r * 11, 1]}>
+          <spriteMaterial map={glow} color="#FF8A2A" transparent opacity={0.28} depthWrite={false} blending={THREE.AdditiveBlending} />
+        </sprite>
+      </group>
+    );
+  }
+  if (!map) {
+    // Rahu / Ketu: shadow points, drawn as an eclipsed disc with a thin corona.
+    return (
+      <group>
+        <mesh>
+          <sphereGeometry args={[r, 24, 24]} />
+          <meshBasicMaterial color="#070A18" />
+        </mesh>
+        <sprite scale={[r * 4.2, r * 4.2, 1]}>
+          <spriteMaterial map={glow} color="#C9B27A" transparent opacity={0.35} depthWrite={false} blending={THREE.AdditiveBlending} />
+        </sprite>
+      </group>
+    );
+  }
+  return (
+    <group rotation={[0, 0, graha.tilt ?? 0]}>
+      <mesh>
+        <sphereGeometry args={[r, segs, segs]} />
+        <meshStandardMaterial map={map} roughness={0.95} metalness={0} />
+      </mesh>
+      {ringGeo && rings && (
+        <mesh geometry={ringGeo} rotation={[-Math.PI / 2, 0, 0]}>
+          <meshStandardMaterial map={rings} transparent side={THREE.DoubleSide} depthWrite={false} roughness={1} />
+        </mesh>
+      )}
+    </group>
+  );
+}
+
+function Ready({ onReady }: { onReady: () => void }) {
+  useEffect(() => onReady(), [onReady]);
+  return null;
+}
+
 function Armillary({ reduced, lite }: { reduced: boolean; lite: boolean }) {
   const root = useRef<THREE.Group>(null);
   const planets = useRef<THREE.Group>(null);
+  const earth = useRef<THREE.Mesh>(null);
+  const clouds = useRef<THREE.Mesh>(null);
+  const sunLight = useRef<THREE.PointLight>(null);
   const { camera } = useThree();
   const glow = useMemo(glowTexture, []);
+  const segs = lite ? 32 : 56;
+  const textures = useLoader(THREE.TextureLoader, TEX_URLS);
+  const maps = useMemo(() => {
+    const out: Record<string, THREE.Texture> = {};
+    TEX_URLS.forEach((url, i) => {
+      const tex = textures[i];
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = 4;
+      out[url.split('/').pop()!.replace(/\.(webp|png)$/, '')] = tex;
+    });
+    return out;
+  }, [textures]);
+  const ringTex = maps['saturn-rings'];
+  const atmosphere = useMemo(atmosphereMaterial, []);
 
   const rings = useMemo(() => {
     const group = new THREE.Group();
@@ -145,8 +257,9 @@ function Armillary({ reduced, lite }: { reduced: boolean; lite: boolean }) {
         });
       }
       glow.dispose();
+      atmosphere.dispose();
     },
-    [rings, stars, glow],
+    [rings, stars, glow, atmosphere],
   );
 
   useFrame((state, delta) => {
@@ -161,40 +274,50 @@ function Armillary({ reduced, lite }: { reduced: boolean; lite: boolean }) {
     g.rotation.x = THREE.MathUtils.damp(g.rotation.x, 0.42 + py * 0.12 + scroll * 0.35, 3, delta);
     g.rotation.y = THREE.MathUtils.damp(g.rotation.y, -0.5 + drift + px * 0.22 + scroll * 0.9, 3, delta);
     camera.position.z = THREE.MathUtils.damp(camera.position.z, 13 + scroll * 4, 3, delta);
-    if (planets.current && !reduced) {
+    if (planets.current) {
       planets.current.children.forEach((child, i) => {
         const gr = GRAHAS[i];
         // One real year ≈ 40 s of animation; keeps the Moon visibly moving.
-        const a = gr.phase + (t * 9.1) / gr.period;
-        child.position.set(Math.cos(a) * 3.14, 0, Math.sin(a) * 3.14);
+        const a = gr.phase + (reduced ? 0 : (t * 9.1) / gr.period);
+        child.position.set(Math.cos(a) * ORBIT, 0, Math.sin(a) * ORBIT);
+        const body = child.children[0];
+        if (body && !reduced) body.rotation.y += gr.spin * delta;
       });
+      // The Sun is the light: every body shows its true phase.
+      const sun = planets.current.children[0];
+      if (sun && sunLight.current) sunLight.current.position.copy(sun.position);
     }
+    if (earth.current && !reduced) earth.current.rotation.y += 0.08 * delta;
+    if (clouds.current && !reduced) clouds.current.rotation.y += 0.1 * delta;
   });
 
   return (
     <group ref={root} rotation={[0.42, -0.5, 0]}>
       <primitive object={rings} />
+      <pointLight ref={sunLight} color="#FFF1DA" intensity={2.6} decay={0} />
+      <ambientLight intensity={0.07} color="#9FB0FF" />
       <group ref={planets}>
         {GRAHAS.map((gr, i) => (
-          <group key={i} position={[Math.cos(gr.phase) * 3.14, 0, Math.sin(gr.phase) * 3.14]}>
-            <mesh>
-              <sphereGeometry args={[gr.size, 20, 20]} />
-              <meshBasicMaterial color={gr.color} />
-            </mesh>
-            <sprite scale={[gr.size * 7, gr.size * 7, 1]}>
-              <spriteMaterial map={glow} color={gr.color} transparent opacity={0.55} depthWrite={false} blending={THREE.AdditiveBlending} />
-            </sprite>
+          <group key={gr.name} position={[Math.cos(gr.phase) * ORBIT, 0, Math.sin(gr.phase) * ORBIT]}>
+            <Body graha={gr} segs={segs} map={gr.tex ? maps[gr.tex] : undefined} rings={gr.rings ? ringTex : undefined} glow={glow} />
           </group>
         ))}
       </group>
-      {/* The observer at the centre — Vedic astrology is geocentric. */}
-      <mesh>
-        <sphereGeometry args={[0.1, 24, 24]} />
-        <meshBasicMaterial color="#C9D2F2" />
-      </mesh>
-      <sprite scale={[1.6, 1.6, 1]}>
-        <spriteMaterial map={glow} color="#7F8FD0" transparent opacity={0.4} depthWrite={false} blending={THREE.AdditiveBlending} />
-      </sprite>
+      {/* The observer at the centre: Vedic astrology is geocentric. */}
+      <group rotation={[0, 0, 0.41]}>
+        <mesh ref={earth}>
+          <sphereGeometry args={[0.42, segs, segs]} />
+          <meshStandardMaterial map={maps.earth} roughness={0.85} metalness={0} />
+        </mesh>
+        <mesh ref={clouds}>
+          <sphereGeometry args={[0.428, segs, segs]} />
+          <meshStandardMaterial map={maps['earth-clouds']} transparent depthWrite={false} roughness={1} />
+        </mesh>
+        <mesh scale={1.1}>
+          <sphereGeometry args={[0.42, segs, segs]} />
+          <primitive object={atmosphere} attach="material" />
+        </mesh>
+      </group>
       <primitive object={stars} />
     </group>
   );
@@ -207,11 +330,14 @@ export default function CelestialScene({ active, reduced, lite, onReady }: { act
       gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }}
       camera={{ position: [0, 0, 13], fov: 38 }}
       frameloop={reduced ? 'demand' : active ? 'always' : 'never'}
-      onCreated={() => onReady()}
       aria-hidden
       style={{ pointerEvents: 'none' }}
     >
-      <Armillary reduced={reduced} lite={lite} />
+      <Suspense fallback={null}>
+        <Armillary reduced={reduced} lite={lite} />
+        {/* Mounts once every texture has loaded: only then fade the canvas in. */}
+        <Ready onReady={onReady} />
+      </Suspense>
     </Canvas>
   );
 }

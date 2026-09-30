@@ -7,7 +7,7 @@ import { PRODUCTS } from '@/lib/brand';
 /**
  * Aroha Vastu preview. Two real screens, each labelled with its status: the
  * Vastu planner film is what ships in the Aroha Astrology app today; the 3D
- * plan beside it is Aroha Vastu, still in development.
+ * plan beside it is the 3D version, coming soon.
  */
 export function VastuPreview() {
   const p = PRODUCTS.vastu;
@@ -23,8 +23,8 @@ export function VastuPreview() {
             From the cosmos to your space
           </h2>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-vastu-ink-2">
-            Vastu Shastra is India’s traditional system of architecture and spatial design: how a home’s directions, centre and rooms are arranged. Aroha Vastu is
-            being built to read your own floor plan through that lens, and to show you the result in 3D before you move a single wall.
+            Vastu Shastra is India’s traditional system of architecture and spatial design: how a home’s directions, centre and rooms are arranged. Aroha Vastu reads
+            your own floor plan through that lens, room by room, with a score for each. A 3D version is coming soon.
           </p>
           <ul className="mt-8 space-y-3">
             {p.capabilities.map((c) => (
@@ -35,8 +35,8 @@ export function VastuPreview() {
             ))}
           </ul>
           <p className="mt-8 max-w-xl rounded-2xl border border-vastu-ink/15 bg-[#F4EDDF] px-5 py-4 text-[14.5px] leading-relaxed text-vastu-ink-2">
-            <strong className="text-vastu-ink">Available today:</strong> an early Vastu planner lives inside the Aroha Astrology app, where you can
-            draw a 2D floor plan and check it against the eight directions.
+            <strong className="text-vastu-ink">Where to get it:</strong> {p.where} <strong className="text-vastu-ink">Coming soon:</strong> your home in
+            3D, with a walk-through view and furniture placement scored against Vastu.
           </p>
           <TrackedLink
             href="/vastu"
@@ -55,7 +55,7 @@ export function VastuPreview() {
             <FeatureVideo video={FEATURE_VIDEOS.vastuPlanner} tone="sand" />
           </div>
           <div className="mt-16 sm:mt-24">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-vastu-ink-2">In development</p>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-vastu-ink-2">3D · coming soon</p>
             <AppShot shot={VASTU_INTERIORS_SHOTS.floorPlan3d} tone="sand" sizes="(min-width: 1024px) 260px, 45vw" />
           </div>
         </div>
