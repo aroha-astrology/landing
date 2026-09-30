@@ -58,7 +58,7 @@ const faqItems = [
 
 export default function KundliPage() {
   return (
-    <main>
+    <div>
       <KundliSection headingLevel="h1" />
 
       <section className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
@@ -116,6 +116,6 @@ export default function KundliPage() {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </main>
+    </div>
   );
 }

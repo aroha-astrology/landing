@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -25,14 +24,6 @@ const GRAHAS = [
   { sanskrit: 'Ketu', english: 'South Node', domain: 'Detachment & release' },
 ];
 
-const listVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.06 } },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const } },
-};
 
 export function NavagrahaSection() {
   return (
@@ -62,21 +53,17 @@ export function NavagrahaSection() {
           ))}
         </div>
 
-        <motion.ul
+        <ul
           className="grid grid-cols-[repeat(auto-fit,minmax(110px,1fr))] gap-x-3 gap-y-5"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={listVariants}
         >
           {GRAHAS.map((g) => (
-            <motion.li key={g.sanskrit} variants={itemVariants}>
+            <li key={g.sanskrit}>
               <p className="font-display text-[17px] text-night-ink">{g.sanskrit}</p>
               <p className="mt-0.5 text-[11px] uppercase tracking-[0.04em] text-night-accent">{g.english}</p>
               <p className="mt-1.5 text-[12px] leading-[1.4] text-night-ink-2">{g.domain}</p>
-            </motion.li>
+            </li>
           ))}
-        </motion.ul>
+        </ul>
       </div>
     </Section>
   );

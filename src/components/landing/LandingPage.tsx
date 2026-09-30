@@ -1,36 +1,41 @@
-import { HeroSection } from './HeroSection';
-import { MoonSignsOverviewSection } from './MoonSignsOverviewSection';
-import { NavagrahaSection } from './NavagrahaSection';
-import { HowItWorksSection } from './HowItWorksSection';
-import { FeaturesSection } from './FeaturesSection';
-import { ReportsSection } from './ReportsSection';
-import { VideoSection } from './VideoSection';
-import { PrecisionSection } from './PrecisionSection';
+import { HeroSection } from '@/components/home/HeroSection';
+import { EcosystemSection } from '@/components/home/EcosystemSection';
+import { AstrologySection } from '@/components/home/AstrologySection';
+import { AskSection } from '@/components/home/AskSection';
+import { SignatureTransition } from '@/components/home/SignatureTransition';
+import { VastuPreview } from '@/components/home/VastuPreview';
+import { PujaPreview } from '@/components/home/PujaPreview';
+import { TrustSection } from '@/components/home/TrustSection';
+import { AppExperience } from '@/components/home/AppExperience';
+import { KnowledgeSection } from '@/components/home/KnowledgeSection';
+import { FinalCta } from '@/components/home/FinalCta';
 import { PanchangSection } from './PanchangSection';
-import { LanguagesSection } from './LanguagesSection';
 import { FAQSection } from './FAQSection';
 
 /**
- * Light editorial landing page with two full-bleed dark "acts"
- * (Navagraha, Precision) breaking up the paper surface. Order:
- * Hero → Moon-sign overview (no form — the real calculator lives at
- * /moon-sign) → Navagraha (dark) → How it works → Features → Videos (dark) → Reports →
- * Precision (dark) → Panchang (live data) → Languages → FAQ → Footer.
+ * The ecosystem homepage, told as one arc — Life → Space → Journey:
+ * Hero → the three paths → Astrology (Kundli) → asking about your chart →
+ * today's Panchang → the Cosmos/Space/Ritual transition → Vastu → Puja →
+ * why Aroha → the app → the Knowledge Hub → questions → closing CTA.
+ * Dark "cosmos" bands and warm "space"/"ritual" bands alternate so each
+ * product's light is recognisable before its name is read.
  */
 export function LandingPage() {
   return (
-    <main>
+    <>
       <HeroSection />
-      <MoonSignsOverviewSection />
-      <NavagrahaSection />
-      <HowItWorksSection />
-      <FeaturesSection />
-      <VideoSection />
-      <ReportsSection />
-      <PrecisionSection />
-      <PanchangSection />
-      <LanguagesSection />
-      <FAQSection />
-    </main>
+      <EcosystemSection />
+      <AstrologySection />
+      <AskSection />
+      <PanchangSection intro />
+      <SignatureTransition />
+      <VastuPreview />
+      <PujaPreview />
+      <TrustSection />
+      <AppExperience />
+      <KnowledgeSection />
+      <FAQSection eyebrow="Questions" title="About Aroha" />
+      <FinalCta />
+    </>
   );
 }

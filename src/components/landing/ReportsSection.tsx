@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -164,14 +163,6 @@ const REPORTS: Report[] = [
   },
 ];
 
-const listVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.05 } },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
-};
 
 export function ReportsSection() {
   return (
@@ -182,17 +173,12 @@ export function ReportsSection() {
         subtitle="Every report runs your own birth chart through a fixed set of classical calculations — not a generic template. A blurred preview is always free before you unlock the full reading."
       />
 
-      <motion.div
+      <div
         className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={listVariants}
       >
         {REPORTS.map((report) => (
-          <motion.div
+          <div
             key={report.key}
-            variants={itemVariants}
             className="flex flex-col overflow-hidden rounded-2xl border border-rule bg-paper-raised"
           >
             <div className="relative h-36 w-full bg-paper-sunk">
@@ -208,7 +194,7 @@ export function ReportsSection() {
               <div className="mb-3 flex items-start justify-between gap-3">
                 <h3 className="font-display text-lg leading-tight text-ink">{report.title}</h3>
                 <span
-                  className="shrink-0 rounded-pill bg-accent-soft px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.04em] text-accent"
+                  className="shrink-0 rounded-pill bg-accent-soft px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.04em] text-accent-text"
                   data-no-translate
                 >
                   From ₹{report.fromRupees}
@@ -218,7 +204,7 @@ export function ReportsSection() {
               <ul className="space-y-2 text-[13.5px] leading-snug text-ink-muted">
                 {report.questions.map((q) => (
                   <li key={q} className="flex gap-2">
-                    <span className="mt-[3px] text-accent" aria-hidden>
+                    <span className="mt-[3px] text-accent-text" aria-hidden>
                       •
                     </span>
                     <span>{q}</span>
@@ -226,9 +212,9 @@ export function ReportsSection() {
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </Section>
   );
 }

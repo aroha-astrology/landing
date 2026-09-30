@@ -65,7 +65,7 @@ export default function DeleteAccountPage() {
               on you first — write to the Grievance Officer before confirming deletion.
             </p>
             <p className="mt-4">
-              <Link href={PLAY_STORE_URL} className="text-accent hover:underline">
+              <Link href={PLAY_STORE_URL} className="text-accent-text hover:underline">
                 Open the app
               </Link>
             </p>
@@ -77,7 +77,7 @@ export default function DeleteAccountPage() {
             </h2>
             <p className="mt-3 leading-relaxed text-ink-2">
               Email our Grievance Officer at{' '}
-              <a href={`mailto:${GRIEVANCE_EMAIL}`} className="text-accent hover:underline">
+              <a href={`mailto:${GRIEVANCE_EMAIL}`} className="text-accent-text hover:underline">
                 {GRIEVANCE_EMAIL}
               </a>{' '}
               from the address on your account, or include the mobile number you signed up with, and
@@ -128,10 +128,10 @@ export default function DeleteAccountPage() {
         </div>
 
         <nav className="mt-14 flex flex-wrap gap-x-6 gap-y-2 border-t border-ink/10 pt-6 text-sm">
-          <Link href="/legal/privacy" className="text-accent hover:underline">
+          <Link href="/legal/privacy" className="text-accent-text hover:underline">
             Privacy Policy
           </Link>
-          <Link href="/legal/terms" className="text-accent hover:underline">
+          <Link href="/legal/terms" className="text-accent-text hover:underline">
             Terms of Service
           </Link>
         </nav>

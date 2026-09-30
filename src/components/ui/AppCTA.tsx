@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PLAY_STORE_URL } from '@/lib/links';
+import { track } from '@/lib/analytics';
 
 /**
  * Every "get the app" CTA on the site opens this instead of linking straight
@@ -24,7 +25,7 @@ const VARIANTS: Record<Variant, string> = {
   // Ink on amber, not white — the accent is a light surface, so white text
   // sits around 2.3:1 against it.
   solid: 'bg-accent text-accent-ink hover:bg-accent-hover',
-  outline: 'border border-ink/25 text-ink hover:border-accent hover:text-accent',
+  outline: 'border border-ink/25 text-ink hover:border-accent hover:text-accent-text',
 };
 
 // Minimum gap between the popover and either side of the viewport.
@@ -34,11 +35,14 @@ export function AppCTA({
   variant = 'solid',
   align = 'center',
   className = '',
+  location = 'unknown',
   children,
 }: {
   variant?: Variant;
   align?: Align;
   className?: string;
+  /** Where on the site this CTA sits, for the app_store_click event. */
+  location?: string;
   children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
@@ -78,6 +82,7 @@ export function AppCTA({
       <motion.button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         className={`${BASE} ${VARIANTS[variant]} ${className}`}
@@ -104,6 +109,7 @@ export function AppCTA({
               href={PLAY_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track('app_store_click', { store: 'google_play', location })}
               className="flex w-full items-center justify-between rounded-lg px-2.5 py-2.5 transition-colors hover:bg-paper-sunk"
             >
               <span className="text-[13px] font-semibold text-ink">Android</span>

@@ -1,0 +1,38 @@
+import type { Metadata } from 'next';
+
+const DEFAULT_IMAGE = {
+  url: '/opengraph-image',
+  width: 1200,
+  height: 630,
+  alt: 'Aroha — Ancient wisdom. Modern guidance. Astrology, Vastu and Puja.',
+};
+
+/**
+ * Page metadata with a canonical URL and complete Open Graph / Twitter
+ * tags. A page that sets its own `openGraph` object replaces the root one
+ * wholesale (Next doesn't deep-merge it), so the share image has to be
+ * restated here or the page ships without og:image.
+ */
+export function pageMetadata({
+  title,
+  description,
+  path,
+  robots,
+  absoluteTitle = false,
+}: {
+  /** Skip the "| Aroha" template, for titles that already lead with the brand. */
+  absoluteTitle?: boolean;
+  title: string;
+  description: string;
+  path: string;
+  robots?: Metadata['robots'];
+}): Metadata {
+  return {
+    title: absoluteTitle ? { absolute: title } : title,
+    description,
+    alternates: { canonical: path },
+    robots,
+    openGraph: { type: 'website', siteName: 'Aroha', locale: 'en_IN', title, description, url: path, images: [DEFAULT_IMAGE] },
+    twitter: { card: 'summary_large_image', title, description, images: [DEFAULT_IMAGE.url] },
+  };
+}

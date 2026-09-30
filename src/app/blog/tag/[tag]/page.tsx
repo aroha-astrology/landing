@@ -1,25 +1,18 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Section } from '@/components/ui/Section';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { getAllTags, getPostsByTag } from '@/lib/blog';
+import { Breadcrumbs } from '@/components/blog/Breadcrumbs';
+import { ArticleCard, toSummary } from '@/components/blog/ArticleCard';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { MIN_INDEXABLE_TAG_POSTS, getAllTags, getPostsByTag } from '@/lib/blog';
+import { WEBSITE_ID, breadcrumbNode } from '@/lib/brand';
 import { SITE_URL } from '@/lib/links';
 
 type PageProps = { params: Promise<{ tag: string }> };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getAllTags().map((tag) => ({ tag }));
-}
-
-function formatDate(date: string) {
-  return new Date(`${date}T00:00:00Z`).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'UTC',
-  });
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -29,9 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (posts.length === 0) return {};
 
   return {
-    title: `${tag} — Vedic Astrology Guides`,
-    description: `Aroha Astrology guides tagged "${tag}" — ${posts.length} article${posts.length === 1 ? '' : 's'}.`,
+    title: `${tag}: Articles`,
+    description: `Aroha Knowledge Hub articles about ${tag}: ${posts.length} article${posts.length === 1 ? '' : 's'}.`,
     alternates: { canonical: `/blog/tag/${encodeURIComponent(tag)}` },
+    // Small tag archives are thin pages: keep them as navigation for
+    // readers, but out of the index (and out of sitemap.ts).
+    robots: posts.length < MIN_INDEXABLE_TAG_POSTS ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -42,7 +38,6 @@ export default async function TagPage({ params }: PageProps) {
   if (posts.length === 0) notFound();
 
   const pageUrl = `${SITE_URL}/blog/tag/${encodeURIComponent(tag)}`;
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -50,76 +45,37 @@ export default async function TagPage({ params }: PageProps) {
         '@type': 'CollectionPage',
         '@id': `${pageUrl}#webpage`,
         url: pageUrl,
-        name: `${tag} — Vedic Astrology Guides`,
-        isPartOf: { '@id': `${SITE_URL}/#website` },
+        name: `${tag} — Aroha Knowledge Hub`,
+        isPartOf: { '@id': WEBSITE_ID },
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${pageUrl}#breadcrumb`,
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
-          { '@type': 'ListItem', position: 3, name: tag, item: pageUrl },
-        ],
-      },
+      breadcrumbNode(pageUrl, [
+        { name: 'Blog', url: `${SITE_URL}/blog` },
+        { name: tag, url: pageUrl },
+      ]),
     ],
   };
 
   return (
-    <Section tone="paper">
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <p className="text-sm">
-        <Link href="/blog" className="text-accent hover:underline">
-          ← All guides
-        </Link>
-      </p>
-      <SectionHeading
-        as="h1"
-        eyebrow="Tagged"
-        title={tag}
-        subtitle={`${posts.length} guide${posts.length === 1 ? '' : 's'} on this topic.`}
-        align="left"
-        className="mt-6"
-      />
-
-      <div className="mt-14 flex flex-col divide-y divide-rule">
-        {posts.map((post) => (
-          <article key={post.slug} className="flex gap-6 py-8 first:pt-0">
-            {post.frontmatter.hero && (
-              <Link
-                href={`/blog/${post.slug}`}
-                className="relative hidden h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-rule bg-paper-sunk sm:block"
-              >
-                <Image
-                  src={post.frontmatter.hero}
-                  alt=""
-                  fill
-                  sizes="96px"
-                  className="object-contain p-3"
-                />
-              </Link>
-            )}
-            <div className="min-w-0 flex-1">
-              <Link href={`/blog/${post.slug}`} className="group">
-                <h2 className="font-display text-2xl font-medium text-ink transition-colors group-hover:text-accent sm:text-3xl">
-                  {post.frontmatter.title}
-                </h2>
-              </Link>
-              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium uppercase tracking-[0.1em] text-ink-muted">
-                <time dateTime={post.frontmatter.date}>{formatDate(post.frontmatter.date)}</time>
-                <span aria-hidden>·</span>
-                <span data-no-translate>{post.readingTime} min read</span>
-              </div>
-              <p className="mt-3 max-w-2xl text-base text-ink-2">{post.frontmatter.description}</p>
-            </div>
-          </article>
-        ))}
+    <div className="bg-paper px-[clamp(20px,4vw,56px)] pb-[clamp(64px,8vw,112px)] pt-8 text-ink">
+      <JsonLd data={jsonLd} />
+      <div className="mx-auto max-w-[1180px]">
+        <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: `Tagged: ${tag}` }]} />
+        <header className="mt-10 max-w-3xl">
+          <p className="j-eyebrow text-[13px]">Tagged</p>
+          <h1 className="font-display mt-3 text-[clamp(36px,5vw,56px)] font-medium leading-[1.08]">{tag}</h1>
+          <p className="mt-4 text-lg text-ink-2">
+            {posts.length} article{posts.length === 1 ? '' : 's'} on this topic.
+          </p>
+        </header>
+        <ul className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((p) => (
+            <li key={p.slug}>
+              <ArticleCard article={toSummary(p)} />
+            </li>
+          ))}
+        </ul>
       </div>
-    </Section>
+    </div>
   );
 }

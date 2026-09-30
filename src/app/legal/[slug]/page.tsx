@@ -93,11 +93,11 @@ export default async function LegalDocPage({ params }: PageProps) {
 
         <nav className="mt-14 flex flex-wrap gap-x-6 gap-y-2 border-t border-ink/10 pt-6 text-sm">
           {others.map((s) => (
-            <Link key={s} href={`/legal/${s}`} className="text-accent hover:underline">
+            <Link key={s} href={`/legal/${s}`} className="text-accent-text hover:underline">
               {LEGAL_DOCS[s].title}
             </Link>
           ))}
-          <Link href="/delete-account" className="text-accent hover:underline">
+          <Link href="/delete-account" className="text-accent-text hover:underline">
             Delete your account
           </Link>
         </nav>

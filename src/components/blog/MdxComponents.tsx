@@ -1,5 +1,39 @@
-import type { ImgHTMLAttributes, ReactNode } from 'react';
+import { Children, isValidElement, type HTMLAttributes, type ImgHTMLAttributes, type ReactNode } from 'react';
 import Image from 'next/image';
+import { slugifyHeading } from '@/lib/slug';
+import {
+  Checklist,
+  DashaTimeline,
+  FloorPlan,
+  KeyTakeaway,
+  NakshatraWheel,
+  PanchangLimbs,
+  RitualSteps,
+  VastuCompass,
+} from './Diagrams';
+
+/** Plain text of a rendered heading, for its anchor id (see slugifyHeading). */
+function textOf(node: ReactNode): string {
+  return Children.toArray(node)
+    .map((c) => (typeof c === 'string' || typeof c === 'number' ? String(c) : isValidElement<{ children?: ReactNode }>(c) ? textOf(c.props.children) : ''))
+    .join('');
+}
+
+function H2({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h2 id={slugifyHeading(textOf(children))} {...rest}>
+      {children}
+    </h2>
+  );
+}
+
+function H3({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h3 id={slugifyHeading(textOf(children))} {...rest}>
+      {children}
+    </h3>
+  );
+}
 
 /**
  * An inline illustrated figure for a post body — `<Figure src="/planets/mars.png"
@@ -41,7 +75,7 @@ function Callout({
       ? 'border-accent/40 bg-accent-soft'
       : 'border-rule bg-paper-sunk';
   return (
-    <div className={`my-6 rounded-xl border px-5 py-4 text-[15px] leading-relaxed text-ink-2 ${toneClasses}`}>
+    <div className={`not-prose my-6 rounded-xl border px-5 py-4 text-[15px] leading-relaxed text-ink-2 [&_a]:text-link [&_a]:underline [&_strong]:font-semibold [&_strong]:text-ink ${toneClasses}`}>
       {children}
     </div>
   );
@@ -53,6 +87,21 @@ function Callout({
 export const mdxComponents = {
   Figure,
   Callout,
+  KeyTakeaway,
+  Checklist,
+  RitualSteps,
+  NakshatraWheel,
+  DashaTimeline,
+  VastuCompass,
+  FloorPlan,
+  PanchangLimbs,
+  h2: H2,
+  h3: H3,
+  table: (props: HTMLAttributes<HTMLTableElement>) => (
+    <div className="table-wrap" role="region" aria-label="Table" tabIndex={0}>
+      <table {...props} />
+    </div>
+  ),
   img: (props: ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line jsx-a11y/alt-text -- alt is required on MDX ! [alt](src) syntax and passed through in props
     <span className="my-8 block">

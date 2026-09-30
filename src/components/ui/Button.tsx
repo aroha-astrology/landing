@@ -30,8 +30,8 @@ const VARIANTS: Record<Variant, string> = {
   // Ink on amber, not white — the accent is a light surface, so white text
   // sits around 2.3:1 against it.
   solid: 'bg-accent text-accent-ink hover:bg-accent-hover',
-  outline: 'border border-ink/25 text-ink hover:border-accent hover:text-accent',
-  ghost: 'px-2 py-1 text-ink-2 hover:text-accent',
+  outline: 'border border-ink/25 text-ink hover:border-accent hover:text-accent-text',
+  ghost: 'px-2 py-1 text-ink-2 hover:text-accent-text',
 };
 
 export function Button({ variant = 'solid', className = '', children, ...props }: ButtonProps) {

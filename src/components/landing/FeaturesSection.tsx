@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -73,14 +72,6 @@ const FEATURES: Feature[] = [
   },
 ];
 
-const listVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.06 } },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
-};
 
 export function FeaturesSection() {
   return (
@@ -92,29 +83,24 @@ export function FeaturesSection() {
       {/* Hairline grid: a single gap-px row/column filled with the rule
           colour sits *behind* the cells, so every cell only needs a matching
           background (not its own border) to produce crisp 1px dividers. */}
-      <motion.div
+      <div
         className="mt-14 grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-4"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={listVariants}
       >
         {FEATURES.map((feature, i) => (
-          <motion.div
+          <div
             key={feature.title}
-            variants={itemVariants}
             className="flex min-h-[188px] flex-col justify-between bg-paper-sunk px-6 py-7"
           >
-            <div className="font-display text-sm italic text-accent" data-no-translate>
+            <div className="font-display text-sm italic text-accent-text" data-no-translate>
               {String(i + 1).padStart(2, '0')}
             </div>
             <div>
               <h3 className="font-display text-lg text-ink">{feature.title}</h3>
               <p className="mt-2 text-[13.5px] leading-snug text-ink-muted">{feature.description}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </Section>
   );
 }

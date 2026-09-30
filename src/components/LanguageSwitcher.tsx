@@ -40,7 +40,7 @@ export function LanguageSwitcher() {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex h-9 items-center gap-1.5 rounded-full border border-ink/15 bg-paper px-3 text-ink transition-colors hover:border-accent hover:text-accent"
+        className="flex h-9 items-center gap-1.5 rounded-full border border-ink/15 bg-paper px-3 text-ink transition-colors hover:border-accent hover:text-accent-text"
         aria-label="Change language"
         data-no-translate
       >
@@ -79,7 +79,7 @@ export function LanguageSwitcher() {
                     setOpen(false);
                   }}
                   className={`flex w-full cursor-pointer items-center justify-between rounded-lg border-none bg-transparent px-2.5 py-1.5 text-left transition-colors hover:bg-paper-sunk ${
-                    active ? 'text-accent' : 'text-ink'
+                    active ? 'text-accent-text' : 'text-ink'
                   }`}
                 >
                   <span className="text-[12px] font-semibold">{l.native}</span>

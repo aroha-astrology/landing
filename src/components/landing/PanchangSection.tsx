@@ -36,7 +36,7 @@ function buildLimbs(data: PanchangData): Limb[] {
   ];
 }
 
-export async function PanchangSection() {
+export async function PanchangSection({ intro = false }: { intro?: boolean } = {}) {
   const data = await getTodayPanchang();
 
   return (
@@ -45,9 +45,20 @@ export async function PanchangSection() {
           stack) so the "Live for {date}" badge reads as status attached to
           the heading, the way the design places it. */}
       <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
-        <h2 className="font-display text-3xl font-medium leading-[1.15] sm:text-4xl md:text-5xl">
-          Today’s Panchang
-        </h2>
+        <div className="reveal max-w-2xl">
+          {intro && <p className="j-eyebrow text-[13px]">Daily guidance</p>}
+          <h2 className="font-display text-3xl font-medium leading-[1.15] sm:text-4xl md:text-5xl">Today’s Panchang</h2>
+          {intro && (
+          <p className="mt-4 text-base text-ink-2 sm:text-lg">
+            The five limbs of the day, live from the Aroha backend. Your personal Rashifal and transits are in the app; the full Panchang with
+            Choghadiya and muhurta windows is on the{' '}
+            <a href="/panchang" className="j-link underline underline-offset-4">
+              Panchang page
+            </a>
+            .
+          </p>
+          )}
+        </div>
         {data && (
           <div className="flex items-center gap-2 text-sm text-ink-muted">
             <span className="h-[7px] w-[7px] shrink-0 rounded-full bg-accent" aria-hidden />

@@ -1,142 +1,116 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
-import { Section } from '@/components/ui/Section';
+import { ProsePage } from '@/components/content/ProsePage';
+import { StatusBadge } from '@/components/product/StatusBadge';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { BRAND, ORG_ID, PRODUCTS, PRODUCT_ORDER, WEBSITE_ID, breadcrumbNode } from '@/lib/brand';
 import { LINKS, SITE_URL } from '@/lib/links';
 
 const PAGE_URL = `${SITE_URL}/about`;
-const CONTACT_EMAIL = 'subir@arohaastrology.in';
 
-export const metadata: Metadata = {
-  title: 'About',
+export const metadata: Metadata = pageMetadata({
+  title: 'About Aroha',
   description:
-    'Who builds Aroha Astrology, how its readings are generated (Swiss Ephemeris computation grounded in classical Vedic texts), and our approach to accuracy.',
-  alternates: { canonical: '/about' },
-};
+    'What Aroha is and why it exists: Aroha Astrology (available now), Aroha Vastu and Aroha Puja (coming soon), and how we use AI responsibly.',
+  path: '/about',
+});
 
 export default function AboutPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'AboutPage',
-    '@id': `${PAGE_URL}#webpage`,
-    url: PAGE_URL,
-    name: 'About Aroha Astrology',
-    about: { '@id': `${SITE_URL}/#organization` },
-    isPartOf: { '@id': `${SITE_URL}/#website` },
+    '@graph': [
+      {
+        '@type': 'AboutPage',
+        '@id': `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: 'About Aroha',
+        about: { '@id': ORG_ID },
+        isPartOf: { '@id': WEBSITE_ID },
+        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+      },
+      breadcrumbNode(PAGE_URL, [{ name: 'About', url: PAGE_URL }]),
+    ],
   };
 
   return (
-    <Section tone="paper">
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <ProsePage
+      crumb="About"
+      eyebrow="About Aroha"
+      title="Ancient wisdom, made clear for how people live now"
+      lead="Aroha is an Indian spiritual-technology ecosystem. It starts with Vedic astrology, and is growing to include Vastu for the home and puja for the moments that mark a life."
+    >
+      <JsonLd data={jsonLd} />
 
-      <article className="mx-auto max-w-3xl">
-        <header className="mb-10">
-          <p className="text-sm font-medium uppercase tracking-[0.1em] text-ink-muted">About</p>
-          <h1 className="font-display mt-3 text-3xl font-medium leading-[1.15] text-ink sm:text-4xl md:text-5xl">
-            About Aroha Astrology
-          </h1>
-          <p className="mt-4 text-lg text-ink-2">
-            What we build, how a reading actually gets generated, and where to go if something
-            looks wrong.
-          </p>
-        </header>
-
-        <div className="space-y-9">
-          <section>
-            <h2 className="font-display text-xl font-medium text-ink">What we build</h2>
-            <p className="mt-3 leading-relaxed text-ink-2">
-              Aroha Astrology is a Vedic (Jyotish) astrology app and website: a free Kundli
-              (birth chart) generator, daily Panchang, Moon sign and Nakshatra tools, and a
-              Vedic Astrologer that explains what a chart means in plain language, in 7 Indian
-              languages. We built it because most Kundli tools online either stop at a raw
-              chart with no explanation, or explain in astrology jargon that assumes you
-              already know the subject.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-medium text-ink">
-              How our readings are generated
-            </h2>
-            <p className="mt-3 leading-relaxed text-ink-2">
-              Every chart — planet positions, houses, Dasha timeline, divisional charts — is
-              computed from Swiss Ephemeris astronomical data, the same standard used across
-              professional astrology software, not a simplified or templated approximation.
-            </p>
-            <p className="mt-3 leading-relaxed text-ink-2">
-              The written explanation of what that chart means is AI-generated, grounded in
-              classical Vedic astrology texts and principles — it is not written by a human
-              astrologer reviewing each chart individually. We think that's worth stating
-              plainly rather than leaving ambiguous. Our{' '}
-              <Link href={LINKS.disclaimer} className="text-accent hover:underline">
-                full disclaimer
-              </Link>{' '}
-              covers this in legal detail; this page is the short version.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-medium text-ink">
-              Our approach to accuracy
-            </h2>
-            <p className="mt-3 leading-relaxed text-ink-2">
-              Vedic astrology is not one settled method — different classical traditions
-              (Parashari, Jaimini, KP) sometimes disagree on how to read the same placement. In
-              our{' '}
-              <Link href="/blog" className="text-accent hover:underline">
-                written guides
+      <h2>What Aroha is</h2>
+      <p>
+        Aroha is one ecosystem with three paths. Each helps with a different part of the same question: how to live with more
+        understanding of yourself, your surroundings and your traditions.
+      </p>
+      <ul className="not-prose my-8 grid gap-4">
+        {PRODUCT_ORDER.map((k) => (
+          <li key={k} className="rounded-2xl border border-rule bg-paper-raised p-5">
+            <div className="flex flex-wrap items-center gap-3">
+              <Link href={PRODUCTS[k].path} className="font-display text-2xl text-ink hover:text-accent-text">
+                {PRODUCTS[k].name}
               </Link>
-              , we try to say so explicitly rather than presenting one tradition's rule as
-              universal, and we avoid presenting any reading as a deterministic prediction. A
-              chart placement is a traditional indicator to weigh, not a verdict.
-            </p>
-          </section>
+              <StatusBadge status={PRODUCTS[k].status} />
+            </div>
+            <p className="mt-2 text-[15.5px] leading-relaxed text-ink-2">{PRODUCTS[k].summary}</p>
+          </li>
+        ))}
+      </ul>
 
-          <section>
-            <h2 className="font-display text-xl font-medium text-ink">Founder</h2>
-            <p className="mt-3 leading-relaxed text-ink-2">
-              Aroha Astrology is built by Subir Dutta, based in Bengaluru, India.
-            </p>
-          </section>
-        </div>
+      <h2>Why Aroha exists</h2>
+      <p>
+        Aroha began with astrology because most Kundli tools online either stop at a raw chart with no explanation, or explain it in jargon
+        that assumes you already know the subject. We wanted a chart computed carefully and explained plainly, in the language you think
+        in.
+      </p>
+      <p>
+        The same gap exists for the home and for ritual. Vastu advice online is often contradictory, and arranging a puja at home
+        can mean finding a pandit by word of mouth and guessing what to buy. Aroha Vastu and Aroha Puja are being built to bring the same
+        clarity to those parts of life.
+      </p>
 
-        <section className="mt-14 border-t border-ink/10 pt-8">
-          <h2 className="font-display text-xl font-medium text-ink">Questions or corrections</h2>
-          <p className="mt-3 leading-relaxed text-ink-2">
-            If a reading looks wrong, or you have a question about how something was calculated,
-            write to{' '}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">
-              {CONTACT_EMAIL}
-            </a>{' '}
-            or visit our{' '}
-            <Link href={LINKS.support} className="text-accent hover:underline">
-              support page
-            </Link>
-            .
-          </p>
-        </section>
+      <h2>How Aroha Astrology generates a reading</h2>
+      <p>
+        Every chart (planet positions, houses, the Dasha timeline, divisional charts) is computed from Swiss Ephemeris astronomical data
+        with the Lahiri ayanamsa, the standard used across professional astrology software, not a simplified or templated approximation.
+      </p>
+      <p>
+        The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. It is
+        not written by a human astrologer reviewing each chart individually. We think that is worth stating plainly rather than leaving it
+        ambiguous. Our <Link href={LINKS.disclaimer}>full disclaimer</Link> covers this in legal detail.
+      </p>
 
-        <nav className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-ink/10 pt-6 text-sm">
-          <Link href="/blog" className="text-accent hover:underline">
-            Blog
-          </Link>
-          <Link href={LINKS.support} className="text-accent hover:underline">
-            Support
-          </Link>
-          <Link href={LINKS.disclaimer} className="text-accent hover:underline">
-            Disclaimer
-          </Link>
-          <Link href={LINKS.privacy} className="text-accent hover:underline">
-            Privacy Policy
-          </Link>
-          <Link href={LINKS.terms} className="text-accent hover:underline">
-            Terms of Service
-          </Link>
-        </nav>
-      </article>
-    </Section>
+      <h2>How we think about AI</h2>
+      <p>
+        We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language,
+        and answering follow-up questions. We do not use it to claim certainty astrology doesn’t have, and we don’t present readings as
+        deterministic predictions. Articles in our <Link href="/blog">Knowledge Hub</Link> may be drafted with AI assistance, and none is
+        published until a person has reviewed it against our <Link href="/editorial-standards">editorial standards</Link>.
+      </p>
+
+      <h2>Cultural context</h2>
+      <p>
+        Vedic astrology is a traditional system of interpretation. Vastu Shastra is a traditional Indian system of architecture and spatial
+        design. Puja is a form of Hindu worship whose practice varies by region, community and family. None is one settled method, and
+        classical traditions (Parashari, Jaimini and KP in astrology, for example) sometimes disagree. We say so when they do, describe
+        beliefs as beliefs, and never present them as scientific fact or as a reason for fear.
+      </p>
+
+      <h2>Who builds Aroha</h2>
+      <p>
+        Aroha is built by {BRAND.founder}, based in {BRAND.city}, India. Aroha Astrology is available on the web and on Android; the iOS app
+        is coming soon.
+      </p>
+
+      <h2>Questions and corrections</h2>
+      <p>
+        If a reading or an article looks wrong, or you have a question about how something was calculated, write to{' '}
+        <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a> or use our <Link href={LINKS.support}>support page</Link>.
+      </p>
+    </ProsePage>
   );
 }
