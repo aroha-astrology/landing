@@ -1,12 +1,10 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { Eyebrow } from './Eyebrow';
 
 /**
  * Shared section header: an eyebrow over a Newsreader display headline.
- * Reveals once on scroll-into-view so every section opens the same way.
- * Pass `dark` inside a night-tone Section; `as="h1"` only for the hero.
+ * Reveals once on scroll-into-view (CSS `.reveal`, see globals.css) so every
+ * section opens the same way — and is fully visible in the server HTML.
+ * Pass `dark` inside a night-tone Section; `as="h1"` only for page heroes.
  */
 type SectionHeadingProps = {
   eyebrow?: string;
@@ -31,15 +29,9 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   const Heading = as;
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.6 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className={`${align === 'center' ? 'text-center' : 'text-left'} ${className}`}
-    >
+    <div className={`reveal ${align === 'center' ? 'text-center' : 'text-left'} ${className}`}>
       {eyebrow && <Eyebrow dark={dark}>{eyebrow}</Eyebrow>}
-      <Heading className="font-display text-3xl font-medium leading-[1.15] sm:text-4xl md:text-5xl">
+      <Heading className="font-display text-3xl font-medium leading-[1.15] text-balance sm:text-4xl md:text-5xl">
         {title}
       </Heading>
       {subtitle && (
@@ -47,6 +39,6 @@ export function SectionHeading({
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </div>
   );
 }

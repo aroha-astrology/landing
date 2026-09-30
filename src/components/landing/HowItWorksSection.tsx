@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -26,14 +25,6 @@ const STEPS = [
   },
 ];
 
-const listVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
-};
 
 // Numeral is counter-rotated on the diamond variant so it stays upright
 // while the square housing it sits at 45deg.
@@ -69,23 +60,19 @@ export function HowItWorksSection() {
     <Section tone="paper" id="how-it-works">
       <SectionHeading eyebrow="How it works" title="From birth details to a chart you understand" />
 
-      <motion.div
+      <div
         className="mt-14 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-9"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        variants={listVariants}
       >
         {STEPS.map((step, i) => (
-          <motion.div key={step.title} variants={itemVariants} className="text-center">
+          <div key={step.title} className="text-center">
             <div className="mx-auto w-fit">
               <StepMarker index={i} />
             </div>
             <h3 className="mt-5 font-display text-xl font-medium text-ink">{step.title}</h3>
             <p className="mx-auto mt-2 max-w-xs text-sm text-ink-2">{step.description}</p>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </Section>
   );
 }

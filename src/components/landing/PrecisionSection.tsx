@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -21,11 +20,7 @@ export function PrecisionSection() {
   return (
     <Section tone="night" id="precision">
       <div className="grid gap-12 lg:grid-cols-[minmax(280px,1fr)_minmax(240px,340px)] lg:items-center lg:gap-14">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        <div
         >
           <SectionHeading eyebrow="The method" title="Precision, not vibes" dark align="left" />
 
@@ -59,14 +54,10 @@ export function PrecisionSection() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
+        <div
           className="flex justify-center"
-          initial={{ opacity: 0, scale: 0.92 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* A static instrument dial (not the orbiting-rings treatment used
               for Navagraha above) — ticks + one amber marker read as a
@@ -96,7 +87,7 @@ export function PrecisionSection() {
               <div className="mt-1 text-[11px] uppercase tracking-wide text-night-ink-2">Lahiri</div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </Section>
   );

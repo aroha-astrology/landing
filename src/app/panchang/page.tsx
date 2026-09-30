@@ -53,7 +53,7 @@ const faqItems = [
 
 export default function PanchangPage() {
   return (
-    <main>
+    <div>
       <PanchangSection />
 
       <section className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
@@ -112,6 +112,6 @@ export default function PanchangPage() {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </main>
+    </div>
   );
 }

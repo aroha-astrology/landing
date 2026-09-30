@@ -16,9 +16,12 @@ import { TranslationProvider } from '@/components/providers/TranslationProvider'
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import { AppDownloadBanner } from '@/components/landing/AppDownloadBanner';
-import { Navbar } from '@/components/landing/Navbar';
-import { Footer } from '@/components/landing/Footer';
-import { SITE_URL, PLAY_STORE_URL } from '@/lib/links';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+import { RevealObserver } from '@/components/layout/RevealObserver';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { BRAND, ORG_ID, brandGraph } from '@/lib/brand';
+import { SITE_URL } from '@/lib/links';
 
 const publicSans = Public_Sans({
   subsets: ['latin', 'latin-ext'],
@@ -39,61 +42,72 @@ const newsreader = Newsreader({
 
 // One Noto Sans face per non-Latin script the LanguageSwitcher exposes.
 // Each ships its own unicode-range, so the browser only fetches a file once
-// a page actually renders that script (i.e. after a language switch) —
-// these do not add weight to the initial English paint. Devanagari also
+// a page actually renders that script (i.e. after a language switch). They
+// must NOT be preloaded: next/font preloads by default, which made every
+// English page download ~1 MB of Indic fonts up front and pushed mobile LCP
+// past 10 s on a slow connection. Devanagari also
 // covers Marathi; Gurmukhi covers Punjabi.
 const notoDevanagari = Noto_Sans_Devanagari({
   subsets: ['devanagari'],
   display: 'swap',
   variable: '--font-devanagari',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 });
 const notoBengali = Noto_Sans_Bengali({
   subsets: ['bengali'],
   display: 'swap',
   variable: '--font-bengali',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 });
 const notoTamil = Noto_Sans_Tamil({
   subsets: ['tamil'],
   display: 'swap',
   variable: '--font-tamil',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 });
 const notoTelugu = Noto_Sans_Telugu({
   subsets: ['telugu'],
   display: 'swap',
   variable: '--font-telugu',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 });
 const notoGujarati = Noto_Sans_Gujarati({
   subsets: ['gujarati'],
   display: 'swap',
   variable: '--font-gujarati',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 });
 const notoKannada = Noto_Sans_Kannada({
   subsets: ['kannada'],
   display: 'swap',
   variable: '--font-kannada',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 });
 const notoMalayalam = Noto_Sans_Malayalam({
   subsets: ['malayalam'],
   display: 'swap',
   variable: '--font-malayalam',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 });
 const notoGurmukhi = Noto_Sans_Gurmukhi({
   subsets: ['gurmukhi'],
   display: 'swap',
   variable: '--font-gurmukhi',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 });
 
-const SITE_NAME = 'Aroha Astrology';
+const SITE_NAME = BRAND.name;
+const DEFAULT_TITLE = 'Aroha: Vedic Astrology, Vastu & Puja — Ancient Wisdom, Modern Guidance';
 const SITE_DESCRIPTION =
-  'Free Vedic birth chart, Moon sign calculator and daily Panchang — Swiss Ephemeris precision, explained in plain language, in 7 Indian languages.';
+  'Aroha brings Vedic astrology, Vastu and puja together. Aroha Astrology and Aroha Vastu are available now; Aroha Puja is coming soon.';
 
 export const viewport: Viewport = {
   themeColor: '#F2ECDF',
@@ -105,26 +119,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & Daily Panchang',
-    template: '%s | Aroha Astrology',
+    default: DEFAULT_TITLE,
+    template: '%s | Aroha',
   },
   description: SITE_DESCRIPTION,
-  keywords: [
-    'vedic astrology',
-    'moon sign calculator',
-    'rashi calculator',
-    'free kundli',
-    'birth chart',
-    'janma kundli',
-    'panchang today',
-    'vimshottari dasha',
-    'jyotish',
-    'kundli milan',
-    'guna milan',
-    'swiss ephemeris',
-  ],
   applicationName: SITE_NAME,
-  authors: [{ name: 'Yogi Baba', url: SITE_URL }],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
   alternates: { canonical: '/' },
   robots: {
     index: true,
@@ -139,59 +139,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
-    title: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & Daily Panchang',
+    title: DEFAULT_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    locale: 'en_US',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aroha Astrology — Vedic Birth Chart, Moon Sign & Daily Panchang',
+    title: DEFAULT_TITLE,
     description: SITE_DESCRIPTION,
   },
 };
 
-// One entry per script the LanguageSwitcher exposes — mirrors the Noto font
-// set above (Devanagari also covers Marathi, Gurmukhi covers Punjabi).
-const AVAILABLE_LANGUAGES = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'es', 'fr', 'de'];
-
-// Organization + WebSite load on every page via this root layout, so any
-// page-level JSON-LD can link back to them by @id (e.g. WebPage.about,
-// SoftwareApplication.publisher) without redeclaring the whole entity.
+// Organization + product Brands + WebSite load on every page via this root
+// layout (see lib/brand.ts), so page-level JSON-LD links to them by @id.
+// The Person node is the byline of the pre-ecosystem astrology posts.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      url: SITE_URL,
-      logo: {
-        '@type': 'ImageObject',
-        '@id': `${SITE_URL}/#logo`,
-        url: `${SITE_URL}/brand/aroha-logo-navy.png`,
-      },
-      image: { '@id': `${SITE_URL}/#logo` },
-      description: SITE_DESCRIPTION,
-      founder: { '@type': 'Person', name: 'Subir Dutta', jobTitle: 'Founder & Developer' },
-      sameAs: [PLAY_STORE_URL],
-      contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'customer support',
-        email: 'subir@arohaastrology.in',
-        areaServed: 'IN',
-        availableLanguage: AVAILABLE_LANGUAGES,
-      },
-      foundingLocation: {
-        '@type': 'Place',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Bengaluru',
-          addressRegion: 'Karnataka',
-          addressCountry: 'IN',
-        },
-      },
-    },
+    ...brandGraph(),
     {
       '@type': 'Person',
       '@id': `${SITE_URL}/#author-yogi-baba`,
@@ -199,39 +165,45 @@ const jsonLd = {
       jobTitle: 'Vedic Astrology Content Advisor',
       description:
         'Reviews and guides the Vedic astrology methodology behind Aroha Astrology — classical Parashari, Jaimini and KP traditions, expressed through Swiss Ephemeris-accurate calculations and plain-language explanations.',
-      worksFor: { '@id': `${SITE_URL}/#organization` },
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `${SITE_URL}/#website`,
-      url: SITE_URL,
-      name: SITE_NAME,
-      description: SITE_DESCRIPTION,
-      publisher: { '@id': `${SITE_URL}/#organization` },
-      inLanguage: 'en',
+      worksFor: { '@id': ORG_ID },
     },
   ],
 };
 
+// Marks JS as available before first paint, so .reveal elements only start
+// hidden when something will reveal them (see globals.css).
+const JS_FLAG = "document.documentElement.classList.add('js')";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      // Font variables live on <html> so :root-level tokens (--font-body in
+      // globals.css) can resolve them; on <body> they were out of scope for
+      // :root and every page silently fell back to the browser serif.
+      className={`${publicSans.variable} ${newsreader.variable} ${notoDevanagari.variable} ${notoBengali.variable} ${notoTamil.variable} ${notoTelugu.variable} ${notoGujarati.variable} ${notoKannada.variable} ${notoMalayalam.variable} ${notoGurmukhi.variable} antialiased`}
+    >
       <head>
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        {/* eslint-disable-next-line react/no-danger */}
+        <script dangerouslySetInnerHTML={{ __html: JS_FLAG }} />
+        <JsonLd data={jsonLd} />
       </head>
-      <body
-        className={`${publicSans.variable} ${newsreader.variable} ${notoDevanagari.variable} ${notoBengali.variable} ${notoTamil.variable} ${notoTelugu.variable} ${notoGujarati.variable} ${notoKannada.variable} ${notoMalayalam.variable} ${notoGurmukhi.variable} antialiased`}
-      >
+      <body>
         <PostHogProvider>
           <TranslationProvider>
+            <a href="#main" className="skip-link">
+              Skip to content
+            </a>
             <AppDownloadBanner />
             <Navbar />
-            <SmoothScrollProvider>{children}</SmoothScrollProvider>
+            <SmoothScrollProvider>
+              <main id="main" tabIndex={-1} className="outline-none">
+                {children}
+              </main>
+            </SmoothScrollProvider>
             <Footer />
+            <RevealObserver />
           </TranslationProvider>
         </PostHogProvider>
       </body>

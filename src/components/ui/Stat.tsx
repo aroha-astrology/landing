@@ -18,7 +18,7 @@ export function Stat({ value, label, dark = false }: StatProps) {
     <div>
       <p
         className={`font-display text-[36px] italic leading-none ${
-          dark ? 'text-night-accent' : 'text-accent'
+          dark ? 'text-night-accent' : 'text-accent-text'
         }`}
         data-no-translate
       >

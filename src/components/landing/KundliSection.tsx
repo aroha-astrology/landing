@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo, useState, type FormEvent } from 'react';
-import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
@@ -34,12 +33,6 @@ type KundliResult = {
 
 type FormState = 'idle' | 'loading' | 'error' | 'success';
 
-const MOTION_PROPS = {
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
-};
 
 export function KundliSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2' } = {}) {
   const t = useT();
@@ -129,9 +122,8 @@ export function KundliSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | '
         subtitle="Your full Vedic birth chart — ascendant, houses and planet placements — computed from the Swiss Ephemeris."
       />
 
-      <motion.div
-        {...MOTION_PROPS}
-        className="mx-auto mt-12 max-w-xl rounded-2xl border border-rule bg-paper-raised p-8"
+      <div
+                className="mx-auto mt-12 max-w-xl rounded-2xl border border-rule bg-paper-raised p-8"
       >
         <form className="space-y-5" onSubmit={onSubmit}>
           <div>
@@ -239,14 +231,11 @@ export function KundliSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | '
         )}
 
         {state === 'success' && result && (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          <div
             className="mt-6 rounded-xl border border-rule-strong bg-paper-sunk p-6"
           >
             <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-text">
                 Ascendant (Lagna)
               </p>
               <p className="font-display mt-1 text-4xl font-medium text-ink" data-no-translate>
@@ -278,9 +267,9 @@ export function KundliSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | '
             <div className="mt-6 text-center">
               <AppCTA variant="solid">See houses, dashas &amp; full reading →</AppCTA>
             </div>
-          </motion.div>
+          </div>
         )}
-      </motion.div>
+      </div>
     </Section>
   );
 }

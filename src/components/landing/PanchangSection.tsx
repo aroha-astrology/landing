@@ -1,5 +1,6 @@
 import { Section } from '@/components/ui/Section';
 import { AppCTA } from '@/components/ui/AppCTA';
+import { FeatureVideo, FEATURE_VIDEOS } from '@/components/ui/PromoVideo';
 import { getTodayPanchang, type PanchangData } from '@/lib/panchang';
 
 /**
@@ -36,7 +37,7 @@ function buildLimbs(data: PanchangData): Limb[] {
   ];
 }
 
-export async function PanchangSection() {
+export async function PanchangSection({ intro = false, video = true }: { intro?: boolean; video?: boolean } = {}) {
   const data = await getTodayPanchang();
 
   return (
@@ -45,9 +46,20 @@ export async function PanchangSection() {
           stack) so the "Live for {date}" badge reads as status attached to
           the heading, the way the design places it. */}
       <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
-        <h2 className="font-display text-3xl font-medium leading-[1.15] sm:text-4xl md:text-5xl">
-          Today’s Panchang
-        </h2>
+        <div className="reveal max-w-2xl">
+          {intro && <p className="j-eyebrow text-[13px]">Daily guidance</p>}
+          <h2 className="font-display text-3xl font-medium leading-[1.15] sm:text-4xl md:text-5xl">Today’s Panchang</h2>
+          {intro && (
+          <p className="mt-4 text-base text-ink-2 sm:text-lg">
+            The five limbs of the day, live from the Aroha backend. Your personal Rashifal and transits are in the app; the full Panchang with
+            Choghadiya and muhurta windows is on the{' '}
+            <a href="/panchang" className="j-link underline underline-offset-4">
+              Panchang page
+            </a>
+            .
+          </p>
+          )}
+        </div>
         {data && (
           <div className="flex items-center gap-2 text-sm text-ink-muted">
             <span className="h-[7px] w-[7px] shrink-0 rounded-full bg-accent" aria-hidden />
@@ -58,37 +70,45 @@ export async function PanchangSection() {
         )}
       </div>
 
-      {!data ? (
-        <div className="mx-auto max-w-lg rounded-2xl border border-rule bg-paper-raised p-8 text-center">
-          <p className="text-ink-2">
-            Panchang is temporarily unavailable — check it in the app.
-          </p>
-          <div className="mt-6">
-            <AppCTA variant="solid">Open Panchang in the app →</AppCTA>
-          </div>
-        </div>
-      ) : (
-        // Hairline grid: 1px gaps over a rule-coloured background, each cell
-        // filled with the section's own surface colour (paper) — same
-        // technique as Features, just 4 columns wide for these 8 limbs.
-        <div className="grid grid-cols-2 gap-px border border-rule bg-rule sm:grid-cols-4">
-          {buildLimbs(data).map((limb) => (
-            <div key={limb.label} className="bg-paper px-5 py-[22px]">
-              <p className="mb-2 text-[11px] uppercase tracking-[0.06em] text-ink-muted">
-                {limb.label}
+      {/* The live grid is the substance; the film beside it shows the same
+          day in the app (Choghadiya, muhurta windows) for anyone deciding
+          whether to install. Poster-only until played. */}
+      <div className={video ? 'grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14' : ''}>
+        <div>
+          {!data ? (
+            <div className={`${video ? '' : 'mx-auto '}max-w-lg rounded-2xl border border-rule bg-paper-raised p-8 text-center`}>
+              <p className="text-ink-2">
+                Panchang is temporarily unavailable — check it in the app.
               </p>
-              <p className="font-display text-[19px] text-ink" data-no-translate>
-                {limb.value}
-              </p>
-              {limb.detail && (
-                <p className="mt-1 text-xs text-ink-muted" data-no-translate>
-                  {limb.detail}
-                </p>
-              )}
+              <div className="mt-6">
+                <AppCTA variant="solid">Open Panchang in the app →</AppCTA>
+              </div>
             </div>
-          ))}
+          ) : (
+            // Hairline grid: 1px gaps over a rule-coloured background, each cell
+            // filled with the section's own surface colour (paper) — same
+            // technique as Features: 4 columns on tablets, 2 beside the film.
+            <div className="grid grid-cols-2 gap-px border border-rule bg-rule sm:grid-cols-4 lg:grid-cols-2">
+              {buildLimbs(data).map((limb) => (
+                <div key={limb.label} className="bg-paper px-5 py-[22px]">
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.06em] text-ink-muted">
+                    {limb.label}
+                  </p>
+                  <p className="font-display text-[19px] text-ink" data-no-translate>
+                    {limb.value}
+                  </p>
+                  {limb.detail && (
+                    <p className="mt-1 text-xs text-ink-muted" data-no-translate>
+                      {limb.detail}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-      )}
+        {video && <FeatureVideo video={FEATURE_VIDEOS.dailyPanchang} className="reveal mx-auto w-full max-w-[260px]" />}
+      </div>
     </Section>
   );
 }

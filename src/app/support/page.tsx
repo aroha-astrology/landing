@@ -81,7 +81,7 @@ export default function SupportPage() {
             <h2 className="font-display text-xl font-medium text-ink">Email us</h2>
             <p className="mt-3 leading-relaxed text-ink-2">
               Write to{' '}
-              <a href={`mailto:${SUPPORT_EMAIL}`} className="text-accent hover:underline">
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="text-accent-text hover:underline">
                 {SUPPORT_EMAIL}
               </a>{' '}
               with your registered mobile number and a description of the issue. We acknowledge
@@ -144,7 +144,7 @@ export default function SupportPage() {
           <h2 className="font-display text-xl font-medium text-ink">Company</h2>
           <p className="mt-3 leading-relaxed text-ink-2">
             Aroha Astrology, Bengaluru, Karnataka, India. Grievance Officer: Subir Dutta,{' '}
-            <a href={`mailto:${SUPPORT_EMAIL}`} className="text-accent hover:underline">
+            <a href={`mailto:${SUPPORT_EMAIL}`} className="text-accent-text hover:underline">
               {SUPPORT_EMAIL}
             </a>
             .
@@ -152,13 +152,13 @@ export default function SupportPage() {
         </section>
 
         <nav className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-ink/10 pt-6 text-sm">
-          <Link href={LINKS.privacy} className="text-accent hover:underline">
+          <Link href={LINKS.privacy} className="text-accent-text hover:underline">
             Privacy Policy
           </Link>
-          <Link href={LINKS.terms} className="text-accent hover:underline">
+          <Link href={LINKS.terms} className="text-accent-text hover:underline">
             Terms of Service
           </Link>
-          <Link href={LINKS.deleteAccount} className="text-accent hover:underline">
+          <Link href={LINKS.deleteAccount} className="text-accent-text hover:underline">
             Delete account
           </Link>
         </nav>

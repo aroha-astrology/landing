@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo, useState, type FormEvent } from 'react';
-import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
@@ -29,12 +28,6 @@ type MoonSignResult = {
 
 type FormState = 'idle' | 'loading' | 'error' | 'success';
 
-const MOTION_PROPS = {
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
-};
 
 export function MoonSignSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2' } = {}) {
   const t = useT();
@@ -109,9 +102,8 @@ export function MoonSignSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
         subtitle="Vedic astrology reads the Moon, not the Sun — enter your birth details for your real Chandra Rashi."
       />
 
-      <motion.div
-        {...MOTION_PROPS}
-        className="mx-auto mt-12 max-w-xl rounded-2xl border border-rule bg-paper-raised p-8"
+      <div
+                className="mx-auto mt-12 max-w-xl rounded-2xl border border-rule bg-paper-raised p-8"
       >
         <form className="space-y-5" onSubmit={onSubmit}>
           <div>
@@ -219,13 +211,10 @@ export function MoonSignSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
         )}
 
         {state === 'success' && result && (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          <div
             className="mt-6 rounded-xl border border-rule-strong bg-paper-sunk p-6 text-center"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-text">
               Your Chandra Rashi
             </p>
             <p className="font-display mt-1 text-4xl font-medium text-ink" data-no-translate>
@@ -241,9 +230,9 @@ export function MoonSignSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
             <div className="mt-6">
               <AppCTA variant="solid">See your full chart →</AppCTA>
             </div>
-          </motion.div>
+          </div>
         )}
-      </motion.div>
+      </div>
     </Section>
   );
 }

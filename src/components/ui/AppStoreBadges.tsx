@@ -56,7 +56,7 @@ export function AppStoreBadges({
         />
       </a>
 
-      <div className="relative inline-flex opacity-50">
+      <div className="relative inline-flex">
         <Image
           src="/brand/app-store-badge.svg"
           alt="Download on the App Store"
@@ -66,6 +66,7 @@ export function AppStoreBadges({
           // escape hatch is on; serving this one file as-is is safer than
           // loosening the rule for every remote image on the site.
           unoptimized
+          className="opacity-50"
           style={{ height: BADGE_H, width: 'auto' }}
         />
         <span className="absolute -right-2 -top-2 rounded-full bg-accent px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-accent-ink">

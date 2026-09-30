@@ -3,109 +3,143 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { Section } from '@/components/ui/Section';
-import { AppCTA } from '@/components/ui/AppCTA';
-import { PromoVideo, promoVideoForSlug } from '@/components/ui/PromoVideo';
+import remarkGfm from 'remark-gfm';
 import { mdxComponents } from '@/components/blog/MdxComponents';
-import { getAllSlugs, getPost, getRelatedPosts } from '@/lib/blog';
+import { Breadcrumbs } from '@/components/blog/Breadcrumbs';
+import { CategoryChip } from '@/components/blog/CategoryChip';
+import { TableOfContents } from '@/components/blog/TableOfContents';
+import { ArticleCard, toSummary } from '@/components/blog/ArticleCard';
+import { ProductPanel } from '@/components/blog/ProductPanel';
+import { ArticleScrollTracker } from '@/components/blog/ArticleScrollTracker';
+import { ArticleFinalCta } from '@/components/blog/ArticleFinalCta';
+import { Accordion } from '@/components/ui/Accordion';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { bodyHasFaq, formatDate, getAllSlugs, getPost, getRelatedPosts, renderableContent, type BlogPost } from '@/lib/blog';
+import { CATEGORIES } from '@/lib/categories';
+import { ORG_ID, WEBSITE_ID, breadcrumbNode, productBrandId } from '@/lib/brand';
 import { SITE_URL } from '@/lib/links';
-
-const DEFAULT_AUTHOR = 'Yogi Baba';
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
+// Posts without an explicit `author` are the pre-ecosystem astrology posts,
+// which carry the site's content-advisor byline (see layout.tsx's
+// #author-yogi-baba node). New articles set `author: "Aroha Editorial Team"`.
+const LEGACY_AUTHOR = 'Yogi Baba';
+const TEAM_AUTHOR = 'Aroha Editorial Team';
+
+export const dynamicParams = false;
+
+// Articles are our own reviewed files, so plain JS expressions in MDX props
+// (e.g. <Checklist items={[...]} />) are allowed; blockDangerousJS still
+// strips eval/Function-style constructs.
+const MDX_OPTIONS = { blockJS: false, blockDangerousJS: true, mdxOptions: { remarkPlugins: [remarkGfm] } };
+
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
 
-function formatDate(date: string) {
-  return new Date(`${date}T00:00:00Z`).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'UTC',
-  });
+function load(slug: string): BlogPost | null {
+  try {
+    return getPost(slug);
+  } catch {
+    return null;
+  }
+}
+
+function authorOf(post: BlogPost) {
+  return post.frontmatter.author ?? LEGACY_AUTHOR;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  let post;
-  try {
-    post = getPost(slug);
-  } catch {
-    return {};
-  }
-
-  const { title, description, date } = post.frontmatter;
-
+  const post = load(slug);
+  if (!post) return {};
+  const { title, seoTitle, description, date, updated, tags } = post.frontmatter;
   return {
-    title,
+    title: seoTitle ?? title,
     description,
+    keywords: tags,
     alternates: { canonical: `/blog/${slug}` },
+    robots: post.status === 'review' ? { index: false, follow: false } : undefined,
     openGraph: {
       type: 'article',
       title,
       description,
-      publishedTime: date,
       url: `/blog/${slug}`,
+      publishedTime: date,
+      modifiedTime: updated ?? date,
+      section: CATEGORIES[post.category].name,
+      tags,
     },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-    },
+    twitter: { card: 'summary_large_image', title, description },
   };
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
+  const post = load(slug);
+  if (!post) notFound();
 
-  let post;
-  try {
-    post = getPost(slug);
-  } catch {
-    notFound();
-  }
-
-  const { title, description, date, updated, tags, faqs, hero, heroAlt, author } = post.frontmatter;
+  const fm = post.frontmatter;
+  const category = CATEGORIES[post.category];
   const pageUrl = `${SITE_URL}/blog/${slug}`;
-  const relatedPosts = getRelatedPosts(post);
-  const promoVideo = promoVideoForSlug(slug);
+  const categoryUrl = `${SITE_URL}/blog/${post.category}`;
+  const related = getRelatedPosts(post, 4);
+  const author = authorOf(post);
+  const showFaq = (fm.faqs?.length ?? 0) > 0 && !bodyHasFaq(post);
+  const heroUrl = post.hero ? `${SITE_URL}${post.hero}` : undefined;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'BlogPosting',
-        '@id': `${pageUrl}#article`,
-        headline: title,
-        description,
-        datePublished: date,
-        dateModified: updated ?? date,
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
         url: pageUrl,
-        mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
-        isPartOf: { '@id': `${SITE_URL}/blog#webpage` },
-        author: { '@id': `${SITE_URL}/#author-yogi-baba` },
-        publisher: { '@id': `${SITE_URL}/#organization` },
-        keywords: tags?.length ? tags.join(', ') : undefined,
+        name: fm.title,
+        isPartOf: { '@id': WEBSITE_ID },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+        primaryImageOfPage: heroUrl ? { '@id': `${pageUrl}#image` } : undefined,
+        ...(fm.reviewedBy ? { reviewedBy: { '@type': 'Person', name: fm.reviewedBy }, lastReviewed: fm.reviewedAt } : {}),
+        inLanguage: 'en',
       },
       {
-        '@type': 'BreadcrumbList',
-        '@id': `${pageUrl}#breadcrumb`,
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
-          { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
-        ],
+        '@type': 'BlogPosting',
+        '@id': `${pageUrl}#article`,
+        headline: fm.title,
+        description: fm.description,
+        image: heroUrl ? { '@type': 'ImageObject', '@id': `${pageUrl}#image`, url: heroUrl, width: 1600, height: 900, caption: fm.heroAlt } : undefined,
+        datePublished: fm.date,
+        dateModified: fm.updated ?? fm.date,
+        author:
+          author === LEGACY_AUTHOR
+            ? { '@id': `${SITE_URL}/#author-yogi-baba` }
+            : author === TEAM_AUTHOR
+              ? { '@type': 'Organization', name: TEAM_AUTHOR, url: `${SITE_URL}/editorial-standards`, parentOrganization: { '@id': ORG_ID } }
+              : { '@type': 'Person', name: author },
+        publisher: { '@id': ORG_ID },
+        mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+        isPartOf: { '@id': `${categoryUrl}#webpage` },
+        articleSection: category.name,
+        about: { '@id': productBrandId(post.category) },
+        keywords: fm.tags?.join(', '),
+        wordCount: post.content.split(/\s+/).length,
+        isAccessibleForFree: true,
+        inLanguage: 'en',
       },
-      ...(faqs?.length
+      breadcrumbNode(pageUrl, [
+        { name: 'Blog', url: `${SITE_URL}/blog` },
+        { name: category.name, url: categoryUrl },
+        { name: fm.title, url: pageUrl },
+      ]),
+      ...(fm.faqs?.length
         ? [
             {
               '@type': 'FAQPage',
               '@id': `${pageUrl}#faq`,
-              mainEntity: faqs.map((f) => ({
+              mainEntity: fm.faqs.map((f) => ({
                 '@type': 'Question',
                 name: f.question,
                 acceptedAnswer: { '@type': 'Answer', text: f.answer },
@@ -117,124 +151,145 @@ export default async function BlogPostPage({ params }: PageProps) {
   };
 
   return (
-    <Section tone="paper">
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <div className="bg-paper px-[clamp(20px,4vw,56px)] pb-[clamp(64px,8vw,112px)] pt-8 text-ink">
+      <JsonLd data={jsonLd} />
+      <ArticleScrollTracker slug={slug} category={post.category} targetId="article-body" />
 
-      <article className="mx-auto max-w-3xl">
-        <div className="mb-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-rule bg-paper-raised px-5 py-4">
-          <p className="text-sm font-medium text-ink-2">
-            Want your own chart, not just the theory? Get the free Aroha Astrology app.
+      <div className="mx-auto max-w-[1180px]">
+        <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: category.name, href: `/blog/${post.category}` }, { name: fm.title }]} />
+
+        {post.status === 'review' && (
+          <p role="status" className="mt-6 rounded-xl border border-accent bg-accent-soft px-4 py-3 text-sm text-ink">
+            <strong>In editorial review.</strong> This article is visible on preview builds only and is not indexed. See the review checklist in <Link href="/editorial-standards" className="underline">Editorial standards</Link>.
           </p>
-          <AppCTA variant="outline">Get the App</AppCTA>
-        </div>
-
-        <header className="mb-10">
-          {hero && (
-            <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-rule bg-paper-sunk">
-              <Image
-                src={hero}
-                alt={heroAlt ?? ''}
-                fill
-                sizes="(min-width: 768px) 768px, 100vw"
-                priority
-                className="object-contain p-10"
-              />
-            </div>
-          )}
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium uppercase tracking-[0.1em] text-ink-muted">
-            <time dateTime={date}>{formatDate(date)}</time>
-            <span aria-hidden>·</span>
-            <span data-no-translate>{post.readingTime} min read</span>
-            <span aria-hidden>·</span>
-            <span>{author ?? DEFAULT_AUTHOR}</span>
-          </div>
-          <h1 className="font-display mt-3 text-3xl font-medium leading-[1.15] text-ink sm:text-4xl md:text-5xl">
-            {title}
-          </h1>
-          <p className="mt-4 text-lg text-ink-2">{description}</p>
-          {tags?.length > 0 && (
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <li key={tag}>
-                  <Link
-                    href={`/blog/tag/${encodeURIComponent(tag)}`}
-                    className="block rounded-pill bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-accent transition-colors hover:bg-accent hover:text-accent-ink"
-                  >
-                    {tag}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </header>
-
-        <div
-          className="
-            [&_h2]:font-display [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-medium [&_h2]:leading-tight [&_h2]:text-ink
-            [&_h3]:font-display [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-xl [&_h3]:font-medium [&_h3]:text-ink
-            [&_p]:mb-4 [&_p]:text-base [&_p]:leading-relaxed [&_p]:text-ink-2
-            [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-4
-            [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:text-ink-2
-            [&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:text-ink-2
-            [&_li]:mb-1
-            [&_strong]:font-semibold [&_strong]:text-ink
-          "
-        >
-          <MDXRemote source={post.content} components={mdxComponents} />
-        </div>
-
-        <footer className="mt-14 border-t border-rule pt-8">
-          <p className="text-sm text-ink-muted">
-            Written and reviewed by <span className="font-semibold text-ink">{author ?? DEFAULT_AUTHOR}</span>,
-            Vedic Astrology Content Advisor at Aroha Astrology.
-          </p>
-        </footer>
-
-        <aside className="mt-14 flex flex-col items-center gap-8 rounded-2xl border border-rule bg-paper-raised px-6 py-8 sm:flex-row sm:px-8">
-          <PromoVideo video={promoVideo} className="max-w-[260px]" />
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.1em] text-ink-muted">See it in action</p>
-            <h2 className="font-display mt-2 text-2xl font-medium text-ink">Your own chart, read properly</h2>
-            <p className="mt-3 text-ink-2">
-              Free Vedic Kundli, a Vedic Astrologer chat in 7 Indian languages, and 14 personal reports. Available on
-              Android. iOS coming soon.
-            </p>
-            <div className="mt-5">
-              <AppCTA>Get the App</AppCTA>
-            </div>
-          </div>
-        </aside>
-
-        {relatedPosts.length > 0 && (
-          <aside className="mt-14 border-t border-rule pt-10">
-            <h2 className="font-display text-xl font-medium text-ink">Related guides</h2>
-            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
-              {relatedPosts.map((related) => (
-                <Link key={related.slug} href={`/blog/${related.slug}`} className="group block">
-                  {related.frontmatter.hero && (
-                    <div className="relative mb-3 aspect-[4/3] w-full overflow-hidden rounded-xl border border-rule bg-paper-sunk">
-                      <Image
-                        src={related.frontmatter.hero}
-                        alt=""
-                        fill
-                        sizes="(min-width: 640px) 33vw, 100vw"
-                        className="object-contain p-6"
-                      />
-                    </div>
-                  )}
-                  <h3 className="font-display text-base leading-snug text-ink transition-colors group-hover:text-accent">
-                    {related.frontmatter.title}
-                  </h3>
-                </Link>
-              ))}
-            </div>
-          </aside>
         )}
-      </article>
-    </Section>
+
+        <article className="mt-8">
+          <header className="mx-auto max-w-[760px]">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-ink-muted">
+              <Link href={`/blog/${post.category}`} aria-label={`More ${category.name} articles`}>
+                <CategoryChip category={post.category} />
+              </Link>
+              <span data-no-translate>{post.readingTime} min read</span>
+            </div>
+            <h1 className="font-display mt-5 text-[clamp(34px,5vw,54px)] font-medium leading-[1.08] text-balance">{fm.title}</h1>
+            <p className="mt-5 text-lg leading-relaxed text-ink-2 sm:text-xl">{fm.description}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-rule pt-5 text-sm text-ink-muted">
+              <span>
+                By <span className="font-semibold text-ink">{author}</span>
+              </span>
+              <span>
+                Published <time dateTime={fm.date}>{formatDate(fm.date)}</time>
+              </span>
+              {fm.updated && (
+                <span>
+                  Updated <time dateTime={fm.updated}>{formatDate(fm.updated)}</time>
+                </span>
+              )}
+              {fm.reviewedBy && <span>Reviewed by {fm.reviewedBy}</span>}
+            </div>
+          </header>
+
+          {post.hero && (
+            <figure className="mx-auto mt-10 max-w-[1080px]">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-rule bg-night">
+                <Image src={post.hero} alt={fm.heroAlt ?? ''} fill priority sizes="(min-width: 1180px) 1080px, 100vw" className="object-cover" />
+              </div>
+            </figure>
+          )}
+
+          <div className="mx-auto mt-12 grid max-w-[1080px] gap-10 lg:grid-cols-[220px_minmax(0,760px)] lg:gap-[60px]">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <TableOfContents headings={post.headings} />
+            </div>
+            <div className="min-w-0">
+              <div id="article-body" className="article-body">
+                <MDXRemote source={renderableContent(post)} components={mdxComponents} options={MDX_OPTIONS} />
+              </div>
+
+              {showFaq && (
+                <section aria-labelledby="faq" className="mt-16">
+                  <h2 id="faq" className="font-display text-[clamp(26px,3vw,32px)] font-medium">Common questions</h2>
+                  <div className="mt-4">
+                    <Accordion items={fm.faqs!} />
+                  </div>
+                </section>
+              )}
+
+              {fm.sources && fm.sources.length > 0 && (
+                <section aria-labelledby="sources" className="mt-14 border-t border-rule pt-8">
+                  <h2 id="sources" className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">Sources and further reading</h2>
+                  <ul className="mt-4 space-y-2 text-sm text-ink-2">
+                    {fm.sources.map((s) => (
+                      <li key={s.title}>
+                        {s.url ? (
+                          <a href={s.url} className="text-link underline underline-offset-4" rel="noopener noreferrer" target="_blank">
+                            {s.title}
+                          </a>
+                        ) : (
+                          <span className="italic">{s.title}</span>
+                        )}
+                        {s.note && <span className="text-ink-muted"> — {s.note}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
+              {fm.tags?.length > 0 && (
+                <nav aria-label="Topics" className="mt-12 flex flex-wrap items-center gap-2">
+                  <span className="mr-1 text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">Topics</span>
+                  {fm.tags.map((tag) => (
+                    <Link
+                      key={tag}
+                      href={`/blog/tag/${encodeURIComponent(tag)}`}
+                      className="rounded-pill bg-paper-sunk px-3 py-1 text-xs font-medium text-ink-2 transition-colors hover:bg-accent-soft hover:text-ink"
+                    >
+                      {tag}
+                    </Link>
+                  ))}
+                </nav>
+              )}
+
+              <p className="mt-8 border-t border-rule pt-6 text-sm leading-relaxed text-ink-muted">
+                {author === LEGACY_AUTHOR ? (
+                  <>Written and reviewed by <span className="font-semibold text-ink">{LEGACY_AUTHOR}</span>, Vedic Astrology Content Advisor at Aroha. </>
+                ) : author === TEAM_AUTHOR ? (
+                  <>Written by the <span className="font-semibold text-ink">{TEAM_AUTHOR}</span>. </>
+                ) : (
+                  <>Written by <span className="font-semibold text-ink">{author}</span>. </>
+                )}
+                {category.framing.split('. ')[0]}. Read how we research and review articles in our{' '}
+                <Link href="/editorial-standards" className="text-link underline underline-offset-4">
+                  editorial standards
+                </Link>
+                .
+              </p>
+
+              <div className="mt-12">
+                <ProductPanel category={post.category} features={fm.features} slug={slug} />
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {related.length > 0 && (
+          <section aria-labelledby="related" className="mx-auto mt-20 max-w-[1080px] border-t border-rule pt-12">
+            <h2 id="related" className="font-display text-3xl font-medium">
+              Keep reading
+            </h2>
+            <div className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+              {related.map((p) => (
+                <ArticleCard key={p.slug} article={toSummary(p)} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        <div className="mx-auto mt-20 max-w-[1080px]">
+          <ArticleFinalCta category={post.category} />
+        </div>
+      </div>
+    </div>
   );
 }

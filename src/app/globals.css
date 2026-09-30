@@ -22,19 +22,23 @@
   /* Ink */
   --ink:           #1B1912;
   --ink-2:         #57544B;  /* rgba(27,25,18,0.72) over paper */
-  --ink-muted:     #7C786E;  /* rgba(27,25,18,0.55) over paper */
+  --ink-muted:     #625E55;  /* darkened from #7C786E to meet 4.5:1 on paper and paper-sunk */
 
   /* Accent — amber */
   --accent:        #D98A2B;
   --accent-hover:  #C2761F;
   --accent-soft:   #F7EAD8;
   --accent-ink:    #141310;  /* amber is a light surface: ink, not white */
+  /* Amber for TEXT on light surfaces. The fill amber above reaches only
+     ~2.3:1 as text; this deeper bronze meets WCAG AA (4.5:1+) on paper,
+     paper-sunk and accent-soft. */
+  --accent-text:   #8F5310;
 
   /* Link — muted violet. Inline text links only; never a fill. */
   --link:          #5A5796;
 
   /* Data — numerals, degrees, chart glyphs ONLY, never body text. */
-  --data:          #D98A2B;
+  --data:          #8F5310;
 
   /* Ink acts — full-bleed interludes */
   --night:         #141310;
@@ -43,6 +47,31 @@
   --night-ink-2:   #ADA79B;  /* ~0.7 alpha over night */
   --night-accent:  #D98A2B;
   --night-rule:    rgba(245,239,228,0.18);
+
+  /* Product lights — one shared system, three moods.
+     Astrology: midnight + starlight gold. */
+  --astro-night:   #0B1020;
+  --astro-night-2: #121A33;
+  --astro-ink:     #F4EEDF;
+  --astro-ink-2:   #A9AEC2;
+  --astro-gold:    #D4A64E;
+  --astro-rule:    rgba(212,166,78,0.22);
+  /* Vastu: sandstone, clay, laterite. */
+  --vastu-sand:    #E9DFCC;
+  --vastu-sand-2:  #DCCFB7;
+  --vastu-clay:    #8A462C;  /* AA as text on sand */
+  --vastu-ink:     #3B2D22;
+  --vastu-ink-2:   #6B5A4A;
+  /* Puja: ivory, saffron firelight, marigold, kumkum. */
+  --puja-ivory:    #FBF5EA;
+  --puja-ivory-2:  #F4E8D3;
+  --puja-saffron:  #9E4A0A;  /* AA as text on ivory */
+  --puja-flame:    #E07A1F;
+  --puja-marigold: #F2A93B;
+  --puja-kumkum:   #9C2A22;
+  --puja-ink:      #3A2418;
+
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Fonts — next/font injects --font-public-sans / --font-newsreader /
      --font-devanagari / --font-* per-script (see layout.tsx). Emoji
@@ -59,8 +88,10 @@
 /* Public Sans across the board; script fallbacks appended so every exposed
    language (incl. the ones without a dedicated serif) renders real glyphs
    instead of tofu boxes. */
-* {
-  font-family: var(--font-body);
+@layer base {
+  * {
+    font-family: var(--font-body);
+  }
 }
 
 .font-display {
@@ -93,6 +124,7 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);
+  --color-accent-text: var(--accent-text);
 
   --color-link: var(--link);
 
@@ -104,6 +136,27 @@
   --color-night-ink-2: var(--night-ink-2);
   --color-night-accent: var(--night-accent);
   --color-night-rule: var(--night-rule);
+
+  --color-astro-night: var(--astro-night);
+  --color-astro-night-2: var(--astro-night-2);
+  --color-astro-ink: var(--astro-ink);
+  --color-astro-ink-2: var(--astro-ink-2);
+  --color-astro-gold: var(--astro-gold);
+  --color-astro-rule: var(--astro-rule);
+
+  --color-vastu-sand: var(--vastu-sand);
+  --color-vastu-sand-2: var(--vastu-sand-2);
+  --color-vastu-clay: var(--vastu-clay);
+  --color-vastu-ink: var(--vastu-ink);
+  --color-vastu-ink-2: var(--vastu-ink-2);
+
+  --color-puja-ivory: var(--puja-ivory);
+  --color-puja-ivory-2: var(--puja-ivory-2);
+  --color-puja-saffron: var(--puja-saffron);
+  --color-puja-flame: var(--puja-flame);
+  --color-puja-marigold: var(--puja-marigold);
+  --color-puja-kumkum: var(--puja-kumkum);
+  --color-puja-ink: var(--puja-ink);
 
   --radius-pill: 9999px;
 }
@@ -139,7 +192,7 @@ html.lenis, html.lenis body { height: auto; }
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 /* Inline text links read violet and warm to amber on hover. Scoped to
@@ -151,7 +204,100 @@ a.j-link {
 }
 .j-prose a:hover,
 a.j-link:hover {
-  color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* ============================================================
+   Reveal-on-scroll, CSS first. Content is fully visible in the server
+   HTML (crawlers, no-JS, slow JS); only once the inline script in
+   layout.tsx has added `.js` to <html> do .reveal elements start hidden,
+   and RevealObserver adds .is-in as they enter the viewport. The delayed
+   fallback animation guarantees nothing stays hidden if the observer
+   never runs. `--reveal-i` staggers siblings.
+   ============================================================ */
+.js .reveal:not(.is-in) {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  animation: reveal-fallback 0.01s linear 3.5s forwards;
+}
+.js .reveal {
+  transition:
+    opacity 0.8s var(--ease-out-soft),
+    transform 0.8s var(--ease-out-soft);
+  transition-delay: calc(var(--reveal-i, 0) * 70ms);
+}
+@keyframes reveal-fallback {
+  to { opacity: 1; transform: none; }
+}
+
+/* Focus ring for every interactive element that doesn't define its own. */
+:where(a, button, [role='tab'], summary, input, select, textarea):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  font-size: 14px;
+}
+.skip-link:focus { top: 12px; }
+
+/* Long-form article typography (Knowledge Hub). In the components layer so
+   Tailwind utilities on embedded diagrams still win, and scoped away from
+   anything inside `.not-prose` (diagrams, checklists, callouts). */
+@layer components {
+  .article-body { color: var(--ink-2); font-size: 17.5px; line-height: 1.75; }
+  .article-body > :where(* + *) { margin-top: 1.1em; }
+  .article-body :where(h2):not(.not-prose *) {
+    font-family: var(--font-newsreader), Georgia, serif;
+    color: var(--ink); font-weight: 500; font-size: clamp(26px, 3vw, 32px);
+    line-height: 1.2; margin-top: 2.2em; scroll-margin-top: 96px; text-wrap: balance;
+  }
+  .article-body :where(h3):not(.not-prose *) {
+    font-family: var(--font-newsreader), Georgia, serif;
+    color: var(--ink); font-weight: 500; font-size: 22px; line-height: 1.3;
+    margin-top: 1.8em; scroll-margin-top: 96px;
+  }
+  .article-body :where(a):not(.not-prose *) { color: var(--link); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .article-body :where(a):not(.not-prose *):hover { color: var(--accent-hover); }
+  .article-body :where(strong):not(.not-prose *) { color: var(--ink); font-weight: 600; }
+  .article-body :where(ul, ol):not(.not-prose, .not-prose *) { padding-left: 1.4em; }
+  .article-body :where(ul):not(.not-prose, .not-prose *) { list-style: disc; }
+  .article-body :where(ol):not(.not-prose, .not-prose *) { list-style: decimal; }
+  .article-body :where(li):not(.not-prose *) { margin-top: 0.45em; padding-left: 0.2em; }
+  .article-body :where(li):not(.not-prose *)::marker { color: var(--accent); }
+  .article-body :where(blockquote):not(.not-prose *) {
+    border-left: 2px solid var(--accent); padding: 0.2em 0 0.2em 1.2em;
+    font-family: var(--font-newsreader), Georgia, serif; font-size: 1.15em; color: var(--ink);
+  }
+  .article-body .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 14px; background: var(--paper-raised); }
+  .article-body table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+  .article-body th {
+    text-align: left; font-weight: 600; color: var(--ink); background: var(--paper-sunk);
+    padding: 10px 14px; border-bottom: 1px solid var(--rule);
+  }
+  .article-body td { padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .article-body tr:last-child td { border-bottom: 0; }
+  .article-body :where(hr) { border: 0; border-top: 1px solid var(--rule); margin: 2.5em 0; }
+}
+
+/* Slow drift for the static (non-WebGL) celestial hero. */
+@keyframes aroha-spin { to { transform: rotate(360deg); } }
+@keyframes aroha-spin-rev { to { transform: rotate(-360deg); } }
+@keyframes aroha-twinkle { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.9; } }
+@keyframes aroha-flicker {
+  0%, 100% { transform: scale(1) translateY(0); opacity: 0.95; }
+  30% { transform: scale(1.04, 0.97) translateY(-1px); opacity: 1; }
+  60% { transform: scale(0.97, 1.03) translateY(1px); opacity: 0.9; }
 }
 
 /* ============================================================
@@ -161,9 +307,11 @@ a.j-link:hover {
    fallback state.
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
+  .js .reveal:not(.is-in) { opacity: 1; transform: none; animation: none; }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
 }
+
