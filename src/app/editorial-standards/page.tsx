@@ -24,7 +24,7 @@ const REVIEW = [
   'One clear search intent, answered in the opening, with no duplication of an existing article.',
   'Readability: plain language, defined terms, useful structure; no padding.',
   'Internal links to the pillar, 3–5 related articles and the relevant Aroha product.',
-  'Images are original or properly licensed, with accurate alt text.',
+  'Images are original, properly licensed or AI-generated illustrations, with accurate alt text. Illustrations never stand in for a real event, person or product screen.',
 ];
 
 export default function EditorialStandardsPage() {

@@ -110,9 +110,12 @@ function estimateReadingTime(content: string): number {
 }
 
 function resolveHero(slug: string, category: CategoryKey, fm: BlogFrontmatter): string | null {
+  // An explicit hero (e.g. a photograph in /assets/blog/photos) wins over the
+  // generated art, which stays on disk as the fallback.
+  if (fm.hero && fs.existsSync(path.join(PUBLIC_DIR, fm.hero))) return fm.hero;
   const conventional = `/assets/blog/${category}/${slug}.webp`;
   if (fs.existsSync(path.join(PUBLIC_DIR, conventional))) return conventional;
-  return fm.hero ?? null;
+  return null;
 }
 
 /** Every .mdx slug on disk, regardless of status. */

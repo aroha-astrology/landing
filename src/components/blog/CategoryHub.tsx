@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Breadcrumbs } from './Breadcrumbs';
 import { ArticleCard, toSummary } from './ArticleCard';
 import { ArticleFinalCta } from './ArticleFinalCta';
@@ -16,6 +17,22 @@ import { SITE_URL } from '@/lib/links';
  * it still renders (the nav links to it) but asks not to be indexed.
  */
 const MIN_INDEXABLE = 3;
+
+/**
+ * Optional photographic cover behind the hub header. The overlay fades from
+ * the header's own colour on the left (where the text sits) to the photo on
+ * the right, so text contrast never depends on the image.
+ */
+const COVER: Partial<Record<CategoryKey, { src: string; overlay: string }>> = {
+  astrology: {
+    src: '/assets/blog/covers/astrology.webp',
+    overlay: 'bg-gradient-to-r from-astro-night via-astro-night/90 to-astro-night/30 max-md:via-astro-night/85 max-md:to-astro-night/75',
+  },
+  puja: {
+    src: '/assets/blog/covers/puja.webp',
+    overlay: 'bg-gradient-to-r from-puja-ivory-2 via-puja-ivory-2/95 to-puja-ivory-2/20 max-md:via-puja-ivory-2/92 max-md:to-puja-ivory-2/85',
+  },
+};
 
 const HERO: Record<CategoryKey, string> = {
   astrology: 'bg-astro-night text-astro-ink',
@@ -45,6 +62,7 @@ export function CategoryHub({ category }: { category: CategoryKey }) {
   const topics = cat.topics.filter((t) => visible.has(t.slug));
   const pageUrl = `${SITE_URL}/blog/${category}`;
   const dark = category === 'astrology';
+  const cover = COVER[category];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -75,8 +93,14 @@ export function CategoryHub({ category }: { category: CategoryKey }) {
   return (
     <div className="bg-paper text-ink">
       <JsonLd data={jsonLd} />
-      <section className={`px-[clamp(20px,4vw,56px)] pb-16 pt-8 ${HERO[category]}`}>
-        <div className="mx-auto max-w-[1180px]">
+      <section className={`relative overflow-hidden px-[clamp(20px,4vw,56px)] pb-16 pt-8 ${HERO[category]}`}>
+        {cover && (
+          <>
+            <Image src={cover.src} alt="" fill priority sizes="100vw" className="object-cover object-right" />
+            <div aria-hidden className={`absolute inset-0 ${cover.overlay}`} />
+          </>
+        )}
+        <div className="relative mx-auto max-w-[1180px]">
           <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: cat.name }]} tone={dark ? 'dark' : 'paper'} />
           <div className="mt-12 max-w-3xl">
             <p className={`text-[13px] font-bold uppercase tracking-[0.14em] ${dark ? 'text-astro-gold' : category === 'vastu' ? 'text-vastu-clay' : 'text-puja-saffron'}`}>

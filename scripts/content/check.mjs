@@ -42,6 +42,7 @@ for (const [slug, { data, content }] of posts) {
   if (!data.art?.motif) errors.push(`${where}: no art.motif (hero generator input)`);
   if (!fs.existsSync(path.join(ROOT, 'public/assets/blog', category, `${slug}.webp`)))
     errors.push(`${where}: hero image missing; run npm run blog:art -- ${slug}`);
+  if (data.hero && !fs.existsSync(path.join(ROOT, 'public', data.hero))) errors.push(`${where}: hero "${data.hero}" not found in public/`);
   if (data.description && data.description.length > 260) warnings.push(`${where}: description is ${data.description.length} chars`);
   if (titles.has(data.title)) errors.push(`${where}: duplicate title with ${titles.get(data.title)}`);
   titles.set(data.title, slug);
