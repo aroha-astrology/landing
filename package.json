@@ -10,6 +10,7 @@
     "blog:art": "node scripts/blog-art/generate.mjs",
     "content:check": "node scripts/content/check.mjs",
     "content:publish": "node scripts/content/publish.mjs",
+    "i18n:export": "node --no-warnings scripts/i18n/export.mjs",
     "planets:art": "node scripts/planets/generate.mjs"
   },
   "dependencies": {
@@ -34,6 +35,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@types/three": "^0.186.0",
+    "parse5": "^8.0.1",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.2"
