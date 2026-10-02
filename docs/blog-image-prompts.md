@@ -74,39 +74,32 @@ OpenAI's terms. They're recorded in `public/assets/LICENSES.md` as
 | `cover-vastu.png` | Morning light crossing a sandstone courtyard of a contemporary Indian home, an open centre, plants at the edges. |
 | `cover-puja.png` | Rows of lit diyas on steps at dusk, marigold garlands, warm bokeh. |
 
-## Astrology illustrations still needed (10)
+## Astrology illustrations still needed (2)
 
 In October 2026 the team supplied 94 illustrated drafts for the astrology
-articles. 27 are in use (`public/assets/blog/illustrations/`). For these ten
-articles every draft had a visible error (misspelt or invented labels, a
-file name printed as the title, wrong figures), so they keep their
-code-generated art until a clean image arrives.
+articles, then 10 more made from the prompts that used to be listed here.
+35 are in use (`public/assets/blog/illustrations/`). These two articles keep
+their code-generated art: the second attempts still had errors (a misspelt
+and repeated sign name; an app screenshot with invented Devanagari).
 
-Most errors came from the model writing its own text. These prompts give
-the exact words to draw and forbid everything else.
+Set the image shape to **landscape 16:9** in the tool itself before
+generating. The second batch came out portrait (9:16) and had to be centred
+on a blurred backdrop to fit the hero frame.
 
 ### Style block (paste first)
 
-> I'm going to ask you for a series of blog header illustrations for a Vedic
-> astrology site. Landscape 16:9. One consistent style: aged parchment or a
-> deep navy night sky, fine gold and ink line work, calm and uncluttered.
-> Draw ONLY the exact words I put in quotes, spelled exactly as given.
-> No other text anywhere: no extra labels, no numbers, no Devanagari, no
-> captions, no file names, no signatures. If a label won't fit, leave it out
-> rather than changing it. No real people's faces.
+> A blog header illustration for a Vedic astrology site. Landscape, 16:9,
+> wider than tall. A single flat illustration that fills the whole frame:
+> not a photo of a screen, not a phone or app screenshot, no interface
+> icons. Aged parchment or a deep navy night sky, fine gold and ink line
+> work, calm and uncluttered. Draw ONLY the exact words I put in quotes,
+> spelled exactly as given. No other writing of any kind: no sign names, no
+> numbers, no Devanagari or other script, no captions, no signatures.
 
 | File | Prompt |
 | --- | --- |
-| `27-nakshatras-list.png` | A ring divided into 27 equal segments around a crescent Moon on a navy night sky. Each segment holds one small gold star cluster and no writing. Title, exactly: "The 27 Nakshatras". |
-| `dhan-yoga-wealth-vedic-astrology.png` | A North Indian diamond-style birth chart drawn in gold on parchment, two of its houses softly glowing, with a small pile of gold coins and a brass kalash beside it. Nothing written inside the chart. Title, exactly: "Dhan Yoga". |
-| `navagraha-nine-planets-vedic-astrology.png` | Nine round medallions in a 3×3 grid on parchment, each a simple icon: the Sun, a crescent Moon, red Mars, green Mercury, large yellow Jupiter, white Venus, ringed Saturn, a serpent's head, a serpent's tail. One label under each, exactly, in this order: "Surya", "Chandra", "Mangala", "Budha", "Guru", "Shukra", "Shani", "Rahu", "Ketu". Title, exactly: "Navagraha". |
-| `rashi-vs-nakshatra.png` | Two wheels side by side on a navy sky. Left wheel: 12 equal segments, one zodiac glyph in each. Right wheel: 27 equal segments, one small star in each, a crescent Moon at the centre. Text, exactly: "Rashi" above the left wheel and "12 signs" below it; "Nakshatra" above the right wheel and "27 lunar mansions" below it. |
-| `retrograde-planets-vedic-astrology.png` | Five planets on concentric orbits around a small Sun, on parchment, each with a short curved arrow pointing backwards along its orbit. No planet labels. Title, exactly: "Retrograde Planets". Subtitle, exactly: "Vakri Grahas". |
-| `sade-sati-saturn-transit.png` | A zodiac wheel of 12 segments with a crescent Moon in one segment. That segment and the one on each side of it are shaded, and ringed Saturn travels across the three along a curved arrow. Title, exactly: "Sade Sati". Subtitle, exactly: "Saturn's seven and a half years". |
-| `vimshottari-dasha-guide.png` | A ring split into nine arcs of unequal length, clockwise, in the proportions 7, 20, 6, 10, 7, 18, 16, 19, 17. One label on each arc, exactly, in that order: "Ketu 7", "Venus 20", "Sun 6", "Moon 10", "Mars 7", "Rahu 18", "Jupiter 16", "Saturn 19", "Mercury 17". Centre text, exactly: "120 years". Title, exactly: "Vimshottari Dasha". |
-| `vedic-astrology-yoga-planetary-combinations.png` | A birth-chart wheel in gold on parchment with pairs of planet icons joined by glowing lines (the Moon with Jupiter, the Sun with Mercury), to show planets combining. Nothing written inside the chart. No yoga postures and no people exercising. Title, exactly: "Yogas in Vedic Astrology". |
-| `what-is-a-moon-sign.png` | A large crescent Moon inside a zodiac wheel of 12 segments that hold only the zodiac glyphs, one segment highlighted, on a navy night sky. Title, exactly: "What Is a Moon Sign?". One label under the Moon, exactly: "Chandra Rashi". |
-| `what-is-kundli-birth-chart.png` | A North Indian diamond-style kundli drawn in red and black ink on aged cream paper, lying on a wooden desk beside a brass compass and an old book, in warm light. The twelve houses of the chart are empty: nothing written on the paper at all. |
+| `sade-sati-saturn-transit.png` | A zodiac wheel of 12 equal segments. Each segment holds one zodiac glyph and nothing else: no sign names anywhere on the wheel. A crescent Moon sits in one segment; that segment and the one on each side of it are tinted gold, and ringed Saturn moves across those three along one curved arrow. Title, exactly: "Sade Sati". Subtitle, exactly: "Saturn's seven and a half years". |
+| `vedic-astrology-yoga-planetary-combinations.png` | A round birth-chart wheel of 12 empty segments in gold line on parchment. Four small planet icons sit in it: a crescent Moon joined to Jupiter by a glowing line, and the Sun joined to Mercury by a glowing line. The wheel has no writing and no numbers at all. No yoga postures, no people. Title, exactly: "Yogas in Vedic Astrology". |
 
-Check each result before sending it: every word spelled as given, nothing
-extra written anywhere, and for the dasha ring all nine labels present once.
+Check each result before sending it: wider than tall, every word spelled as
+given, and nothing else written anywhere.
