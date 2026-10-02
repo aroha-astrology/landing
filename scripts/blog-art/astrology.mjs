@@ -531,6 +531,38 @@ const MOTIFS = {
     return out;
   },
 
+  /**
+   * KP: one nakshatra of the 27 opened out into its nine unequal subs, in Vimshottari
+   * proportions and starting from the nakshatra's own lord (Rohini's is the Moon).
+   */
+  'kp-sub': ({ focus = 3 }) => {
+    const years = [7, 20, 6, 10, 7, 18, 16, 19, 17];
+    const names = ['ketu', 'venus', 'sun', 'moon', 'mars', 'rahu', 'jupiter', 'saturn', 'mercury'];
+    const span = 360 / 27;
+    const mid = focus * span + span / 2;
+    const fan = 150, a0 = mid - fan / 2, a1 = mid + fan / 2;
+    const out = [nakshatraRing(CX, CY, 390, { highlight: [focus], width: 40 })];
+    out.push(circle(CX, CY, 300, faint({ opacity: '0.25' })), circle(CX, CY, 170, faint({ opacity: '0.25' })));
+    // The fan sits under its nakshatra, held between two arcs.
+    out.push(path(arcD(CX, CY, 308, a0, a1), gold({ 'stroke-width': 1.2, opacity: '0.7' })));
+    out.push(path(arcD(CX, CY, 162, a0, a1), gold({ 'stroke-width': 1.2, opacity: '0.7' })));
+    const [tx0, ty0] = polar(CX, CY, 350, mid);
+    const [tx1, ty1] = polar(CX, CY, 308, mid);
+    out.push(line(tx0, ty0, tx1, ty1, gold({ 'stroke-width': 1.4 })));
+    const first = focus % 9;
+    let a = a0;
+    for (let k = 0; k < 9; k++) {
+      const i = (first + k) % 9;
+      const w = (years[i] / 120) * fan;
+      out.push(path(sectorD(CX, CY, 170, 300, a + 0.5, a + w - 0.5), { fill: PLANET_COLORS[names[i]], opacity: k === 0 ? '0.85' : '0.5', stroke: C.gold, 'stroke-width': k === 0 ? 1.8 : 1 }));
+      const [x, y] = polar(CX, CY, 318, a + w / 2);
+      out.push(circle(x, y, k === 0 ? 5.5 : 3.2, { fill: C.goldSoft }));
+      a += w;
+    }
+    out.push(planet(CX, CY, 34, PLANET_COLORS.moon, { id: 'kp' }));
+    return out;
+  },
+
   /** Mahadasha → Antardasha → Pratyantardasha, nested bands. */
   'dasha-timeline': () => {
     const years = [7, 20, 6, 10, 7, 18, 16, 19, 17];

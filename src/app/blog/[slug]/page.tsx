@@ -193,7 +193,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           {post.hero && (
             <figure className="mx-auto mt-10 max-w-[1080px]">
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-rule bg-night">
-                <Image src={post.hero} alt={fm.heroAlt ?? ''} fill priority sizes="(min-width: 1180px) 1080px, 100vw" className="object-cover" />
+                {/* Many heroes carry small lettering, which the default quality (75) smears. */}
+                <Image src={post.hero} alt={fm.heroAlt ?? ''} fill priority quality={90} sizes="(min-width: 1180px) 1080px, 100vw" className="object-cover" />
               </div>
             </figure>
           )}

@@ -80,8 +80,9 @@ export default function EditorialStandardsPage() {
 
       <h2>Authors, AI assistance and human review</h2>
       <p>
-        New articles are published by the Aroha Editorial Team. Some are drafted with AI assistance. Every article is reviewed by a person
-        before it is published, and articles awaiting review are kept out of search engines and site listings. The older astrology guides
+        New articles are published by the Aroha Editorial Team. Some are drafted with AI assistance. Every article is checked against the
+        list below before it is published, and articles awaiting that check are kept out of search engines and site listings. Where a named
+        person has reviewed an article, the article says so. The older astrology guides
         carry the byline of Yogi Baba, our Vedic Astrology Content Advisor.
       </p>
       <Checklist title="The review checklist every article passes" items={REVIEW} />
