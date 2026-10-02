@@ -176,6 +176,37 @@ export function ReportsSection() {
       <div
         className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
       >
+        <div className="relative overflow-hidden rounded-2xl border border-accent/40 bg-paper-raised sm:col-span-2 lg:col-span-3">
+          <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr]">
+            <div className="relative h-48 w-full bg-[#0e0a1c] md:h-auto md:min-h-[260px]">
+              <Image
+                src="/reports/kp_annual.png"
+                alt="The zodiac wheel with the nine planets in orbit"
+                fill
+                sizes="(min-width: 768px) 55vw, 100vw"
+                className="object-cover object-right"
+              />
+              <span className="absolute left-4 top-4 rounded-pill bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-[0.06em] text-accent-ink">
+                New
+              </span>
+            </div>
+            <div className="flex flex-col px-6 py-7 md:px-8">
+              <div className="mb-3 flex flex-wrap items-baseline justify-between gap-3">
+                <h3 className="font-display text-2xl leading-tight text-ink">KP Year Ahead Report</h3>
+                <span className="flex items-baseline gap-2" data-no-translate>
+                  <span className="font-display text-2xl text-accent">₹101</span>
+                  <span className="text-sm text-ink-muted line-through">₹251</span>
+                </span>
+              </div>
+              <ul className="space-y-2.5 text-[14px] leading-snug text-ink-muted">
+                <li>• Your next 12 months, month by month, with the best windows named</li>
+                <li>• Read the Krishnamurti Paddhati (KP) way: cusps, sub lords, dasha–bhukti–antara and transits</li>
+                <li>• Career, money, love, health, home, travel, studies and family</li>
+                <li>• Ask up to 3 questions of your own while ordering, and get them answered</li>
+              </ul>
+            </div>
+          </div>
+        </div>
         {REPORTS.map((report) => (
           <div
             key={report.key}

@@ -54,6 +54,11 @@ const homeFaqItems: AccordionItem[] = [
     answer: 'Aroha Astrology supports 7 Indian languages, so you can read your chart and chat with the Vedic Astrologer in the language you think in.',
   },
   {
+    question: 'What is the KP Year Ahead report?',
+    answer:
+      'It reads the 12 months from the day you order it using Krishnamurti Paddhati (KP): Placidus house cusps, the sub lord of each cusp, your dasha, bhukti and antara periods, and the transits of Jupiter, Saturn, Rahu and Ketu. You get what the year promises for career, money, love, health, home, travel, studies and family, a month-by-month guide, and answers to up to 3 questions you type in yourself. Questions about death, lifespan or self-harm are not answered. It is Rs 101 (MRP Rs 251).',
+  },
+  {
     question: 'Is my birth data kept private?',
     answer: `Your birth details are used to compute your chart and are handled according to our privacy policy at ${LINKS.privacy}, which sets out what is stored and how.`,
   },
