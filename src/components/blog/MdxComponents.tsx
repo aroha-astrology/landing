@@ -57,6 +57,25 @@ function Figure({ src, alt, caption }: { src: string; alt: string; caption?: str
 }
 
 /**
+ * A phone screenshot from the app inside a post — `<Screenshot
+ * src="/vastu/fix-this.webp" alt="..." caption="..." />`. Figure's 4:3
+ * contain box would shrink a tall 9:19 screenshot to a thumbnail, so this
+ * sizes by width instead (560×1014 WebP, see components/ui/PhoneShot).
+ */
+function Screenshot({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <figure className="my-10">
+      <div className="mx-auto w-[64%] max-w-[280px] overflow-hidden rounded-[26px] border-[6px] border-[#1c1a22] bg-[#0f0e13]">
+        <Image src={src} alt={alt} width={560} height={1014} sizes="280px" className="block h-auto w-full" />
+      </div>
+      {caption && (
+        <figcaption className="mt-3 text-center text-sm text-ink-muted">{caption}</figcaption>
+      )}
+    </figure>
+  );
+}
+
+/**
  * A boxed aside for the "different traditions disagree here" / "this is not
  * a deterministic prediction" notes that already appear as plain paragraphs
  * throughout the blog's house voice (see docs/superpowers/plans/2026-08-31-
@@ -112,6 +131,7 @@ function AppScreen({ name }: { name: keyof typeof VASTU_INTERIORS_SHOTS }) {
 // in blog/[slug]/page.tsx, rather than importing a separate types package.
 export const mdxComponents = {
   Figure,
+  Screenshot,
   Callout,
   AppVideo,
   AppScreen,

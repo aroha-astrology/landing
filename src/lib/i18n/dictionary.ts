@@ -2126,7 +2126,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Gemstone recommendations': 'रत्न संबंधी सुझाव',
     'Personalized suggestions based on your own planetary placements.':
       'आपके स्वयं के ग्रहों की स्थिति के आधार पर व्यक्तिगत सुझाव।',
-    'Vastu planner': 'वास्तु प्लानर',
+    'Vastu Studio': 'वास्तु स्टूडियो',
     'A 2D floor-plan tool for laying out your home or office.':
       'आपके घर या कार्यालय को डिजाइन करने के लिए एक 2D फ़्लोर-प्लान टूल।',
     'Daily, weekly, monthly & yearly horoscope': 'दैनिक, साप्ताहिक, मासिक और वार्षिक राशिफल',
@@ -2549,7 +2549,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Gemstone recommendations': 'Recomendaciones de gemas',
     'Personalized suggestions based on your own planetary placements.':
       'Sugerencias personalizadas basadas en tus propias posiciones planetarias.',
-    'Vastu planner': 'Planificador Vastu',
+    'Vastu Studio': 'Estudio Vastu',
     'A 2D floor-plan tool for laying out your home or office.':
       'Una herramienta de plano en 2D para diseñar tu hogar u oficina.',
     'Daily, weekly, monthly & yearly horoscope': 'Horóscopo diario, semanal, mensual y anual',
@@ -2700,7 +2700,7 @@ export const LANDING_DICT: Record<string, Record<string, string>> = {
     'Gemstone recommendations': 'Recommandations de pierres précieuses',
     'Personalized suggestions based on your own planetary placements.':
       'Suggestions personnalisées basées sur vos propres placements planétaires.',
-    'Vastu planner': "Planificateur Vastu",
+    'Vastu Studio': "Studio Vastu",
     'A 2D floor-plan tool for laying out your home or office.':
       "Un outil de plan d'étage 2D pour aménager votre maison ou votre bureau.",
     'Daily, weekly, monthly & yearly horoscope': 'Horoscope quotidien, hebdomadaire, mensuel et annuel',
