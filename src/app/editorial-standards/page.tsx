@@ -88,8 +88,8 @@ export default function EditorialStandardsPage() {
 
       <h2>Images</h2>
       <p>
-        Article illustrations are original Aroha artwork, drawn in code from the subject of each article (a Nakshatra ring for a Nakshatra
-        guide, a floor plan for a Vastu guide). We don’t use images we lack the rights to. Diagrams inside articles are real text, so they
+        Article illustrations are made for Aroha. Some are drawn in code from the subject of each article (a Nakshatra ring for a Nakshatra
+        guide, a floor plan for a Vastu guide); others are AI-generated and checked against the article before they are used. We don’t use images we lack the rights to. Diagrams inside articles are real text, so they
         work with screen readers.
       </p>
 

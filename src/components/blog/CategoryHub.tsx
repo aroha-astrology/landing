@@ -32,6 +32,11 @@ const COVER: Partial<Record<CategoryKey, { src: string; overlay: string }>> = {
     src: '/assets/blog/covers/puja.webp',
     overlay: 'bg-gradient-to-r from-puja-ivory-2 via-puja-ivory-2/95 to-puja-ivory-2/20 max-md:via-puja-ivory-2/92 max-md:to-puja-ivory-2/85',
   },
+  vastu: {
+    src: '/assets/blog/covers/vastu.webp',
+    // The artwork is busy line work, so the text half stays solid and it only shows on the right.
+    overlay: 'bg-gradient-to-r from-vastu-sand from-45% via-vastu-sand/90 via-60% to-vastu-sand/15 max-md:via-vastu-sand/95 max-md:to-vastu-sand/90',
+  },
 };
 
 const HERO: Record<CategoryKey, string> = {
