@@ -118,11 +118,19 @@ export function SignatureTransition() {
                 ))}
                 <rect x={200 - 42.4} y={200 - 42.4} width={84.9} height={84.9} fill="#C98B63" fillOpacity=".12" stroke="none" />
               </motion.g>
-              {/* Ritual: the flame at the centre */}
-              <motion.g style={{ opacity: full ?? flame, scale: full ?? flameScale, transformOrigin: '200px 205px' }}>
-                <circle cx="200" cy="196" r="46" fill="#F2A93B" opacity=".18" />
-                <path d="M200 158 C188 178 186 192 200 214 C214 192 212 178 200 158 Z" fill="#F2A93B" />
-                <path d="M200 176 C194 188 194 198 200 210 C206 198 206 188 200 176 Z" fill="#FFE7A8" />
+              {/* Ritual: the flame at the centre, a photographed clay diya feathered into the dark */}
+              <defs>
+                <radialGradient id="sig-diya-fade">
+                  <stop offset="74%" stopColor="#fff" />
+                  <stop offset="100%" stopColor="#fff" stopOpacity="0" />
+                </radialGradient>
+                <mask id="sig-diya-mask">
+                  <circle cx="200" cy="200" r="59" fill="url(#sig-diya-fade)" />
+                </mask>
+              </defs>
+              <motion.g style={{ opacity: full ?? flame, scale: full ?? flameScale, transformOrigin: '200px 200px' }}>
+                <circle cx="200" cy="200" r="74" fill="#F2A93B" opacity=".14" />
+                <image href="/assets/home/diya-flame.webp" x="141" y="141" width="118" height="118" mask="url(#sig-diya-mask)" />
               </motion.g>
               {/* Aroha: the three become one mandala */}
               <motion.g style={{ opacity: full ?? unity }}>

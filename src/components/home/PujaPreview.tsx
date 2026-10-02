@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { TrackedLink } from '@/components/ui/TrackedLink';
 import { StatusBadge } from '@/components/product/StatusBadge';
 import { PRODUCTS } from '@/lib/brand';
@@ -24,36 +25,18 @@ export function PujaPreview() {
       style={{ background: 'radial-gradient(900px 600px at 18% 55%, #FFE2B0 0%, #FBF5EA 45%, #F4E8D3 100%)' }}
     >
       <div className="mx-auto grid max-w-[1280px] items-center gap-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <figure className="reveal relative mx-auto flex aspect-square w-full max-w-[460px] items-center justify-center" aria-hidden>
-          <div className="absolute inset-[12%] rounded-full bg-puja-marigold/30 blur-3xl" />
-          <svg viewBox="0 0 400 400" className="relative w-full">
-            <defs>
-              <linearGradient id="pp-clay" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#C8743A" />
-                <stop offset="100%" stopColor="#7A3A1C" />
-              </linearGradient>
-              <radialGradient id="pp-halo" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#FFD58A" stopOpacity=".9" />
-                <stop offset="100%" stopColor="#FFD58A" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-            <circle cx="200" cy="170" r="120" fill="url(#pp-halo)" />
-            <g style={{ transformOrigin: '200px 250px', animation: 'aroha-flicker 2.8s ease-in-out infinite' }}>
-              <path d="M200 110 C178 150 172 180 200 240 C228 180 222 150 200 110 Z" fill="#E07A1F" />
-              <path d="M200 150 C190 175 188 195 200 232 C212 195 210 175 200 150 Z" fill="#FFE7A8" />
-            </g>
-            <path d="M110 250 Q200 330 290 250 L310 238 Q250 250 200 252 Q150 250 110 250 Z" fill="url(#pp-clay)" />
-            <path d="M110 250 Q200 236 300 242" stroke="#E9A25A" strokeWidth="2" fill="none" opacity=".7" />
-            {[70, 110, 290, 330].map((x, i) => (
-              <g key={x} transform={`translate(${x} ${300 + (i % 2) * 18})`}>
-                {Array.from({ length: 14 }, (_, j) => {
-                  const a = (j * 360) / 14;
-                  return <ellipse key={j} cx="0" cy="-12" rx="5" ry="9" fill={j % 2 ? '#F2A93B' : '#E07A1F'} transform={`rotate(${a})`} />;
-                })}
-                <circle r="5" fill="#B8561A" />
-              </g>
-            ))}
-          </svg>
+        <figure className="reveal relative mx-auto w-full max-w-[540px]">
+          <div aria-hidden className="absolute inset-[-8%] rounded-full bg-puja-marigold/30 blur-3xl" />
+          {/* 768 px source: keep the frame at or under ~540 px so it stays sharp on dense screens. */}
+          <Image
+            src="/assets/home/puja-still-life.webp"
+            alt="A lit brass diya on a wooden table beside a kalash topped with a coconut and mango leaves"
+            width={768}
+            height={400}
+            quality={90}
+            sizes="(min-width: 1024px) 540px, 92vw"
+            className="relative h-auto w-full rounded-[28px] shadow-[0_30px_70px_-20px_rgba(122,58,28,0.55)] ring-1 ring-puja-ink/10"
+          />
         </figure>
 
         <div className="reveal" style={{ ['--reveal-i' as string]: 1 }}>

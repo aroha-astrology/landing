@@ -24,8 +24,9 @@ export function HeroSection() {
       />
       <HeroVisual />
 
-      <div className="relative mx-auto flex min-h-[min(860px,calc(100svh-64px))] max-w-[1280px] items-center px-[clamp(20px,4vw,56px)] pb-20 pt-[clamp(72px,12vh,140px)]">
-        <div className="max-w-[760px]">
+      {/* Clicks fall through the empty parts of this layer to the planets behind it. */}
+      <div className="pointer-events-none relative mx-auto flex min-h-[min(860px,calc(100svh-64px))] max-w-[1280px] items-center px-[clamp(20px,4vw,56px)] pb-20 pt-[clamp(72px,12vh,140px)]">
+        <div className="max-w-[760px] [&>*]:pointer-events-auto">
           <p className="text-[12.5px] font-bold uppercase tracking-[0.22em] text-astro-gold">Aroha · Astrology · Vastu · Puja</p>
           <h1 id="hero-title" className="font-display mt-6 text-[clamp(44px,6.6vw,88px)] font-medium leading-[1] tracking-[-0.015em]">
             Ancient wisdom.

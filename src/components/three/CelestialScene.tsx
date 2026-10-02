@@ -1,7 +1,7 @@
 'use client';
 
-import { Suspense, useEffect, useMemo, useRef } from 'react';
-import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import { Canvas, useFrame, useLoader, useThree, type ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useScroll } from '@/store/useScroll';
 
@@ -18,6 +18,10 @@ import { useScroll } from '@/store/useScroll';
  * points, so they're drawn as eclipsed discs rather than worlds.
  * Pointer and scroll come from the shared `useScroll` store (published by
  * SmoothScrollProvider), read inside useFrame so nothing re-renders React.
+ *
+ * Each graha carries an invisible, slightly larger hit sphere so small or
+ * fast bodies are easy to click. Hovering or selecting one rings it in gold
+ * and slows the orbits to a crawl; HeroVisual shows what it governs.
  */
 
 const GOLD = new THREE.Color('#D4A64E');
@@ -80,6 +84,21 @@ function glowTexture() {
   g.addColorStop(1, 'rgba(255,255,255,0)');
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, 64, 64);
+  const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+
+/** A thin halo ring, drawn on a camera-facing sprite around the hovered or selected graha. */
+function haloTexture() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 128;
+  const ctx = c.getContext('2d')!;
+  ctx.strokeStyle = 'rgba(255,255,255,1)';
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.arc(64, 64, 58, 0, Math.PI * 2);
+  ctx.stroke();
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
@@ -168,14 +187,22 @@ function Ready({ onReady }: { onReady: () => void }) {
   return null;
 }
 
-function Armillary({ reduced, lite }: { reduced: boolean; lite: boolean }) {
+type ArmillaryProps = { reduced: boolean; lite: boolean; selected: string | null; onSelect: (name: string | null) => void };
+
+function Armillary({ reduced, lite, selected, onSelect }: ArmillaryProps) {
   const root = useRef<THREE.Group>(null);
   const planets = useRef<THREE.Group>(null);
   const earth = useRef<THREE.Mesh>(null);
   const clouds = useRef<THREE.Mesh>(null);
   const sunLight = useRef<THREE.PointLight>(null);
   const { camera } = useThree();
+  const [hovered, setHovered] = useState<string | null>(null);
+  // Orbit clock: stopped while a graha is hovered (so it can't slide out from under
+  // the cursor before the click), crawling while one is selected.
+  const orbitTime = useRef(0);
+  const orbitSpeed = useRef(1);
   const glow = useMemo(glowTexture, []);
+  const halo = useMemo(haloTexture, []);
   const segs = lite ? 32 : 56;
   const textures = useLoader(THREE.TextureLoader, TEX_URLS);
   const maps = useMemo(() => {
@@ -240,11 +267,14 @@ function Armillary({ reduced, lite }: { reduced: boolean; lite: boolean }) {
     }
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    return new THREE.Points(
-      geo,
-      new THREE.PointsMaterial({ color: STARLIGHT, size: 0.07, sizeAttenuation: true, transparent: true, opacity: 0.75, depthWrite: false }),
-    );
-  }, [lite]);
+    // The soft disc map keeps each star round: unmapped points draw as squares.
+    const mat = new THREE.PointsMaterial({ color: STARLIGHT, map: glow, size: 0.21, sizeAttenuation: true, transparent: true, opacity: 0.9, depthWrite: false });
+    // Cap the size, or a star drifting close to the camera swells into a blob.
+    mat.onBeforeCompile = (shader) => {
+      shader.vertexShader = shader.vertexShader.replace('#include <fog_vertex>', 'gl_PointSize = min(gl_PointSize, 7.0);\n#include <fog_vertex>');
+    };
+    return new THREE.Points(geo, mat);
+  }, [lite, glow]);
 
   useEffect(
     () => () => {
@@ -257,31 +287,53 @@ function Armillary({ reduced, lite }: { reduced: boolean; lite: boolean }) {
         });
       }
       glow.dispose();
+      halo.dispose();
       atmosphere.dispose();
     },
-    [rings, stars, glow, atmosphere],
+    [rings, stars, glow, halo, atmosphere],
   );
 
-  useFrame((state, delta) => {
+  useEffect(() => {
+    if (!hovered) return;
+    document.body.style.cursor = 'pointer';
+    return () => void (document.body.style.cursor = '');
+  }, [hovered]);
+
+  const hit = (name: string) => ({
+    onClick: (e: ThreeEvent<MouseEvent>) => {
+      e.stopPropagation();
+      onSelect(name === selected ? null : name);
+    },
+    onPointerOver: (e: ThreeEvent<PointerEvent>) => {
+      e.stopPropagation();
+      setHovered(name);
+    },
+    onPointerOut: () => setHovered((h) => (h === name ? null : h)),
+  });
+
+  useFrame((_, delta) => {
     const g = root.current;
     if (!g) return;
     const { px, py } = useScroll.getState();
     const heroH = window.innerHeight || 800;
     const scroll = Math.min(1, Math.max(0, window.scrollY / heroH));
-    const t = state.clock.elapsedTime;
-    const drift = reduced ? 0 : t * 0.035;
-    // Damped pointer tilt; scroll turns the sphere and dollies back.
-    g.rotation.x = THREE.MathUtils.damp(g.rotation.x, 0.42 + py * 0.12 + scroll * 0.35, 3, delta);
-    g.rotation.y = THREE.MathUtils.damp(g.rotation.y, -0.5 + drift + px * 0.22 + scroll * 0.9, 3, delta);
+    orbitSpeed.current = hovered ? 0 : THREE.MathUtils.damp(orbitSpeed.current, selected ? 0.06 : 1, 4, delta);
+    orbitTime.current += delta * orbitSpeed.current;
+    const drift = reduced ? 0 : orbitTime.current * 0.035;
+    // Damped pointer tilt; scroll turns the sphere and dollies back. Held still while hovering a graha.
+    if (!hovered) {
+      g.rotation.x = THREE.MathUtils.damp(g.rotation.x, 0.42 + py * 0.12 + scroll * 0.35, 3, delta);
+      g.rotation.y = THREE.MathUtils.damp(g.rotation.y, -0.5 + drift + px * 0.22 + scroll * 0.9, 3, delta);
+    }
     camera.position.z = THREE.MathUtils.damp(camera.position.z, 13 + scroll * 4, 3, delta);
     if (planets.current) {
       planets.current.children.forEach((child, i) => {
         const gr = GRAHAS[i];
         // One real year ≈ 40 s of animation; keeps the Moon visibly moving.
-        const a = gr.phase + (reduced ? 0 : (t * 9.1) / gr.period);
+        const a = gr.phase + (reduced ? 0 : (orbitTime.current * 9.1) / gr.period);
         child.position.set(Math.cos(a) * ORBIT, 0, Math.sin(a) * ORBIT);
         const body = child.children[0];
-        if (body && !reduced) body.rotation.y += gr.spin * delta;
+        if (body && !reduced) body.rotation.y += gr.spin * delta * orbitSpeed.current;
       });
       // The Sun is the light: every body shows its true phase.
       const sun = planets.current.children[0];
@@ -297,11 +349,24 @@ function Armillary({ reduced, lite }: { reduced: boolean; lite: boolean }) {
       <pointLight ref={sunLight} color="#FFF1DA" intensity={2.6} decay={0} />
       <ambientLight intensity={0.07} color="#9FB0FF" />
       <group ref={planets}>
-        {GRAHAS.map((gr, i) => (
-          <group key={gr.name} position={[Math.cos(gr.phase) * ORBIT, 0, Math.sin(gr.phase) * ORBIT]}>
-            <Body graha={gr} segs={segs} map={gr.tex ? maps[gr.tex] : undefined} rings={gr.rings ? ringTex : undefined} glow={glow} />
-          </group>
-        ))}
+        {GRAHAS.map((gr) => {
+          const ringed = selected === gr.name || hovered === gr.name;
+          const haloSize = Math.max(gr.size * 3.2, 0.42) * (gr.rings ? 1.45 : 1);
+          return (
+            <group key={gr.name} position={[Math.cos(gr.phase) * ORBIT, 0, Math.sin(gr.phase) * ORBIT]}>
+              {/* Body stays children[0]: useFrame spins it. */}
+              <Body graha={gr} segs={segs} map={gr.tex ? maps[gr.tex] : undefined} rings={gr.rings ? ringTex : undefined} glow={glow} />
+              <mesh visible={false} {...hit(gr.name)}>
+                <sphereGeometry args={[Math.max(gr.size * 1.8, 0.24), 12, 12]} />
+              </mesh>
+              {ringed && (
+                <sprite scale={[haloSize, haloSize, 1]}>
+                  <spriteMaterial map={halo} color={GOLD_SOFT} transparent opacity={selected === gr.name ? 0.95 : 0.5} depthWrite={false} />
+                </sprite>
+              )}
+            </group>
+          );
+        })}
       </group>
       {/* The observer at the centre: Vedic astrology is geocentric. */}
       <group rotation={[0, 0, 0.41]}>
@@ -323,7 +388,16 @@ function Armillary({ reduced, lite }: { reduced: boolean; lite: boolean }) {
   );
 }
 
-export default function CelestialScene({ active, reduced, lite, onReady }: { active: boolean; reduced: boolean; lite: boolean; onReady: () => void }) {
+type SceneProps = {
+  active: boolean;
+  reduced: boolean;
+  lite: boolean;
+  onReady: () => void;
+  selected: string | null;
+  onSelect: (name: string | null) => void;
+};
+
+export default function CelestialScene({ active, reduced, lite, onReady, selected, onSelect }: SceneProps) {
   return (
     <Canvas
       dpr={lite ? [1, 1.25] : [1, 1.5]}
@@ -331,10 +405,11 @@ export default function CelestialScene({ active, reduced, lite, onReady }: { act
       camera={{ position: [0, 0, 13], fov: 38 }}
       frameloop={reduced ? 'demand' : active ? 'always' : 'never'}
       aria-hidden
-      style={{ pointerEvents: 'none' }}
+      // Clicking empty sky closes the planet card.
+      onPointerMissed={() => onSelect(null)}
     >
       <Suspense fallback={null}>
-        <Armillary reduced={reduced} lite={lite} />
+        <Armillary reduced={reduced} lite={lite} selected={selected} onSelect={onSelect} />
         {/* Mounts once every texture has loaded: only then fade the canvas in. */}
         <Ready onReady={onReady} />
       </Suspense>
