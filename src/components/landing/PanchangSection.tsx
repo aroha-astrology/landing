@@ -78,7 +78,7 @@ export async function PanchangSection({ intro = false, video = true }: { intro?:
           {!data ? (
             <div className={`${video ? '' : 'mx-auto '}max-w-lg rounded-2xl border border-rule bg-paper-raised p-8 text-center`}>
               <p className="text-ink-2">
-                Panchang is temporarily unavailable — check it in the app.
+                Panchang is temporarily unavailable. Check it in the app.
               </p>
               <div className="mt-6">
                 <AppCTA variant="solid">Open Panchang in the app →</AppCTA>

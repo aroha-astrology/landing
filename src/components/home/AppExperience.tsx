@@ -14,7 +14,7 @@ export function AppExperience() {
           <div className="max-w-2xl">
             <p className="text-[13px] font-bold uppercase tracking-[0.16em] text-night-accent">The Aroha Astrology app</p>
             <h2 id="app-title" className="font-display mt-3 text-[clamp(34px,4.6vw,56px)] font-medium leading-[1.05] text-balance">
-              Your chart, your Dasha and your questions, in your pocket
+              Your chart, your Dasha and your questions on your phone
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-night-ink-2">
               Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and{' '}

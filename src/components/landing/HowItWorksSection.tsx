@@ -12,12 +12,12 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 const STEPS = [
   {
     title: 'Enter your birth details',
-    description: 'Your birth date, time and place — that’s all the chart needs to get started.',
+    description: 'You need your birth date, time and place to get started.',
   },
   {
     title: 'We compute your exact chart',
     description:
-      'Swiss Ephemeris precision and the Lahiri ayanamsa — the same standard India’s government almanac uses.',
+      'Swiss Ephemeris precision and the Lahiri ayanamsa, the standard India’s government almanac uses.',
   },
   {
     title: 'Ask anything',

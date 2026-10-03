@@ -26,17 +26,16 @@ const LOOK: Record<ProductKey, { card: string; glyph: string; cta: string; lead:
     card: 'bg-puja-ivory-2 text-puja-ink',
     glyph: 'text-puja-saffron',
     cta: 'See what’s coming',
-    lead: 'Practise meaningful rituals',
-    line: 'A pandit at your home for any puja, with the samagri handled the way you choose.',
+    lead: 'Perform pujas at home',
+    line: 'A pandit comes to your home for any puja, and you choose who arranges the samagri.',
     Glyph: PujaGlyph,
-    points: ['Book a pandit for any puja at home', 'Samagri included, or arranged by you', 'Pricing that reflects your choice'],
+    points: ['Book a pandit for any puja at home', 'Samagri included, or arranged by you', 'The price depends on who arranges the samagri'],
   },
 };
 
 /**
- * "One ecosystem. Three paths." — the three products side by side with
- * their true status, joined by the Life → Space → Journey arc so they read
- * as one system, not three unrelated apps.
+ * The three products side by side with their true status, joined by the
+ * Life → Space → Journey arc so they read as one system.
  */
 export function EcosystemSection() {
   return (
@@ -44,14 +43,14 @@ export function EcosystemSection() {
       <div className="mx-auto max-w-[1280px]">
         <div className="reveal grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
-            <p className="j-eyebrow text-[13px]">The Aroha ecosystem</p>
+            <p className="j-eyebrow text-[13px]">What Aroha offers</p>
             <h2 id="ecosystem-title" className="font-display mt-3 text-[clamp(36px,5vw,64px)] font-medium leading-[1.04] text-balance">
-              One ecosystem. Three paths.
+              Astrology, Vastu and puja in one place
             </h2>
           </div>
           <p className="max-w-xl text-lg leading-relaxed text-ink-2 lg:justify-self-end">
-            Aroha begins with you, moves to the home you live in, and continues into the rituals that mark your life. Each path stands on its
-            own, and together they form one practice.
+            Aroha starts with your birth chart, moves to the home you live in, and ends with the rituals that mark your life. You can use
+            each one on its own.
           </p>
         </div>
 
@@ -59,7 +58,7 @@ export function EcosystemSection() {
           {PRODUCT_ORDER.map((k, i) => (
             <li key={k} className="flex items-center gap-4">
               <span className="whitespace-nowrap">
-                {String(i + 1).padStart(2, '0')} · Your {PRODUCTS[k].theme.toLowerCase()}
+                {`${String(i + 1).padStart(2, '0')} · Your ${PRODUCTS[k].theme.toLowerCase()}`}
               </span>
               {i < 2 && <span aria-hidden className="h-px flex-1 bg-gradient-to-r from-rule-strong to-transparent" />}
             </li>

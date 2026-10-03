@@ -21,7 +21,7 @@ const COPY: Record<CategoryKey, { eyebrow: string; title: string; body: string; 
   },
   puja: {
     eyebrow: 'Aroha Puja · Coming soon',
-    title: 'A puja at home, done properly',
+    title: 'A puja at home with a pandit you book',
     body: 'Aroha Puja will let you book a pandit for any puja at home, with the samagri included or arranged by your family. It is not open for bookings yet.',
     href: '/puja',
     cta: 'Discover Aroha Puja',

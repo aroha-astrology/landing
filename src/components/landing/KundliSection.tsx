@@ -70,7 +70,7 @@ export function KundliSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | '
         `/api/geocode?city=${encodeURIComponent(selectedCity.name)}&country=${encodeURIComponent(selectedCity.country)}`,
       );
       if (geoRes.status === 429) {
-        setErrorMessage('Too many requests — try again in a minute.');
+        setErrorMessage('Too many requests. Try again in a minute.');
         setState('error');
         return;
       }
@@ -94,7 +94,7 @@ export function KundliSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | '
         return;
       }
       if (res.status === 429) {
-        setErrorMessage('Too many requests — try again in a minute.');
+        setErrorMessage('Too many requests. Try again in a minute.');
         setState('error');
         return;
       }
@@ -119,7 +119,7 @@ export function KundliSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | '
         as={headingLevel}
         eyebrow="Free tool"
         title="Generate your free Kundli"
-        subtitle="Your full Vedic birth chart — ascendant, houses and planet placements — computed from the Swiss Ephemeris."
+        subtitle="Your full Vedic birth chart, with ascendant, houses and planet placements, computed from the Swiss Ephemeris."
       />
 
       <div

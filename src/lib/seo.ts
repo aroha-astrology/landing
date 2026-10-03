@@ -4,7 +4,7 @@ const DEFAULT_IMAGE = {
   url: '/opengraph-image',
   width: 1200,
   height: 630,
-  alt: 'Aroha — Ancient wisdom. Modern guidance. Astrology, Vastu and Puja.',
+  alt: 'Aroha: your birth chart and your home, read the Vedic way. Astrology, Vastu and Puja.',
 };
 
 /**

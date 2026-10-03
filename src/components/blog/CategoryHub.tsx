@@ -76,7 +76,7 @@ export function CategoryHub({ category }: { category: CategoryKey }) {
         '@type': 'CollectionPage',
         '@id': `${pageUrl}#webpage`,
         url: pageUrl,
-        name: `${cat.name} articles — Aroha Knowledge Hub`,
+        name: `${cat.name} articles: Aroha Knowledge Hub`,
         description: cat.description,
         isPartOf: { '@id': WEBSITE_ID },
         about: { '@id': productBrandId(category) },

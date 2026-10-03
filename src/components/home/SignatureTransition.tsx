@@ -7,8 +7,8 @@ import { cos, sin } from '@/lib/svgmath';
 const STAGES = [
   { product: 'Astrology', realm: 'Cosmos', line: 'Understand yourself: the sky at the moment you were born.' },
   { product: 'Vastu', realm: 'Space', line: 'Understand your space: the directions and centre of the home you live in.' },
-  { product: 'Puja', realm: 'Ritual', line: 'Practise meaningful rituals: the moments that mark a life.' },
-  { product: 'Aroha', realm: 'One ecosystem', line: 'Your life. Your space. Your journey.' },
+  { product: 'Puja', realm: 'Ritual', line: 'Mark the moments of a life with a puja.' },
+  { product: 'Aroha', realm: 'All three', line: 'Your chart, your home and your rituals, in one place.' },
 ];
 
 // Each stage owns a quarter of the scroll distance.
@@ -28,7 +28,7 @@ function useStageOpacity(p: MotionValue<number>, i: number) {
 /**
  * The signature moment: one geometry assembling as you scroll.
  * Cosmos is a circle (the zodiac), Space is the square inscribed in it (the
- * Vastu Purusha grid), Ritual is the flame at the centre — and together,
+ * Vastu Purusha grid), Ritual is the flame at the centre, and together,
  * circle-square-centre is the oldest mandala form there is: Aroha.
  *
  * The stage texts are an ordered list in the HTML, so the idea is legible
@@ -78,7 +78,7 @@ export function SignatureTransition() {
         <div className="mx-auto grid w-full max-w-[1280px] items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div className="relative order-2 md:order-1">
             <h2 id="signature-title" className="text-[12.5px] font-bold uppercase tracking-[0.22em] text-astro-gold">
-              From the cosmos to your doorstep
+              From the sky to your home
             </h2>
             <ol className={`relative mt-6 ${reduce ? 'space-y-8' : 'min-h-[240px] sm:min-h-[260px]'}`}>
               {STAGES.map((s, i) => (

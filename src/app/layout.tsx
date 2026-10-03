@@ -105,7 +105,7 @@ const notoGurmukhi = Noto_Sans_Gurmukhi({
 });
 
 const SITE_NAME = BRAND.name;
-const DEFAULT_TITLE = 'Aroha: Vedic Astrology, Vastu & Puja — Ancient Wisdom, Modern Guidance';
+const DEFAULT_TITLE = 'Aroha: Vedic Astrology, Vastu and Puja';
 const SITE_DESCRIPTION =
   'Aroha brings Vedic astrology, Vastu and puja together. Aroha Astrology and Aroha Vastu are available now; Aroha Puja is coming soon.';
 
@@ -164,7 +164,7 @@ const jsonLd = {
       name: 'Yogi Baba',
       jobTitle: 'Vedic Astrology Content Advisor',
       description:
-        'Reviews and guides the Vedic astrology methodology behind Aroha Astrology — classical Parashari, Jaimini and KP traditions, expressed through Swiss Ephemeris-accurate calculations and plain-language explanations.',
+        'Reviews and guides the Vedic astrology methodology behind Aroha Astrology: the classical Parashari, Jaimini and KP traditions, expressed through Swiss Ephemeris-accurate calculations and plain-language explanations.',
       worksFor: { '@id': ORG_ID },
     },
   ],

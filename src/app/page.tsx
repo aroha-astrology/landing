@@ -13,7 +13,7 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/#webpage`,
       url: SITE_URL,
-      name: 'Aroha: Vedic Astrology, Vastu & Puja — Ancient Wisdom, Modern Guidance',
+      name: 'Aroha: Vedic Astrology, Vastu and Puja',
       isPartOf: { '@id': WEBSITE_ID },
       about: { '@id': ORG_ID },
       mentions: ['astrology', 'vastu', 'puja'].map((k) => ({ '@id': productBrandId(k as 'astrology') })),

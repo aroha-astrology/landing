@@ -45,7 +45,7 @@ export default async function TagPage({ params }: PageProps) {
         '@type': 'CollectionPage',
         '@id': `${pageUrl}#webpage`,
         url: pageUrl,
-        name: `${tag} — Aroha Knowledge Hub`,
+        name: `${tag}: Aroha Knowledge Hub`,
         isPartOf: { '@id': WEBSITE_ID },
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },

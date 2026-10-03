@@ -12,7 +12,7 @@ const homeFaqItems: AccordionItem[] = [
   {
     question: 'What is Aroha?',
     answer:
-      'Aroha is an Indian spiritual-technology ecosystem with three products: Aroha Astrology for Vedic astrology, which is available now; Aroha Vastu for understanding your home through Vastu Shastra, which is also available now (a 3D version is coming soon); and Aroha Puja for booking a pandit to perform pujas at home, which is coming soon.',
+      'Aroha is a set of three products built in India. Aroha Astrology covers Vedic astrology and is available now. Aroha Vastu covers your home through Vastu Shastra and is also available now, with a 3D version coming soon. Aroha Puja, for booking a pandit to perform pujas at home, is coming soon.',
   },
   {
     question: 'What can I do with Aroha Astrology today?',
@@ -22,12 +22,12 @@ const homeFaqItems: AccordionItem[] = [
   {
     question: 'What is available in Aroha Vastu, and what is coming?',
     answer:
-      'Aroha Vastu is available now on Android, inside the Aroha Astrology app: draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development; we have not announced launch dates, and this site will say clearly when each opens.',
+      'Aroha Vastu is available now on Android, inside the Aroha Astrology app. You can draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development. We have not announced launch dates, and this site will say when each one opens.',
   },
   {
     question: 'How will Aroha Puja work?',
     answer:
-      'Aroha Puja is being built as a premium service for booking a pandit to perform any puja at your home. You will be able to choose whether the pandit brings all the samagri or your family arranges the items, and the price will reflect that choice. Bookings are not open yet.',
+      'Aroha Puja is being built as a service for booking a pandit to perform any puja at your home. You will be able to choose whether the pandit brings all the samagri or your family arranges the items, and the price will reflect that choice. Bookings are not open yet.',
   },
   {
     question: 'Is astrology or Vastu scientifically proven?',

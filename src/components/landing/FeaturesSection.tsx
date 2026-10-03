@@ -11,7 +11,7 @@ const FEATURES: Feature[] = [
     description: 'Your full Vedic birth chart, computed from your exact birth details.',
   },
   {
-    title: 'Divisional charts (D1–D60)',
+    title: 'Divisional charts (D1 to D60)',
     description: 'Navamsa, Dasamsa and more, for deeper analysis beyond the main chart.',
   },
   {
@@ -20,7 +20,7 @@ const FEATURES: Feature[] = [
   },
   {
     title: 'Vimshottari Dasha',
-    description: 'Mahadasha, Antardasha and Pratyantardasha — the timeline shaping your life.',
+    description: 'Mahadasha, Antardasha and Pratyantardasha: the timeline of your life.',
   },
   {
     title: '54 yogas & 7 doshas',
@@ -40,7 +40,7 @@ const FEATURES: Feature[] = [
   },
   {
     title: 'Gemstone recommendations',
-    description: 'Personalized suggestions based on your own planetary placements.',
+    description: 'Personalised suggestions based on your own planetary placements.',
   },
   {
     title: 'Lal Kitab remedies',
@@ -52,11 +52,11 @@ const FEATURES: Feature[] = [
   },
   {
     title: 'Palm reading',
-    description: 'Nine lines, nine mounts — read from your photos and cross-checked against your chart.',
+    description: 'Nine lines and nine mounts, read from your photos and checked against your chart.',
   },
   {
     title: 'Vastu Studio',
-    description: 'Draw your home, point it north, and see every room’s Vastu rating — with fixes, a 3D view and a report.',
+    description: 'Draw your home, point it north, and see every room’s Vastu rating, with fixes, a 3D view and a report.',
   },
   {
     title: 'Birth-time rectification',

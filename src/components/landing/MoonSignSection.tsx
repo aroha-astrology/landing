@@ -74,7 +74,7 @@ export function MoonSignSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
         return;
       }
       if (res.status === 429) {
-        setErrorMessage('Too many requests — try again in a minute.');
+        setErrorMessage('Too many requests. Try again in a minute.');
         setState('error');
         return;
       }
@@ -99,7 +99,7 @@ export function MoonSignSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
         as={headingLevel}
         eyebrow="Free tool"
         title="What's your Moon sign?"
-        subtitle="Vedic astrology reads the Moon, not the Sun — enter your birth details for your real Chandra Rashi."
+        subtitle="Vedic astrology reads the Moon rather than the Sun. Enter your birth details for your Chandra Rashi."
       />
 
       <div

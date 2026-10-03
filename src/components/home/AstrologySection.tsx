@@ -4,7 +4,7 @@ import { TrackedLink } from '@/components/ui/TrackedLink';
 
 const CAPABILITIES = [
   { title: 'Janam Kundli', text: 'Your Lagna, Rashi and Nakshatra, with every graha placed by sign, house and degree.', href: '/kundli' },
-  { title: 'Vimshottari Dasha', text: 'Mahadasha, Antardasha and Pratyantardasha: the timeline your chart unfolds along.', href: '/blog/vimshottari-dasha-guide' },
+  { title: 'Vimshottari Dasha', text: 'Mahadasha, Antardasha and Pratyantardasha: the timeline of your chart.', href: '/blog/vimshottari-dasha-guide' },
   { title: 'Yogas and doshas', text: '54 yogas and 7 doshas detected automatically, each explained against your placements.', href: '/blog/vedic-astrology-yoga-planetary-combinations' },
   { title: 'Kundli matching', text: 'The 36-point Guna Milan and a Manglik check for both charts.', href: '/blog/guna-milan-ashtakoota-compatibility' },
   { title: 'Rashifal and transits', text: 'Daily to yearly horoscopes read from your Moon sign and the planets’ current movement.', href: '/blog/planetary-transits-gochar-vedic-astrology' },
@@ -42,7 +42,7 @@ export function AstrologySection() {
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-astro-ink-2">
               Every reading starts from your Janam Kundli, computed with the Swiss Ephemeris and the Lahiri ayanamsa from your exact date,
-              time and place of birth. Then Aroha explains it in plain language, in your language.
+              time and place of birth. Aroha then explains it in plain language, in the language you choose.
             </p>
             <div id="kundli" className="mt-9 flex flex-wrap gap-4">
               <TrackedLink

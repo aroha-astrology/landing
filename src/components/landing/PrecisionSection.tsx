@@ -22,18 +22,18 @@ export function PrecisionSection() {
       <div className="grid gap-12 lg:grid-cols-[minmax(280px,1fr)_minmax(240px,340px)] lg:items-center lg:gap-14">
         <div
         >
-          <SectionHeading eyebrow="The method" title="Precision, not vibes" dark align="left" />
+          <SectionHeading eyebrow="The method" title="How the charts are calculated" dark align="left" />
 
           <p className="mt-6 text-base text-night-ink-2 sm:text-lg">
-            Every chart starts with the Swiss Ephemeris — the same astronomical calculation
-            engine observatories rely on — to place all nine grahas to sub-degree accuracy at
-            your exact moment and place of birth.
+            Every chart starts with the Swiss Ephemeris, an astronomical calculation engine that
+            observatories rely on, to place all nine grahas to sub-degree accuracy at your exact
+            moment and place of birth.
           </p>
           <p className="mt-4 text-base text-night-ink-2 sm:text-lg">
-            Vedic astrology tracks the actual visible constellations rather than the fixed
-            Western calendar zodiac, so we apply the Lahiri ayanamsa — India’s official sidereal
-            correction — before deriving divisional charts, from D1 through D60, off that base
-            chart.
+            Vedic astrology follows the constellations as they appear in the sky, while the
+            Western calendar zodiac stays fixed to the seasons. So we apply the Lahiri ayanamsa,
+            India’s official sidereal correction, and derive the divisional charts from D1
+            through D60 from that base chart.
           </p>
 
           <div className="mt-8 grid grid-cols-1 gap-6 border-t border-night-rule pt-7 sm:grid-cols-3">

@@ -20,7 +20,7 @@ export function VastuPreview() {
             <StatusBadge status={p.status} />
           </div>
           <h2 id="vastu-title" className="font-display mt-4 text-[clamp(34px,4.6vw,58px)] font-medium leading-[1.05] text-balance">
-            From the cosmos to your space
+            Check your home against Vastu
           </h2>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-vastu-ink-2">
             Vastu Shastra is India’s traditional system of architecture and spatial design: how a home’s directions, centre and rooms are arranged. Aroha Vastu reads
@@ -35,8 +35,7 @@ export function VastuPreview() {
             ))}
           </ul>
           <p className="mt-8 max-w-xl rounded-2xl border border-vastu-ink/15 bg-[#F4EDDF] px-5 py-4 text-[14.5px] leading-relaxed text-vastu-ink-2">
-            <strong className="text-vastu-ink">Where to get it:</strong> {p.where} <strong className="text-vastu-ink">Coming soon:</strong> your home in
-            3D, with a walk-through view and furniture placement scored against Vastu.
+            {`Where to get it: ${p.where} Coming soon: your home in 3D, with a walk-through view and furniture placement scored against Vastu.`}
           </p>
           <TrackedLink
             href="/vastu"

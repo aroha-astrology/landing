@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
-export const alt = 'Aroha — Ancient wisdom. Modern guidance. Astrology, Vastu and Puja.';
+export const alt = 'Aroha: your birth chart and your home, read the Vedic way. Astrology, Vastu and Puja.';
 
 const NIGHT = '#0B1020';
 const GOLD = '#D4A64E';
@@ -41,9 +41,9 @@ export default async function Image() {
         <div style={{ position: 'absolute', top: 305, right: 160, width: 20, height: 20, borderRadius: '50%', background: GOLD, display: 'flex' }} />
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: 760 }}>
           <div style={{ display: 'flex', fontSize: 24, fontFamily: 'Arial, sans-serif', fontWeight: 700, color: GOLD, letterSpacing: '0.2em' }}>AROHA</div>
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: 20, fontSize: 76, fontFamily: 'Georgia, serif', color: INK, lineHeight: 1.04 }}>
-            <span>Ancient wisdom.</span>
-            <span style={{ color: GOLD, fontStyle: 'italic' }}>Modern guidance.</span>
+          <div style={{ display: 'flex', flexDirection: 'column', marginTop: 20, fontSize: 62, fontFamily: 'Georgia, serif', color: INK, lineHeight: 1.06 }}>
+            <span>Your birth chart and your home,</span>
+            <span style={{ color: GOLD, fontStyle: 'italic' }}>read the Vedic way.</span>
           </div>
           <div style={{ display: 'flex', marginTop: 44, gap: 28 }}>
             {PRODUCTS.map(([name, status]) => (

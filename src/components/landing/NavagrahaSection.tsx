@@ -34,7 +34,7 @@ export function NavagrahaSection() {
       <SectionHeading
         eyebrow="The Nine Influences"
         title="Navagraha"
-        subtitle="Each Graha governs a domain of your chart. We read their positions the way an instrument reads a scale — precisely, not poetically."
+        subtitle="Each graha governs an area of your chart, and we calculate each position precisely."
         dark
       />
 

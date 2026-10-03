@@ -38,15 +38,15 @@ const faqItems: AccordionItem[] = [
   {
     question: 'My Kundli or a report looks incorrect',
     answer:
-      "Double-check the birth date, time and place saved on the profile — small errors there (especially birth time) can shift the chart. If the details are correct and the reading still looks wrong, tell us which report and what looks off.",
+      "Double-check the birth date, time and place saved on the profile. Small errors there, especially in the birth time, can shift the chart. If the details are correct and the reading still looks wrong, tell us which report and what looks off.",
   },
   {
     question: 'I need to change my birth details',
-    answer: 'Birth details can be edited from your profile inside the app. Charts and readings you already generated are not recalculated automatically — regenerate them after saving the correction.',
+    answer: 'Birth details can be edited from your profile inside the app. Charts and readings you already generated are not recalculated automatically, so regenerate them after saving the correction.',
   },
   {
     question: 'Can I use the app in my own language?',
-    answer: 'Yes — Aroha supports multiple languages. Change it any time from Settings → Language.',
+    answer: 'Yes. Aroha supports multiple languages. Change it any time from Settings → Language.',
   },
   {
     question: 'How do I delete my account or ask about my data?',
@@ -72,7 +72,7 @@ export default function SupportPage() {
             Support
           </h1>
           <p className="mt-4 text-lg text-ink-2">
-            Questions about your account, a report, or a payment — reach us here.
+            Questions about your account, a report or a payment? Reach us here.
           </p>
         </header>
 
@@ -107,8 +107,8 @@ export default function SupportPage() {
                 Go to <strong className="font-medium text-ink">Help &amp; Support</strong>.
               </li>
               <li>
-                Pick a category — Billing, Chart accuracy, Technical issue, or Other — and send us
-                a message.
+                Pick a category (Billing, Chart accuracy, Technical issue or Other) and send us a
+                message.
               </li>
             </ol>
             <p className="mt-3 leading-relaxed text-ink-2">

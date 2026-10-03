@@ -74,8 +74,8 @@ export default function PujaPage() {
       <JsonLd data={jsonLd} />
       <ProductHero
         product={PRODUCTS.puja}
-        title="Pujas at home, performed properly"
-        lead="Aroha Puja will let you book a pandit for any puja at your home, and decide whether the pandit brings all the samagri or your family arranges it. A premium service for the moments that matter, when it opens."
+        title="Book a pandit for puja at home"
+        lead="Aroha Puja will let you book a pandit for any puja at your home and decide whether the pandit brings the samagri or your family arranges it."
         visual={<PujaGlyph className="pointer-events-none absolute right-[-6%] top-1/2 -z-10 h-[90%] w-auto -translate-y-1/2 text-puja-saffron opacity-[0.14]" />}
       >
         <TrackedLink

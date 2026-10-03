@@ -1,6 +1,6 @@
 # Aroha website: English strings for translation
 
-823 strings, about 8901 words.
+821 strings, about 8778 words.
 
 How to translate this file:
 
@@ -57,16 +57,11 @@ Editorial standards
 ## t-3e4cbd97
 Knowledge Hub
 
-## t-376a7b31
-Ancient wisdom. Modern guidance.
+## t-4a60b005
+Your birth chart and your home, read the Vedic way
 
-## t-a1f2ac1d
-<!-- Part of: Aroha brings Vedic astrology, Vastu and puja together in one ecosystem. Aroha Astrology is available now on Android. -->
-Aroha brings Vedic astrology, Vastu and puja together in one ecosystem.
-
-## t-0282daf2
-<!-- Part of: Aroha brings Vedic astrology, Vastu and puja together in one ecosystem. Aroha Astrology is available now on Android. -->
-is available now on Android.
+## t-cec28203
+Aroha brings Vedic astrology, Vastu and puja together. Aroha Astrology is available now on Android.
 
 ## t-fe0a091f (heading)
 Products
@@ -107,8 +102,8 @@ Disclaimer
 ## t-1753c206 (button or link)
 Delete account
 
-## t-ca4dc732
-Astrology, Vastu and puja are traditional practices. Our guidance is for reflection, not a substitute for professional advice.
+## t-6f393d34
+Astrology, Vastu and puja are traditional practices. Use our guidance for reflection, and ask a professional for advice.
 
 ---
 # Home
@@ -116,22 +111,22 @@ Astrology, Vastu and puja are traditional practices. Our guidance is for reflect
 ## t-85733a43
 Aroha · Astrology · Vastu · Puja
 
-## t-3b55cbc9 (heading)
-<!-- Part of: Ancient wisdom. Modern guidance. -->
-Ancient wisdom.
+## t-ee88cdb2 (heading)
+<!-- Part of: Your birth chart and your home,read the Vedic way. -->
+Your birth chart and your home,
 
-## t-766ce6c6 (heading)
-<!-- Part of: Ancient wisdom. Modern guidance. -->
-Modern guidance.
+## t-3956cf7f (heading)
+<!-- Part of: Your birth chart and your home,read the Vedic way. -->
+read the Vedic way.
 
-## t-361f866c
-Explore your birth chart, understand your space and discover meaningful spiritual guidance through the Aroha ecosystem, built on the traditions of India and designed for how you live now.
+## t-18dac5ac
+Read your birth chart, check your home against Vastu Shastra, and book a pandit for puja once Aroha Puja opens. Everything in Aroha is built on Indian tradition.
 
 ## t-c077dd89 (button or link)
 Explore Aroha Astrology
 
-## t-cc74aa8f (button or link)
-Discover the ecosystem
+## t-e58fa9d8 (button or link)
+See all of Aroha
 
 ## t-bb374ac5
 Available now
@@ -139,33 +134,26 @@ Available now
 ## t-dc3dd28b
 3D version coming soon
 
-## t-88e0d2db
-Aroha is an Indian spiritual-technology ecosystem: Aroha Astrology for Vedic astrology and Aroha Vastu for understanding your home (both available now on Android, with iOS and a 3D Vastu experience coming soon), and Aroha Puja for booking pujas at home (coming soon).
+## t-c635c65f
+Aroha is built in India for Vedic astrology, Vastu and puja. Aroha Astrology covers your birth chart and Aroha Vastu covers your home; both are available now on Android, with iOS and a 3D Vastu version coming soon. Aroha Puja, for booking pujas at home, is coming soon.
 
-## t-fb191f8c
-The Aroha ecosystem
+## t-d4a51cfc
+What Aroha offers
 
-## t-8721447f (heading)
-One ecosystem. Three paths.
+## t-02390aab (heading)
+Astrology, Vastu and puja in one place
 
-## t-d9173ff5
-Aroha begins with you, moves to the home you live in, and continues into the rituals that mark your life. Each path stands on its own, and together they form one practice.
+## t-5d150302
+Aroha starts with your birth chart, moves to the home you live in, and ends with the rituals that mark your life. You can use each one on its own.
 
-## t-5bc60b83
-<!-- Part of: 01 · Your life -->
-· Your
+## t-162bf781
+01 · Your life
 
-## t-2b5d05d3
-<!-- Part of: 01 · Your life -->
-life
+## t-3dbbe393
+02 · Your space
 
-## t-0803df4f
-<!-- Part of: 02 · Your space -->
-space
-
-## t-7da33f49
-<!-- Part of: 03 · Your journey -->
-journey
+## t-4056ab8c
+03 · Your journey
 
 ## t-0f59d3cb
 Understand yourself
@@ -203,11 +191,11 @@ A Vastu score and live analysis
 ## t-21239654 (button or link)
 Explore Vastu
 
-## t-0d229842
-Practise meaningful rituals
+## t-567a5ee8
+Perform pujas at home
 
-## t-928731d8
-A pandit at your home for any puja, with the samagri handled the way you choose.
+## t-3d401b63
+A pandit comes to your home for any puja, and you choose who arranges the samagri.
 
 ## t-eb5a67d2
 Book a pandit for any puja at home
@@ -215,8 +203,8 @@ Book a pandit for any puja at home
 ## t-0ddf312c
 Samagri included, or arranged by you
 
-## t-3afc9906
-Pricing that reflects your choice
+## t-4714d9d1
+The price depends on who arranges the samagri
 
 ## t-a2692a0c (button or link)
 Coming soon · See what’s coming
@@ -227,8 +215,8 @@ Aroha Astrology · Available now
 ## t-0289b638 (heading)
 Understand your life through Vedic astrology
 
-## t-54fec325
-Every reading starts from your Janam Kundli, computed with the Swiss Ephemeris and the Lahiri ayanamsa from your exact date, time and place of birth. Then Aroha explains it in plain language, in your language.
+## t-47dcd8a4
+Every reading starts from your Janam Kundli, computed with the Swiss Ephemeris and the Lahiri ayanamsa from your exact date, time and place of birth. Aroha then explains it in plain language, in the language you choose.
 
 ## t-36484279 (button or link)
 Everything in Aroha Astrology
@@ -248,8 +236,8 @@ Learn more
 ## t-98fb5137 (heading)
 Vimshottari Dasha
 
-## t-9686ce87 (button or link)
-Mahadasha, Antardasha and Pratyantardasha: the timeline your chart unfolds along.
+## t-2cf98c89 (button or link)
+Mahadasha, Antardasha and Pratyantardasha: the timeline of your chart.
 
 ## t-1eac6236 (heading)
 Yogas and doshas
@@ -278,11 +266,11 @@ Gemstones, Lal Kitab remedies, a shlokas library and the Bhagavad Gita.
 ## t-05e68d03
 Ask about your own chart
 
-## t-4316120c (heading)
-Questions answered from your chart, not a template
+## t-25105303 (heading)
+Answers that start from your own chart
 
-## t-d11692fe
-The Vedic Astrologer chat in Aroha Astrology starts from what’s actually in your Kundli. It is useful for understanding your own chart, and it doesn’t pretend to be more than that.
+## t-96231135
+The Vedic Astrologer chat in Aroha Astrology answers from what is in your Kundli. Use it to understand your own chart.
 
 ## t-0ba83cb8 (heading)
 Your question
@@ -299,8 +287,8 @@ Your Lagna, the Dasha you’re running and today’s transits, all computed from
 ## t-fca94d3b (heading)
 Aroha’s Vedic Astrologer
 
-## t-3d5de492
-Reads the question against classical rules and your chart, not a generic sun-sign template.
+## t-70aef20c
+Reads the question against classical rules and your chart.
 
 ## t-020c371b (heading)
 A personal interpretation
@@ -317,11 +305,11 @@ I’m running Jupiter Mahadasha. Is this a reasonable time to go back to studyin
 ## t-c0dd7e68
 In your chart Jupiter rules the 9th house, traditionally the house of higher learning, and sits in the 5th, the house of intellect. Classical texts read that combination as supportive of study during Jupiter’s period. Your Saturn Antardasha begins next year, which is usually read as slower, steadier progress rather than a block.
 
-## t-4ea7a5da
-What it is, plainly
+## t-f8c94a3b
+What it is
 
-## t-da7bc88e
-Chart positions are computed astronomically. The written answers are generated by AI from your computed chart and classical Vedic texts; a human astrologer doesn’t review each one. Vedic astrology is a tradition of interpretation, not a scientific prediction, so use it for reflection, not for medical, legal or financial decisions.
+## t-914e3eec
+Chart positions are computed astronomically. The written answers are generated by AI from your computed chart and classical Vedic texts, and no human astrologer reviews each one. Vedic astrology is a tradition of interpretation, and it does not predict the future scientifically. Use it for reflection, and ask a professional about medical, legal or financial decisions.
 
 ## t-7260c3d8
 Daily guidance
@@ -372,8 +360,8 @@ What the video shows
 ## t-7811d20a
 Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android.
 
-## t-b516401e (heading)
-From the cosmos to your doorstep
+## t-ba000608 (heading)
+From the sky to your home
 
 ## t-81bf3e00
 01 · Astrology
@@ -399,20 +387,20 @@ Understand your space: the directions and centre of the home you live in.
 ## t-a276d8b0
 Ritual
 
-## t-e7783b14
-Practise meaningful rituals: the moments that mark a life.
+## t-ee096be2
+Mark the moments of a life with a puja.
 
 ## t-a4bc67f3
 Together
 
-## t-8487d185
-One ecosystem
+## t-45971e1d
+All three
 
-## t-cd7c13f5
-Your life. Your space. Your journey.
+## t-c0ec5a6d
+Your chart, your home and your rituals, in one place.
 
-## t-7abfe75e (heading)
-From the cosmos to your space
+## t-996cf3d4 (heading)
+Check your home against Vastu
 
 ## t-4d91a734
 Vastu Shastra is India’s traditional system of architecture and spatial design: how a home’s directions, centre and rooms are arranged. Aroha Vastu reads your own floor plan through that lens, room by room, with a score for each. A 3D version is coming soon.
@@ -432,21 +420,8 @@ Ask questions about your plan in the chat
 ## t-d010f95c
 Save your layouts and compare changes
 
-## t-d51cf100
-<!-- Part of: Where to get it: On Android, in the Aroha Astrology app. Coming soon: your home in 3D, with a walk-through view and furniture placement scored against Vastu. -->
-Where to get it:
-
-## t-b035f296
-<!-- Part of: Where to get it: On Android, in the Aroha Astrology app. Coming soon: your home in 3D, with a walk-through view and furniture placement scored against Vastu. -->
-On Android, in the Aroha Astrology app.
-
-## t-81946193
-<!-- Part of: Where to get it: On Android, in the Aroha Astrology app. Coming soon: your home in 3D, with a walk-through view and furniture placement scored against Vastu. -->
-Coming soon:
-
-## t-a28c2ab0
-<!-- Part of: Where to get it: On Android, in the Aroha Astrology app. Coming soon: your home in 3D, with a walk-through view and furniture placement scored against Vastu. -->
-your home in 3D, with a walk-through view and furniture placement scored against Vastu.
+## t-67f8de3b
+Where to get it: On Android, in the Aroha Astrology app. Coming soon: your home in 3D, with a walk-through view and furniture placement scored against Vastu.
 
 ## t-39b0b08c (button or link)
 Discover Aroha Vastu
@@ -471,11 +446,11 @@ Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner
 ## t-c4290ec1
 A floor plan in 3D, every zone tagged with its direction. Preview of the 3D version of Aroha Vastu, coming soon.
 
-## t-4a295067 (heading)
-From your space to your spiritual journey
+## t-ffa500b1 (heading)
+Pujas at home, with a pandit you book
 
-## t-9ca624a4
-A new home, a new vehicle, a child’s first ceremony, a festival: the moments families mark with a puja. Aroha Puja will be a premium way to have one performed properly at home, for every kind of puja.
+## t-12c55594
+A new home, a new vehicle, a child’s first ceremony, a festival: families mark these with a puja. Aroha Puja will let you book a pandit to perform any of them at your home.
 
 ## t-c41a81f6 (heading)
 A pandit at your home
@@ -525,11 +500,11 @@ Not open for bookings yet.
 ## t-31ca812f
 Why Aroha
 
-## t-1452ad90 (heading)
-Built with care for something people hold dear
+## t-7f657d9f (heading)
+What we commit to
 
-## t-d3827058 (heading)
-Calculated, not guessed
+## t-6e0ee2f0 (heading)
+Calculated from astronomy
 
 ## t-24c351e9
 Charts are computed with the Swiss Ephemeris and the Lahiri ayanamsa, India’s official sidereal standard, down to divisional charts D1 to D60.
@@ -537,14 +512,14 @@ Charts are computed with the Swiss Ephemeris and the Lahiri ayanamsa, India’s 
 ## t-3105ee82 (button or link)
 Our method
 
-## t-b4be85be (heading)
-Honest about what it is
+## t-dac46264 (heading)
+Plain about its limits
 
-## t-3fbae1bb
-Astrology, Vastu and puja are traditions of interpretation and practice. We present them respectfully and never as scientific certainty or a reason for fear.
+## t-7f080fd4
+Astrology, Vastu and puja are traditions of interpretation and practice. We describe them with respect, and we do not call them scientific certainty or use them to frighten anyone.
 
-## t-3b8b1a93 (heading)
-In the language you think in
+## t-708feddc (heading)
+Seven Indian languages
 
 ## t-873f3af6
 Aroha Astrology reads your chart and answers your questions in 7 Indian languages.
@@ -552,8 +527,8 @@ Aroha Astrology reads your chart and answers your questions in 7 Indian language
 ## t-db07be18 (button or link)
 Languages
 
-## t-71bc7568 (heading)
-Your details stay yours
+## t-455521fd (heading)
+Your birth details
 
 ## t-fdcfb87a
 The free web Kundli is computed and returned without being stored. What the app keeps, and how, is set out in our privacy policy.
@@ -564,8 +539,8 @@ Privacy policy
 ## t-bbb8c68d
 The Aroha Astrology app
 
-## t-e2ffbda9 (heading)
-Your chart, your Dasha and your questions, in your pocket
+## t-4d3aacc4 (heading)
+Your chart, your Dasha and your questions on your phone
 
 ## t-d6258fcd
 <!-- Part of: Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and 14 personalised reports, from marriage and Kundli Milan to wealth and career. Available on Android; iOS is coming soon. -->
@@ -597,8 +572,8 @@ By the numbers
 ## t-f692803c
 9 grahas, 27 nakshatras, 54 yogas, 14 reports, 7 languages.
 
-## t-fe08e491 (heading)
-Explore the wisdom behind Aroha
+## t-caeae480 (heading)
+Read about the traditions behind Aroha
 
 ## t-69e5a94e
 Clear guides to Vedic astrology, Vastu Shastra and puja: what the traditions say, and where they differ.
@@ -626,8 +601,8 @@ About Aroha
 ## t-b2ef0024 (button or link)
 What is Aroha?
 
-## t-4f2b5f8c
-Aroha is an Indian spiritual-technology ecosystem with three products: Aroha Astrology for Vedic astrology, which is available now; Aroha Vastu for understanding your home through Vastu Shastra, which is also available now (a 3D version is coming soon); and Aroha Puja for booking a pandit to perform pujas at home, which is coming soon.
+## t-00bc028d
+Aroha is a set of three products built in India. Aroha Astrology covers Vedic astrology and is available now. Aroha Vastu covers your home through Vastu Shastra and is also available now, with a 3D version coming soon. Aroha Puja, for booking a pandit to perform pujas at home, is coming soon.
 
 ## t-91776f1b (button or link)
 What can I do with Aroha Astrology today?
@@ -638,14 +613,14 @@ Generate your free Janam Kundli (Lagna, Rashi, Nakshatra and all nine planets), 
 ## t-b226a65d (button or link)
 What is available in Aroha Vastu, and what is coming?
 
-## t-73f2bb48
-Aroha Vastu is available now on Android, inside the Aroha Astrology app: draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development; we have not announced launch dates, and this site will say clearly when each opens.
+## t-dd6e1f3e
+Aroha Vastu is available now on Android, inside the Aroha Astrology app. You can draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development. We have not announced launch dates, and this site will say when each one opens.
 
 ## t-aa8e5a07 (button or link)
 How will Aroha Puja work?
 
-## t-0f66d68f
-Aroha Puja is being built as a premium service for booking a pandit to perform any puja at your home. You will be able to choose whether the pandit brings all the samagri or your family arranges the items, and the price will reflect that choice. Bookings are not open yet.
+## t-03c9c84e
+Aroha Puja is being built as a service for booking a pandit to perform any puja at your home. You will be able to choose whether the pandit brings all the samagri or your family arranges the items, and the price will reflect that choice. Bookings are not open yet.
 
 ## t-c2267121 (button or link)
 Is astrology or Vastu scientifically proven?
@@ -689,8 +664,11 @@ Is my birth data kept private?
 ## t-0fce6510
 Your birth details are used to compute your chart and are handled according to our privacy policy at /legal/privacy, which sets out what is stored and how.
 
-## t-010ef465
-Begin where Aroha began: with your own birth chart. Vastu and puja will join you along the way.
+## t-2343187f (heading)
+Start with your free Kundli
+
+## t-c9e774ef
+Your Kundli is free. Aroha Vastu is already in the app, and Aroha Puja is coming soon.
 
 ---
 # Aroha Astrology page
@@ -712,8 +690,8 @@ Vedic astrology
 ## t-b57df1f8
 Your Janam Kundli, computed with Swiss Ephemeris precision, then explained in plain language: your Lagna, Rashi and Nakshatra, the Dasha you’re in, the yogas in your chart and what today’s sky means for you.
 
-## t-0fd317c0 (heading)
-Free on the web, right now
+## t-f640419f (heading)
+Free on the web
 
 ## t-6f1e0a5b (button or link)
 Lagna, houses and all nine planets from your birth details.
@@ -739,8 +717,8 @@ Janma Kundli
 ## t-2f8db231
 Your full Vedic birth chart, computed from your exact birth details.
 
-## t-0aa02d53 (heading)
-Divisional charts (D1–D60)
+## t-d1794e62 (heading)
+Divisional charts (D1 to D60)
 
 ## t-ee2ddcbd
 Navamsa, Dasamsa and more, for deeper analysis beyond the main chart.
@@ -751,8 +729,8 @@ Ashtakavarga & planet strength
 ## t-7ec773bd
 Bindu strength, Shadbala, and retrograde/combust flags for every planet.
 
-## t-c087cb62
-Mahadasha, Antardasha and Pratyantardasha — the timeline shaping your life.
+## t-7e764a4e
+Mahadasha, Antardasha and Pratyantardasha: the timeline of your life.
 
 ## t-aa37d579 (heading)
 54 yogas & 7 doshas
@@ -781,8 +759,8 @@ Ongoing readings that track how transits affect your chart over time.
 ## t-4824b8ac (heading)
 Gemstone recommendations
 
-## t-e581dfc1
-Personalized suggestions based on your own planetary placements.
+## t-4b1eb40d
+Personalised suggestions based on your own planetary placements.
 
 ## t-28af2c04 (heading)
 Lal Kitab remedies
@@ -799,14 +777,14 @@ Vedic Mulank & Bhagyank, Lo Shu Grid, and your Pythagorean life-path numbers.
 ## t-c8f86601 (heading)
 Palm reading
 
-## t-8f1c0f85
-Nine lines, nine mounts — read from your photos and cross-checked against your chart.
+## t-730815c5
+Nine lines and nine mounts, read from your photos and checked against your chart.
 
 ## t-ce633df3 (heading)
 Vastu Studio
 
-## t-4c30a1af
-Draw your home, point it north, and see every room’s Vastu rating — with fixes, a 3D view and a report.
+## t-06f84aa0
+Draw your home, point it north, and see every room’s Vastu rating, with fixes, a 3D view and a report.
 
 ## t-13c3c758 (heading)
 Birth-time rectification
@@ -835,14 +813,14 @@ From birth details to a chart you understand
 ## t-f67e1f37 (heading)
 Enter your birth details
 
-## t-e2b93647
-Your birth date, time and place — that’s all the chart needs to get started.
+## t-6fdf8d99
+You need your birth date, time and place to get started.
 
 ## t-f4860e06 (heading)
 We compute your exact chart
 
-## t-b25863cc
-Swiss Ephemeris precision and the Lahiri ayanamsa — the same standard India’s government almanac uses.
+## t-f03a210f
+Swiss Ephemeris precision and the Lahiri ayanamsa, the standard India’s government almanac uses.
 
 ## t-fffbce7d (heading)
 Ask anything
@@ -856,8 +834,8 @@ The Nine Influences
 ## t-9f45117b (heading)
 Navagraha
 
-## t-0d44ab60
-Each Graha governs a domain of your chart. We read their positions the way an instrument reads a scale — precisely, not poetically.
+## t-948af9b3
+Each graha governs an area of your chart, and we calculate each position precisely.
 
 ## t-7d6d4831
 Surya
@@ -940,8 +918,8 @@ Go deeper
 ## t-5faea056 (heading)
 14 reports, grounded in your real chart
 
-## t-781975c8
-Every report runs your own birth chart through a fixed set of classical calculations — not a generic template. A blurred preview is always free before you unlock the full reading.
+## t-bf674fa8
+Every report runs your own birth chart through a fixed set of classical calculations. A blurred preview is always free before you unlock the full reading.
 
 ## t-6403f2b7
 New
@@ -952,8 +930,8 @@ KP Year Ahead Report
 ## t-e82477de
 • Your next 12 months, month by month, with the best windows named
 
-## t-570b3152
-• Read the Krishnamurti Paddhati (KP) way: cusps, sub lords, dasha–bhukti–antara and transits
+## t-3996f00a
+• Read the Krishnamurti Paddhati (KP) way: cusps, sub lords, dasha, bhukti, antara and transits
 
 ## t-b94fb86e
 • Career, money, love, health, home, travel, studies and family
@@ -1132,14 +1110,14 @@ Which days are best for important conversations?
 ## t-3a07195c
 The method
 
-## t-6c68433b (heading)
-Precision, not vibes
+## t-d190181e (heading)
+How the charts are calculated
 
-## t-de627e53
-Every chart starts with the Swiss Ephemeris — the same astronomical calculation engine observatories rely on — to place all nine grahas to sub-degree accuracy at your exact moment and place of birth.
+## t-5c5872b3
+Every chart starts with the Swiss Ephemeris, an astronomical calculation engine that observatories rely on, to place all nine grahas to sub-degree accuracy at your exact moment and place of birth.
 
-## t-3cb4e3e1
-Vedic astrology tracks the actual visible constellations rather than the fixed Western calendar zodiac, so we apply the Lahiri ayanamsa — India’s official sidereal correction — before deriving divisional charts, from D1 through D60, off that base chart.
+## t-b321d4ef
+Vedic astrology follows the constellations as they appear in the sky, while the Western calendar zodiac stays fixed to the seasons. So we apply the Lahiri ayanamsa, India’s official sidereal correction, and derive the divisional charts from D1 through D60 from that base chart.
 
 ## t-74b688ff
 Ayanamsa today
@@ -1156,8 +1134,8 @@ Lahiri
 ## t-29710818
 However you think
 
-## t-3cb5dff7 (heading)
-Available in 4 languages
+## t-4247f242 (heading)
+This site is available in 4 languages
 
 ## t-649df08a
 English
@@ -1214,8 +1192,11 @@ No. Vedic astrology is a traditional system of interpretation. Aroha computes yo
 ---
 # Aroha Vastu page
 
-## t-cb513d04
-Aroha Vastu reads the home you live in through Vastu Shastra. Draw your floor plan, see every room judged by its direction, and get a Vastu score for your home, room by room.
+## t-3ebe866f (heading)
+Your home, read through Vastu Shastra
+
+## t-f37c6b70
+Draw your floor plan, see every room judged by its direction, and get a Vastu score for your home, room by room.
 
 ## t-f25cbaf9 (button or link)
 Try Aroha Vastu
@@ -1225,6 +1206,10 @@ Read the Vastu guides
 
 ## t-a7f40f42 (heading)
 Your floor plan, room by room
+
+## t-b035f296
+<!-- Part of: On Android, in the Aroha Astrology app. Draw your home and every room is judged by where it sits. In the film, a kitchen moved from the north to the south-east, the traditional fire corner, goes from 70 to 88. -->
+On Android, in the Aroha Astrology app.
 
 ## t-af86e5e1
 <!-- Part of: On Android, in the Aroha Astrology app. Draw your home and every room is judged by where it sits. In the film, a kitchen moved from the north to the south-east, the traditional fire corner, goes from 70 to 88. -->
@@ -1236,8 +1221,8 @@ Get Aroha Vastu
 ## t-d80ce6bb
 The tradition
 
-## t-888a65a6 (heading)
-What Vastu Shastra is, and what it isn’t
+## t-94a4ac31 (heading)
+What Vastu Shastra is
 
 ## t-bc1313e3
 Vastu Shastra is a traditional Indian system of architecture and spatial design. Its classical texts describe how a building should be oriented, how its plan relates to the eight directions, and why its centre, the Brahmasthan, should stay open.
@@ -1284,8 +1269,8 @@ How a floor plan is read in Vastu: a 3 × 3 grid over the plan, north at the top
 ## t-9e608dfc (heading)
 Aroha Vastu in 3D
 
-## t-ff00e594
-The next version of Aroha Vastu shows your home as a space, not just a drawing. It isn’t available yet, and we haven’t announced a date.
+## t-cfdf4f51
+The next version of Aroha Vastu will show your home as a space you can walk through. It isn’t available yet, and we haven’t announced a date.
 
 ## t-e4245ed5
 Your home in 3D, with a walk-through view
@@ -1341,11 +1326,11 @@ Aroha Vastu is designed to help you understand your space and make considered ch
 ---
 # Aroha Puja page
 
-## t-f3da407d (heading)
-Pujas at home, performed properly
+## t-07cb2d3d (heading)
+Book a pandit for puja at home
 
-## t-5d520a92
-Aroha Puja will let you book a pandit for any puja at your home, and decide whether the pandit brings all the samagri or your family arranges it. A premium service for the moments that matter, when it opens.
+## t-dcec91ce
+Aroha Puja will let you book a pandit for any puja at your home and decide whether the pandit brings the samagri or your family arranges it.
 
 ## t-6ac926e1 (button or link)
 Read the puja guides
@@ -1467,8 +1452,8 @@ About Aroha Puja
 ## t-ba4b7dc3 (button or link)
 What is Aroha Puja?
 
-## t-4e638074
-Aroha Puja is an upcoming premium service for booking a pandit to perform any puja at your home, with the choice of the pandit bringing all the samagri or your family arranging the items yourselves, priced accordingly.
+## t-d40a0e01
+Aroha Puja is a planned service for booking a pandit to perform any puja at your home. You choose whether the pandit brings all the samagri or your family arranges the items, and the price depends on that choice.
 
 ## t-7e585186 (button or link)
 Can I book a puja now?
@@ -1500,8 +1485,8 @@ We have not announced launch cities yet.
 ## t-83044bce
 Free tool
 
-## t-5ca8264e
-Your full Vedic birth chart — ascendant, houses and planet placements — computed from the Swiss Ephemeris.
+## t-efc15d46
+Your full Vedic birth chart, with ascendant, houses and planet placements, computed from the Swiss Ephemeris.
 
 ## t-9518425f (form label)
 Date of birth
@@ -1518,62 +1503,62 @@ Generate my Kundli
 ## t-aaaf2fdd (heading)
 What is a Kundli?
 
-## t-b5345c2c
-A Kundli — also called a birth chart, janma kundli, or D1/Rashi chart — is a snapshot of the entire sky at the exact moment and place you were born: where the Sun, Moon, and every visible planet sat against the zodiac, and which of the 12 astrological houses each one fell into. It is the single foundational document of Vedic astrology; your Moon sign, your dashas (planetary time periods), your doshas, and your compatibility with a partner are all read from this one chart, not computed independently of it.
+## t-a96505e7
+A Kundli, also called a birth chart, janma kundli or D1/Rashi chart, is a snapshot of the sky at the exact moment and place you were born: where the Sun, Moon and every visible planet sat against the zodiac, and which of the 12 astrological houses each one fell into. It is the foundation of Vedic astrology. Your Moon sign, your dashas (planetary time periods), your doshas and your compatibility with a partner are all read from this one chart.
 
-## t-6bbdf930 (heading)
-The Ascendant is the anchor
+## t-d4357258 (heading)
+The Ascendant anchors the chart
 
-## t-b6c7ed0e
-<!-- Part of: Unlike your Moon sign — a single placement that needs only your birth date and time — a full Kundli also needs your birth place, because it computes your Ascendant (Lagna): the zodiac sign rising on the eastern horizon at your exact moment of birth. The Ascendant sets the entire house structure of your chart. Two people born the same minute in different cities can have different Ascendants, and therefore entirely different house placements for the same planets — which is why a Kundli, unlike a Moon sign, can't be computed from date and time alone. -->
-Unlike your Moon sign — a single placement that needs only your birth date and time — a full Kundli also needs your birth
+## t-1232b425
+<!-- Part of: A Moon sign needs only your birth date and time. A full Kundli also needs your birth place, because it computes your Ascendant (Lagna): the zodiac sign rising on the eastern horizon at the moment of your birth. The Ascendant sets the house structure of your chart. Two people born in the same minute in different cities can have different Ascendants, and so different house placements for the same planets. That is why a Kundli cannot be computed from date and time alone. -->
+A Moon sign needs only your birth date and time. A full Kundli also needs your birth
 
 ## t-9da8f1fa
-<!-- Part of: Unlike your Moon sign — a single placement that needs only your birth date and time — a full Kundli also needs your birth place, because it computes your Ascendant (Lagna): the zodiac sign rising on the eastern horizon at your exact moment of birth. The Ascendant sets the entire house structure of your chart. Two people born the same minute in different cities can have different Ascendants, and therefore entirely different house placements for the same planets — which is why a Kundli, unlike a Moon sign, can't be computed from date and time alone. -->
+<!-- Part of: A Moon sign needs only your birth date and time. A full Kundli also needs your birth place, because it computes your Ascendant (Lagna): the zodiac sign rising on the eastern horizon at the moment of your birth. The Ascendant sets the house structure of your chart. Two people born in the same minute in different cities can have different Ascendants, and so different house placements for the same planets. That is why a Kundli cannot be computed from date and time alone. -->
 place
 
-## t-6e8f38ef
-<!-- Part of: Unlike your Moon sign — a single placement that needs only your birth date and time — a full Kundli also needs your birth place, because it computes your Ascendant (Lagna): the zodiac sign rising on the eastern horizon at your exact moment of birth. The Ascendant sets the entire house structure of your chart. Two people born the same minute in different cities can have different Ascendants, and therefore entirely different house placements for the same planets — which is why a Kundli, unlike a Moon sign, can't be computed from date and time alone. -->
-, because it computes your Ascendant (Lagna): the zodiac sign rising on the eastern horizon at your exact moment of birth. The Ascendant sets the entire house structure of your chart. Two people born the same minute in different cities can have different Ascendants, and therefore entirely different house placements for the same planets — which is why a Kundli, unlike a Moon sign, can't be computed from date and time alone.
+## t-c44c9257
+<!-- Part of: A Moon sign needs only your birth date and time. A full Kundli also needs your birth place, because it computes your Ascendant (Lagna): the zodiac sign rising on the eastern horizon at the moment of your birth. The Ascendant sets the house structure of your chart. Two people born in the same minute in different cities can have different Ascendants, and so different house placements for the same planets. That is why a Kundli cannot be computed from date and time alone. -->
+, because it computes your Ascendant (Lagna): the zodiac sign rising on the eastern horizon at the moment of your birth. The Ascendant sets the house structure of your chart. Two people born in the same minute in different cities can have different Ascendants, and so different house placements for the same planets. That is why a Kundli cannot be computed from date and time alone.
 
-## t-cfb4e257
-Because the sky rotates roughly one sign's width every two hours, the Ascendant is also the most time-sensitive placement in the entire chart — a birth time off by 15-20 minutes can shift it into a neighbouring sign and reshuffle every house that follows. This calculator computes yours from the Swiss Ephemeris using the Lahiri ayanamsha and Whole Sign houses, the same standard reference points used throughout Aroha's app.
+## t-a62a36d7
+The sky rotates through roughly one sign every two hours, so the Ascendant is the most time-sensitive placement in the chart. A birth time off by 15 to 20 minutes can move it into the next sign and reshuffle every house that follows. This calculator computes yours from the Swiss Ephemeris using the Lahiri ayanamsha and Whole Sign houses, the same reference points used throughout the Aroha app.
 
 ## t-9c142011 (heading)
 Understanding your Kundli
 
-## t-a2e1cb46
-A Kundli (also called a birth chart, janma kundli, or D1/Rashi chart) is a map of where the Sun, Moon and every planet sat in the sky at your exact moment and place of birth, laid out across the 12 houses of Vedic astrology. It is the foundation every other reading — dashas, doshas, compatibility — is built from.
+## t-eedc0e0c
+A Kundli (also called a birth chart, janma kundli, or D1/Rashi chart) is a map of where the Sun, Moon and every planet sat in the sky at your exact moment and place of birth, laid out across the 12 houses of Vedic astrology. Dashas, doshas and compatibility are all read from it.
 
 ## t-205c65f6 (button or link)
 What is the Ascendant (Lagna)?
 
-## t-2b032c6d
-Your Ascendant, or Lagna, is whichever zodiac sign was rising on the eastern horizon at your exact moment of birth. It's the single most important placement in your chart: it fixes the entire house structure, so where your career, relationships, health and every other life theme fall in your Kundli is measured relative to it, not to your Moon or Sun sign.
+## t-2ddd64a3
+Your Ascendant, or Lagna, is the zodiac sign that was rising on the eastern horizon at your exact moment of birth. It is the most important placement in your chart because it fixes the house structure. Your career, relationships, health and every other life theme are measured from it, and not from your Moon or Sun sign.
 
 ## t-bd9f821f (button or link)
 What are the 12 houses?
 
-## t-634b24b9
-The 12 houses each govern a life area — the 1st house is self/body, the 7th is partnerships, the 10th is career, and so on. Every planet in your chart occupies exactly one house, and a planet's effects are read through the lens of that house's theme.
+## t-7102182d
+The 12 houses each govern an area of life: the 1st house is self and body, the 7th is partnerships, the 10th is career, and so on. Every planet in your chart sits in exactly one house, and its effects are read through that house's theme.
 
 ## t-920e71e2 (button or link)
 Why does my exact birth time matter so much here?
 
-## t-501c68d6
-More than for a Moon sign, because the Ascendant changes roughly once every two hours as the sky rotates — a birth time off by even 15-20 minutes can shift your Lagna into a neighbouring sign, which reshuffles every house in the chart. If you're unsure of your exact time, your birth certificate or hospital record is the most reliable source.
+## t-01e7d9f6
+The Ascendant changes roughly once every two hours as the sky rotates, so a birth time that is off by even 15 to 20 minutes can move your Lagna into the next sign and reshuffle every house in the chart. This matters more here than for a Moon sign. If you are unsure of your exact time, your birth certificate or hospital record is the most reliable source.
 
 ## t-0a9b28b4 (button or link)
 Is this the same as my Moon sign?
 
-## t-8f2d5022
-No — related, but not the same. Your Moon sign is a single placement (where the Moon sat) and needs no location, only date and time. A full Kundli needs your birth place too, because it also computes the Ascendant and all 12 houses, which depend on where on Earth you were standing at that moment.
+## t-16309d59
+They are related but different. Your Moon sign is a single placement (where the Moon sat) and needs only date and time. A full Kundli also needs your birth place, because it computes the Ascendant and all 12 houses, which depend on where on Earth you were at that moment.
 
 ## t-568a48a3 (button or link)
 What ayanamsha and house system does this use?
 
-## t-4fd6fc59
-Lahiri ayanamsha (the Indian government's standard for the sidereal zodiac) and the Whole Sign house system, both computed via the Swiss Ephemeris — the same precision engine astronomical observatories use. If you're used to a different house system (Placidus, Koch), your house cusps may read differently even though the planet-sign placements will match.
+## t-4c2a6549
+Lahiri ayanamsha (the Indian government's standard for the sidereal zodiac) and the Whole Sign house system, both computed with the Swiss Ephemeris, the engine astronomical observatories use. If you are used to a different house system such as Placidus or Koch, your house cusps may read differently, although the planet-sign placements will match.
 
 ## t-a0041711
 This free chart is computed and returned to your browser without being stored. Creating a profile in the app (to save your chart and unlock deeper reports) is handled according to our privacy policy.
@@ -1584,8 +1569,8 @@ This free chart is computed and returned to your browser without being stored. C
 ## t-84c285c2 (heading)
 What's your Moon sign?
 
-## t-304c213c
-Vedic astrology reads the Moon, not the Sun — enter your birth details for your real Chandra Rashi.
+## t-25724381
+Vedic astrology reads the Moon rather than the Sun. Enter your birth details for your Chandra Rashi.
 
 ## t-ea5975ed (button or link)
 Reveal my Moon sign
@@ -1593,38 +1578,43 @@ Reveal my Moon sign
 ## t-587fddf4 (heading)
 What is a Vedic Moon sign?
 
-## t-caf8598d
-<!-- Part of: In Vedic (Jyotish) astrology, your Moon sign — called your Chandra Rashi — is the zodiac sign the Moon occupied at the exact moment and place you were born. Where Western astrology leans heavily on your Sun sign, Vedic astrology treats the Moon as the more personal placement: it governs the mind, emotions, and instinctive reactions, and many traditional predictions — including your Vimshottari Dasha timeline and monthly horoscope — are calculated from it rather than from the Sun. -->
-In Vedic (Jyotish) astrology, your Moon sign — called your
+## t-84d29d5b
+<!-- Part of: In Vedic (Jyotish) astrology, your Moon sign, called your Chandra Rashi, is the zodiac sign the Moon occupied at the exact moment and place you were born. Western astrology leans on the Sun sign. Vedic astrology treats the Moon as the more personal placement: it governs the mind, emotions and instinctive reactions, and many traditional predictions, including your Vimshottari Dasha timeline and monthly horoscope, are calculated from it. -->
+In Vedic (Jyotish) astrology, your Moon sign, called your
 
 ## t-a8cc290d
-<!-- Part of: In Vedic (Jyotish) astrology, your Moon sign — called your Chandra Rashi — is the zodiac sign the Moon occupied at the exact moment and place you were born. Where Western astrology leans heavily on your Sun sign, Vedic astrology treats the Moon as the more personal placement: it governs the mind, emotions, and instinctive reactions, and many traditional predictions — including your Vimshottari Dasha timeline and monthly horoscope — are calculated from it rather than from the Sun. -->
+<!-- Part of: In Vedic (Jyotish) astrology, your Moon sign, called your Chandra Rashi, is the zodiac sign the Moon occupied at the exact moment and place you were born. Western astrology leans on the Sun sign. Vedic astrology treats the Moon as the more personal placement: it governs the mind, emotions and instinctive reactions, and many traditional predictions, including your Vimshottari Dasha timeline and monthly horoscope, are calculated from it. -->
 Chandra Rashi
 
-## t-e7877c63
-<!-- Part of: In Vedic (Jyotish) astrology, your Moon sign — called your Chandra Rashi — is the zodiac sign the Moon occupied at the exact moment and place you were born. Where Western astrology leans heavily on your Sun sign, Vedic astrology treats the Moon as the more personal placement: it governs the mind, emotions, and instinctive reactions, and many traditional predictions — including your Vimshottari Dasha timeline and monthly horoscope — are calculated from it rather than from the Sun. -->
-— is the zodiac sign the Moon occupied at the exact moment and place you were born. Where Western astrology leans heavily on your Sun sign, Vedic astrology treats the Moon as the more personal placement: it governs the mind, emotions, and instinctive reactions, and many traditional predictions — including your Vimshottari Dasha timeline and monthly horoscope — are calculated from it rather than from the Sun.
+## t-92574d98
+<!-- Part of: In Vedic (Jyotish) astrology, your Moon sign, called your Chandra Rashi, is the zodiac sign the Moon occupied at the exact moment and place you were born. Western astrology leans on the Sun sign. Vedic astrology treats the Moon as the more personal placement: it governs the mind, emotions and instinctive reactions, and many traditional predictions, including your Vimshottari Dasha timeline and monthly horoscope, are calculated from it. -->
+, is the zodiac sign the Moon occupied at the exact moment and place you were born. Western astrology leans on the Sun sign. Vedic astrology treats the Moon as the more personal placement: it governs the mind, emotions and instinctive reactions, and many traditional predictions, including your Vimshottari Dasha timeline and monthly horoscope, are calculated from it.
 
 ## t-cd2e37bd (heading)
 Why is it different from my Western sun sign?
 
-## t-9c84c942
-The difference isn't just which planet is used — it's which zodiac. Western astrology uses the
+## t-30664d04
+<!-- Part of: Western astrology uses the tropical zodiac, which is fixed to the seasons (0° Aries is always the spring equinox). Vedic astrology uses the sidereal zodiac, which is fixed to the observable positions of the constellations. The two were aligned roughly two thousand years ago, but the Earth's slow wobble on its axis, a 26,000-year cycle called precession, has since moved them apart by about 24 degrees. That gap, known as the ayanamsha, is why a planet's tropical position and its sidereal position can fall in different signs today. It is also why a Vedic Moon sign calculation needs a precise ephemeris and not a simple date lookup. -->
+Western astrology uses the
 
 ## t-3c81d9a7
+<!-- Part of: Western astrology uses the tropical zodiac, which is fixed to the seasons (0° Aries is always the spring equinox). Vedic astrology uses the sidereal zodiac, which is fixed to the observable positions of the constellations. The two were aligned roughly two thousand years ago, but the Earth's slow wobble on its axis, a 26,000-year cycle called precession, has since moved them apart by about 24 degrees. That gap, known as the ayanamsha, is why a planet's tropical position and its sidereal position can fall in different signs today. It is also why a Vedic Moon sign calculation needs a precise ephemeris and not a simple date lookup. -->
 zodiac, which is fixed to the seasons (0° Aries is always the spring equinox). Vedic astrology uses the
 
-## t-aeea1845
-zodiac, which is fixed to the actual, observable positions of the constellations. The two were aligned roughly two thousand years ago, but the Earth's slow wobble on its axis — a 26,000-year cycle called precession — has since pulled them apart by about 24 degrees. That gap, known as the
+## t-ff5ca873
+<!-- Part of: Western astrology uses the tropical zodiac, which is fixed to the seasons (0° Aries is always the spring equinox). Vedic astrology uses the sidereal zodiac, which is fixed to the observable positions of the constellations. The two were aligned roughly two thousand years ago, but the Earth's slow wobble on its axis, a 26,000-year cycle called precession, has since moved them apart by about 24 degrees. That gap, known as the ayanamsha, is why a planet's tropical position and its sidereal position can fall in different signs today. It is also why a Vedic Moon sign calculation needs a precise ephemeris and not a simple date lookup. -->
+zodiac, which is fixed to the observable positions of the constellations. The two were aligned roughly two thousand years ago, but the Earth's slow wobble on its axis, a 26,000-year cycle called precession, has since moved them apart by about 24 degrees. That gap, known as the
 
 ## t-d03f0dc1
+<!-- Part of: Western astrology uses the tropical zodiac, which is fixed to the seasons (0° Aries is always the spring equinox). Vedic astrology uses the sidereal zodiac, which is fixed to the observable positions of the constellations. The two were aligned roughly two thousand years ago, but the Earth's slow wobble on its axis, a 26,000-year cycle called precession, has since moved them apart by about 24 degrees. That gap, known as the ayanamsha, is why a planet's tropical position and its sidereal position can fall in different signs today. It is also why a Vedic Moon sign calculation needs a precise ephemeris and not a simple date lookup. -->
 ayanamsha
 
-## t-6da72337
-, is why a planet's tropical position and its sidereal position can land in entirely different signs today, and why a Vedic Moon sign calculation needs its own precise ephemeris rather than a simple date lookup.
+## t-cef4e23f
+<!-- Part of: Western astrology uses the tropical zodiac, which is fixed to the seasons (0° Aries is always the spring equinox). Vedic astrology uses the sidereal zodiac, which is fixed to the observable positions of the constellations. The two were aligned roughly two thousand years ago, but the Earth's slow wobble on its axis, a 26,000-year cycle called precession, has since moved them apart by about 24 degrees. That gap, known as the ayanamsha, is why a planet's tropical position and its sidereal position can fall in different signs today. It is also why a Vedic Moon sign calculation needs a precise ephemeris and not a simple date lookup. -->
+, is why a planet's tropical position and its sidereal position can fall in different signs today. It is also why a Vedic Moon sign calculation needs a precise ephemeris and not a simple date lookup.
 
-## t-56987abd
-Because the Moon moves roughly 13 degrees across the zodiac every day, getting the sign — and the more precise nakshatra (lunar mansion) and pada (quarter) — right depends on knowing your birth time and place accurately, down to the correct UTC offset for that historical date. This calculator handles that for you: enter your details above and it computes your real Chandra Rashi using the same Swiss Ephemeris data that powers a full birth chart.
+## t-fb08438f
+The Moon moves roughly 13 degrees across the zodiac every day, so getting the sign, and the more precise nakshatra (lunar mansion) and pada (quarter), right depends on knowing your birth time and place accurately, down to the correct UTC offset for that historical date. This calculator handles that for you. Enter your details above and it computes your real Chandra Rashi from the same Swiss Ephemeris data that powers a full birth chart.
 
 ---
 # Panchang page
@@ -1632,97 +1622,97 @@ Because the Moon moves roughly 13 degrees across the zodiac every day, getting t
 ## t-680d0110 (heading)
 What is Panchang?
 
-## t-355dd91f
-<!-- Part of: Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination), and karana (half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight. -->
-Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule:
+## t-58660c0b
+<!-- Part of: Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination) and karana (half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight. -->
+Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule:
 
 ## t-a7d149db
-<!-- Part of: Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination), and karana (half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight. -->
+<!-- Part of: Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination) and karana (half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight. -->
 (lunar day),
 
 ## t-04ea67d1
-<!-- Part of: Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination), and karana (half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight. -->
+<!-- Part of: Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination) and karana (half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight. -->
 vara
 
 ## t-01ae38af
-<!-- Part of: Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination), and karana (half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight. -->
+<!-- Part of: Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination) and karana (half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight. -->
 (weekday),
 
 ## t-3bf9acfa
-<!-- Part of: Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination), and karana (half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight. -->
+<!-- Part of: Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination) and karana (half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight. -->
 (the Moon's lunar mansion),
 
 ## t-6b3bebb6
-<!-- Part of: Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination), and karana (half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight. -->
+<!-- Part of: Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination) and karana (half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight. -->
 yoga
 
-## t-889dd72d
-<!-- Part of: Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination), and karana (half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight. -->
-(a Sun-Moon angular combination), and
+## t-8fa6fb07
+<!-- Part of: Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination) and karana (half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight. -->
+(a Sun-Moon angular combination) and
 
-## t-8a6e3ff0
-<!-- Part of: Panchang — literally “five limbs” — is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or simply planning your morning. It's built from five real astronomical measurements rather than a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination), and karana (half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight. -->
-(half a tithi). Because each is derived from the Moon and Sun's actual positions, their start and end times shift every single day — unlike a Gregorian date, a tithi can begin at any hour and run past midnight.
+## t-dc7ce837
+<!-- Part of: Panchang, literally “five limbs”, is the traditional Vedic almanac used to read the character of a day before making a decision: starting a journey, signing a contract, holding a wedding, or planning your morning. It is built from five astronomical measurements and not from a fixed calendar rule: tithi (lunar day), vara (weekday), nakshatra (the Moon's lunar mansion), yoga (a Sun-Moon angular combination) and karana (half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight. -->
+(half a tithi). Each is derived from the actual positions of the Moon and Sun, so their start and end times shift every day. A tithi can begin at any hour and run past midnight.
 
 ## t-f725fb7c (heading)
 Why the timings shift by city
 
-## t-f478786c
-Four of the values above the fold — Rahu Kaal, Gulika Kaal, Yamaganda Kaal, and Abhijit Muhurta — aren't fixed clock times at all. Each is a fraction of the interval between local sunrise and sunset, so the same day's Rahu Kaal can fall an hour apart in Mumbai versus Kolkata, simply because the Sun rises and sets at different moments in each. Getting these right requires computing real sunrise/sunset for the exact latitude/longitude in question, not reading them off a printed table computed for one reference city.
+## t-fd364a76
+Four of the values above (Rahu Kaal, Gulika Kaal, Yamaganda Kaal and Abhijit Muhurta) are not fixed clock times. Each is a fraction of the interval between local sunrise and sunset, so the same day's Rahu Kaal can fall an hour apart in Mumbai and Kolkata, because the Sun rises and sets at different moments in each. Getting these right means computing real sunrise and sunset for the exact latitude and longitude, and not reading them off a printed table made for one reference city.
 
-## t-771d40f9
-The Panchang above is computed live from the Swiss Ephemeris — the same precision engine used by astronomical observatories — using the Lahiri ayanamsha, the Indian government's standard reference point for the sidereal zodiac. Open the Aroha app to get every one of these timings recalculated for your own city rather than the New Delhi default shown here.
+## t-bc2773df
+The Panchang above is computed live from the Swiss Ephemeris, the engine astronomical observatories use, with the Lahiri ayanamsha, the Indian government's reference point for the sidereal zodiac. Open the Aroha app to get every one of these timings recalculated for your own city instead of the New Delhi default shown here.
 
 ## t-55d509fe (heading)
 Understanding today's Panchang
 
-## t-9d487025
-Panchang (literally "five limbs") is the traditional Vedic almanac used to read the character of a day. It's built from five components — tithi (lunar day), vara (weekday), nakshatra (lunar mansion), yoga, and karana — each computed from the real positions of the Sun and Moon, not a fixed calendar rule.
+## t-b9626027
+Panchang (literally "five limbs") is the traditional Vedic almanac used to read the character of a day. It is built from five components, tithi (lunar day), vara (weekday), nakshatra (lunar mansion), yoga and karana, each computed from the real positions of the Sun and Moon and not from a fixed calendar rule.
 
 ## t-bb8099e4 (button or link)
 What is a tithi?
 
-## t-5ecb07d2
-A tithi is a lunar day, defined by the angular distance between the Moon and Sun advancing by 12°. There are 30 tithis in a lunar month, split into the Shukla Paksha (waxing fortnight) and Krishna Paksha (waning fortnight) — which is why a tithi's exact start and end time shifts from day to day, unlike a fixed calendar date.
+## t-8614233a
+A tithi is a lunar day, defined by the angular distance between the Moon and Sun advancing by 12°. There are 30 tithis in a lunar month, split into the Shukla Paksha (waxing fortnight) and the Krishna Paksha (waning fortnight). A tithi's exact start and end time therefore shifts from day to day, unlike a fixed calendar date.
 
 ## t-5207fc8e (button or link)
 What is Rahu Kaal, and why does it matter?
 
-## t-4524d99e
-Rahu Kaal is a roughly 90-minute window each day traditionally considered inauspicious for starting anything new — a shadow period ruled by Rahu. Its exact start and end time depends on the day of the week and the local sunrise/sunset, which is why it shifts by both date and city.
+## t-4272f5c1
+Rahu Kaal is a roughly 90-minute window each day that is traditionally considered inauspicious for starting anything new. It is a shadow period ruled by Rahu. Its exact start and end time depends on the day of the week and the local sunrise and sunset, so it shifts by both date and city.
 
 ## t-79fab15e (button or link)
 What is Abhijit Muhurta?
 
-## t-3f06f626
-Abhijit Muhurta is the most auspicious ~48-minute window of the day, centred on local solar noon — the midpoint between sunrise and sunset. It's traditionally favoured for starting important work, precisely because it's the one window considered universally auspicious regardless of the weekday.
+## t-8fb8197e
+Abhijit Muhurta is the most auspicious window of the day, about 48 minutes long and centred on local solar noon, the midpoint between sunrise and sunset. It is traditionally favoured for starting important work because it is considered auspicious on every weekday.
 
 ## t-1cd6b20f (button or link)
 Why do the timings shown here differ from another Panchang site or app?
 
-## t-c7c3ac25
-Two things commonly differ between sources: the ayanamsha used (Aroha uses the Lahiri ayanamsha, the Indian government standard) and how precisely sunrise/sunset is computed for the location. Aroha computes yours from the Swiss Ephemeris, the same precision engine used by astronomical observatories, rather than a simplified approximation.
+## t-e5fd10c6
+Sources commonly differ in two ways: the ayanamsha they use (Aroha uses the Lahiri ayanamsha, the Indian government standard) and how precisely they compute sunrise and sunset for the location. Aroha computes yours from the Swiss Ephemeris, the engine astronomical observatories use.
 
 ## t-bb07acfb (button or link)
 Does this Panchang work for any city, or just Delhi?
 
-## t-2c3425f5
-The Panchang shown here defaults to New Delhi. Sunrise/sunset-dependent limbs — Rahu Kaal, Gulika Kaal, Yamaganda Kaal, and Abhijit Muhurta — shift for your exact location. Open the app to get every timing computed for your own city.
+## t-533a5cde
+The Panchang shown here defaults to New Delhi. The limbs that depend on sunrise and sunset (Rahu Kaal, Gulika Kaal, Yamaganda Kaal and Abhijit Muhurta) shift with your exact location. Open the app to get every timing computed for your own city.
 
 ---
 # About page
 
-## t-e9ad08cd (heading)
-Ancient wisdom, made clear for how people live now
+## t-4ce797f9 (heading)
+Vedic astrology, Vastu and puja, explained plainly
 
-## t-5008cd0a
-Aroha is an Indian spiritual-technology ecosystem. It starts with Vedic astrology, and is growing to include Vastu for the home and puja for the moments that mark a life.
+## t-4edcbf70
+Aroha is built in India for Vedic astrology, Vastu and puja. It started with astrology, added Vastu for the home, and is adding puja for the moments that mark a life.
 
 ## t-87db48c8 (heading)
 What Aroha is
 
-## t-a31b7015
-Aroha is one ecosystem with three paths. Each helps with a different part of the same question: how to live with more understanding of yourself, your surroundings and your traditions.
+## t-e0f399b2
+Aroha has three products: astrology for understanding yourself, Vastu for understanding your home, and puja for the rituals that mark your life.
 
 ## t-d5a55499 (heading)
 Why Aroha exists
@@ -1730,47 +1720,47 @@ Why Aroha exists
 ## t-737832e7
 Aroha began with astrology because most Kundli tools online either stop at a raw chart with no explanation, or explain it in jargon that assumes you already know the subject. We wanted a chart computed carefully and explained plainly, in the language you think in.
 
-## t-1514db7d
-The same gap exists for the home and for ritual. Vastu advice online is often contradictory, and arranging a puja at home can mean finding a pandit by word of mouth and guessing what to buy. Aroha Vastu brings the same clarity to the home today, and Aroha Puja is being built to do it for ritual.
+## t-28a56bdf
+The same gap exists for the home and for ritual. Vastu advice online is often contradictory, and arranging a puja at home can mean finding a pandit by word of mouth and guessing what to buy. Aroha Vastu covers the home today, and Aroha Puja is being built for ritual.
 
 ## t-f7aa8b71 (heading)
 How Aroha Astrology generates a reading
 
-## t-0ae798b9
-Every chart (planet positions, houses, the Dasha timeline, divisional charts) is computed from Swiss Ephemeris astronomical data with the Lahiri ayanamsa, the standard used across professional astrology software, not a simplified or templated approximation.
+## t-7bb40a92
+Every chart (planet positions, houses, the Dasha timeline, divisional charts) is computed from Swiss Ephemeris astronomical data with the Lahiri ayanamsa, the standard used across professional astrology software.
 
-## t-d24ff443
-<!-- Part of: The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. It is not written by a human astrologer reviewing each chart individually. We think that is worth stating plainly rather than leaving it ambiguous. Our full disclaimer covers this in legal detail. -->
-The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. It is not written by a human astrologer reviewing each chart individually. We think that is worth stating plainly rather than leaving it ambiguous. Our
+## t-b4a021bc
+<!-- Part of: The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. A human astrologer does not review each chart individually. Our full disclaimer covers this in legal detail. -->
+The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. A human astrologer does not review each chart individually. Our
 
 ## t-7af4e0b5 (button or link)
-<!-- Part of: The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. It is not written by a human astrologer reviewing each chart individually. We think that is worth stating plainly rather than leaving it ambiguous. Our full disclaimer covers this in legal detail. -->
+<!-- Part of: The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. A human astrologer does not review each chart individually. Our full disclaimer covers this in legal detail. -->
 full disclaimer
 
 ## t-c5e6fd82
-<!-- Part of: The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. It is not written by a human astrologer reviewing each chart individually. We think that is worth stating plainly rather than leaving it ambiguous. Our full disclaimer covers this in legal detail. -->
+<!-- Part of: The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. A human astrologer does not review each chart individually. Our full disclaimer covers this in legal detail. -->
 covers this in legal detail.
 
 ## t-9b24c054 (heading)
 How we think about AI
 
-## t-29b511e9
-<!-- Part of: We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language, and answering follow-up questions. We do not use it to claim certainty astrology doesn’t have, and we don’t present readings as deterministic predictions. Articles in our Knowledge Hub may be drafted with AI assistance, and none is published until a person has reviewed it against our editorial standards. -->
-We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language, and answering follow-up questions. We do not use it to claim certainty astrology doesn’t have, and we don’t present readings as deterministic predictions. Articles in our
+## t-ee23055f
+<!-- Part of: We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language, and answering follow-up questions. We do not present readings as predictions or claim a certainty that astrology does not have. Articles in our Knowledge Hub may be drafted with AI assistance, and none is published until a person has reviewed it against our editorial standards. -->
+We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language, and answering follow-up questions. We do not present readings as predictions or claim a certainty that astrology does not have. Articles in our
 
 ## t-0d35ec01
-<!-- Part of: We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language, and answering follow-up questions. We do not use it to claim certainty astrology doesn’t have, and we don’t present readings as deterministic predictions. Articles in our Knowledge Hub may be drafted with AI assistance, and none is published until a person has reviewed it against our editorial standards. -->
+<!-- Part of: We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language, and answering follow-up questions. We do not present readings as predictions or claim a certainty that astrology does not have. Articles in our Knowledge Hub may be drafted with AI assistance, and none is published until a person has reviewed it against our editorial standards. -->
 may be drafted with AI assistance, and none is published until a person has reviewed it against our
 
 ## t-b4a81401 (button or link)
-<!-- Part of: We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language, and answering follow-up questions. We do not use it to claim certainty astrology doesn’t have, and we don’t present readings as deterministic predictions. Articles in our Knowledge Hub may be drafted with AI assistance, and none is published until a person has reviewed it against our editorial standards. -->
+<!-- Part of: We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language, and answering follow-up questions. We do not present readings as predictions or claim a certainty that astrology does not have. Articles in our Knowledge Hub may be drafted with AI assistance, and none is published until a person has reviewed it against our editorial standards. -->
 editorial standards
 
 ## t-fb5c5297 (heading)
 Cultural context
 
-## t-e8ec3c53
-Vedic astrology is a traditional system of interpretation. Vastu Shastra is a traditional Indian system of architecture and spatial design. Puja is a form of Hindu worship whose practice varies by region, community and family. None is one settled method, and classical traditions (Parashari, Jaimini and KP in astrology, for example) sometimes disagree. We say so when they do, describe beliefs as beliefs, and never present them as scientific fact or as a reason for fear.
+## t-4857cfb4
+Vedic astrology is a traditional system of interpretation. Vastu Shastra is a traditional Indian system of architecture and spatial design. Puja is a form of Hindu worship whose practice varies by region, community and family. None is one settled method, and classical traditions (Parashari, Jaimini and KP in astrology, for example) sometimes disagree. We say so when they do, describe beliefs as beliefs, and do not present them as scientific fact or use them to frighten anyone.
 
 ## t-1553919c (heading)
 Who builds Aroha
@@ -1819,8 +1809,8 @@ We're here to help
 ## t-f32d5a3b (heading)
 Support
 
-## t-d2f65511
-Questions about your account, a report, or a payment — reach us here.
+## t-e546f4bd
+Questions about your account, a report or a payment? Reach us here.
 
 ## t-d3eca824 (heading)
 Email us
@@ -1882,8 +1872,8 @@ Go to
 <!-- Part of: Go to Help & Support. -->
 Help & Support
 
-## t-a66fd708
-Pick a category — Billing, Chart accuracy, Technical issue, or Other — and send us a message.
+## t-8ec07608
+Pick a category (Billing, Chart accuracy, Technical issue or Other) and send us a message.
 
 ## t-ba20e10f
 Your ticket status and our replies appear on that same screen, so you can track it without leaving the app.
@@ -1909,20 +1899,20 @@ Open Settings → Payment History in the app to see every transaction. If a purc
 ## t-3dfeaa52 (button or link)
 My Kundli or a report looks incorrect
 
-## t-df183e90
-Double-check the birth date, time and place saved on the profile — small errors there (especially birth time) can shift the chart. If the details are correct and the reading still looks wrong, tell us which report and what looks off.
+## t-18671a2b
+Double-check the birth date, time and place saved on the profile. Small errors there, especially in the birth time, can shift the chart. If the details are correct and the reading still looks wrong, tell us which report and what looks off.
 
 ## t-00dbe8a2 (button or link)
 I need to change my birth details
 
-## t-99c68c7d
-Birth details can be edited from your profile inside the app. Charts and readings you already generated are not recalculated automatically — regenerate them after saving the correction.
+## t-b3b9550e
+Birth details can be edited from your profile inside the app. Charts and readings you already generated are not recalculated automatically, so regenerate them after saving the correction.
 
 ## t-2f2f0d3a (button or link)
 Can I use the app in my own language?
 
-## t-ec68e165
-Yes — Aroha supports multiple languages. Change it any time from Settings → Language.
+## t-fe34d678
+Yes. Aroha supports multiple languages. Change it any time from Settings → Language.
 
 ## t-534a5e06 (button or link)
 How do I delete my account or ask about my data?
@@ -2001,8 +1991,8 @@ The review checklist every article passes
 ## t-6a2834cb
 Factual accuracy: names, dates, calculations and classical references checked against sources.
 
-## t-7db84c94
-Traditional belief is worded as belief (“traditionally”, “in many traditions”), never as scientific fact.
+## t-4b7544b6
+Traditional belief is worded as belief (“traditionally”, “in many traditions”) and not as scientific fact.
 
 ## t-8d4b939a
 No medical, financial, legal or fear-based claims, and no promises of outcomes.
@@ -2016,8 +2006,8 @@ One clear search intent, answered in the opening, with no duplication of an exis
 ## t-bf5265b8
 Readability: plain language, defined terms, useful structure; no padding.
 
-## t-942d08e4
-Internal links to the pillar, 3–5 related articles and the relevant Aroha product.
+## t-fa43f4ce
+Internal links to the pillar, 3 to 5 related articles and the relevant Aroha product.
 
 ## t-66045876
 Images are original, properly licensed or AI-generated illustrations, with accurate alt text. Illustrations never stand in for a real event, person or product screen.
@@ -2067,8 +2057,8 @@ Delete Account
 <!-- Part of: Tap Delete Account and confirm. -->
 and confirm.
 
-## t-2aa8b8af
-This submits a deletion request, which we review before acting on it — normally within three to seven business days. Nothing is erased until then, so your account keeps working, though we stop sending you notifications and stop generating new readings from the moment you ask. You can also request a copy of everything we hold on you first — write to the Grievance Officer before confirming deletion.
+## t-6e619f64
+This submits a deletion request, which we review before acting on it, normally within three to seven business days. Nothing is erased until then, so your account keeps working, though we stop sending you notifications and stop generating new readings from the moment you ask. You can also request a copy of everything we hold on you first. Write to the Grievance Officer before confirming deletion.
 
 ## t-75e361aa (button or link)
 Open the app
@@ -2087,8 +2077,8 @@ from the address on your account, or include the mobile number you signed up wit
 ## t-7b6363bb (heading)
 What gets deleted
 
-## t-388fd0c7
-Your name, gender, email, date, time and place of birth, gotra, current location, relationship status, and every other identifying field on your profile are irreversibly overwritten as part of the request — along with the same fields on any birth profile you created for someone else.
+## t-c730d08d
+Your name, gender, email, date, time and place of birth, gotra, current location, relationship status, and every other identifying field on your profile are irreversibly overwritten as part of the request, along with the same fields on any birth profile you created for someone else.
 
 ## t-0653021e
 Your palm photographs, chat transcripts, saved chat memory, and feedback are destroyed outright rather than overwritten. Push notification tokens for your devices are revoked.
@@ -2096,11 +2086,11 @@ Your palm photographs, chat transcripts, saved chat memory, and feedback are des
 ## t-a4ec5af6 (heading)
 What is retained, and why
 
-## t-158bb0ba
-Your mobile number and authentication identifier stay on the emptied account shell. This is a security and anti-abuse measure rather than a use of your data. Mobile numbers in India are recycled to new subscribers, and keeping the shell is what guarantees that whoever is issued your number next gets a blank, freshly-onboardable account instead of inheriting anything of yours. It also means the one-time sign-up credit cannot be claimed again and again by deleting and re-registering the same number. If you sign in on that number later you return to the same emptied account — we will say so, and you will need to enter your details afresh.
+## t-6e43fb69
+Your mobile number and authentication identifier stay on the emptied account shell. This is a security and anti-abuse measure rather than a use of your data. Mobile numbers in India are recycled to new subscribers, and keeping the shell is what guarantees that whoever is issued your number next gets a blank, freshly-onboardable account instead of inheriting anything of yours. It also means the one-time sign-up credit cannot be claimed again and again by deleting and re-registering the same number. If you sign in on that number later you return to the same emptied account. We will say so, and you will need to enter your details afresh.
 
-## t-82d2a14b
-The consent audit log keeps a skeleton record — which consent, which document version, and when — because the DPDP Act requires us to be able to evidence the lawful basis on which we processed data. The IP address and device string on those records are scrubbed with everything else. Payment and tax records are kept for the period Indian law requires.
+## t-2cd14645
+The consent audit log keeps a skeleton record (which consent, which document version, and when) because the DPDP Act requires us to be able to evidence the lawful basis on which we processed data. The IP address and device string on those records are scrubbed with everything else. Payment and tax records are kept for the period Indian law requires.
 
 ## t-cc9e042d
 If you want the retained shell and consent skeleton removed as well, say so in an email to the Grievance Officer above and we will action it manually.
@@ -2108,8 +2098,8 @@ If you want the retained shell and consent skeleton removed as well, say so in a
 ---
 # Knowledge Hub
 
-## t-62e462a7 (heading)
-The wisdom behind Aroha
+## t-fd3ba7df (heading)
+Learn the traditions behind Aroha
 
 ## t-c89989dc
 Guides to Vedic astrology, Vastu Shastra and Hindu puja: what the traditions say, how their concepts work, and where practitioners disagree. Every article is written to answer one question well, in plain language.
@@ -2126,8 +2116,8 @@ Practical guides to Vastu Shastra: directions, the main entrance, bedroom, kitch
 ## t-103e1ef7 (button or link)
 Guides to Hindu puja: what it is, how to do a simple puja at home, Griha Pravesh, Vastu Shanti, vehicle and business pujas, samagri, mantras, aartis and booking a pandit.
 
-## t-b332de06
-One foundational guide for each path.
+## t-d92911e2
+One foundational guide each for astrology, Vastu and puja.
 
 ## t-91570fb5 (heading)
 All articles
@@ -2223,8 +2213,8 @@ Booking a pandit
 ## t-1f753806
 Aroha Puja · Coming soon
 
-## t-0dae1d30 (heading)
-A puja at home, done properly
+## t-3c7e3f79 (heading)
+A puja at home with a pandit you book
 
 ## t-64c5202d
 Aroha Puja will let you book a pandit for any puja at home, with the samagri included or arranged by your family. It is not open for bookings yet.
@@ -2367,8 +2357,8 @@ Timezone:
 ## t-a7f3ce53
 Check your birth details and try again.
 
-## t-2c5f5880
-Too many requests — try again in a minute.
+## t-9a3f5b9e
+Too many requests. Try again in a minute.
 
 ## t-9a3ea059
 Something went wrong. Please try again.
@@ -2391,8 +2381,8 @@ See houses, dashas & full reading →
 ## t-cf765512
 Sending…
 
-## t-cc1aa40e
-You've sent a few requests already — please wait a bit before trying again, or email us directly.
+## t-35afd5f4
+You've sent a few requests already. Please wait a bit before trying again, or email us directly.
 
 ## t-c0445819
 Something went wrong. Please try again or email us directly.
@@ -2400,20 +2390,20 @@ Something went wrong. Please try again or email us directly.
 ## t-6ad4aac0
 Could not reach the support service. Please try again or email us directly.
 
-## t-d94e73cf
-Thanks — we've got your message and will reply by email within a day or two.
+## t-dba558d5
+Thanks, we've got your message and will reply by email within a day or two.
 
-## t-87778399
-Get the app — faster & offline
+## t-361fd26d
+Get the app, faster and offline
 
-## t-32dee186
-iPhone app — coming soon
+## t-00a3365b
+iPhone app coming soon
 
 ## t-cd966cac
 No articles match that yet. Try a broader word, or clear the filter.
 
-## t-41ecd2d1
-Panchang is temporarily unavailable — check it in the app.
+## t-9c2b38d2
+Panchang is temporarily unavailable. Check it in the app.
 
 ## t-aa39fdd8
 Open Panchang in the app →

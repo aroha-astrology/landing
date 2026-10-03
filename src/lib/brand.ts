@@ -10,10 +10,10 @@ import { PLAY_STORE_URL, SITE_URL } from './links';
 
 export const BRAND = {
   name: 'Aroha',
-  tagline: 'Ancient wisdom. Modern guidance.',
-  promise: 'Your life. Your space. Your journey.',
+  tagline: 'Your birth chart and your home, read the Vedic way',
+  promise: 'Start with your free Kundli',
   description:
-    'Aroha is an Indian spiritual-technology ecosystem: Aroha Astrology for Vedic astrology and Aroha Vastu for understanding your home (both available now on Android, with iOS and a 3D Vastu experience coming soon), and Aroha Puja for booking pujas at home (coming soon).',
+    'Aroha is built in India for Vedic astrology, Vastu and puja. Aroha Astrology covers your birth chart and Aroha Vastu covers your home; both are available now on Android, with iOS and a 3D Vastu version coming soon. Aroha Puja, for booking pujas at home, is coming soon.',
   email: 'subir@arohaastrology.in',
   founder: 'Subir Dutta',
   city: 'Bengaluru',
@@ -99,7 +99,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     theme: 'Journey',
     realm: 'Ritual',
     summary:
-      'Aroha Puja is an upcoming premium service for booking a pandit to perform any puja at your home, with the choice of the pandit bringing all the samagri or your family arranging the items yourselves, priced accordingly.',
+      'Aroha Puja is a planned service for booking a pandit to perform any puja at your home. You choose whether the pandit brings all the samagri or your family arranges the items, and the price depends on that choice.',
     capabilities: [
       'Book a pandit for a puja at your home',
       'Every kind of puja, from Griha Pravesh to milestone ceremonies',

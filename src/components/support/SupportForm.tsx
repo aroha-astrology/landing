@@ -46,7 +46,7 @@ export function SupportForm() {
           | null;
         if (res.status === 429) {
           setError(
-            "You've sent a few requests already — please wait a bit before trying again, or email us directly.",
+            "You've sent a few requests already. Please wait a bit before trying again, or email us directly.",
           );
         } else {
           setError(data?.error?.message ?? 'Something went wrong. Please try again or email us directly.');
@@ -65,7 +65,7 @@ export function SupportForm() {
   if (status === 'success') {
     return (
       <p className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-ink-2">
-        Thanks — we&apos;ve got your message and will reply by email within a day or two.
+        Thanks, we&apos;ve got your message and will reply by email within a day or two.
       </p>
     );
   }

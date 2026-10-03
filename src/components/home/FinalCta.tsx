@@ -13,7 +13,7 @@ export function FinalCta() {
           {BRAND.promise}
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-astro-ink-2">
-          Begin where Aroha began: with your own birth chart. Vastu and puja will join you along the way.
+          Your Kundli is free. Aroha Vastu is already in the app, and Aroha Puja is coming soon.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <TrackedLink

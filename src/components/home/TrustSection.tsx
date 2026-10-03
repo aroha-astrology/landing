@@ -2,28 +2,28 @@ import Link from 'next/link';
 
 const PILLARS = [
   {
-    k: 'Calculated, not guessed',
+    k: 'Calculated from astronomy',
     v: 'Charts are computed with the Swiss Ephemeris and the Lahiri ayanamsa, India’s official sidereal standard, down to divisional charts D1 to D60.',
     link: { href: '/astrology#method', label: 'Our method' },
   },
   {
-    k: 'Honest about what it is',
-    v: 'Astrology, Vastu and puja are traditions of interpretation and practice. We present them respectfully and never as scientific certainty or a reason for fear.',
+    k: 'Plain about its limits',
+    v: 'Astrology, Vastu and puja are traditions of interpretation and practice. We describe them with respect, and we do not call them scientific certainty or use them to frighten anyone.',
     link: { href: '/editorial-standards', label: 'Editorial standards' },
   },
   {
-    k: 'In the language you think in',
+    k: 'Seven Indian languages',
     v: 'Aroha Astrology reads your chart and answers your questions in 7 Indian languages.',
     link: { href: '/astrology#languages', label: 'Languages' },
   },
   {
-    k: 'Your details stay yours',
+    k: 'Your birth details',
     v: 'The free web Kundli is computed and returned without being stored. What the app keeps, and how, is set out in our privacy policy.',
     link: { href: '/legal/privacy', label: 'Privacy policy' },
   },
 ];
 
-/** Why Aroha: four specific, checkable commitments rather than adjectives. */
+/** Why Aroha: four specific, checkable commitments. */
 export function TrustSection() {
   return (
     <section aria-labelledby="trust-title" className="bg-paper-sunk px-[clamp(20px,4vw,56px)] py-[clamp(72px,9vw,120px)]">
@@ -31,7 +31,7 @@ export function TrustSection() {
         <div className="reveal max-w-2xl">
           <p className="j-eyebrow text-[13px]">Why Aroha</p>
           <h2 id="trust-title" className="font-display mt-3 text-[clamp(34px,4.6vw,56px)] font-medium leading-[1.05] text-balance">
-            Built with care for something people hold dear
+            What we commit to
           </h2>
         </div>
         <ul className="mt-14 grid gap-px overflow-hidden rounded-[28px] border border-rule bg-rule md:grid-cols-2 lg:grid-cols-4">

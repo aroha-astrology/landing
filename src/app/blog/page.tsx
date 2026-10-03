@@ -64,7 +64,7 @@ export default function KnowledgeHubPage() {
 
         <header className="mt-10 max-w-3xl">
           <p className="j-eyebrow text-[13px]">Knowledge Hub</p>
-          <h1 className="font-display mt-3 text-[clamp(40px,6vw,72px)] font-medium leading-[1.04] text-balance">The wisdom behind Aroha</h1>
+          <h1 className="font-display mt-3 text-[clamp(40px,6vw,72px)] font-medium leading-[1.04] text-balance">Learn the traditions behind Aroha</h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-2 sm:text-xl">
             Guides to Vedic astrology, Vastu Shastra and Hindu puja: what the traditions say, how their concepts work, and where
             practitioners disagree. Every article is written to answer one question well, in plain language.
@@ -95,7 +95,7 @@ export default function KnowledgeHubPage() {
             <h2 id="start-here" className="font-display text-3xl font-medium sm:text-4xl">
               Start here
             </h2>
-            <p className="mt-2 text-ink-2">One foundational guide for each path.</p>
+            <p className="mt-2 text-ink-2">One foundational guide each for astrology, Vastu and puja.</p>
             <div className="mt-8 grid gap-8 md:grid-cols-3">
               {pillars.map((p) => (
                 <ArticleCard key={p.slug} article={toSummary(p)} />

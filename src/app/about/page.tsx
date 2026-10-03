@@ -12,7 +12,7 @@ const PAGE_URL = `${SITE_URL}/about`;
 export const metadata: Metadata = pageMetadata({
   title: 'About Aroha',
   description:
-    'What Aroha is and why it exists: Aroha Astrology and Aroha Vastu (available now), Aroha Puja (coming soon), and how we use AI responsibly.',
+    'What Aroha is and why it exists: Aroha Astrology and Aroha Vastu (available now), Aroha Puja (coming soon), and how we use AI.',
   path: '/about',
 });
 
@@ -37,15 +37,15 @@ export default function AboutPage() {
     <ProsePage
       crumb="About"
       eyebrow="About Aroha"
-      title="Ancient wisdom, made clear for how people live now"
-      lead="Aroha is an Indian spiritual-technology ecosystem. It starts with Vedic astrology, and is growing to include Vastu for the home and puja for the moments that mark a life."
+      title="Vedic astrology, Vastu and puja, explained plainly"
+      lead="Aroha is built in India for Vedic astrology, Vastu and puja. It started with astrology, added Vastu for the home, and is adding puja for the moments that mark a life."
     >
       <JsonLd data={jsonLd} />
 
       <h2>What Aroha is</h2>
       <p>
-        Aroha is one ecosystem with three paths. Each helps with a different part of the same question: how to live with more
-        understanding of yourself, your surroundings and your traditions.
+        Aroha has three products: astrology for understanding yourself, Vastu for understanding your home, and puja for the rituals
+        that mark your life.
       </p>
       <ul className="not-prose my-8 grid gap-4">
         {PRODUCT_ORDER.map((k) => (
@@ -69,26 +69,26 @@ export default function AboutPage() {
       </p>
       <p>
         The same gap exists for the home and for ritual. Vastu advice online is often contradictory, and arranging a puja at home
-        can mean finding a pandit by word of mouth and guessing what to buy. Aroha Vastu brings the same
-        clarity to the home today, and Aroha Puja is being built to do it for ritual.
+        can mean finding a pandit by word of mouth and guessing what to buy. Aroha Vastu
+        covers the home today, and Aroha Puja is being built for ritual.
       </p>
 
       <h2>How Aroha Astrology generates a reading</h2>
       <p>
         Every chart (planet positions, houses, the Dasha timeline, divisional charts) is computed from Swiss Ephemeris astronomical data
-        with the Lahiri ayanamsa, the standard used across professional astrology software, not a simplified or templated approximation.
+        with the Lahiri ayanamsa, the standard used across professional astrology software.
       </p>
       <p>
-        The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. It is
-        not written by a human astrologer reviewing each chart individually. We think that is worth stating plainly rather than leaving it
-        ambiguous. Our <Link href={LINKS.disclaimer}>full disclaimer</Link> covers this in legal detail.
+        The written explanation of what that chart means is AI-generated, grounded in classical Vedic astrology texts and principles. A
+        human astrologer does not review each chart individually. Our <Link href={LINKS.disclaimer}>full disclaimer</Link> covers this
+        in legal detail.
       </p>
 
       <h2>How we think about AI</h2>
       <p>
         We use AI where it helps someone understand their own chart: turning computed positions and classical rules into plain language,
-        and answering follow-up questions. We do not use it to claim certainty astrology doesn’t have, and we don’t present readings as
-        deterministic predictions. Articles in our <Link href="/blog">Knowledge Hub</Link> may be drafted with AI assistance, and none is
+        and answering follow-up questions. We do not present readings as predictions or claim a certainty that astrology does not have.
+        Articles in our <Link href="/blog">Knowledge Hub</Link> may be drafted with AI assistance, and none is
         published until a person has reviewed it against our <Link href="/editorial-standards">editorial standards</Link>.
       </p>
 
@@ -97,7 +97,7 @@ export default function AboutPage() {
         Vedic astrology is a traditional system of interpretation. Vastu Shastra is a traditional Indian system of architecture and spatial
         design. Puja is a form of Hindu worship whose practice varies by region, community and family. None is one settled method, and
         classical traditions (Parashari, Jaimini and KP in astrology, for example) sometimes disagree. We say so when they do, describe
-        beliefs as beliefs, and never present them as scientific fact or as a reason for fear.
+        beliefs as beliefs, and do not present them as scientific fact or use them to frighten anyone.
       </p>
 
       <h2>Who builds Aroha</h2>

@@ -66,7 +66,7 @@ export function Footer() {
             </Link>
             <p className="font-display mt-5 text-2xl text-night-ink">{BRAND.tagline}</p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-night-ink-2">
-              Aroha brings Vedic astrology, Vastu and puja together in one ecosystem. {PRODUCTS.astrology.name} is available now on Android.
+              {`Aroha brings Vedic astrology, Vastu and puja together. ${PRODUCTS.astrology.name} is available now on Android.`}
             </p>
             <AppStoreBadges align="start" className="mt-6" />
           </div>
@@ -79,7 +79,7 @@ export function Footer() {
           <span data-no-translate>
             © {new Date().getFullYear()} {BRAND.name} · {BRAND.city}, India
           </span>
-          <span>Astrology, Vastu and puja are traditional practices. Our guidance is for reflection, not a substitute for professional advice.</span>
+          <span>Astrology, Vastu and puja are traditional practices. Use our guidance for reflection, and ask a professional for advice.</span>
         </div>
       </div>
     </footer>

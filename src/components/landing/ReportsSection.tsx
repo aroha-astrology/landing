@@ -170,7 +170,7 @@ export function ReportsSection() {
       <SectionHeading
         eyebrow="Go deeper"
         title="14 reports, grounded in your real chart"
-        subtitle="Every report runs your own birth chart through a fixed set of classical calculations — not a generic template. A blurred preview is always free before you unlock the full reading."
+        subtitle="Every report runs your own birth chart through a fixed set of classical calculations. A blurred preview is always free before you unlock the full reading."
       />
 
       <div
@@ -200,7 +200,7 @@ export function ReportsSection() {
               </div>
               <ul className="space-y-2.5 text-[14px] leading-snug text-ink-muted">
                 <li>• Your next 12 months, month by month, with the best windows named</li>
-                <li>• Read the Krishnamurti Paddhati (KP) way: cusps, sub lords, dasha–bhukti–antara and transits</li>
+                <li>• Read the Krishnamurti Paddhati (KP) way: cusps, sub lords, dasha, bhukti, antara and transits</li>
                 <li>• Career, money, love, health, home, travel, studies and family</li>
                 <li>• Ask up to 3 questions of your own while ordering, and get them answered</li>
               </ul>

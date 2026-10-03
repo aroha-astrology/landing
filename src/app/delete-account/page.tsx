@@ -58,11 +58,11 @@ export default function DeleteAccountPage() {
               </li>
             </ol>
             <p className="mt-3 leading-relaxed text-ink-2">
-              This submits a deletion request, which we review before acting on it — normally
+              This submits a deletion request, which we review before acting on it, normally
               within three to seven business days. Nothing is erased until then, so your account
               keeps working, though we stop sending you notifications and stop generating new
               readings from the moment you ask. You can also request a copy of everything we hold
-              on you first — write to the Grievance Officer before confirming deletion.
+              on you first. Write to the Grievance Officer before confirming deletion.
             </p>
             <p className="mt-4">
               <Link href={PLAY_STORE_URL} className="text-accent-text hover:underline">
@@ -91,7 +91,7 @@ export default function DeleteAccountPage() {
             <p className="mt-3 leading-relaxed text-ink-2">
               Your name, gender, email, date, time and place of birth, gotra, current location,
               relationship status, and every other identifying field on your profile are
-              irreversibly overwritten as part of the request — along with the same fields on any
+              irreversibly overwritten as part of the request, along with the same fields on any
               birth profile you created for someone else.
             </p>
             <p className="mt-3 leading-relaxed text-ink-2">
@@ -110,12 +110,12 @@ export default function DeleteAccountPage() {
               guarantees that whoever is issued your number next gets a blank, freshly-onboardable
               account instead of inheriting anything of yours. It also means the one-time sign-up
               credit cannot be claimed again and again by deleting and re-registering the same
-              number. If you sign in on that number later you return to the same emptied account —
-              we will say so, and you will need to enter your details afresh.
+              number. If you sign in on that number later you return to the same emptied account.
+              We will say so, and you will need to enter your details afresh.
             </p>
             <p className="mt-3 leading-relaxed text-ink-2">
-              The consent audit log keeps a skeleton record — which consent, which document version,
-              and when — because the DPDP Act requires us to be able to evidence the lawful basis on
+              The consent audit log keeps a skeleton record (which consent, which document version,
+              and when) because the DPDP Act requires us to be able to evidence the lawful basis on
               which we processed data. The IP address and device string on those records are scrubbed
               with everything else. Payment and tax records are kept for the period Indian law
               requires.

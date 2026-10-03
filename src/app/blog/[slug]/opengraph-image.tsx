@@ -58,7 +58,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           </div>
           <div style={{ display: 'flex', marginTop: 22, fontSize: 58, fontFamily: 'Georgia, serif', color: '#F4EEDF', lineHeight: 1.12 }}>{title}</div>
           <div style={{ display: 'flex', marginTop: 34, fontSize: 22, fontFamily: 'Arial, sans-serif', color: '#A9AEC2' }}>
-            Ancient wisdom. Modern guidance. · arohaastrology.in
+            Your birth chart and your home, read the Vedic way · arohaastrology.in
           </div>
         </div>
       </div>

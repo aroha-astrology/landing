@@ -106,7 +106,7 @@ export function AppDownloadBanner() {
           Aroha Astrology
         </p>
         <p className="text-[11px] text-ink-muted leading-tight truncate">
-          {platform === 'android' ? 'Get the app — faster & offline' : 'iPhone app — coming soon'}
+          {platform === 'android' ? 'Get the app, faster and offline' : 'iPhone app coming soon'}
         </p>
       </div>
 

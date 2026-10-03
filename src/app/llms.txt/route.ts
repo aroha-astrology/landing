@@ -22,9 +22,9 @@ export function GET() {
   lines.push('## Products', '');
   for (const k of PRODUCT_ORDER) {
     const p = PRODUCTS[k];
-    lines.push(`- [${p.name}](${SITE_URL}${p.path}) — ${statusLabel(p.status)}. ${p.summary}`);
+    lines.push(`- [${p.name}](${SITE_URL}${p.path}): ${statusLabel(p.status)}. ${p.summary}`);
   }
-  lines.push(`- [${PRODUCTS.astrology.name} on Google Play](${PLAY_STORE_URL}) — Android app. iOS: coming soon.`, '');
+  lines.push(`- [${PRODUCTS.astrology.name} on Google Play](${PLAY_STORE_URL}): Android app. iOS: coming soon.`, '');
 
   lines.push('## Free tools', '');
   lines.push(`- [Free Kundli](${SITE_URL}/kundli): Vedic birth chart (Lagna, houses, planets) from date, time and place of birth.`);
@@ -41,12 +41,12 @@ export function GET() {
   }
 
   lines.push('## About and policies', '');
-  lines.push(`- [About Aroha](${SITE_URL}/about): what Aroha is, how readings are generated (Swiss Ephemeris computation; AI-written explanations grounded in classical texts) and responsible use of AI.`);
+  lines.push(`- [About Aroha](${SITE_URL}/about): what Aroha is, how readings are generated (Swiss Ephemeris computation, with AI-written explanations grounded in classical texts) and how Aroha uses AI.`);
   lines.push(`- [Editorial standards](${SITE_URL}/editorial-standards): how articles are researched, reviewed and corrected.`);
   lines.push(`- [Support and contact](${SITE_URL}/support)`, '');
 
   lines.push('## Notes', '');
-  lines.push('- Vedic astrology is a traditional system of interpretation; Vastu Shastra is a traditional system of architecture and spatial design; puja practice varies by region and community. Aroha presents them as traditions, not as scientific fact or prediction.');
+  lines.push('- Vedic astrology is a traditional system of interpretation; Vastu Shastra is a traditional system of architecture and spatial design; puja practice varies by region and community. Aroha presents them as traditions and does not claim scientific fact or prediction.');
   lines.push('- Aroha Astrology and Aroha Vastu are available on Android (Aroha Vastu inside the Aroha Astrology app); iOS and a 3D version of Aroha Vastu are coming soon. Aroha Puja is not yet available.');
 
   return new Response(lines.join('\n') + '\n', {

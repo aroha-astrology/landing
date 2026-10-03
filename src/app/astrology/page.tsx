@@ -109,7 +109,7 @@ export default function AstrologyPage() {
       <section aria-labelledby="tools-title" className="bg-paper px-[clamp(20px,4vw,56px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1180px]">
           <h2 id="tools-title" className="font-display text-3xl font-medium sm:text-4xl">
-            Free on the web, right now
+            Free on the web
           </h2>
           <ul className="mt-8 grid gap-4 md:grid-cols-3">
             {TOOLS.map((t, i) => (

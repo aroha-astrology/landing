@@ -19,7 +19,7 @@ export function KnowledgeSection() {
           <div className="max-w-2xl">
             <p className="j-eyebrow text-[13px]">Knowledge Hub</p>
             <h2 id="knowledge-title" className="font-display mt-3 text-[clamp(34px,4.6vw,56px)] font-medium leading-[1.05] text-balance">
-              Explore the wisdom behind Aroha
+              Read about the traditions behind Aroha
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-ink-2">
               Clear guides to Vedic astrology, Vastu Shastra and puja: what the traditions say, and where they differ.

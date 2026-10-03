@@ -75,8 +75,8 @@ export default function VastuPage() {
       <JsonLd data={jsonLd} />
       <ProductHero
         product={product}
-        title="From the cosmos to your space"
-        lead="Aroha Vastu reads the home you live in through Vastu Shastra. Draw your floor plan, see every room judged by its direction, and get a Vastu score for your home, room by room."
+        title="Your home, read through Vastu Shastra"
+        lead="Draw your floor plan, see every room judged by its direction, and get a Vastu score for your home, room by room."
         visual={<VastuGlyph className="pointer-events-none absolute right-[-10%] top-1/2 -z-10 h-[110%] w-auto -translate-y-1/2 text-vastu-clay opacity-[0.12]" />}
       >
         <AppCTA variant="solid" location="vastu_hero" className="!bg-vastu-ink !px-7 !py-3.5 !text-[15px] !text-vastu-sand hover:!bg-vastu-clay">
@@ -127,7 +127,7 @@ export default function VastuPage() {
           <div className="reveal">
             <p className="j-eyebrow text-[13px]">The tradition</p>
             <h2 id="what-vastu" className="font-display mt-3 text-[clamp(30px,4vw,48px)] font-medium leading-[1.08]">
-              What Vastu Shastra is, and what it isn’t
+              What Vastu Shastra is
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-ink-2">
               Vastu Shastra is a traditional Indian system of architecture and spatial design. Its classical texts describe how a building
@@ -173,8 +173,8 @@ export default function VastuPage() {
             Aroha Vastu in 3D
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-vastu-ink-2">
-            The next version of Aroha Vastu shows your home as a space, not just a drawing. It isn’t available yet, and we haven’t announced a
-            date.
+            The next version of Aroha Vastu will show your home as a space you can walk through. It isn’t available yet, and we haven’t
+            announced a date.
           </p>
           <ul className="mt-8 grid gap-3 md:grid-cols-3">
             {product.upcoming?.map((u) => (

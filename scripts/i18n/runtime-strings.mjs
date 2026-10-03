@@ -22,7 +22,7 @@ const FORMS = [
   'Select a city from the list.',
   'Timezone:',
   'Check your birth details and try again.',
-  'Too many requests — try again in a minute.',
+  'Too many requests. Try again in a minute.',
   'Something went wrong. Please try again.',
   "Couldn't locate that city. Try a nearby major city instead.",
   'Your Chandra Rashi',
@@ -31,17 +31,17 @@ const FORMS = [
   'See houses, dashas & full reading →',
   // SupportForm
   'Sending…',
-  "You've sent a few requests already — please wait a bit before trying again, or email us directly.",
+  "You've sent a few requests already. Please wait a bit before trying again, or email us directly.",
   'Something went wrong. Please try again or email us directly.',
   'Could not reach the support service. Please try again or email us directly.',
-  "Thanks — we've got your message and will reply by email within a day or two.",
+  "Thanks, we've got your message and will reply by email within a day or two.",
   // AppDownloadBanner (phones only)
-  'Get the app — faster & offline',
-  'iPhone app — coming soon',
+  'Get the app, faster and offline',
+  'iPhone app coming soon',
   // KnowledgeHubSearch
   'No articles match that yet. Try a broader word, or clear the filter.',
   // PanchangSection, when the backend is unreachable
-  'Panchang is temporarily unavailable — check it in the app.',
+  'Panchang is temporarily unavailable. Check it in the app.',
   'Open Panchang in the app →',
   // HeroVisual planet card
   'Click any planet to see what it governs',

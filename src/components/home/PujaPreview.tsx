@@ -45,11 +45,11 @@ export function PujaPreview() {
             <StatusBadge status={p.status} />
           </div>
           <h2 id="puja-title" className="font-display mt-4 text-[clamp(34px,4.6vw,58px)] font-medium leading-[1.05] text-balance">
-            From your space to your spiritual journey
+            Pujas at home, with a pandit you book
           </h2>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-puja-ink/80">
-            A new home, a new vehicle, a child’s first ceremony, a festival: the moments families mark with a puja. Aroha Puja will be a premium
-            way to have one performed properly at home, for every kind of puja.
+            A new home, a new vehicle, a child’s first ceremony, a festival: families mark these with a puja. Aroha Puja will let you book a
+            pandit to perform any of them at your home.
           </p>
           <ol className="mt-9 grid gap-4 sm:grid-cols-3">
             {MODEL.map((m, i) => (
