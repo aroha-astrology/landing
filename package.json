@@ -11,6 +11,8 @@
     "content:check": "node scripts/content/check.mjs",
     "content:publish": "node scripts/content/publish.mjs",
     "i18n:export": "node --no-warnings scripts/i18n/export.mjs",
+    "i18n:import": "node --no-warnings scripts/i18n/import.mjs",
+    "i18n:check": "node --no-warnings scripts/i18n/check.mjs",
     "planets:art": "node scripts/planets/generate.mjs"
   },
   "dependencies": {

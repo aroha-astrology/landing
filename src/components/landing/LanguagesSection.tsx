@@ -8,7 +8,7 @@ import { LANGUAGES } from '@/components/LanguageSwitcher';
 export function LanguagesSection() {
   return (
     <Section tone="sunk" id="languages">
-      <SectionHeading eyebrow="However you think" title={`Available in ${LANGUAGES.length} languages`} />
+      <SectionHeading eyebrow="However you think" title={`This site is available in ${LANGUAGES.length} languages`} />
 
       <div
         className="mt-12 flex flex-wrap justify-center gap-3"

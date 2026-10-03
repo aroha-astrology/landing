@@ -4,21 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '@/store/useStore';
 
-type LangOption = { code: string; label: string; native: string };
+import { AVAILABLE_LANGUAGES as LANGUAGES } from '@/lib/i18n/locale';
 
-// Only languages with full LANDING_DICT coverage for the current homepage copy
-// belong here — bn/ta/te/mr/gu/kn/ml/pa/de were listed but silently no-op on
-// this page (their dictionary entries are either missing or leftover from an
-// older redesign), which read as a broken switcher rather than an untranslated
-// one. Re-add a code here only once its LANDING_DICT block covers this page's
-// actual strings (see src/lib/i18n/dictionary.ts's "2026-07-22 redesign
-// additions" sections for hi/es/fr as the template).
-export const LANGUAGES: LangOption[] = [
-  { code: 'en', label: 'English', native: 'English' },
-  { code: 'hi', label: 'Hindi', native: 'हिन्दी' },
-  { code: 'es', label: 'Spanish', native: 'Español' },
-  { code: 'fr', label: 'French', native: 'Français' },
-];
+export { LANGUAGES };
 
 export function LanguageSwitcher() {
   const language = useStore((s) => s.language);

@@ -204,7 +204,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <TableOfContents headings={post.headings} />
             </div>
             <div className="min-w-0">
-              <div id="article-body" className="article-body">
+              <div id="article-body" className="article-body" data-no-translate>
                 <MDXRemote source={renderableContent(post)} components={mdxComponents} options={MDX_OPTIONS} />
               </div>
 

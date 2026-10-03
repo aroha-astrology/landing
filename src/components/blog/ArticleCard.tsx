@@ -86,6 +86,7 @@ export function ArticleCard({
           {article.status === 'review' && <span className="rounded-pill border border-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-accent-text">In review</span>}
         </div>
         <Heading
+          data-no-translate
           className={`font-display mt-2.5 leading-snug text-balance ${dark ? 'text-night-ink' : 'text-ink'} ${
             feature ? 'text-2xl sm:text-3xl' : compact ? 'text-base' : 'text-xl'
           }`}
@@ -95,7 +96,7 @@ export function ArticleCard({
           </Link>
         </Heading>
         {!compact && (
-          <p className={`mt-2.5 line-clamp-3 text-[15px] leading-relaxed ${dark ? 'text-night-ink-2' : 'text-ink-2'}`}>{article.description}</p>
+          <p data-no-translate className={`mt-2.5 line-clamp-3 text-[15px] leading-relaxed ${dark ? 'text-night-ink-2' : 'text-ink-2'}`}>{article.description}</p>
         )}
       </div>
     </article>

@@ -1,11 +1,12 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useStore } from '@/store/useStore';
-import { lookupDict } from './dictionary';
+import { loadLocale, lookup } from './locale';
 
 /**
  * Translation helper for strings the DOM-walking TranslationProvider can't
- * reach — chiefly element attributes like input `placeholder` and `aria-label`
+ * reach: element attributes like input `placeholder` and `aria-label`
  * (the provider only swaps visible text nodes and skips INPUT tags).
  *
  * For visible JSX text, just write English; the provider translates it live.
@@ -15,6 +16,9 @@ import { lookupDict } from './dictionary';
  */
 export function useT() {
   const language = useStore((s) => s.language);
-  return (en: string): string =>
-    language === 'en' ? en : lookupDict(en, language) ?? en;
+  const [, setLoaded] = useState(0);
+  useEffect(() => {
+    if (language !== 'en') loadLocale(language).then(() => setLoaded((n) => n + 1));
+  }, [language]);
+  return (en: string): string => (language === 'en' ? en : lookup(en, language) ?? en);
 }

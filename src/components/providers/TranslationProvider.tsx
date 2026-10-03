@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, type ReactNode } from 'react';
 import { useStore } from '@/store/useStore';
-import { lookupDict } from '@/lib/i18n/dictionary';
+import { isAvailable, loadLocale, lookup, normalise } from '@/lib/i18n/locale';
 
-// Dictionary-only port of the production TranslationProvider.
-// It walks the DOM, swapping translatable text nodes using DICT (keyed by the
-// exact English source). Strings missing from the dictionary keep their English
-// value — there is no /api/translate fallback in this standalone landing.
+// Walks the DOM and swaps each text node using the language's locale file,
+// keyed by the English text with whitespace collapsed (see scripts/i18n).
+// A string with no entry stays English. Run `npm run i18n:check` after a
+// build to list any that are missing.
 
 const SKIP_TAGS = new Set([
   'SCRIPT', 'STYLE', 'NOSCRIPT', 'CODE', 'PRE', 'SVG', 'PATH', 'CIRCLE', 'LINE', 'POLYLINE', 'RECT', 'TEXTAREA', 'INPUT',
@@ -97,7 +97,7 @@ function applyLanguage(lang: string) {
     const orig = (n[NODE_ORIG] ?? '').trim();
     if (!orig) continue;
 
-    const fromDict = lookupDict(orig, lang);
+    const fromDict = lookup(normalise(orig), lang);
     if (fromDict) {
       applySingle(n, fromDict, lang);
     } else if (n[NODE_LANG] !== 'en' && n[NODE_ORIG] != null) {
@@ -115,7 +115,14 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = language;
     document.cookie = `i18n-lang=${encodeURIComponent(language)}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
 
-    const run = () => applyLanguage(language);
+    // A saved language the site no longer offers falls back to English.
+    if (language !== 'en' && !isAvailable(language)) useStore.getState().setLanguage('en');
+
+    let cancelled = false;
+    const run = () => {
+      if (language === 'en') return applyLanguage(language);
+      loadLocale(language).then(() => !cancelled && applyLanguage(language));
+    };
     const initial = setTimeout(run, 50);
 
     // Re-translate when React re-renders new text into the tree.
@@ -124,9 +131,10 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
       if (timer) clearTimeout(timer);
       timer = setTimeout(run, 300);
     });
-    observer.observe(document.body, { childList: true, subtree: true, characterData: false });
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
 
     return () => {
+      cancelled = true;
       clearTimeout(initial);
       if (timer) clearTimeout(timer);
       observer.disconnect();

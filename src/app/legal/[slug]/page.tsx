@@ -63,7 +63,7 @@ export default async function LegalDocPage({ params }: PageProps) {
 
   return (
     <Section tone="paper">
-      <article className="mx-auto max-w-3xl">
+      <article className="mx-auto max-w-3xl" data-no-translate>
         <header className="mb-10">
           <p className="text-sm font-medium uppercase tracking-[0.1em] text-ink-muted">Legal</p>
           <h1 className="font-display mt-3 text-3xl font-medium leading-[1.15] text-ink sm:text-4xl md:text-5xl">
