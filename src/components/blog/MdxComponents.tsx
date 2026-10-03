@@ -1,6 +1,8 @@
-import { Children, isValidElement, type HTMLAttributes, type ImgHTMLAttributes, type ReactNode } from 'react';
+import { Children, isValidElement, type AnchorHTMLAttributes, type HTMLAttributes, type ImgHTMLAttributes, type ReactNode } from 'react';
 import Image from 'next/image';
 import { slugifyHeading } from '@/lib/slug';
+import { AppCTA } from '@/components/ui/AppCTA';
+import { PLAY_STORE_URL } from '@/lib/links';
 import {
   Checklist,
   DashaTimeline,
@@ -145,6 +147,18 @@ export const mdxComponents = {
   PanchangLimbs,
   h2: H2,
   h3: H3,
+  // A bare Play Store link in an article opens the Android / Web / iOS picker
+  // instead, so readers on any device have somewhere to go.
+  a: ({ href, children, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement>) =>
+    href === PLAY_STORE_URL ? (
+      <AppCTA variant="link" location="article_inline">
+        {children}
+      </AppCTA>
+    ) : (
+      <a href={href} {...rest}>
+        {children}
+      </a>
+    ),
   table: (props: HTMLAttributes<HTMLTableElement>) => (
     <div className="table-wrap" role="region" aria-label="Table" tabIndex={0}>
       <table {...props} />

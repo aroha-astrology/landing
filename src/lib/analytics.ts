@@ -14,7 +14,7 @@ export type AnalyticsEvent =
   | { name: 'cta_click'; props: { cta: string; location: string; product?: string } }
   | { name: 'blog_category_click'; props: { category: string; location: string } }
   | { name: 'article_scroll_depth'; props: { slug: string; category: string; depth: 25 | 50 | 75 | 100 } }
-  | { name: 'app_store_click'; props: { store: 'google_play'; location: string } };
+  | { name: 'app_store_click'; props: { store: 'google_play' | 'web'; location: string } };
 
 export function track<N extends AnalyticsEvent['name']>(
   name: N,

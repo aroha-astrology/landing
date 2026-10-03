@@ -9,9 +9,12 @@
 export const SITE_URL = 'https://www.arohaastrology.in';
 
 // Not live on the App Store yet — every "get the app" CTA on the site opens
-// the AppCTA picker (Android via this link, iOS marked Coming soon) rather
-// than linking straight into the web app. See src/components/ui/AppCTA.tsx.
+// the AppCTA picker: Android (this link), Web (WEB_APP_URL) and iOS marked
+// Coming soon. See src/components/ui/AppCTA.tsx.
 export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.aroha.astrology';
+
+// The full app in a browser — same account and data as the Android app.
+export const WEB_APP_URL = 'https://app.arohaastrology.in';
 
 export const LINKS = {
   // Legal documents are served by THIS site, not the app. These are the URLs

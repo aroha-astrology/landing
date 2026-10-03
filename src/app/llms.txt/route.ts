@@ -24,7 +24,7 @@ export function GET() {
     const p = PRODUCTS[k];
     lines.push(`- [${p.name}](${SITE_URL}${p.path}): ${statusLabel(p.status)}. ${p.summary}`);
   }
-  lines.push(`- [${PRODUCTS.astrology.name} on Google Play](${PLAY_STORE_URL}): Android app. iOS: coming soon.`, '');
+  lines.push(`- [${PRODUCTS.astrology.name} on Google Play](${PLAY_STORE_URL}): Android app. Web app: https://app.arohaastrology.in. iOS: coming soon.`, '');
 
   lines.push('## Free tools', '');
   lines.push(`- [Free Kundli](${SITE_URL}/kundli): Vedic birth chart (Lagna, houses, planets) from date, time and place of birth.`);
@@ -47,7 +47,7 @@ export function GET() {
 
   lines.push('## Notes', '');
   lines.push('- Vedic astrology is a traditional system of interpretation; Vastu Shastra is a traditional system of architecture and spatial design; puja practice varies by region and community. Aroha presents them as traditions and does not claim scientific fact or prediction.');
-  lines.push('- Aroha Astrology and Aroha Vastu are available on Android (Aroha Vastu inside the Aroha Astrology app); iOS and a 3D version of Aroha Vastu are coming soon. Aroha Puja is not yet available.');
+  lines.push('- Aroha Astrology and Aroha Vastu are available on Android and the web (Aroha Vastu inside the Aroha Astrology app); iOS and a 3D version of Aroha Vastu are coming soon. Aroha Puja is not yet available.');
 
   return new Response(lines.join('\n') + '\n', {
     headers: { 'content-type': 'text/plain; charset=utf-8', 'cache-control': 'public, max-age=3600' },

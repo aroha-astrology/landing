@@ -21,7 +21,7 @@ export function AppExperience() {
               <Link href="/astrology#reports" className="text-night-ink underline underline-offset-4">
                 14 personalised reports
               </Link>
-              , from marriage and Kundli Milan to wealth and career. Available on Android; iOS is coming soon.
+              , from marriage and Kundli Milan to wealth and career. Available on Android and the web; iOS is coming soon.
             </p>
           </div>
           <AppStoreBadges align="start" />

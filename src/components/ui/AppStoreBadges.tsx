@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { PLAY_STORE_URL } from '@/lib/links';
+import { PLAY_STORE_URL, WEB_APP_URL } from '@/lib/links';
 
 /**
  * The official store badges, served locally from /public/brand — Google's
@@ -14,7 +14,7 @@ import { PLAY_STORE_URL } from '@/lib/links';
  * height, and the clear space Google's guidelines require is reproduced with
  * the flex `gap` instead.
  *
- * Android points at the live listing. There is no iOS listing yet (see
+ * Android points at the live listing, Web opens the app in a browser. There is no iOS listing yet (see
  * links.ts), so the App Store badge is deliberately inert — dimmed, not an
  * anchor, and tagged "Coming soon" so nobody taps through to a dead page.
  */
@@ -54,6 +54,19 @@ export function AppStoreBadges({
           height={BADGE_H}
           style={{ height: BADGE_H, width: 'auto' }}
         />
+      </a>
+
+      <a
+        href={WEB_APP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ height: BADGE_H }}
+        className="inline-flex items-center gap-2 rounded-lg border border-ink/30 bg-ink px-4 text-left text-paper transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      >
+        <span className="flex flex-col leading-tight">
+          <span className="text-[10px] uppercase tracking-wide opacity-80">Use on the</span>
+          <span className="text-[15px] font-semibold">Web</span>
+        </span>
       </a>
 
       <div className="relative inline-flex">

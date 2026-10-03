@@ -49,7 +49,7 @@ const FAQS = [
   },
   {
     question: 'Is it available on iPhone?',
-    answer: 'Aroha Astrology is available on Android through Google Play. The iOS app is coming soon.',
+    answer: 'Aroha Astrology is available on Android through Google Play and on the web at app.arohaastrology.in. The iOS app is coming soon.',
   },
   {
     question: 'Does Aroha predict the future?',

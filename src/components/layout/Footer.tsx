@@ -66,7 +66,7 @@ export function Footer() {
             </Link>
             <p className="font-display mt-5 text-2xl text-night-ink">{BRAND.tagline}</p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-night-ink-2">
-              {`Aroha brings Vedic astrology, Vastu and puja together. ${PRODUCTS.astrology.name} is available now on Android.`}
+              {`Aroha brings Vedic astrology, Vastu and puja together. ${PRODUCTS.astrology.name} is available now on Android and the web.`}
             </p>
             <AppStoreBadges align="start" className="mt-6" />
           </div>
