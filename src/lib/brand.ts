@@ -1,4 +1,4 @@
-import { PLAY_STORE_URL, SITE_URL } from './links';
+import { PLAY_STORE_URL, SITE_URL, WEB_APP_URL } from './links';
 
 /**
  * The Aroha ecosystem, declared once. Every place that states what Aroha is
@@ -124,6 +124,7 @@ export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const productBrandId = (key: ProductKey) => `${SITE_URL}/${key}#brand`;
 export const ASTROLOGY_APP_ID = `${SITE_URL}/#app`;
+export const ASTROLOGY_WEB_APP_ID = `${SITE_URL}/#webapp`;
 
 const AVAILABLE_LANGUAGES = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'es', 'fr', 'de'];
 
@@ -210,6 +211,24 @@ export function astrologyAppNode() {
       reviewCount: '19',
       bestRating: '5',
     },
+    featureList: PRODUCTS.astrology.capabilities,
+    inLanguage: AVAILABLE_LANGUAGES,
+  };
+}
+
+/** The same app in a browser. Emitted next to the Android entity. No rating: the Play reviews belong to the Android app. */
+export function astrologyWebAppNode() {
+  return {
+    '@type': 'WebApplication',
+    '@id': ASTROLOGY_WEB_APP_ID,
+    name: PRODUCTS.astrology.name,
+    url: WEB_APP_URL,
+    applicationCategory: 'LifestyleApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript. Works in current Chrome, Safari, Edge and Firefox.',
+    brand: { '@id': productBrandId('astrology') },
+    publisher: { '@id': ORG_ID },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR', url: WEB_APP_URL },
     featureList: PRODUCTS.astrology.capabilities,
     inLanguage: AVAILABLE_LANGUAGES,
   };

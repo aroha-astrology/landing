@@ -15,7 +15,14 @@ import { AskSection } from '@/components/home/AskSection';
 import { ArticleCard, toSummary } from '@/components/blog/ArticleCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getFeaturedPosts, getPostsByCategory } from '@/lib/blog';
-import { PRODUCTS, WEBSITE_ID, astrologyAppNode, breadcrumbNode, productBrandId } from '@/lib/brand';
+import {
+  PRODUCTS,
+  WEBSITE_ID,
+  astrologyAppNode,
+  astrologyWebAppNode,
+  breadcrumbNode,
+  productBrandId,
+} from '@/lib/brand';
 import { SITE_URL } from '@/lib/links';
 import Link from 'next/link';
 
@@ -77,6 +84,7 @@ export default function AstrologyPage() {
       },
       breadcrumbNode(PAGE_URL, [{ name: 'Aroha Astrology', url: PAGE_URL }]),
       astrologyAppNode(),
+      astrologyWebAppNode(),
     ],
   };
   return (

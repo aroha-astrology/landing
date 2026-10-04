@@ -1,6 +1,13 @@
 import { LandingPage } from '@/components/landing/LandingPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { ORG_ID, WEBSITE_ID, astrologyAppNode, breadcrumbNode, productBrandId } from '@/lib/brand';
+import {
+  ORG_ID,
+  WEBSITE_ID,
+  astrologyAppNode,
+  astrologyWebAppNode,
+  breadcrumbNode,
+  productBrandId,
+} from '@/lib/brand';
 import { SITE_URL } from '@/lib/links';
 
 // ISR: the Panchang section is live data, refreshed hourly.
@@ -22,6 +29,7 @@ const jsonLd = {
     },
     breadcrumbNode(`${SITE_URL}/`, []),
     astrologyAppNode(),
+    astrologyWebAppNode(),
   ],
 };
 
