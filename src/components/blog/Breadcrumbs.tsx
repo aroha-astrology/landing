@@ -17,7 +17,7 @@ export function Breadcrumbs({ items, tone = 'paper' }: { items: Crumb[]; tone?: 
                   {c.name}
                 </Link>
               ) : (
-                <span aria-current={last ? 'page' : undefined} className={`line-clamp-1 ${dark ? 'text-night-ink' : 'text-ink-2'}`}>
+                <span data-i18n={last ? 'crumb' : undefined} aria-current={last ? 'page' : undefined} className={`line-clamp-1 ${dark ? 'text-night-ink' : 'text-ink-2'}`}>
                   {c.name}
                 </span>
               )}

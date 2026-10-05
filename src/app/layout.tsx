@@ -13,6 +13,7 @@ import {
 } from 'next/font/google';
 import './globals.css';
 import { TranslationProvider } from '@/components/providers/TranslationProvider';
+import { BlogTranslator } from '@/components/blog/BlogTranslator';
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import { AppDownloadBanner } from '@/components/landing/AppDownloadBanner';
@@ -204,6 +205,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </SmoothScrollProvider>
             <Footer />
             <RevealObserver />
+            <BlogTranslator />
           </TranslationProvider>
         </PostHogProvider>
       </body>

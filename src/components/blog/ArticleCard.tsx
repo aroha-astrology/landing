@@ -58,7 +58,7 @@ export function ArticleCard({
   const feature = variant === 'feature';
   const compact = variant === 'compact';
   return (
-    <article className={`group relative flex h-full ${compact ? 'flex-row gap-4' : 'flex-col'}`}>
+    <article data-article={article.slug} className={`group relative flex h-full ${compact ? 'flex-row gap-4' : 'flex-col'}`}>
       {article.hero && (
         <div
           className={`relative shrink-0 overflow-hidden rounded-2xl border ${dark ? 'border-night-rule' : 'border-rule'} bg-night ${
@@ -91,12 +91,12 @@ export function ArticleCard({
             feature ? 'text-2xl sm:text-3xl' : compact ? 'text-base' : 'text-xl'
           }`}
         >
-          <Link href={`/blog/${article.slug}`} className="after:absolute after:inset-0 after:content-[''] group-hover:underline decoration-1 underline-offset-4">
+          <Link data-i18n-card="title" href={`/blog/${article.slug}`} className="after:absolute after:inset-0 after:content-[''] group-hover:underline decoration-1 underline-offset-4">
             {article.title}
           </Link>
         </Heading>
         {!compact && (
-          <p data-no-translate className={`mt-2.5 line-clamp-3 text-[15px] leading-relaxed ${dark ? 'text-night-ink-2' : 'text-ink-2'}`}>{article.description}</p>
+          <p data-i18n-card="desc" data-no-translate className={`mt-2.5 line-clamp-3 text-[15px] leading-relaxed ${dark ? 'text-night-ink-2' : 'text-ink-2'}`}>{article.description}</p>
         )}
       </div>
     </article>

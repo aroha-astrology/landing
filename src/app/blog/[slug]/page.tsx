@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import remarkGfm from 'remark-gfm';
+import { MDX_OPTIONS } from '@/lib/mdx-options';
 import { mdxComponents } from '@/components/blog/MdxComponents';
 import { Breadcrumbs } from '@/components/blog/Breadcrumbs';
 import { CategoryChip } from '@/components/blog/CategoryChip';
@@ -33,11 +33,6 @@ const LEGACY_AUTHOR = 'Yogi Baba';
 const TEAM_AUTHOR = 'Aroha Editorial Team';
 
 export const dynamicParams = false;
-
-// Articles are our own reviewed files, so plain JS expressions in MDX props
-// (e.g. <Checklist items={[...]} />) are allowed; blockDangerousJS still
-// strips eval/Function-style constructs.
-const MDX_OPTIONS = { blockJS: false, blockDangerousJS: true, mdxOptions: { remarkPlugins: [remarkGfm] } };
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -177,8 +172,8 @@ export default async function BlogPostPage({ params }: PageProps) {
               </Link>
               <span data-no-translate>{post.readingTime} min read</span>
             </div>
-            <h1 className="font-display mt-5 text-[clamp(34px,5vw,54px)] font-medium leading-[1.08] text-balance">{fm.title}</h1>
-            <p className="mt-5 text-lg leading-relaxed text-ink-2 sm:text-xl">{fm.description}</p>
+            <h1 data-i18n="title" data-no-translate className="font-display mt-5 text-[clamp(34px,5vw,54px)] font-medium leading-[1.08] text-balance">{fm.title}</h1>
+            <p data-i18n="desc" data-no-translate className="mt-5 text-lg leading-relaxed text-ink-2 sm:text-xl">{fm.description}</p>
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-rule pt-5 text-sm text-ink-muted">
               <span>
                 By <span className="font-semibold text-ink">{author}</span>
@@ -197,7 +192,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </header>
 
           {post.hero && (
-            <figure className="mx-auto mt-10 max-w-[1080px]">
+            <figure data-i18n="hero" className="mx-auto mt-10 max-w-[1080px]">
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-rule bg-night">
                 {/* Many heroes carry small lettering, which the default quality (75) smears. */}
                 <Image src={post.hero} alt={fm.heroAlt ?? ''} fill priority quality={90} sizes="(min-width: 1180px) 1080px, 100vw" className="object-cover" />
@@ -206,18 +201,18 @@ export default async function BlogPostPage({ params }: PageProps) {
           )}
 
           <div className="mx-auto mt-12 grid max-w-[1080px] gap-10 lg:grid-cols-[220px_minmax(0,760px)] lg:gap-[60px]">
-            <div className="lg:sticky lg:top-28 lg:self-start">
+            <div data-i18n-toc className="lg:sticky lg:top-28 lg:self-start">
               <TableOfContents headings={post.headings} />
             </div>
             <div className="min-w-0">
-              <div id="article-body" className="article-body" data-no-translate>
+              <div id="article-body" className="article-body" data-slug={slug} data-no-translate>
                 <MDXRemote source={renderableContent(post)} components={mdxComponents} options={MDX_OPTIONS} />
               </div>
 
               {showFaq && (
                 <section aria-labelledby="faq" className="mt-16">
                   <h2 id="faq" className="font-display text-[clamp(26px,3vw,32px)] font-medium">Common questions</h2>
-                  <div className="mt-4">
+                  <div id="faq-list" data-no-translate className="mt-4">
                     <Accordion items={fm.faqs!} />
                   </div>
                 </section>
