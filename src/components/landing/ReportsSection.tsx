@@ -60,7 +60,7 @@ const REPORTS: Report[] = [
   {
     key: 'progeny',
     title: 'Progeny Report',
-    fromRupees: 99,
+    fromRupees: 101,
     questions: [
       'Will we have children, and what does each chart show?',
       'What does my D7 (Saptamsha) chart reveal?',
@@ -80,7 +80,7 @@ const REPORTS: Report[] = [
   {
     key: 'remedies',
     title: 'Remedies Report (Lal Kitab)',
-    fromRupees: 99,
+    fromRupees: 75,
     questions: [
       'Do I carry any karmic debts (Rin)?',
       'What’s the specific remedy for each planet in my chart?',
@@ -120,7 +120,7 @@ const REPORTS: Report[] = [
   {
     key: 'career_monthly',
     title: 'Career Report',
-    fromRupees: 25,
+    fromRupees: 31,
     cadence: 'month',
     questions: [
       'Is this a good month to ask for a raise or switch jobs?',
@@ -131,7 +131,7 @@ const REPORTS: Report[] = [
   {
     key: 'health_monthly',
     title: 'Health Report',
-    fromRupees: 25,
+    fromRupees: 31,
     cadence: 'month',
     questions: [
       'How is my energy and health trending this month?',
@@ -142,7 +142,7 @@ const REPORTS: Report[] = [
   {
     key: 'finance_monthly',
     title: 'Finance Report',
-    fromRupees: 25,
+    fromRupees: 31,
     cadence: 'month',
     questions: [
       'What’s my financial outlook this month?',
@@ -153,7 +153,7 @@ const REPORTS: Report[] = [
   {
     key: 'relationship_monthly',
     title: 'Relationship Report',
-    fromRupees: 25,
+    fromRupees: 31,
     cadence: 'month',
     questions: [
       'How will my relationship feel this month?',
@@ -169,7 +169,7 @@ export function ReportsSection() {
     <Section tone="paper" id="reports">
       <SectionHeading
         eyebrow="Go deeper"
-        title="14 reports, grounded in your real chart"
+        title="15 reports, grounded in your real chart"
         subtitle="Every report runs your own birth chart through a fixed set of classical calculations. A blurred preview is always free before you unlock the full reading."
       />
 

@@ -58,7 +58,7 @@ const jsonLd = {
       applicationCategory: 'LifestyleApplication',
       operatingSystem: 'Web',
       publisher: { '@id': `${SITE_URL}/#organization` },
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
     },
     {
       '@type': 'FAQPage',

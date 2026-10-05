@@ -22,6 +22,7 @@ import { RevealObserver } from '@/components/layout/RevealObserver';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BRAND, ORG_ID, brandGraph } from '@/lib/brand';
 import { SITE_URL } from '@/lib/links';
+import { DEFAULT_ROBOTS } from '@/lib/seo';
 
 const publicSans = Public_Sans({
   subsets: ['latin', 'latin-ext'],
@@ -126,16 +127,7 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   alternates: { canonical: '/' },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  robots: DEFAULT_ROBOTS,
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,

@@ -1,5 +1,22 @@
 import type { Metadata } from 'next';
 
+/**
+ * The site-wide robots directives. A page that sets `robots` at all, even to
+ * `undefined`, replaces the root layout's value wholesale, so every page
+ * that builds its own metadata has to restate these or it ships with no
+ * robots tag and loses `max-image-preview:large`.
+ */
+export const DEFAULT_ROBOTS: Metadata['robots'] = {
+  index: true,
+  follow: true,
+  googleBot: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+  },
+};
+
 const DEFAULT_IMAGE = {
   url: '/opengraph-image',
   width: 1200,
@@ -31,7 +48,7 @@ export function pageMetadata({
     title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
-    robots,
+    robots: robots ?? DEFAULT_ROBOTS,
     openGraph: { type: 'website', siteName: 'Aroha', locale: 'en_IN', title, description, url: path, images: [DEFAULT_IMAGE] },
     twitter: { card: 'summary_large_image', title, description, images: [DEFAULT_IMAGE.url] },
   };
