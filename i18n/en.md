@@ -1,6 +1,6 @@
 # Aroha website: English strings for translation
 
-825 strings, about 8858 words.
+839 strings, about 8888 words.
 
 How to translate this file:
 
@@ -672,6 +672,17 @@ Is my birth data kept private?
 ## t-0fce6510
 Your birth details are used to compute your chart and are handled according to our privacy policy at /legal/privacy, which sets out what is stored and how.
 
+## t-ac7e66e8 (heading)
+Read Aroha in your own language
+
+## t-d805a299
+<!-- Part of: This site is available in 15 languages. Pick yours and the whole page changes. -->
+This site is available in
+
+## t-d299ad03
+<!-- Part of: This site is available in 15 languages. Pick yours and the whole page changes. -->
+languages. Pick yours and the whole page changes.
+
 ## t-2343187f (heading)
 Start with your free Kundli
 
@@ -1142,8 +1153,8 @@ Lahiri
 ## t-29710818
 However you think
 
-## t-4247f242 (heading)
-This site is available in 4 languages
+## t-0500be08 (heading)
+This site is available in 15 languages
 
 ## t-649df08a
 English
@@ -1151,11 +1162,44 @@ English
 ## t-c9e6b253
 Hindi
 
+## t-198e9c08
+Bengali
+
+## t-86c2b627
+Tamil
+
+## t-ea6c0346
+Telugu
+
+## t-6bb4b981
+Marathi
+
+## t-c06c55a5
+Gujarati
+
+## t-c3ed6655
+Kannada
+
 ## t-8df7f1b3
 Spanish
 
 ## t-44389f6a
 French
+
+## t-da91388c
+German
+
+## t-23882c57
+Portuguese
+
+## t-485b57ad
+Italian
+
+## t-74ad93cb
+Russian
+
+## t-9239c22d
+Japanese
 
 ## t-ee7197f3 (heading)
 Learn the concepts behind your chart
