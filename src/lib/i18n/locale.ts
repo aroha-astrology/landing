@@ -1,5 +1,4 @@
 import { LOCALE_LOADERS } from './locales';
-import { lookupDict } from './dictionary';
 import { ALL_LANGUAGES } from './languages';
 
 type Locale = Record<string, string>;
@@ -7,12 +6,8 @@ type Locale = Record<string, string>;
 const cache = new Map<string, Locale>();
 const pending = new Map<string, Promise<Locale | null>>();
 
-// Until a language has an imported file, these three keep using the older
-// dictionary for the strings it still happens to cover.
-const LEGACY = new Set(['hi', 'es', 'fr']);
-
-/** Languages a visitor can pick right now: English, imported files, and the legacy three. */
-export const AVAILABLE_LANGUAGES = ALL_LANGUAGES.filter((l) => l.code === 'en' || l.code in LOCALE_LOADERS || LEGACY.has(l.code));
+/** Languages a visitor can pick right now: English plus every imported file. */
+export const AVAILABLE_LANGUAGES = ALL_LANGUAGES.filter((l) => l.code === 'en' || l.code in LOCALE_LOADERS);
 
 export function isAvailable(code: string): boolean {
   return AVAILABLE_LANGUAGES.some((l) => l.code === code);
@@ -42,5 +37,5 @@ export function loadLocale(code: string): Promise<Locale | null> {
 /** Synchronous lookup; call after loadLocale has resolved. */
 export function lookup(text: string, code: string): string | undefined {
   const key = normalise(text);
-  return cache.get(code)?.[key] ?? (LEGACY.has(code) ? lookupDict(key, code) : undefined);
+  return cache.get(code)?.[key];
 }
