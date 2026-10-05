@@ -12,4 +12,6 @@ export const LOCALE_LOADERS: Record<string, () => Promise<Record<string, string>
   de: () => import('./de.json').then((m) => m.default),
   pt: () => import('./pt.json').then((m) => m.default),
   it: () => import('./it.json').then((m) => m.default),
+  ru: () => import('./ru.json').then((m) => m.default),
+  ja: () => import('./ja.json').then((m) => m.default),
 };
