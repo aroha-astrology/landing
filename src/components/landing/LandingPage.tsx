@@ -9,6 +9,7 @@ import { TrustSection } from '@/components/home/TrustSection';
 import { AppExperience } from '@/components/home/AppExperience';
 import { KnowledgeSection } from '@/components/home/KnowledgeSection';
 import { FinalCta } from '@/components/home/FinalCta';
+import { LanguagesStrip } from '@/components/home/LanguagesStrip';
 import { PanchangSection } from './PanchangSection';
 import { FAQSection } from './FAQSection';
 
@@ -35,6 +36,7 @@ export function LandingPage() {
       <AppExperience />
       <KnowledgeSection />
       <FAQSection eyebrow="Questions" title="About Aroha" />
+      <LanguagesStrip />
       <FinalCta />
     </>
   );
