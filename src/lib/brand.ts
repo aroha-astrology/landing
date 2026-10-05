@@ -1,4 +1,4 @@
-import { PLAY_STORE_URL, SITE_URL } from './links';
+import { PLAY_STORE_URL, SITE_URL, WEB_APP_URL } from './links';
 
 /**
  * The Aroha ecosystem, declared once. Every place that states what Aroha is
@@ -13,7 +13,7 @@ export const BRAND = {
   tagline: 'Your birth chart and your home, read the Vedic way',
   promise: 'Start with your free Kundli',
   description:
-    'Aroha is built in India for Vedic astrology, Vastu and puja. Aroha Astrology covers your birth chart and Aroha Vastu covers your home; both are available now on Android, with iOS and a 3D Vastu version coming soon. Aroha Puja, for booking pujas at home, is coming soon.',
+    'Aroha is built in India for Vedic astrology, Vastu and puja. Aroha Astrology covers your birth chart and Aroha Vastu covers your home; both are available now on Android and the web, with iOS and a 3D Vastu version coming soon. Aroha Puja, for booking pujas at home, is coming soon.',
   email: 'subir@arohaastrology.in',
   founder: 'Subir Dutta',
   city: 'Bengaluru',
@@ -66,7 +66,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       '14 personalised reports, gemstones, Lal Kitab remedies, numerology and palm reading',
       'Shlokas library and the Bhagavad Gita',
     ],
-    where: 'On Android. iOS is coming soon.',
+    where: 'On Android and the web. iOS is coming soon.',
     note: 'iOS coming soon',
   },
   vastu: {
@@ -78,7 +78,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     theme: 'Space',
     realm: 'Space',
     summary:
-      'Aroha Vastu helps you understand your home through Vastu Shastra: draw your floor plan, see every room judged by its direction with a Vastu score, and ask questions about your layout. It is available on Android in the Aroha Astrology app; a 3D version with walk-through and furniture placement is coming soon.',
+      'Aroha Vastu helps you understand your home through Vastu Shastra: draw your floor plan, see every room judged by its direction with a Vastu score, and ask questions about your layout. It is available on Android and the web in the Aroha Astrology app; a 3D version with walk-through and furniture placement is coming soon.',
     capabilities: [
       'Draw your floor plan in 2D, room by room',
       'Every room checked against the eight directions and the centre',
@@ -86,7 +86,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       'Ask questions about your plan in the chat',
       'Save your layouts and compare changes',
     ],
-    where: 'On Android, in the Aroha Astrology app.',
+    where: 'On Android and the web, in the Aroha Astrology app.',
     note: '3D version coming soon',
     upcoming: ['Your home in 3D, with a walk-through view', 'Furniture placement scored against Vastu', 'Furnished 3D interiors before you change a thing'],
   },
@@ -124,6 +124,7 @@ export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const productBrandId = (key: ProductKey) => `${SITE_URL}/${key}#brand`;
 export const ASTROLOGY_APP_ID = `${SITE_URL}/#app`;
+export const ASTROLOGY_WEB_APP_ID = `${SITE_URL}/#webapp`;
 
 const AVAILABLE_LANGUAGES = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'es', 'fr', 'de'];
 
@@ -210,6 +211,24 @@ export function astrologyAppNode() {
       reviewCount: '19',
       bestRating: '5',
     },
+    featureList: PRODUCTS.astrology.capabilities,
+    inLanguage: AVAILABLE_LANGUAGES,
+  };
+}
+
+/** The same app in a browser. Emitted next to the Android entity. No rating: the Play reviews belong to the Android app. */
+export function astrologyWebAppNode() {
+  return {
+    '@type': 'WebApplication',
+    '@id': ASTROLOGY_WEB_APP_ID,
+    name: PRODUCTS.astrology.name,
+    url: WEB_APP_URL,
+    applicationCategory: 'LifestyleApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript. Works in current Chrome, Safari, Edge and Firefox.',
+    brand: { '@id': productBrandId('astrology') },
+    publisher: { '@id': ORG_ID },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR', url: WEB_APP_URL },
     featureList: PRODUCTS.astrology.capabilities,
     inLanguage: AVAILABLE_LANGUAGES,
   };

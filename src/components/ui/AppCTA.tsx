@@ -9,13 +9,13 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { PLAY_STORE_URL } from "@/lib/links";
+import { PLAY_STORE_URL, WEB_APP_URL } from "@/lib/links";
 import { track } from "@/lib/analytics";
 
 /**
- * Every "get the app" CTA on the site opens this instead of linking straight
- * into the web app — there's no App Store listing yet, so Android gets the
- * real Play Store link and iOS is marked Coming soon rather than dead-ending.
+ * Every "get the app" CTA on the site opens this picker: Android (Play Store),
+ * Web (the app in a browser) and iOS, marked Coming soon since there's no App
+ * Store listing yet.
  * Visually a drop-in replacement for Button (same base/variant classes);
  * `align` controls which edge the popover hangs from, since this gets used
  * both in tight corners (Navbar) and centered contexts (Hero, Footer). The
@@ -26,13 +26,18 @@ import { track } from "@/lib/analytics";
  * section wrappers use overflow-hidden for their backgrounds, and an
  * absolutely positioned child would be clipped by them.
  */
-type Variant = "solid" | "outline";
+type Variant = "solid" | "outline" | "link";
 type Align = "center" | "right";
 
 const BASE =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide cursor-pointer transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 
+// "link" reads as a text link inside article prose, so it skips BASE.
+const LINK_CLASS =
+  "cursor-pointer text-link underline underline-offset-4 hover:text-accent-text focus:outline-none focus-visible:ring-2 focus-visible:ring-accent";
+
 const VARIANTS: Record<Variant, string> = {
+  link: "",
   // Ink on amber, not white — the accent is a light surface, so white text
   // sits around 2.3:1 against it.
   solid: "bg-accent text-accent-ink hover:bg-accent-hover",
@@ -61,6 +66,8 @@ export function AppCTA({
   const [pos, setPos] = useState<{ left: number; top: number }>();
   const ref = useRef<HTMLDivElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
+  // A <div> inside article prose (<p>) is invalid HTML and breaks hydration.
+  const Wrapper = (variant === "link" ? "span" : "div") as "div";
 
   // Position in viewport px, before paint, so there's no jump; follows the
   // button on scroll and resize while open.
@@ -110,17 +117,28 @@ export function AppCTA({
   }, []);
 
   return (
-    <div className="relative inline-block" ref={ref}>
-      <motion.button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        className={`${BASE} ${VARIANTS[variant]} ${className}`}
-      >
-        {children}
-      </motion.button>
+    <Wrapper className="relative inline-block" ref={ref}>
+      {variant === "link" ? (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className={`${LINK_CLASS} ${className}`}
+        >
+          {children}
+        </button>
+      ) : (
+        <motion.button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className={`${BASE} ${VARIANTS[variant]} ${className}`}
+        >
+          {children}
+        </motion.button>
+      )}
 
       {typeof document !== "undefined" &&
         createPortal(
@@ -155,6 +173,18 @@ export function AppCTA({
                     Play Store
                   </span>
                 </a>
+                <a
+                  href={WEB_APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("app_store_click", { store: "web", location })}
+                  className="flex w-full items-center justify-between rounded-lg px-2.5 py-2.5 transition-colors hover:bg-paper-sunk"
+                >
+                  <span className="text-[13px] font-semibold text-ink">Web</span>
+                  <span className="text-[10px] uppercase tracking-wide text-ink-muted">
+                    Open in browser
+                  </span>
+                </a>
                 <div className="flex w-full cursor-not-allowed items-center justify-between rounded-lg px-2.5 py-2.5 opacity-50">
                   <span className="text-[13px] font-semibold text-ink">
                     iOS
@@ -168,6 +198,6 @@ export function AppCTA({
           </AnimatePresence>,
           document.body,
         )}
-    </div>
+    </Wrapper>
   );
 }

@@ -14,7 +14,7 @@ const COPY: Record<CategoryKey, { eyebrow: string; title: string; body: string; 
   vastu: {
     eyebrow: 'Aroha Vastu · Available now',
     title: 'From reading about Vastu to checking your own home',
-    body: 'Draw your floor plan in Aroha Vastu and see every room judged by its direction, with a Vastu score for your home. On Android now; a 3D version is coming soon.',
+    body: 'Draw your floor plan in Aroha Vastu and see every room judged by its direction, with a Vastu score for your home. On Android and the web now; a 3D version is coming soon.',
     href: '/vastu',
     cta: 'Discover Aroha Vastu',
     tone: 'bg-vastu-ink text-vastu-sand',
@@ -47,7 +47,7 @@ export function ArticleFinalCta({ category }: { category: CategoryKey }) {
         >
           {c.cta}
         </TrackedLink>
-        {category === 'astrology' && (
+        {category !== 'puja' && (
           <AppCTA variant="outline" className="!border-current !text-current">
             Get the app
           </AppCTA>

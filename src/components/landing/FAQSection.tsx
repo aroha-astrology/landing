@@ -17,12 +17,12 @@ const homeFaqItems: AccordionItem[] = [
   {
     question: 'What can I do with Aroha Astrology today?',
     answer:
-      'Generate your free Janam Kundli (Lagna, Rashi, Nakshatra and all nine planets), follow your Vimshottari Dasha, check yogas and doshas, match two Kundlis with Guna Milan, read the daily Panchang and horoscope, ask the Vedic Astrologer chat about your own chart, and unlock personalised reports. It is on Android now; iOS is coming soon.',
+      'Generate your free Janam Kundli (Lagna, Rashi, Nakshatra and all nine planets), follow your Vimshottari Dasha, check yogas and doshas, match two Kundlis with Guna Milan, read the daily Panchang and horoscope, ask the Vedic Astrologer chat about your own chart, and unlock personalised reports. It is on Android and the web now; iOS is coming soon.',
   },
   {
     question: 'What is available in Aroha Vastu, and what is coming?',
     answer:
-      'Aroha Vastu is available now on Android, inside the Aroha Astrology app. You can draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development. We have not announced launch dates, and this site will say when each one opens.',
+      'Aroha Vastu is available now on Android and the web, inside the Aroha Astrology app. You can draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development. We have not announced launch dates, and this site will say when each one opens.',
   },
   {
     question: 'How will Aroha Puja work?',

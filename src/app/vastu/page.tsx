@@ -16,7 +16,7 @@ import { SITE_URL } from '@/lib/links';
 const PAGE_URL = `${SITE_URL}/vastu`;
 const TITLE = 'Aroha Vastu: Check Your Floor Plan Room by Room';
 const DESCRIPTION =
-  'Aroha Vastu is available on Android: draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. 3D is coming soon.';
+  'Aroha Vastu is available on Android and the web: draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. 3D is coming soon.';
 
 export const metadata: Metadata = pageMetadata({ absoluteTitle: true, title: TITLE, description: DESCRIPTION, path: '/vastu' });
 
@@ -34,7 +34,7 @@ const FAQS = [
   {
     question: 'Where can I use Aroha Vastu?',
     answer:
-      'Aroha Vastu is available now on Android, inside the Aroha Astrology app. An iOS version of the app is coming soon.',
+      'Aroha Vastu is available now on Android and the web, inside the Aroha Astrology app. An iOS version of the app is coming soon.',
   },
   {
     question: 'When is the 3D version coming?',

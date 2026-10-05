@@ -6,8 +6,8 @@ import type { ProductKey } from './brand';
  * the "Related Aroha feature" box is always a true statement about the
  * product and a renamed page is a one-line fix here.
  *
- * `href: 'app'` means the feature lives in the mobile app — the template
- * renders the app picker (Android now, iOS coming soon) instead of a link.
+ * `href: 'app'` means the feature lives in the app — the template renders
+ * the app picker (Android, Web, iOS coming soon) instead of a link.
  */
 export type FeatureLink = {
   key: string;

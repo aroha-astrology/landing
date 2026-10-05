@@ -3,7 +3,7 @@ import { HeroVisual } from '@/components/three/HeroVisual';
 import { TrackedLink } from '@/components/ui/TrackedLink';
 import { StatusBadge } from '@/components/product/StatusBadge';
 import { BRAND, PRODUCTS, PRODUCT_ORDER } from '@/lib/brand';
-import { PLAY_STORE_URL } from '@/lib/links';
+import { PLAY_STORE_URL, WEB_APP_URL } from '@/lib/links';
 
 /**
  * The front door. The H1 and copy are plain server HTML and the LCP
@@ -80,6 +80,17 @@ export function HeroSection() {
                         className="font-semibold text-astro-gold underline underline-offset-4 hover:text-[#E6BD68]"
                       >
                         Android<span className="sr-only"> (opens Google Play)</span>
+                      </TrackedLink>
+                      <TrackedLink
+                        href={WEB_APP_URL}
+                        cta="hero_store_web"
+                        location="hero_status"
+                        product="astrology"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-astro-gold underline underline-offset-4 hover:text-[#E6BD68]"
+                      >
+                        Web<span className="sr-only"> (opens the web app)</span>
                       </TrackedLink>
                       <span className="text-astro-ink-2">iOS · coming soon</span>
                     </div>

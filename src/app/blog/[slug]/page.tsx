@@ -12,6 +12,9 @@ import { ArticleCard, toSummary } from '@/components/blog/ArticleCard';
 import { ProductPanel } from '@/components/blog/ProductPanel';
 import { ArticleScrollTracker } from '@/components/blog/ArticleScrollTracker';
 import { ArticleFinalCta } from '@/components/blog/ArticleFinalCta';
+import { ArticleTryBar } from '@/components/blog/ArticleTryBar';
+import { ArticleTryPopup } from '@/components/blog/ArticleTryPopup';
+import { promptFor } from '@/lib/article-prompts';
 import { Accordion } from '@/components/ui/Accordion';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { bodyHasFaq, formatDate, getAllSlugs, getPost, getRelatedPosts, renderableContent, type BlogPost } from '@/lib/blog';
@@ -89,6 +92,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const related = getRelatedPosts(post, 4);
   const author = authorOf(post);
   const showFaq = (fm.faqs?.length ?? 0) > 0 && !bodyHasFaq(post);
+  const prompt = promptFor(slug, post.category);
   const heroUrl = post.hero ? `${SITE_URL}${post.hero}` : undefined;
 
   const jsonLd = {
@@ -154,6 +158,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     <div className="bg-paper px-[clamp(20px,4vw,56px)] pb-[clamp(64px,8vw,112px)] pt-8 text-ink">
       <JsonLd data={jsonLd} />
       <ArticleScrollTracker slug={slug} category={post.category} targetId="article-body" />
+      <ArticleTryPopup slug={slug} targetId="article-body" prompt={prompt} />
 
       <div className="mx-auto max-w-[1180px]">
         <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: category.name, href: `/blog/${post.category}` }, { name: fm.title }]} />
@@ -188,6 +193,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               )}
               {fm.reviewedBy && <span>Reviewed by {fm.reviewedBy}</span>}
             </div>
+            <ArticleTryBar prompt={prompt} />
           </header>
 
           {post.hero && (

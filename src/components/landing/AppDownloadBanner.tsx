@@ -6,7 +6,8 @@ import { X } from 'lucide-react';
 
 const DISMISS_KEY = 'app_banner_dismissed_until';
 const DISMISS_DAYS = 7;
-const APK_URL = '/downloads/aroha-astrology.apk';
+const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.aroha.astrology';
+const WEB_URL = 'https://app.arohaastrology.in';
 const APP_PACKAGE = 'com.aroha.astrology';
 
 type Platform = 'android' | 'ios' | null;
@@ -38,15 +39,15 @@ function shouldHide(platform: Platform): boolean {
   return false;
 }
 
-// Opens the installed app if present; falls back to the APK download.
+// Opens the installed app if present; falls back to the Play Store listing.
 function intentUrl(path: string) {
   const host = window.location.hostname;
-  return `intent://${host}${path}#Intent;scheme=https;package=${APP_PACKAGE};S.browser_fallback_url=${encodeURIComponent(APK_URL)};end`;
+  return `intent://${host}${path}#Intent;scheme=https;package=${APP_PACKAGE};S.browser_fallback_url=${encodeURIComponent(PLAY_URL)};end`;
 }
 
 /**
- * Fixed top banner offering the app: a real install for Android (APK, since
- * there's no Play Store listing yet), "Coming soon" for iOS. Auto-shows on
+ * Fixed top banner offering the app: Android opens the app or the Play Store;
+ * iPhone gets the web app, since the iOS app is coming soon. Auto-shows on
  * mobile web only — hides itself inside the Capacitor app shell or an
  * installed PWA, and desktop entirely. Sets `--app-banner-h` so the fixed
  * Navbar and page content shift down while it's visible.
@@ -106,7 +107,7 @@ export function AppDownloadBanner() {
           Aroha Astrology
         </p>
         <p className="text-[11px] text-ink-muted leading-tight truncate">
-          {platform === 'android' ? 'Get the app, faster and offline' : 'iPhone app coming soon'}
+          {platform === 'android' ? 'Get the app, faster and offline' : 'iPhone app coming soon, use the web app'}
         </p>
       </div>
 
@@ -119,9 +120,12 @@ export function AppDownloadBanner() {
             Open
           </a>
         ) : (
-          <span className="px-3 py-1.5 rounded-full text-[12px] font-semibold border border-accent/25 text-ink-muted opacity-70">
-            Coming soon
-          </span>
+          <a
+            href={WEB_URL}
+            className="px-3 py-1.5 rounded-full text-[12px] font-bold no-underline bg-accent text-white"
+          >
+            Open
+          </a>
         )}
       </div>
     </div>

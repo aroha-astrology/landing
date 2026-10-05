@@ -41,7 +41,7 @@ export const FEATURE_VIDEOS = {
     src: '/assets/video/aroha-daily-panchang.mp4',
     poster: '/assets/video/aroha-daily-panchang.jpg',
     transcript:
-      'Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android.',
+      'Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android and the web.',
   },
   vastuPlanner: {
     slug: 'vastu-planner',
@@ -50,7 +50,7 @@ export const FEATURE_VIDEOS = {
     src: '/assets/video/aroha-vastu-planner.mp4',
     poster: '/assets/video/aroha-vastu-planner.jpg',
     transcript:
-      'Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner you draw your home room by room and each room is judged by its direction. A kitchen in the north scores 70 and is marked as needing work; moved to the south-east, the traditional fire corner, the score rises to 88. Questions about the plan can be asked in the app’s chat. Aroha Astrology: Vastu, room by room. Free on Android.',
+      'Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner you draw your home room by room and each room is judged by its direction. A kitchen in the north scores 70 and is marked as needing work; moved to the south-east, the traditional fire corner, the score rises to 88. Questions about the plan can be asked in the app’s chat. Aroha Astrology: Vastu, room by room. Free on Android and the web.',
   },
 } satisfies Record<string, PromoVideoEntry>;
 
