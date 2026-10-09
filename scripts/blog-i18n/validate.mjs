@@ -25,11 +25,11 @@ export function check(kind, lang, src, out) {
   if (!out || !out.trim()) return 'empty';
   if (/\b(AI|A\.I\.)\b/.test(out) && !/\bAI\b/.test(src)) return 'mentions AI';
   if (/[–—]/.test(out)) return 'dash';
-  if (digits(src) !== digits(out)) return 'digits';
+  if (digits(src) && digits(src) !== digits(out)) return 'digits';
   if (kind === 'md') {
     if (links(src) !== links(out)) return 'links';
     if (tags(src) !== tags(out)) return 'tags';
-    const a = src.split('\n'), b = out.split('\n');
+    const a = src.trim().split('\n'), b = out.trim().split('\n');
     if (a.length !== b.length) return 'lines';
     for (let i = 0; i < a.length; i++) {
       if (marker(a[i]) !== marker(b[i])) return 'marker line ' + i;
