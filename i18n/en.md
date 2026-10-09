@@ -1,6 +1,6 @@
 # Aroha website: English strings for translation
 
-821 strings, about 8778 words.
+839 strings, about 8888 words.
 
 How to translate this file:
 
@@ -54,14 +54,22 @@ Today’s Panchang
 ## t-3a7795fe (button or link)
 Editorial standards
 
+## t-4ed70fbd (button or link)
+<!-- Part of: Use on the Web -->
+Use on the
+
+## t-a8323a2a (button or link)
+<!-- Part of: Use on the Web -->
+Web
+
 ## t-3e4cbd97
 Knowledge Hub
 
 ## t-4a60b005
 Your birth chart and your home, read the Vedic way
 
-## t-cec28203
-Aroha brings Vedic astrology, Vastu and puja together. Aroha Astrology is available now on Android.
+## t-77198e3a
+Aroha brings Vedic astrology, Vastu and puja together. Aroha Astrology is available now on Android and the web.
 
 ## t-fe0a091f (heading)
 Products
@@ -134,8 +142,8 @@ Available now
 ## t-dc3dd28b
 3D version coming soon
 
-## t-c635c65f
-Aroha is built in India for Vedic astrology, Vastu and puja. Aroha Astrology covers your birth chart and Aroha Vastu covers your home; both are available now on Android, with iOS and a 3D Vastu version coming soon. Aroha Puja, for booking pujas at home, is coming soon.
+## t-c6ca121d
+Aroha is built in India for Vedic astrology, Vastu and puja. Aroha Astrology covers your birth chart and Aroha Vastu covers your home; both are available now on Android and the web, with iOS and a 3D Vastu version coming soon. Aroha Puja, for booking pujas at home, is coming soon.
 
 ## t-d4a51cfc
 What Aroha offers
@@ -158,8 +166,8 @@ Aroha starts with your birth chart, moves to the home you live in, and ends with
 ## t-0f59d3cb
 Understand yourself
 
-## t-e9c41191
-Your birth chart, computed with Swiss Ephemeris precision and explained in plain language, in 7 Indian languages.
+## t-8bf9cfce
+Your birth chart, computed with Swiss Ephemeris precision and explained in plain language, in English and six Indian languages.
 
 ## t-e660c436
 Free Janam Kundli: Lagna, Rashi and Nakshatra
@@ -347,18 +355,18 @@ Sunset
 Rahu Kaal
 
 ## t-8d9ed0a4
-<!-- Part of: Is today the right day? Today’s Panchang in the Aroha Astrology app: Tithi, Rahu Kaal, Abhijit Muhurta and hour-by-hour Choghadiya for your city. What the video shows Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android. -->
+<!-- Part of: Is today the right day? Today’s Panchang in the Aroha Astrology app: Tithi, Rahu Kaal, Abhijit Muhurta and hour-by-hour Choghadiya for your city. What the video shows Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android and the web. -->
 Is today the right day?
 
 ## t-eb0bf791
-<!-- Part of: Is today the right day? Today’s Panchang in the Aroha Astrology app: Tithi, Rahu Kaal, Abhijit Muhurta and hour-by-hour Choghadiya for your city. What the video shows Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android. -->
+<!-- Part of: Is today the right day? Today’s Panchang in the Aroha Astrology app: Tithi, Rahu Kaal, Abhijit Muhurta and hour-by-hour Choghadiya for your city. What the video shows Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android and the web. -->
 Today’s Panchang in the Aroha Astrology app: Tithi, Rahu Kaal, Abhijit Muhurta and hour-by-hour Choghadiya for your city.
 
 ## t-459e4064
 What the video shows
 
-## t-7811d20a
-Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android.
+## t-e5085e84
+Is today the right day? The app shows the five limbs of the day (Tithi, Vaar, Nakshatra, Yoga and Karana), today’s Tithi (Shukla Chaturdashi, ending at 23:08 before Purnima), when to wait and when to begin with Rahu Kaal and Abhijit Muhurta, and every hour of the day rated in the Choghadiya. Aroha Astrology: today’s Panchang, for your city. Free on Android and the web.
 
 ## t-ba000608 (heading)
 From the sky to your home
@@ -420,8 +428,8 @@ Ask questions about your plan in the chat
 ## t-d010f95c
 Save your layouts and compare changes
 
-## t-67f8de3b
-Where to get it: On Android, in the Aroha Astrology app. Coming soon: your home in 3D, with a walk-through view and furniture placement scored against Vastu.
+## t-8c809f8d
+Where to get it: On Android and the web, in the Aroha Astrology app. Coming soon: your home in 3D, with a walk-through view and furniture placement scored against Vastu.
 
 ## t-39b0b08c (button or link)
 Discover Aroha Vastu
@@ -430,15 +438,15 @@ Discover Aroha Vastu
 In the app today
 
 ## t-db7940c5
-<!-- Part of: Vastu, room by room. The Vastu planner in the Aroha Astrology app: draw your home, see each room judged by direction, and watch the score change as you fix it. What the video shows Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner you draw your home room by room and each room is judged by its direction. A kitchen in the north scores 70 and is marked as needing work; moved to the south-east, the traditional fire corner, the score rises to 88. Questions about the plan can be asked in the app’s chat. Aroha Astrology: Vastu, room by room. Free on Android. -->
+<!-- Part of: Vastu, room by room. The Vastu planner in the Aroha Astrology app: draw your home, see each room judged by direction, and watch the score change as you fix it. What the video shows Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner you draw your home room by room and each room is judged by its direction. A kitchen in the north scores 70 and is marked as needing work; moved to the south-east, the traditional fire corner, the score rises to 88. Questions about the plan can be asked in the app’s chat. Aroha Astrology: Vastu, room by room. Free on Android and the web. -->
 Vastu, room by room
 
 ## t-1d02f04c
-<!-- Part of: Vastu, room by room. The Vastu planner in the Aroha Astrology app: draw your home, see each room judged by direction, and watch the score change as you fix it. What the video shows Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner you draw your home room by room and each room is judged by its direction. A kitchen in the north scores 70 and is marked as needing work; moved to the south-east, the traditional fire corner, the score rises to 88. Questions about the plan can be asked in the app’s chat. Aroha Astrology: Vastu, room by room. Free on Android. -->
+<!-- Part of: Vastu, room by room. The Vastu planner in the Aroha Astrology app: draw your home, see each room judged by direction, and watch the score change as you fix it. What the video shows Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner you draw your home room by room and each room is judged by its direction. A kitchen in the north scores 70 and is marked as needing work; moved to the south-east, the traditional fire corner, the score rises to 88. Questions about the plan can be asked in the app’s chat. Aroha Astrology: Vastu, room by room. Free on Android and the web. -->
 The Vastu planner in the Aroha Astrology app: draw your home, see each room judged by direction, and watch the score change as you fix it.
 
-## t-c007d2a2
-Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner you draw your home room by room and each room is judged by its direction. A kitchen in the north scores 70 and is marked as needing work; moved to the south-east, the traditional fire corner, the score rises to 88. Questions about the plan can be asked in the app’s chat. Aroha Astrology: Vastu, room by room. Free on Android.
+## t-cf7ab157
+Eight directions, one right corner. In the Aroha Astrology app’s Vastu planner you draw your home room by room and each room is judged by its direction. A kitchen in the north scores 70 and is marked as needing work; moved to the south-east, the traditional fire corner, the score rises to 88. Questions about the plan can be asked in the app’s chat. Aroha Astrology: Vastu, room by room. Free on Android and the web.
 
 ## t-6cb550e8
 3D · coming soon
@@ -518,11 +526,11 @@ Plain about its limits
 ## t-7f080fd4
 Astrology, Vastu and puja are traditions of interpretation and practice. We describe them with respect, and we do not call them scientific certainty or use them to frighten anyone.
 
-## t-708feddc (heading)
-Seven Indian languages
+## t-3948450c (heading)
+Seven languages
 
-## t-873f3af6
-Aroha Astrology reads your chart and answers your questions in 7 Indian languages.
+## t-d27e92b6
+Aroha Astrology reads your chart and answers your questions in English, Hindi, Bengali, Marathi, Telugu, Tamil and Gujarati.
 
 ## t-db07be18 (button or link)
 Languages
@@ -543,16 +551,16 @@ The Aroha Astrology app
 Your chart, your Dasha and your questions on your phone
 
 ## t-d6258fcd
-<!-- Part of: Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and 14 personalised reports, from marriage and Kundli Milan to wealth and career. Available on Android; iOS is coming soon. -->
+<!-- Part of: Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and 15 personalised reports, from marriage and Kundli Milan to wealth and career. Available on Android and the web; iOS is coming soon. -->
 Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and
 
-## t-000a66ca (button or link)
-<!-- Part of: Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and 14 personalised reports, from marriage and Kundli Milan to wealth and career. Available on Android; iOS is coming soon. -->
-14 personalised reports
+## t-fb109efc (button or link)
+<!-- Part of: Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and 15 personalised reports, from marriage and Kundli Milan to wealth and career. Available on Android and the web; iOS is coming soon. -->
+15 personalised reports
 
-## t-9b1f396a
-<!-- Part of: Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and 14 personalised reports, from marriage and Kundli Milan to wealth and career. Available on Android; iOS is coming soon. -->
-, from marriage and Kundli Milan to wealth and career. Available on Android; iOS is coming soon.
+## t-3d66dba3
+<!-- Part of: Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and 15 personalised reports, from marriage and Kundli Milan to wealth and career. Available on Android and the web; iOS is coming soon. -->
+, from marriage and Kundli Milan to wealth and career. Available on Android and the web; iOS is coming soon.
 
 ## t-7b2288fa (heading)
 The sky remembers
@@ -607,14 +615,14 @@ Aroha is a set of three products built in India. Aroha Astrology covers Vedic as
 ## t-91776f1b (button or link)
 What can I do with Aroha Astrology today?
 
-## t-1622b3fa
-Generate your free Janam Kundli (Lagna, Rashi, Nakshatra and all nine planets), follow your Vimshottari Dasha, check yogas and doshas, match two Kundlis with Guna Milan, read the daily Panchang and horoscope, ask the Vedic Astrologer chat about your own chart, and unlock personalised reports. It is on Android now; iOS is coming soon.
+## t-b4efa862
+Generate your free Janam Kundli (Lagna, Rashi, Nakshatra and all nine planets), follow your Vimshottari Dasha, check yogas and doshas, match two Kundlis with Guna Milan, read the daily Panchang and horoscope, ask the Vedic Astrologer chat about your own chart, and unlock personalised reports. It is on Android and the web now; iOS is coming soon.
 
 ## t-b226a65d (button or link)
 What is available in Aroha Vastu, and what is coming?
 
-## t-dd6e1f3e
-Aroha Vastu is available now on Android, inside the Aroha Astrology app. You can draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development. We have not announced launch dates, and this site will say when each one opens.
+## t-c6a0785f
+Aroha Vastu is available now on Android and the web, inside the Aroha Astrology app. You can draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. A 3D version, with a walk-through of your home and furniture placement, is coming soon. Aroha Puja is also in development. We have not announced launch dates, and this site will say when each one opens.
 
 ## t-aa8e5a07 (button or link)
 How will Aroha Puja work?
@@ -649,8 +657,8 @@ Ideally, yes. The Moon moves fast enough that a 15 to 20 minute error can shift 
 ## t-0ad5c78a (button or link)
 Which languages does Aroha support?
 
-## t-118f2ec3
-Aroha Astrology supports 7 Indian languages, so you can read your chart and chat with the Vedic Astrologer in the language you think in.
+## t-ddbd37ac
+Aroha Astrology supports 7 languages: English, Hindi, Bengali, Marathi, Telugu, Tamil and Gujarati. You can read your chart and chat with the Vedic Astrologer in the language you think in.
 
 ## t-f728e28f (button or link)
 What is the KP Year Ahead report?
@@ -663,6 +671,17 @@ Is my birth data kept private?
 
 ## t-0fce6510
 Your birth details are used to compute your chart and are handled according to our privacy policy at /legal/privacy, which sets out what is stored and how.
+
+## t-ac7e66e8 (heading)
+Read Aroha in your own language
+
+## t-d805a299
+<!-- Part of: This site is available in 15 languages. Pick yours and the whole page changes. -->
+This site is available in
+
+## t-d299ad03
+<!-- Part of: This site is available in 15 languages. Pick yours and the whole page changes. -->
+languages. Pick yours and the whole page changes.
 
 ## t-2343187f (heading)
 Start with your free Kundli
@@ -915,8 +934,8 @@ Detachment & release
 ## t-eb4d3e97
 Go deeper
 
-## t-5faea056 (heading)
-14 reports, grounded in your real chart
+## t-70e37db7 (heading)
+15 reports, grounded in your real chart
 
 ## t-bf674fa8
 Every report runs your own birth chart through a fixed set of classical calculations. A blurred preview is always free before you unlock the full reading.
@@ -1134,8 +1153,8 @@ Lahiri
 ## t-29710818
 However you think
 
-## t-4247f242 (heading)
-This site is available in 4 languages
+## t-0500be08 (heading)
+This site is available in 15 languages
 
 ## t-649df08a
 English
@@ -1143,11 +1162,44 @@ English
 ## t-c9e6b253
 Hindi
 
+## t-198e9c08
+Bengali
+
+## t-86c2b627
+Tamil
+
+## t-ea6c0346
+Telugu
+
+## t-6bb4b981
+Marathi
+
+## t-c06c55a5
+Gujarati
+
+## t-c3ed6655
+Kannada
+
 ## t-8df7f1b3
 Spanish
 
 ## t-44389f6a
 French
+
+## t-da91388c
+German
+
+## t-23882c57
+Portuguese
+
+## t-485b57ad
+Italian
+
+## t-74ad93cb
+Russian
+
+## t-9239c22d
+Japanese
 
 ## t-ee7197f3 (heading)
 Learn the concepts behind your chart
@@ -1162,8 +1214,8 @@ About Aroha Astrology
 ## t-daec9ebb (button or link)
 What is Aroha Astrology?
 
-## t-aeaf1320
-Aroha Astrology is a Vedic astrology app and website: a free Janam Kundli computed with Swiss Ephemeris precision, daily Panchang and horoscope, Vimshottari Dasha, yogas and doshas, Kundli matching, personalised reports and a Vedic Astrologer chat grounded in your own chart, in 7 Indian languages.
+## t-4d57234e
+Aroha Astrology is a Vedic astrology app and website: a free Janam Kundli computed with Swiss Ephemeris precision, daily Panchang and horoscope, Vimshottari Dasha, yogas and doshas, Kundli matching, personalised reports and a Vedic Astrologer chat grounded in your own chart, in English and six Indian languages.
 
 ## t-2370f7e0 (button or link)
 Which ayanamsa and house system does Aroha use?
@@ -1180,8 +1232,8 @@ Your Kundli, daily Panchang, horoscope, Moon sign, Guna Milan and the shlokas an
 ## t-c5dd568a (button or link)
 Is it available on iPhone?
 
-## t-0816b3e1
-Aroha Astrology is available on Android through Google Play. The iOS app is coming soon.
+## t-71aa1b31
+Aroha Astrology is available on Android through Google Play and on the web at app.arohaastrology.in. The iOS app is coming soon.
 
 ## t-0d4434ac (button or link)
 Does Aroha predict the future?
@@ -1207,12 +1259,12 @@ Read the Vastu guides
 ## t-a7f40f42 (heading)
 Your floor plan, room by room
 
-## t-b035f296
-<!-- Part of: On Android, in the Aroha Astrology app. Draw your home and every room is judged by where it sits. In the film, a kitchen moved from the north to the south-east, the traditional fire corner, goes from 70 to 88. -->
-On Android, in the Aroha Astrology app.
+## t-6512d89e
+<!-- Part of: On Android and the web, in the Aroha Astrology app. Draw your home and every room is judged by where it sits. In the film, a kitchen moved from the north to the south-east, the traditional fire corner, goes from 70 to 88. -->
+On Android and the web, in the Aroha Astrology app.
 
 ## t-af86e5e1
-<!-- Part of: On Android, in the Aroha Astrology app. Draw your home and every room is judged by where it sits. In the film, a kitchen moved from the north to the south-east, the traditional fire corner, goes from 70 to 88. -->
+<!-- Part of: On Android and the web, in the Aroha Astrology app. Draw your home and every room is judged by where it sits. In the film, a kitchen moved from the north to the south-east, the traditional fire corner, goes from 70 to 88. -->
 Draw your home and every room is judged by where it sits. In the film, a kitchen moved from the north to the south-east, the traditional fire corner, goes from 70 to 88.
 
 ## t-2b51b49c (button or link)
@@ -1299,14 +1351,14 @@ About Aroha Vastu
 ## t-a77e0595 (button or link)
 What is Aroha Vastu?
 
-## t-26f95587
-Aroha Vastu helps you understand your home through Vastu Shastra: draw your floor plan, see every room judged by its direction with a Vastu score, and ask questions about your layout. It is available on Android in the Aroha Astrology app; a 3D version with walk-through and furniture placement is coming soon.
+## t-9b489ffd
+Aroha Vastu helps you understand your home through Vastu Shastra: draw your floor plan, see every room judged by its direction with a Vastu score, and ask questions about your layout. It is available on Android and the web in the Aroha Astrology app; a 3D version with walk-through and furniture placement is coming soon.
 
 ## t-f7f59936 (button or link)
 Where can I use Aroha Vastu?
 
-## t-2d3e5f8f
-Aroha Vastu is available now on Android, inside the Aroha Astrology app. An iOS version of the app is coming soon.
+## t-1b3cd5a3
+Aroha Vastu is available now on Android and the web, inside the Aroha Astrology app. An iOS version of the app is coming soon.
 
 ## t-dd1154d3 (button or link)
 When is the 3D version coming?
@@ -2189,8 +2241,8 @@ Aroha Vastu · Available now
 ## t-0041a56a (heading)
 From reading about Vastu to checking your own home
 
-## t-55c83ecc
-Draw your floor plan in Aroha Vastu and see every room judged by its direction, with a Vastu score for your home. On Android now; a 3D version is coming soon.
+## t-4f39f3c9
+Draw your floor plan in Aroha Vastu and see every room judged by its direction, with a Vastu score for your home. On Android and the web now; a 3D version is coming soon.
 
 ## t-6b52289e (heading)
 Puja, rituals and spiritual practice
@@ -2240,6 +2292,10 @@ Yogi Baba
 <!-- Part of: Published 21 August 2026 -->
 Published
 
+## t-f2f8570d
+<!-- Part of: Updated 3 October 2026 -->
+Updated
+
 ## t-bea99f93
 In this article
 
@@ -2271,8 +2327,8 @@ Your Lagna, house placements and all nine grahas, computed with Swiss Ephemeris 
 ## t-f3623f58 (button or link)
 Generate your Kundli
 
-## t-78b184b1
-Ask follow-up questions and get answers grounded in your computed chart, in 7 Indian languages.
+## t-0d4bcd75
+Ask follow-up questions and get answers grounded in your computed chart, in English and six Indian languages.
 
 ## t-cf3766cc (button or link)
 Ask about your chart
@@ -2327,6 +2383,9 @@ A chanting library of shlokas with audio, and all 701 verses of the Gita, inside
 
 ## t-647f18ff (button or link)
 Open the library
+
+## t-085e7589
+Draw your floor plan and see each room checked against the eight directions, with a Vastu score.
 
 ## t-42744ef9
 Tagged

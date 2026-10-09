@@ -19,7 +19,7 @@ export function AppExperience() {
             <p className="mt-5 text-lg leading-relaxed text-night-ink-2">
               Free Kundli, daily Panchang and horoscope, the Vedic Astrologer chat and{' '}
               <Link href="/astrology#reports" className="text-night-ink underline underline-offset-4">
-                14 personalised reports
+                15 personalised reports
               </Link>
               , from marriage and Kundli Milan to wealth and career. Available on Android and the web; iOS is coming soon.
             </p>

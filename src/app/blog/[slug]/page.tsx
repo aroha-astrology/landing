@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { DEFAULT_ROBOTS } from '@/lib/seo';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -60,7 +61,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     keywords: tags,
     alternates: { canonical: `/blog/${slug}` },
-    robots: post.status === 'review' ? { index: false, follow: false } : undefined,
+    robots: post.status === 'review' ? { index: false, follow: false } : DEFAULT_ROBOTS,
     openGraph: {
       type: 'article',
       title,

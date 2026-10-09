@@ -10,7 +10,8 @@ import { LINKS, SITE_URL } from '@/lib/links';
 const PAGE_URL = `${SITE_URL}/about`;
 
 export const metadata: Metadata = pageMetadata({
-  title: 'About Aroha',
+  absoluteTitle: true,
+  title: 'About Aroha: Vedic Astrology, Vastu and Puja from India',
   description:
     'What Aroha is and why it exists: Aroha Astrology and Aroha Vastu (available now), Aroha Puja (coming soon), and how we use AI.',
   path: '/about',
