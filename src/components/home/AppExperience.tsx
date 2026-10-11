@@ -24,7 +24,7 @@ export function AppExperience() {
               , from marriage and Kundli Milan to wealth and career. Available on Android and the web; iOS is coming soon.
             </p>
           </div>
-          <AppStoreBadges align="start" />
+          <AppStoreBadges align="start" location="app_experience" />
         </div>
         <ul className="-mx-[clamp(20px,4vw,56px)] mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto px-[clamp(20px,4vw,56px)] pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0">
           {PROMO_VIDEOS.map((video, i) => (

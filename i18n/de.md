@@ -2460,3 +2460,12 @@ Moksha
 
 ## t-ed9edf93
 Die Illustrationen in den Artikeln werden speziell für Aroha erstellt. Einige werden per Code passend zum Thema des jeweiligen Artikels gezeichnet (ein Nakshatra-Ring für einen Nakshatra-Ratgeber, ein Grundriss für einen Vastu-Ratgeber); andere werden digital generiert und vor der Nutzung mit dem Artikel abgeglichen. Wir verwenden keine Bilder, an denen wir keine Rechte besitzen. Diagramme in den Artikeln bestehen aus echtem Text, damit sie problemlos mit Screenreadern funktionieren.
+
+## t-d5aa65bf
+Vorerst im Web
+
+## t-fe659421
+Auf dem iPhone? Nutze vorerst die Web-Version
+
+## t-26339159
+Tippe auf einen Planeten, um zu sehen, wofür er steht

@@ -2,9 +2,8 @@
 
 import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
-import { TrackedLink } from '@/components/ui/TrackedLink';
 import { CelestialSvg } from './CelestialSvg';
-import { GRAHA_INFO } from './grahaInfo';
+import { GrahaCard } from './GrahaCard';
 
 // three.js + R3F are only ever downloaded when the device qualifies below.
 const CelestialScene = dynamic(() => import('./CelestialScene'), { ssr: false });
@@ -35,6 +34,11 @@ function qualifies(): { ok: boolean; lite: boolean } {
  * is idle — lazy-loads the WebGL scene and cross-fades it in. The canvas
  * only animates while the hero is on screen and the tab is visible.
  * Once the scene is up, clicking a graha opens a card on what it governs.
+ *
+ * All of this is for 768px and up, where the armillary has the right half of
+ * the hero to itself. Below that it is not drawn here at all: behind a phone's
+ * full-width copy its planets sat under the heading and the paragraph. A phone
+ * gets the armillary as its own block instead (HeroArmillaryMobile).
  */
 export function HeroVisual() {
   const ref = useRef<HTMLDivElement>(null);
@@ -84,12 +88,10 @@ export function HeroVisual() {
     return () => window.removeEventListener('keydown', onKey);
   }, [selected]);
 
-  const info = selected ? GRAHA_INFO[selected] : undefined;
-
   return (
     <div ref={ref} className="pointer-events-none absolute inset-0">
       <CelestialSvg
-        className={`absolute right-[-30%] top-1/2 h-[120%] max-h-[900px] w-auto -translate-y-1/2 opacity-60 transition-opacity duration-1000 md:right-[-8%] md:opacity-90 lg:right-[-2%] ${
+        className={`absolute top-1/2 hidden h-[120%] max-h-[900px] w-auto -translate-y-1/2 opacity-90 transition-opacity duration-1000 md:right-[-8%] md:block lg:right-[-2%] ${
           ready ? '!opacity-0' : ''
         }`}
       />
@@ -121,45 +123,13 @@ export function HeroVisual() {
         </p>
       )}
 
-      {selected && info && (
-        <aside
+      {selected && (
+        <GrahaCard
           key={selected}
-          aria-label={`${selected} in Vedic astrology`}
-          aria-live="polite"
-          className="pointer-events-auto absolute bottom-8 right-[clamp(20px,4vw,56px)] z-10 w-[min(340px,calc(100vw-40px))] rounded-2xl border border-astro-rule bg-astro-night/85 p-5 text-astro-ink shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-md"
-          style={{ animation: 'aroha-card-in 320ms ease-out' }}
-        >
-          <button
-            type="button"
-            onClick={() => setSelected(null)}
-            aria-label="Close"
-            className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full text-lg leading-none text-astro-ink-2 transition-colors hover:bg-white/5 hover:text-astro-ink"
-          >
-            ×
-          </button>
-          <p className="text-[11.5px] font-bold uppercase tracking-[0.2em] text-astro-gold">Graha · {info.day}</p>
-          <p className="font-display mt-2 text-[26px] font-medium leading-tight">
-            {selected} <em className="font-normal text-astro-gold">{info.sanskrit}</em>
-          </p>
-          <p className="mt-2 text-[14.5px] leading-relaxed text-astro-ink-2">{info.blurb}</p>
-          <p className="mt-4 text-[11.5px] font-bold uppercase tracking-[0.2em] text-astro-ink-2">Responsible for</p>
-          <ul className="mt-2 flex flex-wrap gap-1.5">
-            {info.governs.map((g) => (
-              <li key={g} className="rounded-full border border-astro-rule px-2.5 py-1 text-[12.5px] text-astro-ink">
-                {g}
-              </li>
-            ))}
-          </ul>
-          <TrackedLink
-            href="/blog/navagraha-nine-planets-vedic-astrology"
-            cta="hero_graha_read_more"
-            location="hero_armillary"
-            product="astrology"
-            className="mt-4 inline-flex text-[13.5px] font-semibold text-astro-gold underline-offset-4 hover:underline"
-          >
-            Read about all nine grahas <span aria-hidden>&nbsp;→</span>
-          </TrackedLink>
-        </aside>
+          name={selected}
+          onClose={() => setSelected(null)}
+          className="!absolute bottom-8 right-[clamp(20px,4vw,56px)] z-10 w-[min(340px,calc(100vw-40px))]"
+        />
       )}
     </div>
   );

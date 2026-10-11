@@ -1,6 +1,6 @@
 # Aroha website: English strings for translation
 
-839 strings, about 8888 words.
+842 strings, about 8908 words.
 
 How to translate this file:
 
@@ -61,6 +61,12 @@ Use on the
 ## t-a8323a2a (button or link)
 <!-- Part of: Use on the Web -->
 Web
+
+## t-d5aa65bf (button or link)
+Use web for now
+
+## t-fe659421 (button or link)
+On iPhone? Use the web version for now
 
 ## t-3e4cbd97
 Knowledge Hub
@@ -135,6 +141,9 @@ Explore Aroha Astrology
 
 ## t-e58fa9d8 (button or link)
 See all of Aroha
+
+## t-26339159
+Tap any planet to see what it governs
 
 ## t-bb374ac5
 Available now

@@ -15,7 +15,9 @@ export type AnalyticsEvent =
   | { name: 'blog_category_click'; props: { category: string; location: string } }
   | { name: 'article_scroll_depth'; props: { slug: string; category: string; depth: 25 | 50 | 75 | 100 } }
   | { name: 'article_app_prompt'; props: { slug: string; action: 'shown' | 'dismissed' } }
-  | { name: 'app_store_click'; props: { store: 'google_play' | 'web'; location: string } };
+  // 'ios_web': an iPhone path (the App Store badge, the iOS row) that opens the web app
+  // while there is no iOS listing. Kept apart from 'web' so iPhone demand can be counted.
+  | { name: 'app_store_click'; props: { store: 'google_play' | 'web' | 'ios_web'; location: string } };
 
 export function track<N extends AnalyticsEvent['name']>(
   name: N,

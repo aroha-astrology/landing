@@ -68,7 +68,7 @@ export function Footer() {
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-night-ink-2">
               {`Aroha brings Vedic astrology, Vastu and puja together. ${PRODUCTS.astrology.name} is available now on Android and the web.`}
             </p>
-            <AppStoreBadges align="start" className="mt-6" />
+            <AppStoreBadges align="start" className="mt-6" location="footer" />
           </div>
           <Column title="Products" links={products} />
           <Column title="Explore" links={EXPLORE} />
