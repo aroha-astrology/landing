@@ -2469,3 +2469,96 @@ Hai un iPhone? Per ora usa la versione web
 
 ## t-26339159
 Tocca un pianeta per vedere cosa governa
+
+## t-4ed70fbd
+Usa su
+
+## t-a8323a2a
+Web
+
+## t-77198e3a
+Aroha unisce astrologia vedica, Vastu e puja. Aroha Astrology è ora disponibile su Android e web.
+
+## t-c6ca121d
+Aroha nasce in India per astrologia vedica, Vastu e puja. Aroha Astrology analizza il tuo grafico di nascita e Aroha Vastu la tua casa; entrambi sono disponibili ora su Android e web, con iOS e una versione Vastu 3D in arrivo. Aroha Puja, per prenotare puja a casa, arriverà a breve.
+
+## t-e5085e84
+È il giorno giusto? L'app mostra i cinque elementi della giornata (Tithi, Vaar, Nakshatra, Yoga e Karana), il Tithi di oggi (Shukla Chaturdashi, termina alle 23:08 prima di Purnima), quando attendere e quando iniziare con Rahu Kaal e Abhijit Muhurta, e ogni ora della giornata valutata nel Choghadiya. Aroha Astrology: Panchang di oggi, per la tua città. Gratis su Android e web.
+
+## t-8c809f8d
+Dove trovarlo: su Android e web, nell'app Aroha Astrology. Prossimamente: la tua casa in 3D, con vista esplorabile e punteggio dei mobili rispetto al Vastu.
+
+## t-cf7ab157
+Otto direzioni, un angolo giusto. Nel pianificatore Vastu di Aroha Astrology disegni la tua casa stanza per stanza e ogni stanza viene valutata in base alla direzione. Una cucina a nord ottiene 70 ed è segnalata come da migliorare; spostata a sud-est, l'angolo tradizionale del fuoco, il punteggio sale a 88. Le domande sul piano possono essere inviate nella chat dell'app. Aroha Astrology: Vastu, stanza per stanza. Gratis su Android e web.
+
+## t-3d66dba3
+dal matrimonio e Kundli Milan alla ricchezza e alla carriera. Disponibile su Android e web; iOS arriva a breve.
+
+## t-b4efa862
+Genera il tuo Janam Kundli gratuito (Lagna, Rashi, Nakshatra e tutti i nove pianeti), segui la tua Vimshottari Dasha, controlla yogas e doshas, accoppia due Kundlis con Guna Milan, leggi il Panchang e l'oroscopo quotidiani, chiedi alla chat del Vedic Astrologer del tuo grafico personale e sblocca report personalizzati. Ora su Android e web; iOS arriva a breve.
+
+## t-c6a0785f
+Aroha Vastu è disponibile ora su Android e web, all'interno dell'app Aroha Astrology. Puoi disegnare la tua planimetria, vedere ogni stanza valutata per direzione con un punteggio Vastu e chiedere informazioni sulla tua disposizione. Una versione 3D, con un tour della tua casa e la disposizione dei mobili, è in arrivo. Anche Aroha Puja è in sviluppo. Non abbiamo ancora annunciato date di lancio e questo sito indicherà quando ciascuno verrà attivato.
+
+## t-ac7e66e8
+Leggi Aroha nella tua lingua
+
+## t-d805a299
+Questo sito è disponibile in
+
+## t-d299ad03
+lingue. Scegli la tua e cambierà l'intera pagina.
+
+## t-0500be08
+Questo sito è disponibile in 15 lingue
+
+## t-198e9c08
+Bengalese
+
+## t-86c2b627
+Tamil
+
+## t-ea6c0346
+Telugu
+
+## t-6bb4b981
+Marathi
+
+## t-c06c55a5
+Gujarati
+
+## t-c3ed6655
+Kannada
+
+## t-da91388c
+Tedesco
+
+## t-23882c57
+Portoghese
+
+## t-485b57ad
+Italiano
+
+## t-74ad93cb
+Russo
+
+## t-9239c22d
+Giapponese
+
+## t-71aa1b31
+Aroha Astrology è disponibile su Android tramite Google Play e sul web su app.arohaastrology.in. L'app iOS arriva a breve.
+
+## t-6512d89e
+Su Android e web, nell'app Aroha Astrology.
+
+## t-9b489ffd
+Aroha Vastu ti aiuta a comprendere la tua casa attraverso il Vastu Shastra: disegna la planimetria, vedi ogni stanza valutata per direzione con un punteggio Vastu e poni domande sulla tua disposizione. È disponibile su Android e web nell'app Aroha Astrology; una versione 3D con tour e disposizione dei mobili arriverà a breve.
+
+## t-1b3cd5a3
+Aroha Vastu è disponibile ora su Android e web, all'interno dell'app Aroha Astrology. Una versione iOS dell'app è in arrivo.
+
+## t-4f39f3c9
+Disegna la planimetria in Aroha Vastu e vedi ogni stanza valutata per direzione, con un punteggio Vastu per la tua casa. Ora su Android e web; una versione 3D arriverà a breve.
+
+## t-085e7589
+Disegna la tua planimetria e vedi ogni stanza controllata rispetto alle otto direzioni, con un punteggio Vastu.

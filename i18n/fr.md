@@ -2469,3 +2469,90 @@ Sur iPhone ? Utilisez la version web pour l'instant
 
 ## t-26339159
 Touchez une planète pour voir ce qu'elle gouverne
+
+## t-4ed70fbd
+Utilisez
+
+## t-a8323a2a
+Sur le Web
+
+## t-77198e3a
+Aroha réunit l’astrologie védique, le Vastu et le puja. Aroha Astrology est disponible dès maintenant sur Android et sur le Web.
+
+## t-c6ca121d
+Aroha est conçu en Inde pour l’astrologie védique, le Vastu et le puja. Aroha Astrology couvre votre thème de naissance et Aroha Vastu couvre votre maison ; les deux sont disponibles dès maintenant sur Android et sur le Web, avec une version iOS et une version Vastu en 3D qui arrivent prochainement. Aroha Puja, pour réserver des puja à domicile, arrive bientôt.
+
+## t-e5085e84
+Est-ce aujourd’hui le bon jour ? L’application affiche les cinq membres du jour (Tithi, Vaar, Nakshatra, Yoga et Karana), le Tithi du jour (Shukla Chaturdashi, se terminant à 23:08 avant la Purnima), quand attendre et quand commencer avec le Rahu Kaal et l’Abhijit Muhurta, et chaque heure du jour notée dans le Choghadiya. Aroha Astrology : le Panchang du jour, pour votre ville. Gratuit sur Android et sur le Web.
+
+## t-8c809f8d
+Où l’obtenir : sur Android et sur le Web, dans l’application Aroha Astrology. À venir : votre maison en 3D, avec une vue en visite guidée et un score du placement des meubles selon le Vastu.
+
+## t-cf7ab157
+Huit directions, un coin juste. Dans le planificateur Vastu de l’application Aroha Astrology, vous dessinez votre maison pièce par pièce et chaque pièce est jugée selon sa direction. Une cuisine au nord obtient un score de 70 et est marquée comme nécessitant des travaux ; déplacée au sud-est, le coin traditionnel du feu, le score passe à 88. Les questions sur le plan peuvent être posées dans la messagerie de l’application. Aroha Astrology : le Vastu, pièce par pièce. Gratuit sur Android et sur le Web.
+
+## t-b4efa862
+Générez votre Janam Kundli gratuite (Lagna, Rashi, Nakshatra et les neuf planètes), suivez votre Vimshottari Dasha, vérifiez les yogas et les doshas, faites correspondre deux Kundlis avec le Guna Milan, lisez le Panchang quotidien et l’horoscope, posez des questions à l’astrologue védique par chat sur votre propre thème, et débloquez des rapports personnalisés. Disponible sur Android et sur le Web dès maintenant ; la version iOS arrive bientôt.
+
+## t-c6a0785f
+Aroha Vastu est disponible dès maintenant sur Android et sur le Web, dans l’application Aroha Astrology. Vous pouvez dessiner votre plan d’étage, voir chaque pièce jugée selon sa direction avec un score Vastu, et poser des questions sur votre agencement. Une version en 3D, avec une visite guidée de votre maison et le placement des meubles, arrive bientôt. Aroha Puja est également en développement. Nous n’avons pas encore annoncé de dates de lancement, et ce site indiquera quand chacune ouvrira.
+
+## t-ac7e66e8
+Lisez Aroha dans votre propre langue
+
+## t-d805a299
+Ce site est disponible en
+
+## t-d299ad03
+langues. Choisissez la vôtre et toute la page change.
+
+## t-0500be08
+Ce site est disponible en 15 langues
+
+## t-198e9c08
+Bengali
+
+## t-86c2b627
+Tamoul
+
+## t-ea6c0346
+Télougou
+
+## t-6bb4b981
+Marathi
+
+## t-c06c55a5
+Gujarati
+
+## t-c3ed6655
+Kannada
+
+## t-da91388c
+Allemand
+
+## t-23882c57
+Portugais
+
+## t-485b57ad
+Italien
+
+## t-74ad93cb
+Russe
+
+## t-9239c22d
+Japonais
+
+## t-71aa1b31
+Aroha Astrology est disponible sur Android via Google Play et sur le Web à l’adresse app.arohaastrology.in. L’application iOS arrive bientôt.
+
+## t-6512d89e
+Sur Android et sur le Web, dans l’application Aroha Astrology.
+
+## t-9b489ffd
+Aroha Vastu vous aide à comprendre votre maison grâce au Vastu Shastra : dessinez votre plan d’étage, voyez chaque pièce jugée selon sa direction avec un score Vastu, et posez des questions sur votre agencement. Disponible sur Android et sur le Web dans l’application Aroha Astrology ; une version en 3D avec visite guidée et placement des meubles arrive bientôt.
+
+## t-1b3cd5a3
+Aroha Vastu est disponible dès maintenant sur Android et sur le Web, dans l’application Aroha Astrology. Une version iOS de l’application arrive bientôt.
+
+## t-4f39f3c9
+Dessinez votre plan d’étage dans Aroha Vastu et voyez chaque pièce jugée selon sa direction, avec un score Vastu.

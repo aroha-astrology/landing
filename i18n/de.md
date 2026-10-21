@@ -2469,3 +2469,96 @@ Auf dem iPhone? Nutze vorerst die Web-Version
 
 ## t-26339159
 Tippe auf einen Planeten, um zu sehen, wofür er steht
+
+## t-4ed70fbd
+Verwenden auf
+
+## t-a8323a2a
+Web
+
+## t-77198e3a
+Aroha vereint vedische Astrologie, Vastu und Puja. Aroha Astrology ist jetzt auf Android und im Web verfügbar.
+
+## t-c6ca121d
+Aroha wurde in Indien für vedische Astrologie, Vastu und Puja entwickelt. Aroha Astrology deckt Ihr Geburtshoroskop ab, Aroha Vastu Ihr Zuhause; beide sind jetzt auf Android und im Web verfügbar, iOS und eine 3D-Vastu-Version folgen demnächst. Aroha Puja, für die Buchung von Puja zu Hause, kommt demnächst.
+
+## t-e5085e84
+Ist heute ein geeigneter Tag? Die App zeigt die fünf Glieder des Tages (Tithi, Vaar, Nakshatra, Yoga und Karana), die heutige Tithi (Shukla Chaturdashi, endend um 23:08 Uhr vor Purnima), Wann-Warten und Wann-Beginnen mit Rahu Kaal und Abhijit Muhurta sowie jede Stunde des Tages im Choghadiya bewertet. Aroha Astrology: heutiges Panchang für Ihre Stadt. Kostenlos auf Android und im Web.
+
+## t-8c809f8d
+Wo Sie es erhalten: auf Android und im Web, in der Aroha Astrology App. Demnächst: Ihr Zuhause in 3D mit einer Begehansicht und Einrichtungsplatzierung, bewertet nach Vastu.
+
+## t-cf7ab157
+Acht Richtungen, eine richtige Ecke. Im Vastu-Planer der Aroha Astrology App zeichnen Sie Ihr Zuhause Zimmer für Zimmer, und jedes Zimmer wird nach seiner Richtung bewertet. Eine Küche im Norden erhält eine Bewertung von 70 und wird als verbesserungswürdig markiert; in die südöstliche, traditionelle Feuer-Ecke verlegt, steigt die Bewertung auf 88. Fragen zum Plan können im Chat der App gestellt werden. Aroha Astrology: Vastu, Zimmer für Zimmer. Kostenlos auf Android und im Web.
+
+## t-3d66dba3
+, von Ehe und Kundli Milan bis zu Wohlstand und Karriere. Verfügbar auf Android und im Web; iOS folgt demnächst.
+
+## t-b4efa862
+Erstellen Sie Ihr kostenloses Janam Kundli (Lagna, Rashi, Nakshatra und alle neun Planeten), verfolgen Sie Ihre Vimshottari Dasha, prüfen Sie Yogas und Doshas, stimmen Sie zwei Kundlis mit Guna Milan ab, lesen Sie das tägliche Panchang und Horoskop, fragen Sie den vedischen Astrologen im Chat zu Ihrem eigenen Horoskop und schalten Sie personalisierte Berichte frei. Es ist jetzt auf Android und im Web verfügbar; iOS folgt demnächst.
+
+## t-c6a0785f
+Aroha Vastu ist jetzt auf Android und im Web, in der Aroha Astrology App, verfügbar. Sie können Ihren Grundriss zeichnen, jedes Zimmer nach seiner Richtung bewertet mit einer Vastu-Bewertung sehen und Fragen zu Ihrer Aufteilung stellen. Eine 3D-Version mit Begehung Ihres Zuhauses und Einrichtungsplatzierung folgt demnächst. Aroha Puja befindet sich ebenfalls in Entwicklung. Wir haben keine Veröffentlichungsdaten bekanntgegeben, und diese Seite wird angeben, wann jede einzelne eröffnet.
+
+## t-ac7e66e8
+Lesen Sie Aroha in Ihrer eigenen Sprache
+
+## t-d805a299
+Diese Seite ist verfügbar in
+
+## t-d299ad03
+Sprachen. Wählen Sie Ihre aus, und die gesamte Seite ändert sich.
+
+## t-0500be08
+Diese Seite ist in 15 Sprachen verfügbar
+
+## t-198e9c08
+Bengali
+
+## t-86c2b627
+Tamil
+
+## t-ea6c0346
+Telugu
+
+## t-6bb4b981
+Marathi
+
+## t-c06c55a5
+Gujarati
+
+## t-c3ed6655
+Kannada
+
+## t-da91388c
+Deutsch
+
+## t-23882c57
+Portugiesisch
+
+## t-485b57ad
+Italienisch
+
+## t-74ad93cb
+Russisch
+
+## t-9239c22d
+Japanisch
+
+## t-71aa1b31
+Aroha Astrology ist auf Android über Google Play und im Web unter app.arohaastrology.in verfügbar. Die iOS-App folgt demnächst.
+
+## t-6512d89e
+Auf Android und im Web, in der Aroha Astrology App.
+
+## t-9b489ffd
+Aroha Vastu hilft Ihnen, Ihr Zuhause durch Vastu Shastra zu verstehen: zeichnen Sie Ihren Grundriss, sehen Sie jedes Zimmer nach seiner Richtung bewertet mit einer Vastu-Bewertung, und stellen Sie Fragen zu Ihrer Aufteilung. Es ist auf Android und im Web in der Aroha Astrology App verfügbar; eine 3D-Version mit Begehung und Einrichtungsplatzierung folgt demnächst.
+
+## t-1b3cd5a3
+Aroha Vastu ist jetzt auf Android und im Web, in der Aroha Astrology App, verfügbar. Eine iOS-Version der App folgt demnächst.
+
+## t-4f39f3c9
+Zeichnen Sie Ihren Grundriss in Aroha Vastu und sehen Sie jedes Zimmer nach seiner Richtung bewertet, mit einer Vastu-Bewertung für Ihr Zuhause. Jetzt auf Android und im Web; eine 3D-Version folgt demnächst.
+
+## t-085e7589
+Zeichnen Sie Ihren Grundriss und sehen Sie jedes Zimmer überprüft gegen die acht Richtungen, mit einer Vastu-Bewertung.

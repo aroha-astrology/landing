@@ -2469,3 +2469,96 @@ No iPhone? Use a versão web por enquanto
 
 ## t-26339159
 Toque em um planeta para ver o que ele rege
+
+## t-4ed70fbd
+Use on the
+
+## t-a8323a2a
+Web
+
+## t-77198e3a
+Aroha reúne astrologia védica, Vastu e puja. Aroha Astrology já está disponível no Android e na web.
+
+## t-c6ca121d
+Aroha foi criada na Índia para astrologia védica, Vastu e puja. Aroha Astrology cobre o seu mapa de nascimento e Aroha Vastu cobre o seu lar; ambos já estão disponíveis no Android e na web, com a versão para iOS e uma versão 3D do Vastu a chegar em breve. Aroha Puja, para agendar pujas em casa, chega em breve.
+
+## t-e5085e84
+Hoje é o dia certo? O aplicativo mostra os cinco membros do dia (Tithi, Vaar, Nakshatra, Yoga e Karana), o Tithi de hoje (Shukla Chaturdashi, terminando às 23:08 antes da Purnima), quando esperar e quando começar, com Rahu Kaal e Abhijit Muhurta, e todas as horas do dia avaliadas no Choghadiya. Aroha Astrology: o Panchang de hoje, para a sua cidade. Gratuito no Android e na web.
+
+## t-8c809f8d
+Onde obter: no Android e na web, no aplicativo Aroha Astrology. Em breve: o seu lar em 3D, com uma visão de caminhada e posicionamento de móveis pontuado de acordo com o Vastu.
+
+## t-cf7ab157
+Oito direções, um canto certo. No planejador Vastu do aplicativo Aroha Astrology, você desenha o seu lar cômodo por cômodo e cada cômodo é julgado pela sua direção. Uma cozinha no norte pontua 70 e é marcada como necessitando de trabalho; movida para o sudeste, o canto tradicional do fogo, a pontuação sobe para 88. Perguntas sobre o plano podem ser feitas no chat do aplicativo. Aroha Astrology: Vastu, cômodo por cômodo. Gratuito no Android e na web.
+
+## t-3d66dba3
+, desde casamento e Kundli Milan até riqueza e carreira. Disponível no Android e na web; iOS chegará em breve.
+
+## t-b4efa862
+Gere o seu Janam Kundli gratuito (Lagna, Rashi, Nakshatra e todos os nove planetas), acompanhe a sua Vimshottari Dasha, verifique yogas e doshas, combine duas Kundlis com Guna Milan, leia o Panchang e a previsão do dia, converse com o astrólogo védico do chat sobre o seu próprio mapa e desbloqueie relatórios personalizados. Já está disponível no Android e na web; iOS chegará em breve.
+
+## t-c6a0785f
+Aroha Vastu já está disponível no Android e na web, dentro do aplicativo Aroha Astrology. Você pode desenhar a sua planta baixa, ver cada cômodo julgado pela sua direção com uma pontuação de Vastu e fazer perguntas sobre o seu layout. Uma versão 3D, com uma caminhada pelo seu lar e posicionamento de móveis, chegará em breve. Aroha Puja também está em desenvolvimento. Não anunciemos datas de lançamento e este site avisará quando cada um abrir.
+
+## t-ac7e66e8
+Leia a Aroha no seu próprio idioma
+
+## t-d805a299
+Este site está disponível em
+
+## t-d299ad03
+idiomas. Escolha o seu e a página inteira mudará.
+
+## t-0500be08
+Este site está disponível em 15 idiomas
+
+## t-198e9c08
+Bengali
+
+## t-86c2b627
+Tamil
+
+## t-ea6c0346
+Telugu
+
+## t-6bb4b981
+Marathi
+
+## t-c06c55a5
+Gujarati
+
+## t-c3ed6655
+Kannada
+
+## t-da91388c
+Alemão
+
+## t-23882c57
+Português
+
+## t-485b57ad
+Italiano
+
+## t-74ad93cb
+Russo
+
+## t-9239c22d
+Japonês
+
+## t-71aa1b31
+Aroha Astrology está disponível no Android pelo Google Play e na web em app.arohaastrology.in. O aplicativo para iOS chegará em breve.
+
+## t-6512d89e
+No Android e na web, no aplicativo Aroha Astrology.
+
+## t-9b489ffd
+Aroha Vastu ajuda você a entender o seu lar por meio do Vastu Shastra: desenhe a sua planta baixa, veja cada cômodo julgado pela sua direção com uma pontuação de Vastu e faça perguntas sobre o seu layout. Está disponível no Android e na web no aplicativo Aroha Astrology; uma versão 3D com caminhada e posicionamento de móveis chegará em breve.
+
+## t-1b3cd5a3
+Aroha Vastu já está disponível no Android e na web, dentro do aplicativo Aroha Astrology. Uma versão para iOS do aplicativo chegará em breve.
+
+## t-4f39f3c9
+Desenhe a sua planta baixa na Aroha Vastu e veja cada cômodo julgado pela sua direção, com uma pontuação de Vastu para o seu lar. Já disponível no Android e na web; uma versão 3D chegará em breve.
+
+## t-085e7589
+Desenhe a sua planta baixa e veja cada cômodo verificado contra as oito direções, com uma pontuação de Vastu.
