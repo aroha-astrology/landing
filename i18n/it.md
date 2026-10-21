@@ -2460,3 +2460,12 @@ Karma passato
 
 ## t-6250bea1
 Moksha
+
+## t-d5aa65bf
+Per ora, sul web
+
+## t-fe659421
+Hai un iPhone? Per ora usa la versione web
+
+## t-26339159
+Tocca un pianeta per vedere cosa governa

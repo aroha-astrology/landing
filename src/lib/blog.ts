@@ -88,7 +88,7 @@ function plainHeadingText(raw: string): string {
     .trim();
 }
 
-function extractHeadings(content: string): Heading[] {
+export function extractHeadings(content: string): Heading[] {
   const out: Heading[] = [];
   let inFence = false;
   for (const line of content.split('\n')) {
@@ -271,9 +271,14 @@ export function formatDate(date: string): string {
  * article before another it links to never ships a 404 link.
  */
 export function renderableContent(post: BlogPost): string {
+  return linkableContent(post.content);
+}
+
+/** Same as renderableContent, for a translated body (its links are the same slugs). */
+export function linkableContent(content: string): string {
   const visible = new Set(getAllSlugs());
   const hubs = new Set(['astrology', 'vastu', 'puja', 'tag']);
-  return post.content.replace(/\[([^\]]+)\]\(\/blog\/([a-z0-9-]+)(#[^)]*)?\)/g, (match, text: string, slug: string) =>
+  return content.replace(/\[([^\]]+)\]\(\/blog\/([a-z0-9-]+)(#[^)]*)?\)/g, (match, text: string, slug: string) =>
     visible.has(slug) || hubs.has(slug) ? match : text,
   );
 }

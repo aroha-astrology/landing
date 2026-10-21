@@ -185,14 +185,21 @@ export function AppCTA({
                     Open in browser
                   </span>
                 </a>
-                <div className="flex w-full cursor-not-allowed items-center justify-between rounded-lg px-2.5 py-2.5 opacity-50">
+                {/* No iOS listing yet (see links.ts): an iPhone visitor is sent to the web app. */}
+                <a
+                  href={WEB_APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("app_store_click", { store: "ios_web", location })}
+                  className="flex w-full items-center justify-between rounded-lg px-2.5 py-2.5 transition-colors hover:bg-paper-sunk"
+                >
                   <span className="text-[13px] font-semibold text-ink">
                     iOS
                   </span>
                   <span className="text-[10px] uppercase tracking-wide text-ink-muted">
-                    Coming soon
+                    Use web for now
                   </span>
-                </div>
+                </a>
               </motion.div>
             )}
           </AnimatePresence>,

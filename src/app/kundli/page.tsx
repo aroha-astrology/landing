@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { KundliSection } from '@/components/landing/KundliSection';
 import { FAQSection } from '@/components/landing/FAQSection';
+import { ORG_ID, WEBSITE_ID, breadcrumbNode } from '@/lib/brand';
+import { SITE_URL } from '@/lib/links';
+
+const PAGE_URL = `${SITE_URL}/kundli`;
 
 export const metadata: Metadata = {
   title: 'Free Kundli Generator: Vedic Birth Chart Online',
@@ -11,11 +15,27 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Aroha Astrology: Free Kundli Generator',
-  applicationCategory: 'LifestyleApplication',
-  operatingSystem: 'Web',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${PAGE_URL}#webpage`,
+      url: PAGE_URL,
+      name: 'Free Kundli Generator: Vedic Birth Chart Online',
+      isPartOf: { '@id': WEBSITE_ID },
+      breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+    },
+    breadcrumbNode(PAGE_URL, [{ name: 'Free Kundli', url: PAGE_URL }]),
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${PAGE_URL}#app`,
+      name: 'Aroha Astrology: Free Kundli Generator',
+      url: PAGE_URL,
+      applicationCategory: 'LifestyleApplication',
+      operatingSystem: 'Web',
+      publisher: { '@id': ORG_ID },
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
+    },
+  ],
 };
 
 const faqItems = [

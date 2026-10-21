@@ -18,16 +18,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const latest = (list: typeof posts) =>
     list.length ? new Date(`${list.map((p) => p.frontmatter.updated ?? p.frontmatter.date).sort().at(-1)}T00:00:00Z`) : undefined;
 
+  // The day the page's own copy or structured data last changed. Update by
+  // hand when a page is edited; a date that moves on every build is ignored.
+  const edited = (day: string) => new Date(`${day}T00:00:00Z`);
+
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: `${SITE_URL}/`, changeFrequency: 'weekly', priority: 1 },
-    { url: `${SITE_URL}/astrology`, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${SITE_URL}/vastu`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/`, lastModified: edited('2026-10-06'), changeFrequency: 'weekly', priority: 1 },
+    { url: `${SITE_URL}/astrology`, lastModified: edited('2026-10-06'), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${SITE_URL}/vastu`, lastModified: edited('2026-10-06'), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE_URL}/puja`, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${SITE_URL}/kundli`, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${SITE_URL}/moon-sign`, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${SITE_URL}/kundli`, lastModified: edited('2026-10-06'), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${SITE_URL}/moon-sign`, lastModified: edited('2026-10-06'), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${SITE_URL}/panchang`, changeFrequency: 'daily', priority: 0.9 },
     { url: `${SITE_URL}/blog`, lastModified: latest(posts), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${SITE_URL}/about`, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${SITE_URL}/about`, lastModified: edited('2026-10-06'), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE_URL}/editorial-standards`, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${SITE_URL}/support`, changeFrequency: 'yearly', priority: 0.3 },
     // Low priority but deliberately listed: these are the URLs the Play Store

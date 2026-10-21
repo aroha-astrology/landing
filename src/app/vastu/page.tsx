@@ -16,7 +16,7 @@ import { SITE_URL } from '@/lib/links';
 const PAGE_URL = `${SITE_URL}/vastu`;
 const TITLE = 'Aroha Vastu: Check Your Floor Plan Room by Room';
 const DESCRIPTION =
-  'Aroha Vastu is available on Android and the web: draw your floor plan, see every room judged by its direction with a Vastu score, and ask about your layout. 3D is coming soon.';
+  'Draw your floor plan and see every room judged by its direction, with a Vastu score. Aroha Vastu is on Android and the web. 3D is coming soon.';
 
 export const metadata: Metadata = pageMetadata({ absoluteTitle: true, title: TITLE, description: DESCRIPTION, path: '/vastu' });
 

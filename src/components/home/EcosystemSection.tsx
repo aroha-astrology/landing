@@ -9,7 +9,7 @@ const LOOK: Record<ProductKey, { card: string; glyph: string; cta: string; lead:
     glyph: 'text-astro-gold',
     cta: 'Explore Astrology',
     lead: 'Understand yourself',
-    line: 'Your birth chart, computed with Swiss Ephemeris precision and explained in plain language, in 7 Indian languages.',
+    line: 'Your birth chart, computed with Swiss Ephemeris precision and explained in plain language, in English and six Indian languages.',
     Glyph: AstrologyGlyph,
     points: ['Free Janam Kundli: Lagna, Rashi and Nakshatra', 'Vimshottari Dasha, yogas and Kundli matching', 'Daily Panchang, Rashifal and chart-based answers'],
   },

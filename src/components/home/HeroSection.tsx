@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { HeroVisual } from '@/components/three/HeroVisual';
+import { HeroArmillaryMobile } from '@/components/three/HeroArmillaryMobile';
 import { TrackedLink } from '@/components/ui/TrackedLink';
 import { StatusBadge } from '@/components/product/StatusBadge';
 import { BRAND, PRODUCTS, PRODUCT_ORDER } from '@/lib/brand';
@@ -7,9 +8,11 @@ import { PLAY_STORE_URL, WEB_APP_URL } from '@/lib/links';
 
 /**
  * The front door. The H1 and copy are plain server HTML and the LCP
- * element; the celestial visual sits behind them (SVG first, WebGL later on
- * capable devices). The product status list states, in text, what exists
- * today — nothing about Aroha depends on the 3D scene being rendered.
+ * element; from 768px up the celestial visual sits behind them (SVG first,
+ * WebGL later on capable devices), and on a phone it is its own block under
+ * the buttons, where it covers no text. The product status list states, in
+ * text, what exists today — nothing about Aroha depends on the 3D scene being
+ * rendered.
  */
 export function HeroSection() {
   return (
@@ -58,6 +61,8 @@ export function HeroSection() {
             </TrackedLink>
           </div>
 
+          <HeroArmillaryMobile />
+
           <ul aria-label="The Aroha products" className="mt-14 grid max-w-[560px] gap-3 border-t border-astro-rule pt-7 sm:grid-cols-3">
             {PRODUCT_ORDER.map((k) => {
               const p = PRODUCTS[k];
@@ -92,7 +97,18 @@ export function HeroSection() {
                       >
                         Web<span className="sr-only"> (opens the web app)</span>
                       </TrackedLink>
-                      <span className="text-astro-ink-2">iOS · coming soon</span>
+                      {/* No iOS listing yet: an iPhone visitor's way in is the web app. */}
+                      <TrackedLink
+                        href={WEB_APP_URL}
+                        cta="hero_store_ios_web"
+                        location="hero_status"
+                        product="astrology"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-astro-ink-2 underline underline-offset-4 hover:text-astro-gold"
+                      >
+                        iOS · use the web for now
+                      </TrackedLink>
                     </div>
                   ) : (
                     p.note && <span className="text-[12.5px] text-astro-ink-2">{p.note}</span>

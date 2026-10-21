@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { DEFAULT_ROBOTS } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import { Breadcrumbs } from '@/components/blog/Breadcrumbs';
 import { ArticleCard, toSummary } from '@/components/blog/ArticleCard';
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: { canonical: `/blog/tag/${encodeURIComponent(tag)}` },
     // Small tag archives are thin pages: keep them as navigation for
     // readers, but out of the index (and out of sitemap.ts).
-    robots: posts.length < MIN_INDEXABLE_TAG_POSTS ? { index: false, follow: true } : undefined,
+    robots: posts.length < MIN_INDEXABLE_TAG_POSTS ? { index: false, follow: true } : DEFAULT_ROBOTS,
   };
 }
 

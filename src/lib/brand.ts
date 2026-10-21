@@ -54,7 +54,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     theme: 'Life',
     realm: 'Cosmos',
     summary:
-      'Aroha Astrology is a Vedic astrology app and website: a free Janam Kundli computed with Swiss Ephemeris precision, daily Panchang and horoscope, Vimshottari Dasha, yogas and doshas, Kundli matching, personalised reports and a Vedic Astrologer chat grounded in your own chart, in 7 Indian languages.',
+      'Aroha Astrology is a Vedic astrology app and website: a free Janam Kundli computed with Swiss Ephemeris precision, daily Panchang and horoscope, Vimshottari Dasha, yogas and doshas, Kundli matching, personalised reports and a Vedic Astrologer chat grounded in your own chart, in English and six Indian languages.',
     capabilities: [
       'Janam Kundli with Lagna, Rashi, Nakshatra and all nine grahas',
       'Divisional charts D1 to D60, Ashtakavarga and Shadbala',
@@ -63,7 +63,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       'Kundli matching: 36-point Guna Milan and Manglik check',
       'Daily Panchang and daily, weekly, monthly and yearly horoscope',
       'Vedic Astrologer chat that answers from your computed chart',
-      '14 personalised reports, gemstones, Lal Kitab remedies, numerology and palm reading',
+      '15 personalised reports, gemstones, Lal Kitab remedies, numerology and palm reading',
       'Shlokas library and the Bhagavad Gita',
     ],
     where: 'On Android and the web. iOS is coming soon.',
@@ -126,7 +126,9 @@ export const productBrandId = (key: ProductKey) => `${SITE_URL}/${key}#brand`;
 export const ASTROLOGY_APP_ID = `${SITE_URL}/#app`;
 export const ASTROLOGY_WEB_APP_ID = `${SITE_URL}/#webapp`;
 
-const AVAILABLE_LANGUAGES = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'es', 'fr', 'de'];
+// The languages the released app ships in (frontend providers/language-provider.tsx).
+// Not the site's own language list, which lives in lib/i18n/languages.ts.
+const APP_LANGUAGES = ['en', 'hi', 'bn', 'mr', 'te', 'ta', 'gu'];
 
 export function brandGraph() {
   return [
@@ -153,7 +155,7 @@ export function brandGraph() {
         email: BRAND.email,
         url: `${SITE_URL}/support`,
         areaServed: 'IN',
-        availableLanguage: AVAILABLE_LANGUAGES,
+        availableLanguage: APP_LANGUAGES,
       },
       foundingLocation: {
         '@type': 'Place',
@@ -202,17 +204,16 @@ export function astrologyAppNode() {
     brand: { '@id': productBrandId('astrology') },
     publisher: { '@id': ORG_ID },
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR', url: PLAY_STORE_URL },
-    // Real Play Store numbers as of 2026-08-31 — update by hand when they
+    // Real Play Store numbers as of 2026-10-06 — update by hand when they
     // drift meaningfully; a stale rating here is worse than none.
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      ratingCount: '19',
-      reviewCount: '19',
+      ratingValue: '4.9',
+      ratingCount: '26',
       bestRating: '5',
     },
     featureList: PRODUCTS.astrology.capabilities,
-    inLanguage: AVAILABLE_LANGUAGES,
+    inLanguage: APP_LANGUAGES,
   };
 }
 
@@ -230,7 +231,7 @@ export function astrologyWebAppNode() {
     publisher: { '@id': ORG_ID },
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR', url: WEB_APP_URL },
     featureList: PRODUCTS.astrology.capabilities,
-    inLanguage: AVAILABLE_LANGUAGES,
+    inLanguage: APP_LANGUAGES,
   };
 }
 
