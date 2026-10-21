@@ -1,5 +1,7 @@
 'use client';
 
+import { ALL_LANGUAGES } from '@/lib/i18n/languages';
+
 import { useEffect, useRef, type ReactNode } from 'react';
 import { useStore } from '@/store/useStore';
 import { isAvailable, loadLocale, lookup, normalise } from '@/lib/i18n/locale';
@@ -110,6 +112,16 @@ function applyLanguage(lang: string) {
 
 export function TranslationProvider({ children }: { children: ReactNode }) {
   const language = useStore((s) => s.language);
+
+  // First visit (nothing saved): follow the browser language when the site has it, otherwise English.
+  useEffect(() => {
+    let saved: string | null = null;
+    try { saved = localStorage.getItem('aroha-landing'); } catch { /* storage blocked */ }
+    if (saved) return;
+    const codes = ALL_LANGUAGES.map((l) => l.code);
+    const found = (navigator.languages?.length ? navigator.languages : [navigator.language]).map((t) => t.toLowerCase().split('-')[0]).find((c) => codes.includes(c));
+    if (found && found !== 'en') useStore.getState().setLanguage(found);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = language;
