@@ -5,6 +5,7 @@ import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { AppCTA } from '@/components/ui/AppCTA';
+import { KundliChart, PLANET_ABBR } from './KundliChart';
 import { useT } from '@/lib/i18n/useT';
 import { CITIES, type City } from '@/data/cities';
 import { getUtcOffsetMinutes } from '@/lib/timezone';
@@ -248,21 +249,20 @@ export function KundliSection({ headingLevel = 'h2' }: { headingLevel?: 'h1' | '
               </p>
             </div>
 
-            <div className="mt-6 grid grid-cols-3 gap-px border border-rule bg-rule sm:grid-cols-3">
-              {result.planets.map((p) => (
-                <div key={p.planet} className="bg-paper px-3 py-3 text-center">
-                  <p className="text-[11px] uppercase tracking-[0.06em] text-ink-muted">
-                    {p.planet}
-                  </p>
-                  <p className="font-data mt-1 text-sm text-ink" data-no-translate>
-                    {p.sign} {p.isRetrograde && '℞'}
-                  </p>
-                  <p className="mt-0.5 text-xs text-ink-muted" data-no-translate>
-                    House {p.house}
-                  </p>
-                </div>
-              ))}
+            <div className="mt-6 rounded-lg border border-rule bg-paper p-3 sm:p-4">
+              <KundliChart ascendantSign={result.ascendant.sign} planets={result.planets} />
             </div>
+
+            <ul className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-ink-muted" data-no-translate>
+              {result.planets.map((p) => (
+                <li key={p.planet}>
+                  <span className="font-semibold text-accent-text">{PLANET_ABBR[p.planet] ?? p.planet.slice(0, 2)}</span> {p.planet}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2 text-center text-xs text-ink-muted">
+              <span data-no-translate>R</span> Retrograde · <span data-no-translate>↑</span> Exalted · <span data-no-translate>↓</span> Debilitated
+            </p>
 
             <div className="mt-6 text-center">
               <AppCTA variant="solid">See houses, dashas &amp; full reading →</AppCTA>

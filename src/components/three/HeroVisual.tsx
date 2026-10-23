@@ -1,85 +1,19 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-import { useEffect, useRef, useState } from 'react';
-import { CelestialSvg } from './CelestialSvg';
+import { useEffect, useState } from 'react';
+import { track } from '@/lib/analytics';
+import { GrahaChakra } from './GrahaChakra';
 import { GrahaCard } from './GrahaCard';
 
-// three.js + R3F are only ever downloaded when the device qualifies below.
-const CelestialScene = dynamic(() => import('./CelestialScene'), { ssr: false });
-
-type NetworkInfo = { saveData?: boolean; effectiveType?: string };
-
-/** Desktop-class device, WebGL available, no reduced-motion or save-data preference. */
-function qualifies(): { ok: boolean; lite: boolean } {
-  // Reduced motion gets the still SVG; no reason to download a 3D engine.
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return { ok: false, lite: false };
-  const conn = (navigator as Navigator & { connection?: NetworkInfo }).connection;
-  if (conn?.saveData || /(^|-)(2g|3g)$/.test(conn?.effectiveType ?? '')) return { ok: false, lite: false };
-  if (!window.matchMedia('(min-width: 768px)').matches) return { ok: false, lite: false };
-  const cores = navigator.hardwareConcurrency ?? 4;
-  if (cores < 4) return { ok: false, lite: false };
-  try {
-    const c = document.createElement('canvas');
-    if (!(c.getContext('webgl2') || c.getContext('webgl'))) return { ok: false, lite: false };
-  } catch {
-    return { ok: false, lite: false };
-  }
-  return { ok: true, lite: cores < 8 || window.innerWidth < 1100 };
-}
-
 /**
- * The hero's visual layer. Renders the SVG armillary immediately (server
- * HTML, no layout shift), then — on a qualifying device, after the browser
- * is idle — lazy-loads the WebGL scene and cross-fades it in. The canvas
- * only animates while the hero is on screen and the tab is visible.
- * Once the scene is up, clicking a graha opens a card on what it governs.
- *
- * All of this is for 768px and up, where the armillary has the right half of
- * the hero to itself. Below that it is not drawn here at all: behind a phone's
- * full-width copy its planets sat under the heading and the paragraph. A phone
- * gets the armillary as its own block instead (HeroArmillaryMobile).
+ * The hero's visual layer, from 768px up: the orrery (GrahaChakra) fills the
+ * right half of the hero behind the copy. Click a planet and a card says what
+ * it governs. Below 768px the orrery is its own block under the buttons
+ * instead (HeroArmillaryMobile): behind a phone's full-width copy its planets
+ * sat under the heading and the paragraph.
  */
 export function HeroVisual() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [mode, setMode] = useState<{ load: boolean; lite: boolean }>({ load: false, lite: false });
-  const [ready, setReady] = useState(false);
-  const [active, setActive] = useState(true);
-  const [reduced, setReduced] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReduced(mq.matches);
-    const onChange = () => setReduced(mq.matches);
-    mq.addEventListener('change', onChange);
-
-    const { ok, lite } = qualifies();
-    let idle: number | undefined;
-    if (ok) {
-      const start = () => setMode({ load: true, lite });
-      const w = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number; cancelIdleCallback?: (id: number) => void };
-      idle = w.requestIdleCallback ? w.requestIdleCallback(start, { timeout: 2500 }) : window.setTimeout(start, 1200);
-    }
-    return () => {
-      mq.removeEventListener('change', onChange);
-      const w = window as Window & { cancelIdleCallback?: (id: number) => void };
-      if (idle !== undefined) (w.cancelIdleCallback ?? window.clearTimeout)(idle);
-    };
-  }, []);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([e]) => setActive(e.isIntersecting && document.visibilityState === 'visible'), { threshold: 0 });
-    io.observe(el);
-    const onVis = () => setActive(document.visibilityState === 'visible' && el.getBoundingClientRect().bottom > 0);
-    document.addEventListener('visibilitychange', onVis);
-    return () => {
-      io.disconnect();
-      document.removeEventListener('visibilitychange', onVis);
-    };
-  }, []);
 
   useEffect(() => {
     if (!selected) return;
@@ -88,47 +22,31 @@ export function HeroVisual() {
     return () => window.removeEventListener('keydown', onKey);
   }, [selected]);
 
-  return (
-    <div ref={ref} className="pointer-events-none absolute inset-0">
-      <CelestialSvg
-        className={`absolute top-1/2 hidden h-[120%] max-h-[900px] w-auto -translate-y-1/2 opacity-90 transition-opacity duration-1000 md:right-[-8%] md:block lg:right-[-2%] ${
-          ready ? '!opacity-0' : ''
-        }`}
-      />
-      {mode.load && (
-        <div
-          aria-hidden
-          className={`absolute inset-y-0 right-[-14%] w-[80%] transition-opacity duration-[1400ms] lg:right-[-6%] lg:w-[64%] ${ready ? 'pointer-events-auto opacity-100' : 'opacity-0'}`}
-        >
-          <CelestialScene
-            active={active}
-            reduced={reduced}
-            lite={mode.lite}
-            onReady={() => setReady(true)}
-            selected={selected}
-            onSelect={setSelected}
-          />
-        </div>
-      )}
+  const select = (name: string) => {
+    setSelected(name);
+    track('cta_click', { cta: 'hero_graha_click', location: 'hero_orrery', product: 'astrology' });
+  };
 
-      {/* Only the WebGL scene is clickable, so the hint waits for it. 74% is the armillary's centre at md and lg. */}
-      {ready && (
+  return (
+    <div className="pointer-events-none absolute inset-0">
+      {/* The picture and its hint share one box, so the hint always sits over the orrery's centre. */}
+      <div className="absolute top-1/2 hidden aspect-square w-[58vw] -translate-y-1/2 md:right-[-18%] md:block lg:right-[1%] lg:w-[min(46vw,680px)]">
+        <GrahaChakra className="h-full w-full" onSelect={select} selected={selected} />
         <p
           aria-hidden
-          className="absolute left-[74%] top-6 z-10 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-astro-rule bg-astro-night/60 px-4 py-1.5 text-[12.5px] font-semibold tracking-[0.04em] text-astro-gold backdrop-blur-sm"
-          style={{ animation: 'aroha-card-in 600ms ease-out' }}
+          className="absolute -top-2 left-[38%] z-10 flex -translate-x-1/2 lg:left-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-astro-rule bg-astro-night/60 px-4 py-1.5 text-[12.5px] font-semibold tracking-[0.04em] text-astro-gold backdrop-blur-sm"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-astro-gold" style={{ animation: 'aroha-twinkle 2.4s ease-in-out infinite' }} />
           Click any planet to see what it governs
         </p>
-      )}
+      </div>
 
       {selected && (
         <GrahaCard
           key={selected}
           name={selected}
           onClose={() => setSelected(null)}
-          className="!absolute bottom-8 right-[clamp(20px,4vw,56px)] z-10 w-[min(340px,calc(100vw-40px))]"
+          className="!absolute bottom-8 right-[clamp(20px,4vw,56px)] z-10 hidden w-[min(340px,calc(100vw-40px))] md:block"
         />
       )}
     </div>

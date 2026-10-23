@@ -5,7 +5,7 @@ import { GRAHA_INFO } from './grahaInfo';
 
 /**
  * What one graha stands for: the card a visitor gets by clicking a planet in
- * the hero armillary (the WebGL scene on a desktop, the tappable SVG on a
+ * the hero orrery (GrahaChakra, on a desktop and on a
  * phone). Where it sits is the caller's business, passed as `className`.
  */
 export function GrahaCard({
@@ -52,7 +52,7 @@ export function GrahaCard({
       <TrackedLink
         href="/blog/navagraha-nine-planets-vedic-astrology"
         cta="hero_graha_read_more"
-        location="hero_armillary"
+        location="hero_orrery"
         product="astrology"
         className="mt-4 inline-flex text-[13.5px] font-semibold text-astro-gold underline-offset-4 hover:underline"
       >

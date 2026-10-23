@@ -1,5 +1,5 @@
 /**
- * What each graha in the hero armillary stands for, shown when a visitor
+ * What each graha in the hero orrery stands for, shown when a visitor
  * clicks it. Wording follows the Navagraha article
  * (content/blog/navagraha-nine-planets-vedic-astrology.mdx) so the two agree.
  */

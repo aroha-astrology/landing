@@ -1,12 +1,12 @@
 import { AppCTA } from '@/components/ui/AppCTA';
 import { TrackedLink } from '@/components/ui/TrackedLink';
 import { BRAND } from '@/lib/brand';
-import { CelestialSvg } from '@/components/three/CelestialSvg';
+import { GrahaChakra } from '@/components/three/GrahaChakra';
 
 export function FinalCta() {
   return (
     <section aria-labelledby="final-title" className="relative isolate overflow-hidden bg-astro-night px-[clamp(20px,4vw,56px)] py-[clamp(88px,11vw,160px)] text-center text-astro-ink">
-      <CelestialSvg className="absolute left-1/2 top-1/2 -z-10 h-[140%] w-auto -translate-x-1/2 -translate-y-1/2 opacity-30" />
+      <GrahaChakra still className="absolute left-1/2 top-1/2 -z-10 h-[140%] w-auto -translate-x-1/2 -translate-y-1/2 opacity-30" />
       <div className="reveal mx-auto max-w-3xl">
         <p className="text-[12.5px] font-bold uppercase tracking-[0.22em] text-astro-gold">{BRAND.tagline}</p>
         <h2 id="final-title" className="font-display mt-5 text-[clamp(40px,6.4vw,84px)] font-medium leading-[1]">

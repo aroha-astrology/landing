@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 import { ProductHero } from '@/components/product/ProductHero';
-import { CelestialSvg } from '@/components/three/CelestialSvg';
+import { GrahaChakra } from '@/components/three/GrahaChakra';
 import { TrackedLink } from '@/components/ui/TrackedLink';
 import { AppCTA } from '@/components/ui/AppCTA';
 import { FeaturesSection } from '@/components/landing/FeaturesSection';
@@ -98,7 +98,7 @@ export default function AstrologyPage() {
           </>
         }
         lead="Your Janam Kundli, computed with Swiss Ephemeris precision, then explained in plain language: your Lagna, Rashi and Nakshatra, the Dasha you’re in, the yogas in your chart and what today’s sky means for you."
-        visual={<CelestialSvg className="pointer-events-none absolute right-[-20%] top-1/2 -z-10 h-[130%] w-auto -translate-y-1/2 opacity-40 md:right-[-6%] md:opacity-70" />}
+        visual={<GrahaChakra still className="pointer-events-none absolute right-[-20%] top-1/2 -z-10 h-[130%] w-auto -translate-y-1/2 opacity-40 md:right-[-6%] md:opacity-70" />}
       >
         <TrackedLink
           href="/kundli"
