@@ -34,7 +34,7 @@
  * ─────────────────────────────────────────────────────────────────────────
  */
 
-export const LEGAL_VERSION = "1.3.0";
+export const LEGAL_VERSION = "1.4.0";
 export const LEGAL_UPDATED = "7 August 2026";
 
 export interface LegalSection {
