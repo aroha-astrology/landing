@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: 'Is Aroha Astrology free?',
     answer:
-      'Your Kundli, daily Panchang, horoscope, Moon sign, Guna Milan and the shlokas and Gita libraries are free. Deeper reports and chat use a simple credit system, always shown before you spend anything, and every report has a free preview.',
+      'Your Kundli, daily Panchang, horoscope, Moon sign, Guna Milan and the shlokas and Gita libraries are free. Deeper reports and chat use Aroha Coins, always shown before you spend anything, and every report has a free preview.',
   },
   {
     question: 'Is it available on iPhone?',

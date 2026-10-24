@@ -37,7 +37,7 @@ const homeFaqItems: AccordionItem[] = [
   {
     question: 'Is my birth chart really free?',
     answer:
-      'Yes. Your birth chart, daily Panchang, horoscope, the Moon-sign tool, 36-point Guna Milan compatibility check, shlokas library and the Bhagavad Gita cost nothing. Deeper reports and chat run on a simple credit system, shown clearly before you use them, and every report gives you a free preview first.',
+      'Yes. Your birth chart, daily Panchang, horoscope, the Moon-sign tool, 36-point Guna Milan compatibility check, shlokas library and the Bhagavad Gita cost nothing. Deeper reports and chat run on Aroha Coins, shown clearly before you use them, and every report gives you a free preview first.',
   },
   {
     question: 'How accurate are the charts?',

@@ -31,9 +31,9 @@ const faqItems: AccordionItem[] = [
       'Make sure you are entering the mobile number your account was created with, including the country code, and that you can receive the OTP SMS. If the OTP never arrives, wait a minute and request a new one before emailing us.',
   },
   {
-    question: 'A payment or credit purchase looks wrong',
+    question: 'A payment or coin purchase looks wrong',
     answer:
-      "Open Settings → Payment History in the app to see every transaction. If a purchase didn't go through or credits look missing, email us with the date and amount and we'll look it up.",
+      "Open Settings → Payment History in the app to see every transaction. If a purchase didn't go through or coins look missing, email us with the date and amount and we'll look it up.",
   },
   {
     question: 'My Kundli or a report looks incorrect',

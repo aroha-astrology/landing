@@ -199,7 +199,6 @@
  "Is astrology or Vastu scientifically proven?": "ज्योतिष किंवा वास्तू वैज्ञानिकदृष्ट्या सिद्ध झाले आहे का?",
  "No. Vedic astrology is a traditional system of interpretation and Vastu Shastra is a traditional system of architecture and spatial design; neither has been established by scientific evidence. Aroha presents them as traditions to reflect with, and never as a substitute for medical, legal or financial advice.": "नाही. वैदिक ज्योतिष ही अर्थनिर्वचनाची एक पारंपारिक पद्धत आहे आणि वास्तू शास्त्र ही वास्तुकला आणि जागांच्या रचनेची पारंपारिक पद्धत आहे; दोन्हीपैकी कशाचीही वैज्ञानिक पुराव्यांनी सिद्धता झालेली नाही. Aroha त्यांना केवळ विचारमंथन करण्यासाठी परंपरा म्हणून सादर करते, वैद्यकीय, कायदेशीर किंवा आर्थिक सल्ल्याचा पर्याय म्हणून नाही.",
  "Is my birth chart really free?": "माझी जन्म पत्रिका खरोखर मोफत आहे का?",
- "Yes. Your birth chart, daily Panchang, horoscope, the Moon-sign tool, 36-point Guna Milan compatibility check, shlokas library and the Bhagavad Gita cost nothing. Deeper reports and chat run on a simple credit system, shown clearly before you use them, and every report gives you a free preview first.": "होय. तुमची जन्म पत्रिका, दैनिक पंचांग, राशीभविष्य, चंद्रराशी टूल, 36-पॉइंट गुण मिलन, श्लोक संग्रह आणि भगवद्गीता पूर्णपणे मोफत आहेत. अधिक सखोल अहवाल आणि चॅट एका सोप्या क्रेडिट प्रणालीवर चालतात, जी वापरण्यापूर्वी स्पष्टपणे दाखवली जाते, आणि प्रत्येक अहवाल तुम्हाला आधी मोफत प्रिव्ह्यू देतो.",
  "How accurate are the charts?": "पत्रिका किती अचूक आहेत?",
  "Planet positions, houses and Dasha periods are computed with the Swiss Ephemeris and the Lahiri ayanamsa, so the chart itself is astronomically exact for the birth details you give. Interpretation is a different matter: the Vedic Astrologer's job is to explain what those positions traditionally mean, as a tool for reflection rather than a prediction.": "ग्रहांच्या स्थिती, स्थाने आणि दशा काळ हे Swiss Ephemeris आणि लहिरी अयनांशानुसार गणले जातात, त्यामुळे तुम्ही दिलेल्या जन्म तपशिलानुसार पत्रिका खगोलशास्त्रीयदृष्ट्या अगदी अचूक असते. फलादेश हा वेगळा विषय आहे: भाकित करण्यापेक्षा आत्मचिंतनाचे साधन म्हणून त्या स्थितींचा पारंपारिक अर्थ समजावून सांगणे हे वैदिक ज्योतिषाचे काम आहे.",
  "Do I need my exact birth time?": "मला माझी जन्माची अचूक वेळ हवी आहे का?",
@@ -392,7 +391,6 @@
  "Which ayanamsa and house system does Aroha use?": "Aroha कोणता अयानांश आणि भाव पद्धत वापरते?",
  "Charts use the Lahiri (Chitrapaksha) ayanamsa, India’s official standard for the sidereal zodiac, computed with the Swiss Ephemeris. The free web Kundli uses whole-sign houses.": "कुंडल्यांमध्ये लाहिडी (चित्रपक्ष) अयानांश वापरला जातो, जो Swiss Ephemeris द्वारे गणित केलेला भारताचा अधिकृत मानकाधारित निरयण राशीचक्र अयानांश आहे. मोफत वेब कुंडलीमध्ये राशी-भाव पद्धत वापरली जाते.",
  "Is Aroha Astrology free?": "Aroha Astrology मोफत आहे का?",
- "Your Kundli, daily Panchang, horoscope, Moon sign, Guna Milan and the shlokas and Gita libraries are free. Deeper reports and chat use a simple credit system, always shown before you spend anything, and every report has a free preview.": "तुमची कुंडली, दैनिक पंचांग, राशीभविष्य, चंद्र राशी, गुण जुळवणी आणि श्लोक व गीता वाचनालय मोफत आहे. सखोल रिपोर्ट्स आणि चॅटसाठी एक सोपी क्रेडिट प्रणाली आहे, जी काहीही खर्च करण्यापूर्वी नेहमी दाखवली जाते, तसेच प्रत्येक रिपोर्टचे मोफत प्रिव्ह्यू उपलब्ध आहे.",
  "Is it available on iPhone?": "हे iPhone वर उपलब्ध आहे का?",
  "Aroha Astrology is available on Android through Google Play and on the web at app.arohaastrology.in. The iOS app is coming soon.": "Aroha Astrology Android वर Google Play द्वारे आणि वेबवर app.arohaastrology.in वर उपलब्ध आहे. iOS ॲप लवकरच येणार आहे.",
  "Does Aroha predict the future?": "Aroha भविष्याची भविष्यवाणी करते का?",
@@ -611,8 +609,6 @@
  "Common questions": "सामान्य प्रश्न",
  "I can't sign in or verify my number": "मी साइन इन करू शकत नाही किंवा माझा नंबर पडताळू शकत नाही",
  "Make sure you are entering the mobile number your account was created with, including the country code, and that you can receive the OTP SMS. If the OTP never arrives, wait a minute and request a new one before emailing us.": "तुमचे खाते ज्या मोबाईल नंबरवर तयार केले होते तोच नंबर (देशाच्या कोडसह) टाकत आहात आणि तुम्हाला OTP SMS मिळत आहे याची खात्री करा. OTP न आल्यास, एक मिनिट वाट पाहा आणि आम्हाला ई-मेल करण्यापूर्वी पुन्हा नवीन OTP ची विनंती करा.",
- "A payment or credit purchase looks wrong": "पेमेंट किंवा क्रेडिट खरेदी चुकीची वाटत आहे",
- "Open Settings → Payment History in the app to see every transaction. If a purchase didn't go through or credits look missing, email us with the date and amount and we'll look it up.": "सर्व व्यवहार पाहण्यासाठी ॲपमध्ये सेटिंग्ज → पेमेंट हिस्ट्री वर जा. खरेदी यशस्वी झाली नसेल किंवा क्रेडिट्स कमी दिसत असतील, तर तारीख आणि रकमेसह आम्हाला ई-मेल करा, आम्ही त्याची तपासणी करू.",
  "My Kundli or a report looks incorrect": "माझी कुंडली किंवा अहवाल चुकीचा दिसत आहे",
  "Double-check the birth date, time and place saved on the profile. Small errors there, especially in the birth time, can shift the chart. If the details are correct and the reading still looks wrong, tell us which report and what looks off.": "प्रोफाईलवर सेव्ह केलेली जन्मतारीख, वेळ आणि ठिकाण पुन्हा तपासा. तेथील लहान चुकांमुळे, विशेषतः जन्मवेळेतील फरकामुळे, कुंडली बदलू शकते. सर्व तपशील बरोबर असूनही भाकीत चुकीचे वाटत असल्यास, कोणता अहवाल आणि काय चुकीचे वाटत आहे ते आम्हाला सांगा.",
  "I need to change my birth details": "मला माझी जन्म माहिती बदलायची आहे",
@@ -836,5 +832,9 @@
  "Spirituality": "अध्यात्म",
  "Intuition": "अंतर्ज्ञान",
  "Past karma": "पूर्व कर्म",
- "Moksha": "मोक्ष"
+ "Moksha": "मोक्ष",
+ "Your Kundli, daily Panchang, horoscope, Moon sign, Guna Milan and the shlokas and Gita libraries are free. Deeper reports and chat use Aroha Coins, always shown before you spend anything, and every report has a free preview.": "तुमची कुंडली, दैनिक पंचांग, राशीभविष्य, चंद्र राशी, गुण जुळवणी आणि श्लोक व गीता वाचनालय मोफत आहे. सखोल रिपोर्ट्स आणि चॅटसाठी Aroha Coins वापरले जातात, ज्यांची किंमत काहीही खर्च करण्यापूर्वी नेहमी दाखवली जाते, तसेच प्रत्येक रिपोर्टचे मोफत प्रिव्ह्यू उपलब्ध आहे.",
+ "Yes. Your birth chart, daily Panchang, horoscope, the Moon-sign tool, 36-point Guna Milan compatibility check, shlokas library and the Bhagavad Gita cost nothing. Deeper reports and chat run on Aroha Coins, shown clearly before you use them, and every report gives you a free preview first.": "होय. तुमची जन्म पत्रिका, दैनिक पंचांग, राशीभविष्य, चंद्रराशी टूल, 36-पॉइंट गुण मिलन, श्लोक संग्रह आणि भगवद्गीता पूर्णपणे मोफत आहेत. अधिक सखोल अहवाल आणि चॅट Aroha Coins वर चालतात, ज्यांची किंमत वापरण्यापूर्वी स्पष्टपणे दाखवली जाते, आणि प्रत्येक अहवाल तुम्हाला आधी मोफत प्रिव्ह्यू देतो.",
+ "A payment or coin purchase looks wrong": "पेमेंट किंवा Coin खरेदी चुकीची वाटत आहे",
+ "Open Settings → Payment History in the app to see every transaction. If a purchase didn't go through or coins look missing, email us with the date and amount and we'll look it up.": "सर्व व्यवहार पाहण्यासाठी ॲपमध्ये सेटिंग्ज → पेमेंट हिस्ट्री वर जा. खरेदी यशस्वी झाली नसेल किंवा Coins कमी दिसत असतील, तर तारीख आणि रकमेसह आम्हाला ई-मेल करा, आम्ही त्याची तपासणी करू."
 }

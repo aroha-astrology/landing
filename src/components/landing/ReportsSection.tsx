@@ -194,8 +194,8 @@ export function ReportsSection() {
               <div className="mb-3 flex flex-wrap items-baseline justify-between gap-3">
                 <h3 className="font-display text-2xl leading-tight text-ink">KP Year Ahead Report</h3>
                 <span className="flex items-baseline gap-2" data-no-translate>
-                  <span className="font-display text-2xl text-accent">₹101</span>
-                  <span className="text-sm text-ink-muted line-through">₹251</span>
+                  <span className="font-display text-2xl text-accent">🪙101</span>
+                  <span className="text-sm text-ink-muted line-through">🪙251</span>
                 </span>
               </div>
               <ul className="space-y-2.5 text-[14px] leading-snug text-ink-muted">
@@ -228,7 +228,7 @@ export function ReportsSection() {
                   className="shrink-0 rounded-pill bg-accent-soft px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.04em] text-accent-text"
                   data-no-translate
                 >
-                  From ₹{report.fromRupees}
+                  From 🪙{report.fromRupees}
                   {report.cadence === 'month' ? '/mo' : ''}
                 </span>
               </div>
