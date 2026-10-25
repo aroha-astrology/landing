@@ -2556,3 +2556,48 @@ Aroha Vastu est disponible dès maintenant sur Android et sur le Web, dans l’a
 
 ## t-4f39f3c9
 Dessinez votre plan d’étage dans Aroha Vastu et voyez chaque pièce jugée selon sa direction, avec un score Vastu.
+
+## t-8bf9cfce
+Votre thème natal, calculé avec la précision de Swiss Ephemeris et expliqué dans un langage simple, en anglais et dans six langues indiennes.
+
+## t-3948450c
+Sept langues
+
+## t-d27e92b6
+Aroha Astrology lit votre thème et répond à vos questions en anglais, hindi, bengali, marathe, télougou, tamoul et gujarati.
+
+## t-fb109efc
+15 rapports personnalisés
+
+## t-3d66dba3
+, de l'harmonisation du mariage et du Kundli Milan aux richesses et à la carrière. Disponible sur Android et sur le web ; la version iOS arrive bientôt.
+
+## t-4178e1c0
+Oui. Votre thème natal, le Panchang quotidien, l'horoscope, l'outil de signe lunaire, la vérification de compatibilité Guna Milan sur 36 points, la bibliothèque de shlokas et la Bhagavad Gita sont gratuits. Les rapports plus poussés et le chat fonctionnent avec des Aroha Coins, affichés clairement avant utilisation, et chaque rapport offre d'abord un aperçu gratuit.
+
+## t-ddbd37ac
+Aroha Astrology prend en charge 7 langues : l'anglais, le hindi, le bengali, le marathe, le télougou, le tamoul et le gujarati. Vous pouvez lire votre thème et discuter avec l'astrologue védique dans la langue dans laquelle vous pensez.
+
+## t-70e37db7
+15 rapports, ancrés dans votre vrai thème
+
+## t-4d57234e
+Aroha Astrology est une application et un site web d'astrologie védique : un Janam Kundli gratuit calculé avec la précision de Swiss Ephemeris, un Panchang et un horoscope quotidiens, la Vimshottari Dasha, les yogas et doshas, l'appariement de Kundli, des rapports personnalisés et un chat avec un astrologue védique ancré dans votre propre thème, en anglais et dans six langues indiennes.
+
+## t-bea62609
+Votre Kundli, le Panchang quotidien, l'horoscope, le signe lunaire, le Guna Milan et les bibliothèques de shlokas et de Gita sont gratuits. Les rapports plus poussés et le chat utilisent des Aroha Coins, toujours affichés avant toute dépense, et chaque rapport dispose d'un aperçu gratuit.
+
+## t-4358c7ca
+Un paiement ou un achat de pièces semble incorrect
+
+## t-f10acfb9
+Ouvrez Paramètres → Historique des paiements dans l'application pour voir toutes les transactions. Si un achat n'a pas abouti ou si les pièces semblent manquantes, envoyez-nous un courriel avec la date et le montant et nous ferons une recherche.
+
+## t-f2f8570d
+Mis à jour
+
+## t-0d4bcd75
+Posez des questions de suivi et obtenez des réponses ancrées dans votre thème calculé, en anglais et dans six langues indiennes.
+
+## t-085e7589
+Dessinez votre plan de sol et voyez chaque pièce vérifiée selon les huit directions, avec un score Vastu.

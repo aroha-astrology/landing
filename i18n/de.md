@@ -2562,3 +2562,42 @@ Zeichnen Sie Ihren Grundriss in Aroha Vastu und sehen Sie jedes Zimmer nach sein
 
 ## t-085e7589
 Zeichnen Sie Ihren Grundriss und sehen Sie jedes Zimmer überprüft gegen die acht Richtungen, mit einer Vastu-Bewertung.
+
+## t-8bf9cfce
+Dein Geburtshoroskop, berechnet mit der Präzision der Swiss Ephemeris und in einfacher Sprache erklärt, auf Englisch und in sechs indischen Sprachen.
+
+## t-3948450c
+Sieben Sprachen
+
+## t-d27e92b6
+Aroha Astrology liest dein Horoskop und beantwortet deine Fragen auf Englisch, Hindi, Bengali, Marathi, Telugu, Tamil und Gujarati.
+
+## t-fb109efc
+15 personalisierte Berichte
+
+## t-4178e1c0
+Ja. Dein Geburtshoroskop, der tägliche Panchang, das Horoskop, das Mondzeichen-Tool, der 36-Punkte-Guna-Milan-Verträglichkeitstest, die Shlokas-Bibliothek und die Bhagavad Gita kosten nichts. Tiefgehende Berichte und Chat laufen über Aroha Coins, die dir vor der Verwendung klar angezeigt werden, und jeder Bericht bietet dir zuerst eine kostenlose Vorschau.
+
+## t-ddbd37ac
+Aroha Astrology unterstützt 7 Sprachen: Englisch, Hindi, Bengali, Marathi, Telugu, Tamil und Gujarati. Du kannst dein Horoskop lesen und mit dem vedischen Astrologen in der Sprache chatten, in der du denkst.
+
+## t-70e37db7
+15 Berichte, fundiert in deinem echten Horoskop
+
+## t-4d57234e
+Aroha Astrology ist eine vedische Astrologie-App und -Website: ein kostenloses Janam Kundli, berechnet mit der Präzision der Swiss Ephemeris, täglicher Panchang und Horoskop, Vimshottari Dasha, Yogas und Doshas, Kundli-Matching, personalisierte Berichte und ein vedischer Astrologe-Chat, fundiert in deinem eigenen Horoskop, auf Englisch und in sechs indischen Sprachen.
+
+## t-bea62609
+Dein Kundli, der tägliche Panchang, das Horoskop, das Mondzeichen, Guna Milan und die Shlokas- und Gita-Bibliotheken sind kostenlos. Tiefgehende Berichte und Chat nutzen Aroha Coins, die immer angezeigt werden, bevor du etwas ausgibst, und jeder Bericht hat eine kostenlose Vorschau.
+
+## t-4358c7ca
+Eine Zahlung oder ein Münzkauf sieht falsch aus
+
+## t-f10acfb9
+Öffne in der App Einstellungen → Zahlungshistorie, um jede Transaktion einzusehen. Wenn ein Kauf nicht durchgeführt wurde oder Coins fehlen, schreib uns eine E-Mail mit Datum und Betrag, und wir suchen es nach.
+
+## t-f2f8570d
+Aktualisiert
+
+## t-0d4bcd75
+Stelle Folgefragen und erhalte Antworten, die auf deinem berechneten Horoskop basieren, auf Englisch und in sechs indischen Sprachen.

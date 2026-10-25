@@ -2562,3 +2562,42 @@ Desenhe a sua planta baixa na Aroha Vastu e veja cada cômodo julgado pela sua d
 
 ## t-085e7589
 Desenhe a sua planta baixa e veja cada cômodo verificado contra as oito direções, com uma pontuação de Vastu.
+
+## t-8bf9cfce
+Seu mapa natal, calculado com precisão do Swiss Ephemeris e explicado em linguagem simples, em inglês e seis idiomas indianos.
+
+## t-3948450c
+Sete idiomas
+
+## t-d27e92b6
+A Aroha Astrology lê seu mapa e responde suas perguntas em inglês, hindi, bengali, marati, telugu, tâmil e gujarati.
+
+## t-fb109efc
+15 relatórios personalizados
+
+## t-4178e1c0
+Sim. Seu mapa natal, o Panchang diário, o horóscopo, a ferramenta de signo lunar, a verificação de compatibilidade Guna Milan com 36 pontos, a biblioteca de shlokas e o Bhagavad Gita são gratuitos. Relatórios mais profundos e o chat funcionam com Aroha Coins, mostrados claramente antes de você usá-los, e todo relatório oferece uma prévia gratuita primeiro.
+
+## t-ddbd37ac
+A Aroha Astrology suporta 7 idiomas: inglês, hindi, bengali, marati, telugu, tâmil e gujarati. Você pode ler seu mapa e conversar com o astrólogo védico no idioma em que pensa.
+
+## t-70e37db7
+15 relatórios, baseados no seu mapa real
+
+## t-4d57234e
+A Aroha Astrology é um aplicativo e site de astrologia védica: um Janam Kundli gratuito calculado com precisão do Swiss Ephemeris, Panchang diário e horóscopo, Vimshottari Dasha, yogas e doshas, compatibilidade de Kundli, relatórios personalizados e um chat com astrólogo védico fundamentado no seu próprio mapa, em inglês e seis idiomas indianos.
+
+## t-bea62609
+Seu Kundli, o Panchang diário, o horóscopo, o signo lunar, o Guna Milan e as bibliotecas de shlokas e Gita são gratuitos. Relatórios mais profundos e o chat usam Aroha Coins, sempre mostrados antes de você gastar qualquer coisa, e todo relatório tem uma prévia gratuita.
+
+## t-4358c7ca
+Um pagamento ou compra de moedas parece errado
+
+## t-f10acfb9
+Abra Configurações → Histórico de Pagamentos no aplicativo para ver todas as transações. Se uma compra não foi concluída ou as moedas parecem faltando, envie-nos um e-mail com a data e o valor e faremos a consulta.
+
+## t-f2f8570d
+Atualizado
+
+## t-0d4bcd75
+Faça perguntas de acompanhamento e receba respostas fundamentadas no seu mapa calculado, em inglês e seis idiomas indianos.

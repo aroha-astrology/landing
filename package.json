@@ -13,6 +13,7 @@
     "i18n:export": "node --no-warnings scripts/i18n/export.mjs",
     "i18n:import": "node --no-warnings scripts/i18n/import.mjs",
     "i18n:check": "node --no-warnings scripts/i18n/check.mjs",
+    "i18n:translate": "node --no-warnings scripts/i18n/translate.mjs",
     "planets:art": "node scripts/planets/generate.mjs"
   },
   "dependencies": {

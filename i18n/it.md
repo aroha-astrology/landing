@@ -2562,3 +2562,42 @@ Disegna la planimetria in Aroha Vastu e vedi ogni stanza valutata per direzione,
 
 ## t-085e7589
 Disegna la tua planimetria e vedi ogni stanza controllata rispetto alle otto direzioni, con un punteggio Vastu.
+
+## t-8bf9cfce
+La tua carta natale, calcolata con la precisione del Swiss Ephemeris e spiegata in parole semplici, in inglese e sei lingue indiane.
+
+## t-3948450c
+Sette lingue
+
+## t-d27e92b6
+Aroha Astrology legge la tua carta e risponde alle tue domande in inglese, hindi, bengalese, marathi, telugu, tamil e gujarati.
+
+## t-fb109efc
+15 report personalizzati
+
+## t-4178e1c0
+Sì. La tua carta natale, il Panchang quotidiano, l'oroscopo, lo strumento del segno lunare, il controllo di compatibilità Guna Milan su 36 punti, la libreria di shloka e la Bhagavad Gita sono gratuiti. I report più approfonditi e la chat funzionano con Aroha Coins, mostrati chiaramente prima di usarli, e ogni report offre prima un'anteprima gratuita.
+
+## t-ddbd37ac
+Aroha Astrology supporta 7 lingue: inglese, hindi, bengalese, marathi, telugu, tamil e gujarati. Puoi leggere la tua carta e chattare con l'Astrologo Veda nella lingua in cui pensi.
+
+## t-70e37db7
+15 report, basati sulla tua carta reale
+
+## t-4d57234e
+Aroha Astrology è un'app e un sito web di astrologia Veda: una Janam Kundli gratuita calcolata con la precisione del Swiss Ephemeris, Panchang e oroscopo quotidiani, Vimshottari Dasha, yogas e doshas, abbinamento Kundli, report personalizzati e una chat con l'Astrologo Veda basata sulla tua carta, in inglese e sei lingue indiane.
+
+## t-bea62609
+La tua Kundli, il Panchang quotidiano, l'oroscopo, il segno lunare, il Guna Milan e le librerie di shloka e Gita sono gratuiti. I report più approfonditi e la chat usano Aroha Coins, sempre mostrati prima di spendere qualcosa, e ogni report ha un'anteprima gratuita.
+
+## t-4358c7ca
+Un pagamento o un acquisto di monete sembra errato
+
+## t-f10acfb9
+Apri Impostazioni → Cronologia pagamenti nell'app per vedere tutte le transazioni. Se un acquisto non è andato a buon fine o le monete sembrano mancanti, scrivici con la data e l'importo e faremo una ricerca.
+
+## t-f2f8570d
+Aggiornato
+
+## t-0d4bcd75
+Fai domande di approfondimento e ricevi risposte basate sulla tua carta calcolata, in inglese e sei lingue indiane.
