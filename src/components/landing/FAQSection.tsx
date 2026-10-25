@@ -51,7 +51,7 @@ const homeFaqItems: AccordionItem[] = [
   },
   {
     question: 'Which languages does Aroha support?',
-    answer: 'Aroha Astrology supports 7 languages: English, Hindi, Bengali, Marathi, Telugu, Tamil and Gujarati. You can read your chart and chat with the Vedic Astrologer in the language you think in.',
+    answer: 'Aroha Astrology supports 15 languages: English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Spanish, French, German, Portuguese, Italian, Russian and Japanese. You can read your chart and chat with the Vedic Astrologer in the language you think in.',
   },
   {
     question: 'What is the KP Year Ahead report?',

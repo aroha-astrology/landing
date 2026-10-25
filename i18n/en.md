@@ -1,6 +1,6 @@
 # Aroha website: English strings for translation
 
-842 strings, about 8904 words.
+842 strings, about 8911 words.
 
 How to translate this file:
 
@@ -178,8 +178,8 @@ Aroha starts with your birth chart, moves to the home you live in, and ends with
 ## t-0f59d3cb
 Understand yourself
 
-## t-8bf9cfce
-Your birth chart, computed with Swiss Ephemeris precision and explained in plain language, in English and six Indian languages.
+## t-b65a971e
+Your birth chart, computed with Swiss Ephemeris precision and explained in plain language, in 15 languages.
 
 ## t-e660c436
 Free Janam Kundli: Lagna, Rashi and Nakshatra
@@ -538,11 +538,11 @@ Plain about its limits
 ## t-7f080fd4
 Astrology, Vastu and puja are traditions of interpretation and practice. We describe them with respect, and we do not call them scientific certainty or use them to frighten anyone.
 
-## t-3948450c (heading)
-Seven languages
+## t-2b1468fb (heading)
+Fifteen languages
 
-## t-d27e92b6
-Aroha Astrology reads your chart and answers your questions in English, Hindi, Bengali, Marathi, Telugu, Tamil and Gujarati.
+## t-c327cf3a
+Aroha Astrology reads your chart and answers your questions in English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Spanish, French, German, Portuguese, Italian, Russian and Japanese.
 
 ## t-db07be18 (button or link)
 Languages
@@ -669,8 +669,8 @@ Ideally, yes. The Moon moves fast enough that a 15 to 20 minute error can shift 
 ## t-0ad5c78a (button or link)
 Which languages does Aroha support?
 
-## t-ddbd37ac
-Aroha Astrology supports 7 languages: English, Hindi, Bengali, Marathi, Telugu, Tamil and Gujarati. You can read your chart and chat with the Vedic Astrologer in the language you think in.
+## t-d2a09e60
+Aroha Astrology supports 15 languages: English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Spanish, French, German, Portuguese, Italian, Russian and Japanese. You can read your chart and chat with the Vedic Astrologer in the language you think in.
 
 ## t-f728e28f (button or link)
 What is the KP Year Ahead report?
@@ -1226,8 +1226,8 @@ About Aroha Astrology
 ## t-daec9ebb (button or link)
 What is Aroha Astrology?
 
-## t-4d57234e
-Aroha Astrology is a Vedic astrology app and website: a free Janam Kundli computed with Swiss Ephemeris precision, daily Panchang and horoscope, Vimshottari Dasha, yogas and doshas, Kundli matching, personalised reports and a Vedic Astrologer chat grounded in your own chart, in English and six Indian languages.
+## t-51e8b9d4
+Aroha Astrology is a Vedic astrology app and website: a free Janam Kundli computed with Swiss Ephemeris precision, daily Panchang and horoscope, Vimshottari Dasha, yogas and doshas, Kundli matching, personalised reports and a Vedic Astrologer chat grounded in your own chart, in 15 languages.
 
 ## t-2370f7e0 (button or link)
 Which ayanamsa and house system does Aroha use?
@@ -2339,8 +2339,8 @@ Your Lagna, house placements and all nine grahas, computed with Swiss Ephemeris 
 ## t-f3623f58 (button or link)
 Generate your Kundli
 
-## t-0d4bcd75
-Ask follow-up questions and get answers grounded in your computed chart, in English and six Indian languages.
+## t-aa0068c7
+Ask follow-up questions and get answers grounded in your computed chart, in 15 languages.
 
 ## t-cf3766cc (button or link)
 Ask about your chart

@@ -12,8 +12,8 @@ const PILLARS = [
     link: { href: '/editorial-standards', label: 'Editorial standards' },
   },
   {
-    k: 'Seven languages',
-    v: 'Aroha Astrology reads your chart and answers your questions in English, Hindi, Bengali, Marathi, Telugu, Tamil and Gujarati.',
+    k: 'Fifteen languages',
+    v: 'Aroha Astrology reads your chart and answers your questions in English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Spanish, French, German, Portuguese, Italian, Russian and Japanese.',
     link: { href: '/astrology#languages', label: 'Languages' },
   },
   {

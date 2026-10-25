@@ -2601,3 +2601,21 @@ Aktualisiert
 
 ## t-0d4bcd75
 Stelle Folgefragen und erhalte Antworten, die auf deinem berechneten Horoskop basieren, auf Englisch und in sechs indischen Sprachen.
+
+## t-b65a971e
+Dein Geburtshoroskop, berechnet mit der Präzision der Swiss Ephemeris und in einfacher Sprache erklärt, in 15 Sprachen.
+
+## t-2b1468fb
+Fünfzehn Sprachen
+
+## t-c327cf3a
+Aroha Astrology liest dein Horoskop und beantwortet deine Fragen auf Englisch, Hindi, Bengalisch, Marathi, Telugu, Tamil, Gujarati, Kannada, Spanisch, Französisch, Deutsch, Portugiesisch, Italienisch, Russisch und Japanisch.
+
+## t-d2a09e60
+Aroha Astrology unterstützt 15 Sprachen: Englisch, Hindi, Bengalisch, Marathi, Telugu, Tamil, Gujarati, Kannada, Spanisch, Französisch, Deutsch, Portugiesisch, Italienisch, Russisch und Japanisch. Du kannst dein Horoskop lesen und mit dem vedischen Astrologen in der Sprache chatten, in der du denkst.
+
+## t-51e8b9d4
+Aroha Astrology ist eine vedische Astrologie-App und -Webseite: ein kostenloses Janam Kundli, berechnet mit der Präzision der Swiss Ephemeris, tägliches Panchang und Horoskop, Vimshottari Dasha, Yogas und Doshas, Kundli-Matching, personalisierte Berichte und ein Chat mit einem vedischen Astrologen, der auf deinem eigenen Horoskop basiert, in 15 Sprachen.
+
+## t-aa0068c7
+Stelle Folgefragen und erhalte Antworten, die auf deinem berechneten Horoskop basieren, in 15 Sprachen.

@@ -54,7 +54,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     theme: 'Life',
     realm: 'Cosmos',
     summary:
-      'Aroha Astrology is a Vedic astrology app and website: a free Janam Kundli computed with Swiss Ephemeris precision, daily Panchang and horoscope, Vimshottari Dasha, yogas and doshas, Kundli matching, personalised reports and a Vedic Astrologer chat grounded in your own chart, in English and six Indian languages.',
+      'Aroha Astrology is a Vedic astrology app and website: a free Janam Kundli computed with Swiss Ephemeris precision, daily Panchang and horoscope, Vimshottari Dasha, yogas and doshas, Kundli matching, personalised reports and a Vedic Astrologer chat grounded in your own chart, in 15 languages.',
     capabilities: [
       'Janam Kundli with Lagna, Rashi, Nakshatra and all nine grahas',
       'Divisional charts D1 to D60, Ashtakavarga and Shadbala',

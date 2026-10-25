@@ -71,7 +71,7 @@ export const FEATURE_LINKS: Record<string, FeatureLink> = {
     key: 'chat',
     product: 'astrology',
     label: 'Vedic Astrologer chat',
-    description: 'Ask follow-up questions and get answers grounded in your computed chart, in English and six Indian languages.',
+    description: 'Ask follow-up questions and get answers grounded in your computed chart, in 15 languages.',
     href: 'app',
     cta: 'Ask about your chart',
   },

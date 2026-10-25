@@ -2601,3 +2601,21 @@ Aggiornato
 
 ## t-0d4bcd75
 Fai domande di approfondimento e ricevi risposte basate sulla tua carta calcolata, in inglese e sei lingue indiane.
+
+## t-b65a971e
+Il tuo tema natale, calcolato con la precisione di Swiss Ephemeris e spiegato in parole semplici, in 15 lingue.
+
+## t-2b1468fb
+Quindici lingue
+
+## t-c327cf3a
+Aroha Astrology legge la tua carta e risponde alle tue domande in inglese, hindi, bengalese, marathi, telugu, tamil, gujarati, kannada, spagnolo, francese, tedesco, portoghese, italiano, russo e giapponese.
+
+## t-d2a09e60
+Aroha Astrology supporta 15 lingue: inglese, hindi, bengalese, marathi, telugu, tamil, gujarati, kannada, spagnolo, francese, tedesco, portoghese, italiano, russo e giapponese. Puoi leggere la tua carta e chattare con l'astrologo vedico nella lingua in cui pensi.
+
+## t-51e8b9d4
+Aroha Astrology è un'app e un sito web di astrologia vedica: una Janam Kundli gratuita calcolata con la precisione di Swiss Ephemeris, Panchang e oroscopo quotidiani, Vimshottari Dasha, yogas e doshas, abbinamento Kundli, report personalizzati e una chat con un astrologo vedico basata sulla tua carta, in 15 lingue.
+
+## t-aa0068c7
+Fai domande di approfondimento e ricevi risposte basate sulla tua carta calcolata, in 15 lingue.

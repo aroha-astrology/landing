@@ -2601,3 +2601,21 @@ Posez des questions de suivi et obtenez des réponses ancrées dans votre thème
 
 ## t-085e7589
 Dessinez votre plan de sol et voyez chaque pièce vérifiée selon les huit directions, avec un score Vastu.
+
+## t-b65a971e
+Votre thème natal, calculé avec la précision de Swiss Ephemeris et expliqué dans un langage simple, en 15 langues.
+
+## t-2b1468fb
+Quinze langues
+
+## t-c327cf3a
+Aroha Astrology lit votre thème et répond à vos questions en anglais, hindi, bengali, marathe, télougou, tamoul, gujarati, kannara, espagnol, français, allemand, portugais, italien, russe et japonais.
+
+## t-d2a09e60
+Aroha Astrology prend en charge 15 langues : anglais, hindi, bengali, marathe, télougou, tamoul, gujarati, kannara, espagnol, français, allemand, portugais, italien, russe et japonais. Vous pouvez lire votre thème et discuter avec l'astrologue védique dans la langue dans laquelle vous pensez.
+
+## t-51e8b9d4
+Aroha Astrology est une application et un site web d'astrologie védique : un Janam Kundli gratuit calculé avec la précision de Swiss Ephemeris, un Panchang et un horoscope quotidiens, la Dasha Vimshottari, les yogas et doshas, l'appariement de Kundli, des rapports personnalisés et une discussion avec un astrologue védique ancrée dans votre propre thème, en 15 langues.
+
+## t-aa0068c7
+Posez des questions de suivi et obtenez des réponses ancrées dans votre thème calculé, en 15 langues.
