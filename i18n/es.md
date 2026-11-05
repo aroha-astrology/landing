@@ -2619,3 +2619,6 @@ Aroha Astrology es una aplicación y sitio web de astrología védica: una Janam
 
 ## t-aa0068c7
 Haz preguntas de seguimiento y recibe respuestas fundamentadas en tu carta calculada, en 15 idiomas.
+
+## t-9723178a
+Puedes editar los datos de nacimiento desde tu perfil dentro de la app. Cuando guardes una corrección, se volverán a generar tu carta y tus horóscopos con los nuevos datos, y cualquier informe que ya hayas comprado se reescribirá gratis la próxima vez que lo abras.

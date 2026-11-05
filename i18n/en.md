@@ -1,6 +1,6 @@
 # Aroha website: English strings for translation
 
-842 strings, about 8911 words.
+842 strings, about 8924 words.
 
 How to translate this file:
 
@@ -1969,8 +1969,8 @@ Double-check the birth date, time and place saved on the profile. Small errors t
 ## t-00dbe8a2 (button or link)
 I need to change my birth details
 
-## t-b3b9550e
-Birth details can be edited from your profile inside the app. Charts and readings you already generated are not recalculated automatically, so regenerate them after saving the correction.
+## t-9723178a
+You can edit birth details from your profile inside the app. When you save a correction, your chart and horoscopes are rebuilt for the new details, and any report you already bought is rewritten free the next time you open it.
 
 ## t-2f2f0d3a (button or link)
 Can I use the app in my own language?

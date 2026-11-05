@@ -2619,3 +2619,6 @@ Aroha Astrology est une application et un site web d'astrologie védique : un Ja
 
 ## t-aa0068c7
 Posez des questions de suivi et obtenez des réponses ancrées dans votre thème calculé, en 15 langues.
+
+## t-9723178a
+Vous pouvez modifier vos détails de naissance depuis votre profil dans l'application. Lorsque vous enregistrez une correction, votre thème astral et vos horoscopes sont recalculés pour les nouveaux détails, et tout rapport déjà acheté est réécrit gratuitement la prochaine fois que vous l'ouvrez.

@@ -2619,3 +2619,6 @@ Aroha Astrology é um aplicativo e site de astrologia védica: Janam Kundli grat
 
 ## t-aa0068c7
 Faça perguntas de acompanhamento e receba respostas fundamentadas no seu mapa calculado, em 15 idiomas.
+
+## t-9723178a
+Você pode editar os dados de nascimento no seu perfil dentro do app. Ao salvar uma correção, seu mapa astral e horóscopos são recalculados para os novos dados, e qualquer relatório que você já comprou é refeito gratuitamente na próxima vez que você o abrir.

@@ -620,7 +620,7 @@
  "My Kundli or a report looks incorrect": "クンドリやレポートの内容が正しくないように見えます",
  "Double-check the birth date, time and place saved on the profile. Small errors there, especially in the birth time, can shift the chart. If the details are correct and the reading still looks wrong, tell us which report and what looks off.": "プロフィールに保存されている生年月日、出生時間、出生地を再度ご確認ください。特に出生時間のわずかな誤差によってホロスコープがずれることがあります。詳細が正しいにもかかわらず鑑定結果が不自然な場合は、対象のレポートと不自然な点をお知らせください。",
  "I need to change my birth details": "出生情報を変更したい",
- "Birth details can be edited from your profile inside the app. Charts and readings you already generated are not recalculated automatically, so regenerate them after saving the correction.": "出生情報はアプリ内のプロフィールから編集できます。すでに作成したチャートや鑑定結果は自動では更新されないため、修正を保存した後に作成し直してください。",
+ "You can edit birth details from your profile inside the app. When you save a correction, your chart and horoscopes are rebuilt for the new details, and any report you already bought is rewritten free the next time you open it.": "アプリ内のプロフィールから生年月日などの基本情報を編集できます。修正を保存すると、チャートやホロスコープが新しい情報に基づき再計算され、すでに購入したレポートも次回開いたときに無料で書き直されます。",
  "Can I use the app in my own language?": "自分の言語でアプリを使えますか？",
  "Yes. Aroha supports multiple languages. Change it any time from Settings → Language.": "はい。Aroha は複数の言語に対応しています。設定 → 言語からいつでも変更できます。",
  "How do I delete my account or ask about my data?": "アカウントの削除やデータについての問い合わせはどうすればよいですか？",

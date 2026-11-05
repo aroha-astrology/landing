@@ -2619,3 +2619,6 @@ Aroha Astrology ist eine vedische Astrologie-App und -Webseite: ein kostenloses 
 
 ## t-aa0068c7
 Stelle Folgefragen und erhalte Antworten, die auf deinem berechneten Horoskop basieren, in 15 Sprachen.
+
+## t-9723178a
+Sie können Geburtsdaten in Ihrem Profil in der App bearbeiten. Wenn Sie eine Korrektur speichern, werden Ihr Geburtshoroskop und Ihre Horoskope für die neuen Daten neu berechnet, und jeder bereits gekaufte Bericht wird beim nächsten Öffnen kostenlos aktualisiert.

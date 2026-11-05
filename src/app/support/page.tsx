@@ -42,7 +42,7 @@ const faqItems: AccordionItem[] = [
   },
   {
     question: 'I need to change my birth details',
-    answer: 'Birth details can be edited from your profile inside the app. Charts and readings you already generated are not recalculated automatically, so regenerate them after saving the correction.',
+    answer: 'You can edit birth details from your profile inside the app. When you save a correction, your chart and horoscopes are rebuilt for the new details, and any report you already bought is rewritten free the next time you open it.',
   },
   {
     question: 'Can I use the app in my own language?',
